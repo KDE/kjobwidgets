@@ -31,39 +31,39 @@ class KJob;
  */
 namespace KJobWidgets
 {
-  /**
-   * Associate this job with a window given by @p window.
-   * This is used:
-   * @li by KDialogJobUiDelegate as parent widget for error messages
-   * @li by KWidgetJobTracker as parent widget for progress dialogs
-   * @li by KIO::AbstractJobInteractionInterface as parent widget for rename/skip dialogs
-   * and possibly more.
-   * @since 5.0
-   */
-  KJOBWIDGETS_EXPORT void setWindow(KJob *job, QWidget *widget);
+/**
+ * Associate this job with a window given by @p window.
+ * This is used:
+ * @li by KDialogJobUiDelegate as parent widget for error messages
+ * @li by KWidgetJobTracker as parent widget for progress dialogs
+ * @li by KIO::AbstractJobInteractionInterface as parent widget for rename/skip dialogs
+ * and possibly more.
+ * @since 5.0
+ */
+KJOBWIDGETS_EXPORT void setWindow(KJob *job, QWidget *widget);
 
-  /**
-   * Overload that takes a QWindow.
-   * @since 5.0
-   */
-  //KJOBWIDGETS_EXPORT void setWindow(KJob *job, QWindow *window);
+/**
+ * Overload that takes a QWindow.
+ * @since 5.0
+ */
+//KJOBWIDGETS_EXPORT void setWindow(KJob *job, QWindow *window);
 
-  /**
-   * Return the window associated with this job.
-   * @since 5.0
-   */
-  KJOBWIDGETS_EXPORT QWidget* window(KJob *job);
+/**
+ * Return the window associated with this job.
+ * @since 5.0
+ */
+KJOBWIDGETS_EXPORT QWidget *window(KJob *job);
 
-  /**
-   * Updates the last user action timestamp to the given time.
-   * @since 5.0
-   */
-  KJOBWIDGETS_EXPORT void updateUserTimestamp(KJob *job, unsigned long time);
-  /**
-   * Returns the last user action timestamp
-   * @since 5.0
-   */
-  KJOBWIDGETS_EXPORT unsigned long userTimestamp(KJob *job);
+/**
+ * Updates the last user action timestamp to the given time.
+ * @since 5.0
+ */
+KJOBWIDGETS_EXPORT void updateUserTimestamp(KJob *job, unsigned long time);
+/**
+ * Returns the last user action timestamp
+ * @since 5.0
+ */
+KJOBWIDGETS_EXPORT unsigned long userTimestamp(KJob *job);
 }
 
 #endif

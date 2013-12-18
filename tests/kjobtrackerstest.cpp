@@ -33,7 +33,7 @@
 KTestJob::KTestJob(int numberOfDirs)
     : KJob(), m_numberOfDirs(numberOfDirs), m_currentSpeed(1000), m_state(Stopped)
 {
-    setCapabilities(KJob::Killable|KJob::Suspendable);
+    setCapabilities(KJob::Killable | KJob::Suspendable);
 }
 
 KTestJob::~KTestJob()
@@ -52,8 +52,7 @@ void KTestJob::start()
 
 void KTestJob::nextStep()
 {
-    switch (m_state)
-    {
+    switch (m_state) {
     case StatingDirs:
         emit infoMessage(this, QString("Initial listing"));
         stateNextDir();
@@ -73,55 +72,55 @@ void KTestJob::nextStep()
 
 void KTestJob::stateNextDir()
 {
-    if (totalAmount(KJob::Directories)==m_numberOfDirs) {
+    if (totalAmount(KJob::Directories) == m_numberOfDirs) {
         m_state = CreatingDirs;
         return;
     }
 
-    QString directory_name = "dir"+QString::number(totalAmount(KJob::Directories));
+    QString directory_name = "dir" + QString::number(totalAmount(KJob::Directories));
 
     qDebug() << "Stating " << directory_name;
-    setTotalAmount(KJob::Directories, totalAmount(KJob::Directories)+1);
-    setTotalAmount(KJob::Files, totalAmount(KJob::Directories)*10);
-    setTotalAmount(KJob::Bytes, totalAmount(KJob::Files)*1000);
+    setTotalAmount(KJob::Directories, totalAmount(KJob::Directories) + 1);
+    setTotalAmount(KJob::Files, totalAmount(KJob::Directories) * 10);
+    setTotalAmount(KJob::Bytes, totalAmount(KJob::Files) * 1000);
 
     emit warning(this, directory_name, directory_name);
-    emit description(this, QString("Stating"), qMakePair(QString("Stating"), QString("file:/src/"+directory_name)));
+    emit description(this, QString("Stating"), qMakePair(QString("Stating"), QString("file:/src/" + directory_name)));
 }
 
 void KTestJob::createNextDir()
 {
-    if (processedAmount(KJob::Directories)==totalAmount(KJob::Directories)) {
+    if (processedAmount(KJob::Directories) == totalAmount(KJob::Directories)) {
         m_state = CopyingFiles;
         return;
     }
 
-    QString directory_name = "dir"+QString::number(processedAmount(KJob::Directories));
+    QString directory_name = "dir" + QString::number(processedAmount(KJob::Directories));
 
     qDebug() << "Creating " << directory_name;
-    setProcessedAmount(KJob::Directories, processedAmount(KJob::Directories)+1);
+    setProcessedAmount(KJob::Directories, processedAmount(KJob::Directories) + 1);
 
-    emit description(this, QString("Creating Dir"), qMakePair(QString("Creating"), QString("file:/dest/"+directory_name)));
+    emit description(this, QString("Creating Dir"), qMakePair(QString("Creating"), QString("file:/dest/" + directory_name)));
 }
 
 void KTestJob::copyNextFile()
 {
-    if (processedAmount(KJob::Files)==totalAmount(KJob::Files)) {
+    if (processedAmount(KJob::Files) == totalAmount(KJob::Files)) {
         m_state = Stopped;
         m_timer.stop();
         emitResult();
         return;
     }
 
-    QString file_name = "dir"+QString::number(processedAmount(KJob::Files)/10)
-                        +"/file"+QString::number(processedAmount(KJob::Files)%10);
+    QString file_name = "dir" + QString::number(processedAmount(KJob::Files) / 10)
+                        + "/file" + QString::number(processedAmount(KJob::Files) % 10);
 
     qDebug() << "Copying " << file_name;
-    setProcessedAmount(KJob::Files, processedAmount(KJob::Files)+1);
-    setProcessedAmount(KJob::Bytes, processedAmount(KJob::Bytes)+1000);
+    setProcessedAmount(KJob::Files, processedAmount(KJob::Files) + 1);
+    setProcessedAmount(KJob::Bytes, processedAmount(KJob::Bytes) + 1000);
 
-    emit description(this, QString("Copying"), qMakePair(QString("Source"), QString("file:/src/"+file_name)),
-                     qMakePair(QString("Destination"), QString("file:/dest/"+file_name)));
+    emit description(this, QString("Copying"), qMakePair(QString("Source"), QString("file:/src/" + file_name)),
+                     qMakePair(QString("Destination"), QString("file:/dest/" + file_name)));
 
     emitSpeed(m_currentSpeed);
 }

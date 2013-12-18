@@ -260,8 +260,8 @@ void KWidgetJobTracker::Private::ProgressWidget::infoMessage(const QString &plai
 }
 
 void KWidgetJobTracker::Private::ProgressWidget::description(const QString &title,
-                                                                const QPair<QString, QString> &field1,
-                                                                const QPair<QString, QString> &field2)
+        const QPair<QString, QString> &field1,
+        const QPair<QString, QString> &field2)
 {
     setWindowTitle(title);
     caption = title;
@@ -280,28 +280,31 @@ void KWidgetJobTracker::Private::ProgressWidget::description(const QString &titl
 
 void KWidgetJobTracker::Private::ProgressWidget::totalAmount(KJob::Unit unit, qulonglong amount)
 {
-    switch(unit)
-    {
+    switch (unit) {
     case KJob::Bytes:
         totalSizeKnown = true;
         // size is measured in bytes
-        if (totalSize == amount)
+        if (totalSize == amount) {
             return;
+        }
         totalSize = amount;
-        if (startTime.isNull())
+        if (startTime.isNull()) {
             startTime.start();
+        }
         break;
 
     case KJob::Files:
-        if (totalFiles == amount)
+        if (totalFiles == amount) {
             return;
+        }
         totalFiles = amount;
         showTotals();
         break;
 
     case KJob::Directories:
-        if (totalDirs == amount)
+        if (totalDirs == amount) {
             return;
+        }
         totalDirs = amount;
         showTotals();
         break;
@@ -312,28 +315,30 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
 {
     QString tmp;
 
-    switch(unit)
-    {
+    switch (unit) {
     case KJob::Bytes:
-        if (processedSize == amount)
+        if (processedSize == amount) {
             return;
+        }
         processedSize = amount;
 
         if (totalSizeKnown) {
-            tmp = tr( "%1 of %2 complete", "", amount)
-                        .arg(KJobTrackerFormatters::byteSize(amount))
-                        .arg(KJobTrackerFormatters::byteSize(totalSize));
+            tmp = tr("%1 of %2 complete", "", amount)
+                  .arg(KJobTrackerFormatters::byteSize(amount))
+                  .arg(KJobTrackerFormatters::byteSize(totalSize));
         } else {
             tmp = KJobTrackerFormatters::byteSize(amount);
         }
         sizeLabel->setText(tmp);
-        if (!totalSizeKnown) // update jumping progressbar
+        if (!totalSizeKnown) { // update jumping progressbar
             progressBar->setValue(amount);
+        }
         break;
 
     case KJob::Directories:
-        if (processedDirs == amount)
+        if (processedDirs == amount) {
             return;
+        }
         processedDirs = amount;
 
         tmp = tr("%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
@@ -343,8 +348,9 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         break;
 
     case KJob::Files:
-        if (processedFiles == amount)
+        if (processedFiles == amount) {
             return;
+        }
         processedFiles = amount;
 
         if (totalDirs > 1) {
@@ -362,7 +368,7 @@ void KWidgetJobTracker::Private::ProgressWidget::percent(unsigned long percent)
 
     if (totalSizeKnown) {
         title += tr("%1% of %2").arg(percent).arg(
-                      KJobTrackerFormatters::byteSize(totalSize));
+                     KJobTrackerFormatters::byteSize(totalSize));
     } else if (totalFiles) {
         title += tr("%1% of %n file(s)", "", totalFiles).arg(percent);
     } else {
@@ -383,9 +389,9 @@ void KWidgetJobTracker::Private::ProgressWidget::speed(unsigned long value)
     } else {
         const QString speedStr = KJobTrackerFormatters::byteSize(value);
         if (totalSizeKnown) {
-            const int remaining = 1000*(totalSize - processedSize)/value;
+            const int remaining = 1000 * (totalSize - processedSize) / value;
             speedLabel->setText(tr("%1/s (%2 remaining)", "", remaining).arg(speedStr).arg(
-                                     KJobTrackerFormatters::duration(remaining)));
+                                    KJobTrackerFormatters::duration(remaining)));
         } else { // total size is not known (#24228)
             speedLabel->setText(tr("%1/s", "speed in bytes per second").arg(speedStr));
         }
@@ -399,17 +405,19 @@ void KWidgetJobTracker::Private::ProgressWidget::slotClean()
     cancelClose->setIcon(QIcon::fromTheme("window-close"));
     cancelClose->setToolTip(tr("Close the current window or document"));
     openFile->setEnabled(true);
-    if (!totalSizeKnown || totalSize < processedSize)
+    if (!totalSizeKnown || totalSize < processedSize) {
         totalSize = processedSize;
+    }
     processedAmount(KJob::Bytes, totalSize);
     keepOpenCheck->setEnabled(false);
     pauseButton->setEnabled(false);
     if (!startTime.isNull()) {
         int s = startTime.elapsed();
-        if (!s)
+        if (!s) {
             s = 1;
+        }
         speedLabel->setText(tr("%1/s (done)").arg(
-                                    KJobTrackerFormatters::byteSize(1000 * totalSize / s)));
+                                KJobTrackerFormatters::byteSize(1000 * totalSize / s)));
     }
 }
 
@@ -443,7 +451,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     QGridLayout *grid = new QGridLayout();
     topLayout->addLayout(grid);
     const int spacingHint = style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    grid->addItem(new QSpacerItem(spacingHint,0),0,1);
+    grid->addItem(new QSpacerItem(spacingHint, 0), 0, 1);
     // filenames or action name
     sourceInvite = new QLabel(tr("Source:", "The source url of a job"), this);
     grid->addWidget(sourceInvite, 0, 0);
@@ -475,7 +483,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     topLayout->addLayout(hBox);
 
     arrowButton = new QPushButton(this);
-    arrowButton->setMaximumSize(QSize(32,25));
+    arrowButton->setMaximumSize(QSize(32, 25));
     arrowButton->setIcon(QIcon::fromTheme("arrow-down"));
     arrowButton->setToolTip(tr("Click this to expand the dialog, to show details"));
     arrowState = Qt::DownArrow;
@@ -549,14 +557,15 @@ void KWidgetJobTracker::Private::ProgressWidget::showTotals()
     // Show the totals in the progress label, if we still haven't
     // processed anything. This is useful when the stat'ing phase
     // of CopyJob takes a long time (e.g. over networks).
-    if (processedFiles == 0 && processedDirs == 0)
-    {
+    if (processedFiles == 0 && processedDirs == 0) {
         QString tmps;
         if (totalDirs > 1)
             // that we have a singular to translate looks weired but is only logical
+        {
             tmps = tr("%n folder(s)", "", totalDirs) + "   ";
+        }
         tmps += tr("%n file(s)", "", totalFiles);
-        progressLabel->setText( tmps );
+        progressLabel->setText(tmps);
     }
 }
 
@@ -564,17 +573,14 @@ void KWidgetJobTracker::Private::ProgressWidget::setDestVisible(bool visible)
 {
     // We can't hide the destInvite/destEdit labels,
     // because it screws up the QGridLayout.
-    if (visible)
-    {
+    if (visible) {
         destInvite->show();
         destEdit->show();
-    }
-    else
-    {
+    } else {
         destInvite->hide();
         destEdit->hide();
-        destInvite->setText( QString() );
-        destEdit->setText( QString() );
+        destInvite->setText(QString());
+        destEdit->setText(QString());
     }
     setMaximumHeight(sizeHint().height());
 }
@@ -585,8 +591,9 @@ void KWidgetJobTracker::Private::ProgressWidget::checkDestination(const QUrl &de
 
     if (dest.isLocalFile()) {
         const QString path = dest.toLocalFile();
-        if (path.contains(QDir::tempPath()))
-            ok = false; // it's in the tmp directory
+        if (path.contains(QDir::tempPath())) {
+            ok = false;    // it's in the tmp directory
+        }
     }
 
     if (ok) {
@@ -594,7 +601,7 @@ void KWidgetJobTracker::Private::ProgressWidget::checkDestination(const QUrl &de
         openLocation->show();
         keepOpenCheck->show();
         setMaximumHeight(sizeHint().height());
-        location=dest;
+        location = dest;
     }
 }
 

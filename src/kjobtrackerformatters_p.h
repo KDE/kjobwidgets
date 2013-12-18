@@ -29,13 +29,13 @@
 
 namespace KJobTrackerFormatters
 {
-    QString byteSize(double size);
+QString byteSize(double size);
 
-    QString daysDuration(int n);
-    QString hoursDuration(int n);
-    QString minutesDuration(int n);
-    QString secondsDuration(int n);
-    QString duration(unsigned long mSec);
+QString daysDuration(int n);
+QString hoursDuration(int n);
+QString minutesDuration(int n);
+QString secondsDuration(int n);
+QString duration(unsigned long mSec);
 };
 
 #endif

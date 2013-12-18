@@ -64,11 +64,10 @@ public:
     class ProgressWidget;
 
     QWidget *parent;
-    QEventLoopLocker* eventLoopLocker;
-    QMap<KJob*, ProgressWidget*> progressWidget;
-    QQueue<KJob*> progressWidgetsToBeShown;
+    QEventLoopLocker *eventLoopLocker;
+    QMap<KJob *, ProgressWidget *> progressWidget;
+    QQueue<KJob *> progressWidgetsToBeShown;
 };
-
 
 class KWidgetJobTracker::Private::ProgressWidget
     : public QWidget

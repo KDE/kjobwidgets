@@ -26,7 +26,6 @@
 
 #include <QtCore/QMap>
 
-
 #include "jobviewserverinterface.h"
 #include "jobviewiface.h"
 

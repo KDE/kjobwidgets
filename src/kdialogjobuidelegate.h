@@ -50,7 +50,7 @@ public:
     /**
      * @reimp
      */
-    bool setJob( KJob *job ) Q_DECL_OVERRIDE;
+    bool setJob(KJob *job) Q_DECL_OVERRIDE;
 
     /**
      * Associate this job with a window given by @p window.
@@ -70,7 +70,7 @@ public:
      * Updates the last user action timestamp to the given time.
      * See KApplication::updateUserTimestamp().
      */
-    void updateUserTimestamp( unsigned long time );
+    void updateUserTimestamp(unsigned long time);
 
     /**
      * @internal
@@ -84,7 +84,7 @@ protected Q_SLOTS:
 
 private:
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif

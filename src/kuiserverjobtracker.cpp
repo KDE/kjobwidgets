@@ -42,18 +42,19 @@ public:
 
     void _k_killJob();
 
-    QHash<KJob*, org::kde::JobViewV2*> progressJobView;
+    QHash<KJob *, org::kde::JobViewV2 *> progressJobView;
 };
 
 void KUiServerJobTracker::Private::_k_killJob()
 {
-    org::kde::JobViewV2 *jobView = qobject_cast<org::kde::JobViewV2*>(q->sender());
+    org::kde::JobViewV2 *jobView = qobject_cast<org::kde::JobViewV2 *>(q->sender());
 
     if (jobView) {
         KJob *job = progressJobView.key(jobView);
 
-        if (job)
+        if (job) {
             job->kill(KJob::EmitResult);
+        }
     }
 }
 
@@ -90,14 +91,14 @@ void KUiServerJobTracker::registerJob(KJob *job)
 
     QPointer<KJob> jobWatch = job;
     QDBusReply<QDBusObjectPath> reply = serverProxy()->uiserver().requestView(appName,
-                                                                              programIconName,
-                                                                              job->capabilities());
+                                        programIconName,
+                                        job->capabilities());
 
     // If we got a valid reply, register the interface for later usage.
     if (reply.isValid()) {
         org::kde::JobViewV2 *jobView = new org::kde::JobViewV2("org.kde.JobViewServer",
-                                                           reply.value().path(),
-                                                           QDBusConnection::sessionBus());
+                reply.value().path(),
+                QDBusConnection::sessionBus());
         if (!jobWatch) {
             //qDebug() << "deleted out from under us when asking the server proxy for the view";
             jobView->terminate(QString());
@@ -127,7 +128,7 @@ void KUiServerJobTracker::registerJob(KJob *job)
         d->progressJobView.insert(job, jobView);
     } else if (!jobWatch) {
         qWarning() << "Uh-oh...KUiServerJobTracker was trying to forward a job, but it was deleted from under us."
-        << "kuiserver *may* have a stranded job. we can't do anything about it because the returned objectPath is invalid.";
+                   << "kuiserver *may* have a stranded job. we can't do anything about it because the returned objectPath is invalid.";
         return;
     }
 
@@ -299,18 +300,19 @@ void KUiServerJobTracker::speed(KJob *job, unsigned long value)
 KSharedUiServerProxy::KSharedUiServerProxy()
     : m_uiserver("org.kde.JobViewServer", "/JobViewServer", QDBusConnection::sessionBus())
 {
-    QDBusConnectionInterface* bus = QDBusConnection::sessionBus().interface();
+    QDBusConnectionInterface *bus = QDBusConnection::sessionBus().interface();
     if (!bus->isServiceRegistered("org.kde.JobViewServer")) {
         QDBusReply<void> reply = bus->startService("org.kde.kuiserver");
         if (!reply.isValid()) {
             qCritical() << "Couldn't start kuiserver from org.kde.kuiserver.service:" << reply.error();
         }
-        if (!bus->isServiceRegistered("org.kde.JobViewServer"))
+        if (!bus->isServiceRegistered("org.kde.JobViewServer")) {
             qDebug() << "The dbus name org.kde.JobViewServer is STILL NOT REGISTERED, even after starting kuiserver. Should not happen.";
-        else
+        } else {
             qDebug() << "kuiserver registered";
+        }
     } else {
-            qDebug() << "kuiserver found";
+        qDebug() << "kuiserver found";
     }
 }
 

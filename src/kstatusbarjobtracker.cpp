@@ -60,14 +60,17 @@ void KStatusBarJobTracker::unregisterJob(KJob *job)
 {
     KAbstractWidgetJobTracker::unregisterJob(job);
 
-    if (!d->progressWidget.contains(job))
+    if (!d->progressWidget.contains(job)) {
         return;
+    }
 
-    if (d->currentProgressWidget == d->progressWidget[job])
+    if (d->currentProgressWidget == d->progressWidget[job]) {
         d->currentProgressWidget = 0;
+    }
 
-    if (!d->progressWidget[job]->beingDeleted)
+    if (!d->progressWidget[job]->beingDeleted) {
         delete d->progressWidget[job];
+    }
 
     d->progressWidget.remove(job);
 }
@@ -146,7 +149,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
 {
     widget = new QWidget(parent);
 
-    int w = fontMetrics().width( " 999.9 kB/s 00:00:01 " ) + 8;
+    int w = fontMetrics().width(" 999.9 kB/s 00:00:01 ") + 8;
     box = new QHBoxLayout(widget);
     box->setMargin(0);
     box->setSpacing(0);
@@ -189,31 +192,28 @@ void KStatusBarJobTracker::Private::ProgressWidget::setMode(StatusBarModes newMo
 {
     mode = newMode;
 
-    if (newMode == KStatusBarJobTracker::NoInformation)
-    {
+    if (newMode == KStatusBarJobTracker::NoInformation) {
         stack->hide();
 
         return;
     }
 
-    if (newMode & KStatusBarJobTracker::LabelOnly)
-    {
+    if (newMode & KStatusBarJobTracker::LabelOnly) {
         stack->show();
         stack->setCurrentWidget(label);
 
         return; // TODO: we should make possible to show an informative label and the progress bar
     }
 
-    if (newMode & KStatusBarJobTracker::ProgressOnly)
-    {
+    if (newMode & KStatusBarJobTracker::ProgressOnly) {
         stack->show();
         stack->setCurrentWidget(progressBar);
     }
 }
 
 void KStatusBarJobTracker::Private::ProgressWidget::description(const QString &title,
-                                                                const QPair<QString, QString> &field1,
-                                                                const QPair<QString, QString> &field2)
+        const QPair<QString, QString> &field1,
+        const QPair<QString, QString> &field2)
 {
     Q_UNUSED(field1);
     Q_UNUSED(field2);
@@ -226,7 +226,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::totalAmount(KJob::Unit unit,
     Q_UNUSED(unit);
     Q_UNUSED(amount);
 #if 0 // currently unused
-    if (unit==KJob::Bytes) {
+    if (unit == KJob::Bytes) {
         totalSize = amount;
     }
 #endif
@@ -239,7 +239,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::percent(unsigned long percen
 
 void KStatusBarJobTracker::Private::ProgressWidget::speed(unsigned long value)
 {
-    if (value == 0 ) { // speed is measured in bytes-per-second
+    if (value == 0) {  // speed is measured in bytes-per-second
         label->setText(tr(" Stalled "));
     } else {
         label->setText(tr(" %1/s ").arg(KJobTrackerFormatters::byteSize(value)));
@@ -257,10 +257,10 @@ void KStatusBarJobTracker::Private::ProgressWidget::slotClean()
 
 bool KStatusBarJobTracker::Private::ProgressWidget::eventFilter(QObject *obj, QEvent *event)
 {
-    if (obj==progressBar || obj==label) {
+    if (obj == progressBar || obj == label) {
 
         if (event->type() == QEvent::MouseButtonPress) {
-            QMouseEvent *e = static_cast<QMouseEvent*>(event);
+            QMouseEvent *e = static_cast<QMouseEvent *>(event);
 
             // TODO: we should make possible to show an informative label and the progress bar
             if (e->button() == Qt::LeftButton) {    // toggle view on left mouse button

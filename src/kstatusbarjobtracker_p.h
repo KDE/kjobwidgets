@@ -32,7 +32,6 @@ class QCheckBox;
 class QLabel;
 class QProgressBar;
 
-
 class KStatusBarJobTracker::Private
 {
 public:
@@ -42,17 +41,17 @@ public:
         , showStopButton(withStopButton)
     { }
 
-    ~Private() {
+    ~Private()
+    {
     }
 
     class ProgressWidget;
 
     QWidget *parent;
-    QMap<KJob*, ProgressWidget*> progressWidget;
+    QMap<KJob *, ProgressWidget *> progressWidget;
     ProgressWidget *currentProgressWidget;
     bool showStopButton;
 };
-
 
 class KStatusBarJobTracker::Private::ProgressWidget
     : public QWidget
@@ -109,6 +108,5 @@ private Q_SLOTS:
 protected:
     virtual bool eventFilter(QObject *obj, QEvent *event);
 };
-
 
 #endif // KSTATUSBARJOBTRACKER_P_H

@@ -29,7 +29,7 @@ public:
         : q(parent)
     {
     }
-    
+
     virtual ~Private()
     {
     }

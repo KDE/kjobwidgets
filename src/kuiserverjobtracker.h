@@ -38,7 +38,7 @@ public:
      *
      * @param parent the parent object
      */
-    KUiServerJobTracker(QObject *parent=0);
+    KUiServerJobTracker(QObject *parent = 0);
 
     /**
      * Destroys a KJobTrackerInterface
