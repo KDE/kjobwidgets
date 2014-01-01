@@ -25,6 +25,7 @@ endif()
 
 include(FeatureSummary)
 include(ECMSetupVersion)
+include(ECMGenerateHeaders)
 
 ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KJOBWIDGETS
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_version.h"

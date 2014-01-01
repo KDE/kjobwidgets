@@ -19,6 +19,8 @@ add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 generate_export_header(KF5JobWidgets BASE_NAME KJobWidgets)
 add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
 
+target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kjobwidgets>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KJobWidgets>")
+
 target_link_libraries(KF5JobWidgets
    PUBLIC
       Qt5::Widgets
@@ -39,21 +41,29 @@ set_target_properties(KF5JobWidgets PROPERTIES VERSION   ${KJOBWIDGETS_VERSION_S
 )
 
 
+ecm_generate_headers(
+  KAbstractWidgetJobTracker
+  KDialogJobUiDelegate
+  KUiServerJobTracker
+  KJobWidgets
+  KStatusBarJobTracker
+  KWidgetJobTracker
+
+  MODULE_NAME KJobWidgets
+  REQUIRED_HEADERS KJobWidgets_HEADERS
+)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+
 install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install( FILES
+install(FILES
   org.kde.JobViewServer.xml
   org.kde.JobView.xml
   org.kde.JobViewV2.xml
   DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
 
 install(FILES
-  kabstractwidgetjobtracker.h
-  kdialogjobuidelegate.h
-  kuiserverjobtracker.h
-  kjobwidgets.h
-  kstatusbarjobtracker.h
-  kwidgetjobtracker.h
   ${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_export.h
-  DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
+  ${KJobWidgets_HEADERS}
+  DESTINATION ${INCLUDE_INSTALL_DIR}/kjobwidgets COMPONENT Devel
 )
