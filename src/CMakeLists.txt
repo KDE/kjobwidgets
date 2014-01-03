@@ -19,7 +19,7 @@ add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 generate_export_header(KF5JobWidgets BASE_NAME KJobWidgets)
 add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
 
-target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kjobwidgets>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KJobWidgets>")
+target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KJobWidgets>")
 
 target_link_libraries(KF5JobWidgets
    PUBLIC
@@ -65,5 +65,5 @@ install(FILES
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_export.h
   ${KJobWidgets_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/kjobwidgets COMPONENT Devel
+  DESTINATION ${INCLUDE_INSTALL_DIR}/KJobWidgets COMPONENT Devel
 )
