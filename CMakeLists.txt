@@ -15,7 +15,10 @@ set(KF5_VERSION "4.96.0")
 set(QT_REQUIRED_VERSION 5.2.0)
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets DBus)
 
-find_package(X11)
+if (NOT APPLE)
+    find_package(X11)
+endif()
+
 set(HAVE_X11 ${X11_FOUND})
 
 if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
