@@ -41,7 +41,8 @@ set_target_properties(KF5JobWidgets PROPERTIES VERSION   ${KJOBWIDGETS_VERSION_S
 )
 
 
-ecm_generate_headers(
+ecm_generate_headers(KJobWidgets_HEADERS
+  HEADER_NAMES
   KAbstractWidgetJobTracker
   KDialogJobUiDelegate
   KUiServerJobTracker
@@ -49,10 +50,8 @@ ecm_generate_headers(
   KStatusBarJobTracker
   KWidgetJobTracker
 
-  MODULE_NAME KJobWidgets
   REQUIRED_HEADERS KJobWidgets_HEADERS
 )
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 
 install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
