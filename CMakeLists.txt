@@ -12,8 +12,8 @@ include(KDECMakeSettings)
 
 set(KF5_VERSION "4.97.0")
 
-set(QT_REQUIRED_VERSION 5.2.0)
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets DBus)
+set(REQUIRED_QT_VERSION 5.2.0)
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets DBus)
 
 if (NOT APPLE)
     find_package(X11)
