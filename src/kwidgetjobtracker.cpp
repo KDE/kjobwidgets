@@ -24,6 +24,7 @@
 #include "kwidgetjobtracker_p.h"
 #include "kjobtrackerformatters_p.h"
 
+#include <QCoreApplication>
 #include <QDir>
 #include <QProcess>
 #include <QTimer>
@@ -265,7 +266,10 @@ void KWidgetJobTracker::Private::ProgressWidget::description(const QString &titl
 {
     setWindowTitle(title);
     caption = title;
-    sourceInvite->setText(tr("%1:", QString("%1 is the label, we add a ':' to it").arg(field1.first).toLatin1().data()).arg(field1.first));
+    sourceInvite->setText(
+        QCoreApplication::translate("KWidgetJobTracker",
+            "%1:", "%1 is the label, we add a ':' to it"
+            ).arg(field1.first));
     sourceEdit->setText(field1.second);
 
     if (field2.first.isEmpty()) {
@@ -273,7 +277,10 @@ void KWidgetJobTracker::Private::ProgressWidget::description(const QString &titl
     } else {
         setDestVisible(true);
         checkDestination(QUrl(field2.second));
-        destInvite->setText(tr("%1:", QString("%1 is the label, we add a ':' to it").arg(field2.first).toLatin1().data()).arg(field2.first));
+        destInvite->setText(
+            QCoreApplication::translate("KWidgetJobTracker",
+                "%1:", "%1 is the label, we add a ':' to it"
+                ).arg(field2.first));
         destEdit->setText(field2.second);
     }
 }
@@ -323,7 +330,7 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         processedSize = amount;
 
         if (totalSizeKnown) {
-            tmp = tr("%1 of %2 complete", "", amount)
+            tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 of %2 complete", "", amount)
                   .arg(KJobTrackerFormatters::byteSize(amount))
                   .arg(KJobTrackerFormatters::byteSize(totalSize));
         } else {
@@ -341,9 +348,9 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         }
         processedDirs = amount;
 
-        tmp = tr("%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
+        tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
         tmp += "   ";
-        tmp += tr("%1 / %n file(s)", "", totalFiles).arg(processedFiles);
+        tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
         progressLabel->setText(tmp);
         break;
 
@@ -354,10 +361,10 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         processedFiles = amount;
 
         if (totalDirs > 1) {
-            tmp = tr("%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
+            tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
             tmp += "   ";
         }
-        tmp += tr("%1 / %n file(s)", "", totalFiles).arg(processedFiles);
+        tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
         progressLabel->setText(tmp);
     }
 }
@@ -367,12 +374,12 @@ void KWidgetJobTracker::Private::ProgressWidget::percent(unsigned long percent)
     QString title = caption + " (";
 
     if (totalSizeKnown) {
-        title += tr("%1% of %2").arg(percent).arg(
+        title += QCoreApplication::translate("KWidgetJobTracker", "%1% of %2").arg(percent).arg(
                      KJobTrackerFormatters::byteSize(totalSize));
     } else if (totalFiles) {
-        title += tr("%1% of %n file(s)", "", totalFiles).arg(percent);
+        title += QCoreApplication::translate("KWidgetJobTracker", "%1% of %n file(s)", "", totalFiles).arg(percent);
     } else {
-        title += tr("%1%").arg(percent);
+        title += QCoreApplication::translate("KWidgetJobTracker", "%1%").arg(percent);
     }
 
     title += ')';
@@ -385,15 +392,15 @@ void KWidgetJobTracker::Private::ProgressWidget::percent(unsigned long percent)
 void KWidgetJobTracker::Private::ProgressWidget::speed(unsigned long value)
 {
     if (value == 0) {
-        speedLabel->setText(tr("Stalled"));
+        speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "Stalled"));
     } else {
         const QString speedStr = KJobTrackerFormatters::byteSize(value);
         if (totalSizeKnown) {
             const int remaining = 1000 * (totalSize - processedSize) / value;
-            speedLabel->setText(tr("%1/s (%2 remaining)", "", remaining).arg(speedStr).arg(
+            speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (%2 remaining)", "", remaining).arg(speedStr).arg(
                                     KJobTrackerFormatters::duration(remaining)));
         } else { // total size is not known (#24228)
-            speedLabel->setText(tr("%1/s", "speed in bytes per second").arg(speedStr));
+            speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s", "speed in bytes per second").arg(speedStr));
         }
     }
 }
@@ -401,9 +408,9 @@ void KWidgetJobTracker::Private::ProgressWidget::speed(unsigned long value)
 void KWidgetJobTracker::Private::ProgressWidget::slotClean()
 {
     percent(100);
-    cancelClose->setText(tr("&Close"));
+    cancelClose->setText(QCoreApplication::translate("KWidgetJobTracker", "&Close"));
     cancelClose->setIcon(QIcon::fromTheme("window-close"));
-    cancelClose->setToolTip(tr("Close the current window or document"));
+    cancelClose->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Close the current window or document"));
     openFile->setEnabled(true);
     if (!totalSizeKnown || totalSize < processedSize) {
         totalSize = processedSize;
@@ -416,20 +423,20 @@ void KWidgetJobTracker::Private::ProgressWidget::slotClean()
         if (!s) {
             s = 1;
         }
-        speedLabel->setText(tr("%1/s (done)").arg(
+        speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (done)").arg(
                                 KJobTrackerFormatters::byteSize(1000 * totalSize / s)));
     }
 }
 
 void KWidgetJobTracker::Private::ProgressWidget::suspended()
 {
-    pauseButton->setText(tr("&Resume"));
+    pauseButton->setText(QCoreApplication::translate("KWidgetJobTracker", "&Resume"));
     suspendedProperty = true;
 }
 
 void KWidgetJobTracker::Private::ProgressWidget::resumed()
 {
-    pauseButton->setText(tr("&Pause"));
+    pauseButton->setText(QCoreApplication::translate("KWidgetJobTracker", "&Pause"));
     suspendedProperty = false;
 }
 
@@ -453,7 +460,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     const int spacingHint = style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     grid->addItem(new QSpacerItem(spacingHint, 0), 0, 1);
     // filenames or action name
-    sourceInvite = new QLabel(tr("Source:", "The source url of a job"), this);
+    sourceInvite = new QLabel(QCoreApplication::translate("KWidgetJobTracker", "Source:", "The source url of a job"), this);
     grid->addWidget(sourceInvite, 0, 0);
 
     sourceEdit = new KSqueezedTextLabel(this);
@@ -461,7 +468,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     sourceEdit->installEventFilter(this);
     grid->addWidget(sourceEdit, 0, 2);
 
-    destInvite = new QLabel(tr("Destination:", "The destination url of a job"), this);
+    destInvite = new QLabel(QCoreApplication::translate("KWidgetJobTracker", "Destination:", "The destination url of a job"), this);
     grid->addWidget(destInvite, 1, 0);
 
     destEdit = new KSqueezedTextLabel(this);
@@ -485,7 +492,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     arrowButton = new QPushButton(this);
     arrowButton->setMaximumSize(QSize(32, 25));
     arrowButton->setIcon(QIcon::fromTheme("arrow-down"));
-    arrowButton->setToolTip(tr("Click this to expand the dialog, to show details"));
+    arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to expand the dialog, to show details"));
     arrowState = Qt::DownArrow;
     connect(arrowButton, SIGNAL(clicked()), this, SLOT(_k_arrowToggled()));
     hBox->addWidget(arrowButton);
@@ -500,7 +507,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     resumeLabel = new QLabel(this);
     hBox->addWidget(resumeLabel);
 
-    pauseButton = new QPushButton(tr("&Pause"), this);
+    pauseButton = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "&Pause"), this);
     connect(pauseButton, SIGNAL(clicked()), this, SLOT(_k_pauseResumeClicked()));
     hBox->addWidget(pauseButton);
 
@@ -519,7 +526,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     hBox->addWidget(progressLabel);
     progressLabel->hide();
 
-    keepOpenCheck = new QCheckBox(tr("&Keep this window open after transfer is complete"), this);
+    keepOpenCheck = new QCheckBox(QCoreApplication::translate("KWidgetJobTracker", "&Keep this window open after transfer is complete"), this);
     connect(keepOpenCheck, SIGNAL(toggled(bool)), this, SLOT(_k_keepOpenToggled(bool)));
     topLayout->addWidget(keepOpenCheck);
     keepOpenCheck->hide();
@@ -527,13 +534,13 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     hBox = new QHBoxLayout();
     topLayout->addLayout(hBox);
 
-    openFile = new QPushButton(tr("Open &File"), this);
+    openFile = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "Open &File"), this);
     connect(openFile, SIGNAL(clicked()), this, SLOT(_k_openFile()));
     hBox->addWidget(openFile);
     openFile->setEnabled(false);
     openFile->hide();
 
-    openLocation = new QPushButton(tr("Open &Destination"), this);
+    openLocation = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "Open &Destination"), this);
     connect(openLocation, SIGNAL(clicked()), this, SLOT(_k_openLocation()));
     hBox->addWidget(openLocation);
     openLocation->hide();
@@ -541,7 +548,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     hBox->addStretch(1);
 
     cancelClose = new QPushButton(this);
-    cancelClose->setText(tr("&Cancel"));
+    cancelClose->setText(QCoreApplication::translate("KWidgetJobTracker", "&Cancel"));
     cancelClose->setIcon(QIcon::fromTheme("dialog-cancel"));
     connect(cancelClose, SIGNAL(clicked()), this, SLOT(_k_stop()));
     hBox->addWidget(cancelClose);
@@ -549,7 +556,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     resize(sizeHint());
     setMaximumHeight(sizeHint().height());
 
-    setWindowTitle(tr("Progress Dialog")); // show something better than kuiserver
+    setWindowTitle(QCoreApplication::translate("KWidgetJobTracker", "Progress Dialog")); // show something better than kuiserver
 }
 
 void KWidgetJobTracker::Private::ProgressWidget::showTotals()
@@ -562,9 +569,9 @@ void KWidgetJobTracker::Private::ProgressWidget::showTotals()
         if (totalDirs > 1)
             // that we have a singular to translate looks weired but is only logical
         {
-            tmps = tr("%n folder(s)", "", totalDirs) + "   ";
+            tmps = QCoreApplication::translate("KWidgetJobTracker", "%n folder(s)", "", totalDirs) + "   ";
         }
-        tmps += tr("%n file(s)", "", totalFiles);
+        tmps += QCoreApplication::translate("KWidgetJobTracker", "%n file(s)", "", totalFiles);
         progressLabel->setText(tmps);
     }
 }
@@ -650,14 +657,14 @@ void KWidgetJobTracker::Private::ProgressWidget::_k_arrowToggled()
         progressLabel->show();
         speedLabel->show();
         arrowButton->setIcon(QIcon::fromTheme("arrow-up"));
-        arrowButton->setToolTip(tr("Click this to collapse the dialog, to hide details"));
+        arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to collapse the dialog, to hide details"));
         arrowState = Qt::UpArrow;
     } else {
         //Collapse the dialog
         progressLabel->hide();
         speedLabel->hide();
         arrowButton->setIcon(QIcon::fromTheme("arrow-down"));
-        arrowButton->setToolTip(tr("Click this to expand the dialog, to show details"));
+        arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to expand the dialog, to show details"));
         arrowState = Qt::DownArrow;
     }
     setMaximumHeight(sizeHint().height());
