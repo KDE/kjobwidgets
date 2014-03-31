@@ -8,6 +8,7 @@ set(kjobwidgets_SRCS
   kjobwidgets.cpp
   kstatusbarjobtracker.cpp
   kwidgetjobtracker.cpp
+  ${kjobwidgets_QM_LOADER}
 )
 
 qt5_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
