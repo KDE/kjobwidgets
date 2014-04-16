@@ -1,5 +1,7 @@
 configure_file(config-kjobwidgets.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kjobwidgets.h )
 
+ecm_create_qm_loader(kjobwidgets_QM_LOADER kjobwidgets5)
+
 set(kjobwidgets_SRCS
   kabstractwidgetjobtracker.cpp
   kdialogjobuidelegate.cpp
