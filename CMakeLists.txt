@@ -44,7 +44,7 @@ remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 
 file(GLOB PO_FILES "po/*.po")
 if (PO_FILES)
-  ecm_create_qm_from_po_files(PO_FILES ${PO_FILES} CATALOG_NAME kjobwidgets5)
+  ecm_create_qm_from_po_files(PO_FILES ${PO_FILES} CATALOG_NAME kjobwidgets5_qt)
 endif()
 
 add_subdirectory(src)
