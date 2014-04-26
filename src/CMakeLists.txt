@@ -22,7 +22,7 @@ add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 generate_export_header(KF5JobWidgets BASE_NAME KJobWidgets)
 add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
 
-target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KJobWidgets>")
+target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KJobWidgets>")
 
 target_link_libraries(KF5JobWidgets
    PUBLIC
@@ -56,7 +56,7 @@ ecm_generate_headers(KJobWidgets_HEADERS
   REQUIRED_HEADERS KJobWidgets_HEADERS
 )
 
-install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   org.kde.JobViewServer.xml
@@ -76,7 +76,7 @@ install(FILES
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_export.h
   ${KJobWidgets_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/KJobWidgets COMPONENT Devel
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KJobWidgets COMPONENT Devel
 )
 
 include(ECMGeneratePriFile)
