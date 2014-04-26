@@ -57,21 +57,29 @@ QString KJobTrackerFormatters::byteSize(double size)
 
 QString KJobTrackerFormatters::daysDuration(int n)
 {
+    //~ singular %n day
+    //~ plural %n days
     return QCoreApplication::translate("KJobTrackerFormatters", "%n day(s)", "@item:intext", n);
 }
 
 QString KJobTrackerFormatters::hoursDuration(int n)
 {
+    //~ singular %n hour
+    //~ plural %n hours
     return QCoreApplication::translate("KJobTrackerFormatters", "%n hour(s)", "@item:intext", n);
 }
 
 QString KJobTrackerFormatters::minutesDuration(int n)
 {
+    //~ singular %n minute
+    //~ plural %n minutes
     return QCoreApplication::translate("KJobTrackerFormatters", "%n minute(s)", "@item:intext", n);
 }
 
 QString KJobTrackerFormatters::secondsDuration(int n)
 {
+    //~ singular %n second
+    //~ plural %n seconds
     return QCoreApplication::translate("KJobTrackerFormatters", "%n second(s)", "@item:intext", n);
 }
 

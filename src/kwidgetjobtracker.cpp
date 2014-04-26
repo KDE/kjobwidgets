@@ -330,6 +330,8 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         processedSize = amount;
 
         if (totalSizeKnown) {
+            //~ singular %1 of %2 complete
+            //~ plural %1 of %2 complete
             tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 of %2 complete", "", amount)
                   .arg(KJobTrackerFormatters::byteSize(amount))
                   .arg(KJobTrackerFormatters::byteSize(totalSize));
@@ -348,8 +350,12 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         }
         processedDirs = amount;
 
+        //~ singular %1 / %n folder
+        //~ plural %1 / %n folders
         tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
         tmp += "   ";
+        //~ singular %1 / %n file
+        //~ plural %1 / %n files
         tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
         progressLabel->setText(tmp);
         break;
@@ -361,9 +367,13 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         processedFiles = amount;
 
         if (totalDirs > 1) {
+            //~ singular %1 / %n folder
+            //~ plural %1 / %n folders
             tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
             tmp += "   ";
         }
+        //~ singular %1 / %n file
+        //~ plural %1 / %n files
         tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
         progressLabel->setText(tmp);
     }
@@ -377,6 +387,8 @@ void KWidgetJobTracker::Private::ProgressWidget::percent(unsigned long percent)
         title += QCoreApplication::translate("KWidgetJobTracker", "%1% of %2").arg(percent).arg(
                      KJobTrackerFormatters::byteSize(totalSize));
     } else if (totalFiles) {
+        //~ singular %1% of %n file
+        //~ plural %1% of %n files
         title += QCoreApplication::translate("KWidgetJobTracker", "%1% of %n file(s)", "", totalFiles).arg(percent);
     } else {
         title += QCoreApplication::translate("KWidgetJobTracker", "%1%").arg(percent);
@@ -397,6 +409,8 @@ void KWidgetJobTracker::Private::ProgressWidget::speed(unsigned long value)
         const QString speedStr = KJobTrackerFormatters::byteSize(value);
         if (totalSizeKnown) {
             const int remaining = 1000 * (totalSize - processedSize) / value;
+            //~ singular %1/s (%2 remaining)
+            //~ plural %1/s (%2 remaining)
             speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (%2 remaining)", "", remaining).arg(speedStr).arg(
                                     KJobTrackerFormatters::duration(remaining)));
         } else { // total size is not known (#24228)
@@ -569,8 +583,12 @@ void KWidgetJobTracker::Private::ProgressWidget::showTotals()
         if (totalDirs > 1)
             // that we have a singular to translate looks weired but is only logical
         {
+            //~ singular %n folder
+            //~ plural %n folders
             tmps = QCoreApplication::translate("KWidgetJobTracker", "%n folder(s)", "", totalDirs) + "   ";
         }
+        //~ singular %n file
+        //~ plural %n files
         tmps += QCoreApplication::translate("KWidgetJobTracker", "%n file(s)", "", totalFiles);
         progressLabel->setText(tmps);
     }
