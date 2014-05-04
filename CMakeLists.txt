@@ -12,7 +12,7 @@ include(KDECMakeSettings)
 
 include(ECMCreateQmFromPoFiles)
 
-set(KF5_VERSION "4.98.0") # handled by release scripts
+set(KF5_VERSION "4.99.0") # handled by release scripts
 set(KF5_DEP_VERSION "4.98.0") # handled by release scripts
 
 set(REQUIRED_QT_VERSION 5.2.0)
