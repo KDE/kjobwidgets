@@ -21,6 +21,8 @@
 #ifndef KSTATUSBARJOBTRACKER_P_H
 #define KSTATUSBARJOBTRACKER_P_H
 
+#include "kstatusbarjobtracker.h"
+
 #include <QWidget>
 #include <QMap>
 #include <QTime>

@@ -22,6 +22,8 @@
 #ifndef KABSTRACTWIDGETJOBTRACKER_P
 #define KABSTRACTWIDGETJOBTRACKER_P
 
+#include "kabstractwidgetjobtracker.h"
+
 class KAbstractWidgetJobTracker::Private
 {
 public:

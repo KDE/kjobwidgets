@@ -23,6 +23,7 @@
 #define KWIDGETJOBTRACKER_P_H
 
 #include "kabstractwidgetjobtracker_p.h"
+#include "kwidgetjobtracker.h"
 
 #include <QEventLoopLocker>
 #include <QWidget>
