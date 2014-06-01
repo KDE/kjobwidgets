@@ -47,6 +47,8 @@ public:
     virtual ~Private();
     void queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg);
 
+    QWidget *window;
+
 public Q_SLOTS:
     void next();
 
@@ -57,6 +59,7 @@ private:
 
 KDialogJobUiDelegate::Private::Private(QObject *parent)
     : QObject(parent)
+    , window(0)
     , running(false)
 {
 }
@@ -118,14 +121,20 @@ bool KDialogJobUiDelegate::setJob(KJob *job)
 
 void KDialogJobUiDelegate::setWindow(QWidget *window)
 {
-    Q_ASSERT(job());
-    KJobWidgets::setWindow(job(), window);
+    if (job()) {
+        KJobWidgets::setWindow(job(), window);
+    }
+    d->window = window;
 }
 
 QWidget *KDialogJobUiDelegate::window() const
 {
-    Q_ASSERT(job());
-    return KJobWidgets::window(job());
+    if (d->window) {
+        return d->window;
+    } else if (job()) {
+        return KJobWidgets::window(job());
+    }
+    return 0;
 }
 
 void KDialogJobUiDelegate::updateUserTimestamp(unsigned long time)
