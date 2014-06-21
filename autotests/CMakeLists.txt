@@ -6,6 +6,5 @@ include(ECMAddTests)
 #TODO: add tests
 #ecm_add_tests(
 #   footest.cpp
-#   NAME_PREFIX "kjobwidgets-"
 #   LINK_LIBRARIES Qt5::Test
 #)
