@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 project(KJobWidgets)
 
-find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+find_package(ECM 1.1.0 REQUIRED NO_MODULE)
 
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
@@ -13,7 +13,7 @@ include(KDECMakeSettings)
 include(ECMPoQmTools)
 
 set(KF5_VERSION "5.1.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.0.0") # handled by release scripts
+set(KF5_DEP_VERSION "5.1.0") # handled by release scripts
 
 set(REQUIRED_QT_VERSION 5.2.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets DBus)
