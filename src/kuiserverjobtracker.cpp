@@ -26,6 +26,8 @@
 
 #include <kjob.h>
 
+#include <QGuiApplication>
+#include <QIcon>
 #include <QDebug>
 
 Q_GLOBAL_STATIC(KSharedUiServerProxy, serverProxy)
@@ -82,8 +84,8 @@ void KUiServerJobTracker::registerJob(KJob *job)
     }
 
     const QString appName = QCoreApplication::applicationName();
-    // Positionned by KAboutData
-    QString programIconName = QCoreApplication::instance()->property("applicationIconName").toString();
+    // This will only work if main() used QIcon::fromTheme.
+    QString programIconName = QGuiApplication::windowIcon().name();
 
     if (programIconName.isEmpty()) {
         programIconName = appName;
