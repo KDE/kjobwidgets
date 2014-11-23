@@ -23,12 +23,12 @@
 
 #include "jobviewiface.h"
 #include "jobviewifacev2.h"
+#include "debug.h"
 
 #include <kjob.h>
 
 #include <QGuiApplication>
 #include <QIcon>
-#include <QDebug>
 
 Q_GLOBAL_STATIC(KSharedUiServerProxy, serverProxy)
 
@@ -102,7 +102,7 @@ void KUiServerJobTracker::registerJob(KJob *job)
                 reply.value().path(),
                 QDBusConnection::sessionBus());
         if (!jobWatch) {
-            //qDebug() << "deleted out from under us when asking the server proxy for the view";
+            //qCDebug(KJOBWIDGETS) << "deleted out from under us when asking the server proxy for the view";
             jobView->terminate(QString());
             delete jobView;
             return;
@@ -121,7 +121,7 @@ void KUiServerJobTracker::registerJob(KJob *job)
         }
 
         if (!jobWatch) {
-            //qDebug() << "deleted out from under us when creating the dbus interface";
+            //qCDebug(KJOBWIDGETS) << "deleted out from under us when creating the dbus interface";
             jobView->terminate(QString());
             delete jobView;
             return;
@@ -309,12 +309,12 @@ KSharedUiServerProxy::KSharedUiServerProxy()
             qCritical() << "Couldn't start kuiserver from org.kde.kuiserver.service:" << reply.error();
         }
         if (!bus->isServiceRegistered("org.kde.JobViewServer")) {
-            qDebug() << "The dbus name org.kde.JobViewServer is STILL NOT REGISTERED, even after starting kuiserver. Should not happen.";
+            qCDebug(KJOBWIDGETS) << "The dbus name org.kde.JobViewServer is STILL NOT REGISTERED, even after starting kuiserver. Should not happen.";
         } else {
-            qDebug() << "kuiserver registered";
+            qCDebug(KJOBWIDGETS) << "kuiserver registered";
         }
     } else {
-        qDebug() << "kuiserver found";
+        qCDebug(KJOBWIDGETS) << "kuiserver found";
     }
 }
 

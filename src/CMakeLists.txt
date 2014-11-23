@@ -10,6 +10,7 @@ set(kjobwidgets_SRCS
   kjobwidgets.cpp
   kstatusbarjobtracker.cpp
   kwidgetjobtracker.cpp
+  debug.cpp
   ${kjobwidgets_QM_LOADER}
 )
 
