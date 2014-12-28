@@ -276,7 +276,7 @@ void KWidgetJobTracker::Private::ProgressWidget::description(const QString &titl
         setDestVisible(false);
     } else {
         setDestVisible(true);
-        checkDestination(QUrl(field2.second));
+        checkDestination(QUrl::fromUserInput(field2.second)); // path or URL
         destInvite->setText(
             QCoreApplication::translate("KWidgetJobTracker",
                 "%1:", "%1 is the label, we add a ':' to it"
