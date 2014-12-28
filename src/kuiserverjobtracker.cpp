@@ -307,8 +307,7 @@ KSharedUiServerProxy::KSharedUiServerProxy()
         QDBusReply<void> reply = bus->startService("org.kde.kuiserver");
         if (!reply.isValid()) {
             qCritical() << "Couldn't start kuiserver from org.kde.kuiserver.service:" << reply.error();
-        }
-        if (!bus->isServiceRegistered("org.kde.JobViewServer")) {
+        } else if (!bus->isServiceRegistered("org.kde.JobViewServer")) {
             qCDebug(KJOBWIDGETS) << "The dbus name org.kde.JobViewServer is STILL NOT REGISTERED, even after starting kuiserver. Should not happen.";
         } else {
             qCDebug(KJOBWIDGETS) << "kuiserver registered";
