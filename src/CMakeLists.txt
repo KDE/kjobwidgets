@@ -23,7 +23,7 @@ add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 generate_export_header(KF5JobWidgets BASE_NAME KJobWidgets)
 add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
 
-target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KJobWidgets>")
+target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets>")
 
 target_link_libraries(KF5JobWidgets
    PUBLIC
@@ -61,25 +61,25 @@ install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${KF5_INSTALL_TARGETS_
 
 install(FILES
   org.kde.JobViewServer.xml
-  DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+  DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
   RENAME kf5_org.kde.JobViewServer.xml)
 
 install(FILES
   org.kde.JobView.xml
-  DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+  DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
   RENAME kf5_org.kde.JobView.xml)
 
 install(FILES
   org.kde.JobViewV2.xml
-  DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+  DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
   RENAME kf5_org.kde.JobViewV2.xml)
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_export.h
   ${KJobWidgets_HEADERS}
-  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KJobWidgets COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets COMPONENT Devel
 )
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KJobWidgets LIB_NAME KF5JobWidgets DEPS "widgets KCoreAddons" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KF5_INCLUDE_INSTALL_DIR}/KJobWidgets)
+ecm_generate_pri_file(BASE_NAME KJobWidgets LIB_NAME KF5JobWidgets DEPS "widgets KCoreAddons" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
