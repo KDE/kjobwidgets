@@ -77,10 +77,10 @@ public:
      */
     unsigned long userTimestamp() const;
 
-    virtual void showErrorMessage();
+    void showErrorMessage() Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
-    virtual void slotWarning(KJob *job, const QString &plain, const QString &rich);
+    void slotWarning(KJob *job, const QString &plain, const QString &rich) Q_DECL_OVERRIDE;
 
 private:
     class Private;

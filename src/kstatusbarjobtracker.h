@@ -58,21 +58,21 @@ public:
      *
      * @param job the job to register
      */
-    virtual void registerJob(KJob *job);
+    void registerJob(KJob *job) Q_DECL_OVERRIDE;
 
     /**
      * Unregister a job from this tracker.
      *
      * @param job the job to unregister
      */
-    virtual void unregisterJob(KJob *job);
+    void unregisterJob(KJob *job) Q_DECL_OVERRIDE;
 
     /**
      * The widget associated to this tracker.
      *
      * @return the widget displaying the job progresses
      */
-    virtual QWidget *widget(KJob *job);
+    QWidget *widget(KJob *job) Q_DECL_OVERRIDE;
 
     /**
      * Sets the mode of the status bar.
@@ -88,11 +88,11 @@ public Q_SLOTS:
      */
     virtual void description(KJob *job, const QString &title,
                              const QPair<QString, QString> &field1,
-                             const QPair<QString, QString> &field2);
-    virtual void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount);
-    virtual void percent(KJob *job, unsigned long percent);
-    virtual void speed(KJob *job, unsigned long value);
-    virtual void slotClean(KJob *job);
+                             const QPair<QString, QString> &field2) Q_DECL_OVERRIDE;
+    void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount) Q_DECL_OVERRIDE;
+    void percent(KJob *job, unsigned long percent) Q_DECL_OVERRIDE;
+    void speed(KJob *job, unsigned long value) Q_DECL_OVERRIDE;
+    void slotClean(KJob *job) Q_DECL_OVERRIDE;
 
 private:
     class Private;

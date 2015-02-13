@@ -57,14 +57,14 @@ public Q_SLOTS:
      *
      * @param job the job to register
      */
-    virtual void registerJob(KJob *job);
+    void registerJob(KJob *job) Q_DECL_OVERRIDE;
 
     /**
      * Unregister a job from this tracker.
      *
      * @param job the job to unregister
      */
-    virtual void unregisterJob(KJob *job);
+    void unregisterJob(KJob *job) Q_DECL_OVERRIDE;
 
 public:
     /**
@@ -125,7 +125,7 @@ protected Q_SLOTS:
      *
      * @param job the job that emitted this signal
      */
-    virtual void finished(KJob *job);
+    void finished(KJob *job) Q_DECL_OVERRIDE;
 
     /**
      * This method should be called for correct cancellation of IO operation

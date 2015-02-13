@@ -50,30 +50,30 @@ public:
      *
      * @param job the job to register
      */
-    virtual void registerJob(KJob *job);
+    void registerJob(KJob *job) Q_DECL_OVERRIDE;
 
     /**
      * Unregister a job from this tracker.
      *
      * @param job the job to unregister
      */
-    virtual void unregisterJob(KJob *job);
+    void unregisterJob(KJob *job) Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     /**
      * The following slots are inherited from KJobTrackerInterface.
      */
-    virtual void finished(KJob *job);
-    virtual void suspended(KJob *job);
-    virtual void resumed(KJob *job);
+    void finished(KJob *job) Q_DECL_OVERRIDE;
+    void suspended(KJob *job) Q_DECL_OVERRIDE;
+    void resumed(KJob *job) Q_DECL_OVERRIDE;
     virtual void description(KJob *job, const QString &title,
                              const QPair<QString, QString> &field1,
-                             const QPair<QString, QString> &field2);
-    virtual void infoMessage(KJob *job, const QString &plain, const QString &rich);
-    virtual void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount);
-    virtual void processedAmount(KJob *job, KJob::Unit unit, qulonglong amount);
-    virtual void percent(KJob *job, unsigned long percent);
-    virtual void speed(KJob *job, unsigned long value);
+                             const QPair<QString, QString> &field2) Q_DECL_OVERRIDE;
+    void infoMessage(KJob *job, const QString &plain, const QString &rich) Q_DECL_OVERRIDE;
+    void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount) Q_DECL_OVERRIDE;
+    void processedAmount(KJob *job, KJob::Unit unit, qulonglong amount) Q_DECL_OVERRIDE;
+    void percent(KJob *job, unsigned long percent) Q_DECL_OVERRIDE;
+    void speed(KJob *job, unsigned long value) Q_DECL_OVERRIDE;
 
 private:
     class Private;

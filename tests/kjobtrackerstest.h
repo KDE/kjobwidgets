@@ -36,7 +36,7 @@ public:
     KTestJob(int numberOfDirs = 5);
     ~KTestJob();
 
-    void start();
+    void start() Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void nextStep();
@@ -47,9 +47,9 @@ protected:
     void copyNextFile();
     void deleteNextFile();
 
-    bool doSuspend();
-    bool doResume();
-    bool doKill();
+    bool doSuspend() Q_DECL_OVERRIDE;
+    bool doResume() Q_DECL_OVERRIDE;
+    bool doKill() Q_DECL_OVERRIDE;
 
 private:
     qulonglong m_numberOfDirs;
