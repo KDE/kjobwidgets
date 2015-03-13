@@ -147,6 +147,8 @@ void KUiServerJobTracker::unregisterJob(KJob *job)
 
     org::kde::JobViewV2 *jobView = d->progressJobView.take(job);
 
+    jobView->setError(job->error());
+
     if (job->error()) {
         jobView->terminate(job->errorText());
     } else {
@@ -163,6 +165,8 @@ void KUiServerJobTracker::finished(KJob *job)
     }
 
     org::kde::JobViewV2 *jobView = d->progressJobView.take(job);
+
+    jobView->setError(job->error());
 
     if (job->error()) {
         jobView->terminate(job->errorText());
