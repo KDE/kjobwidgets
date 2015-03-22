@@ -22,7 +22,6 @@
 #include "kuiserverjobtracker_p.h"
 
 #include "jobviewiface.h"
-#include "jobviewifacev2.h"
 #include "debug.h"
 
 #include <kjob.h>

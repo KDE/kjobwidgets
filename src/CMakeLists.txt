@@ -16,7 +16,6 @@ set(kjobwidgets_SRCS
 
 qt5_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
 qt5_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
-qt5_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV2.xml jobviewifacev2 )
 
 add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 
