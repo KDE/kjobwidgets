@@ -12,7 +12,7 @@ include(KDECMakeSettings)
 
 include(ECMPoQmTools)
 
-set(KF5_VERSION "5.10.0") # handled by release scripts
+set(KF5_VERSION "5.11.0") # handled by release scripts
 set(KF5_DEP_VERSION "5.10.0") # handled by release scripts
 
 set(REQUIRED_QT_VERSION 5.2.0)
