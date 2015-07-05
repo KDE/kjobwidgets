@@ -1,0 +1,406 @@
+# translation of kdelibs4.po to hebrew
+# Translation of kdelibs4.po to Hebrew
+# translation of kdelibs4.po to
+# KDE Hebrew Localization Project
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 1998 Erez Nir <erez-n@actcom.co.il>
+# Copyright (C) 1999-2003 Meni Livne <livne@kde.org>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+#
+# Diego Iastrubni <elcuco@kde.org>, 2003.
+# Diego Iastrubni <elcuco@kde.org>, 2003, 2004.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2006, 2007, 2008, 2009, 2012, 2014.
+# Meni Livne <livne@kde.org>, 2007.
+# tahmar1900 <tahmar1900@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2014-01-10 17:20+0200\n"
+"Last-Translator: Diego Iastrubni <elcuco@kde.org>\n"
+"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Qt-Contexts: true\n"
+
+#: kjobtrackerformatters.cpp:32
+#, fuzzy, qt-format
+#| msgctxt "size in bytes"
+#| msgid "%1 B"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 B"
+msgstr "%1 ב'"
+
+#: kjobtrackerformatters.cpp:33
+#, fuzzy, qt-format
+#| msgctxt "size in 1024 bytes"
+#| msgid "%1 KiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 KiB"
+msgstr "%1 ק\"ב"
+
+#: kjobtrackerformatters.cpp:34
+#, fuzzy, qt-format
+#| msgctxt "size in 2^20 bytes"
+#| msgid "%1 MiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 MiB"
+msgstr "%1 מ\"ב"
+
+#: kjobtrackerformatters.cpp:35
+#, fuzzy, qt-format
+#| msgctxt "size in 2^30 bytes"
+#| msgid "%1 GiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 GiB"
+msgstr "%1 ג\"ב"
+
+#: kjobtrackerformatters.cpp:36
+#, fuzzy, qt-format
+#| msgctxt "size in 2^40 bytes"
+#| msgid "%1 TiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 TiB"
+msgstr "%1 ט\"ב"
+
+#: kjobtrackerformatters.cpp:37
+#, fuzzy, qt-format
+#| msgctxt "size in 2^50 bytes"
+#| msgid "%1 PiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 PiB"
+msgstr "%1 פ\"ב"
+
+#: kjobtrackerformatters.cpp:38
+#, fuzzy, qt-format
+#| msgctxt "size in 2^60 bytes"
+#| msgid "%1 EiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 EiB"
+msgstr "%1 א\"ב"
+
+#: kjobtrackerformatters.cpp:39
+#, fuzzy, qt-format
+#| msgctxt "size in 2^70 bytes"
+#| msgid "%1 ZiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 ZiB"
+msgstr "%1 ז\"ב"
+
+#: kjobtrackerformatters.cpp:40
+#, fuzzy, qt-format
+#| msgctxt "size in 2^80 bytes"
+#| msgid "%1 YiB"
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 YiB"
+msgstr "%1 י\"ב"
+
+#: kjobtrackerformatters.cpp:62
+#, fuzzy, qt-format
+#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 days"
+#| msgid "%1 days"
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n day(s)"
+msgid_plural "%n day(s)"
+msgstr[0] "%1 ימים"
+msgstr[1] "%1 ימים"
+
+#: kjobtrackerformatters.cpp:69
+#, fuzzy, qt-format
+#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 hours"
+#| msgid "%1 hours"
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n hour(s)"
+msgid_plural "%n hour(s)"
+msgstr[0] "%1 שעות"
+msgstr[1] "%1 שעות"
+
+#: kjobtrackerformatters.cpp:76
+#, fuzzy, qt-format
+#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 minutes"
+#| msgid "%1 minutes"
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n minute(s)"
+msgid_plural "%n minute(s)"
+msgstr[0] "%1 דקות"
+msgstr[1] "%1 דקות"
+
+#: kjobtrackerformatters.cpp:83
+#, fuzzy, qt-format
+#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 seconds"
+#| msgid "%1 seconds"
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n second(s)"
+msgid_plural "%n second(s)"
+msgstr[0] "%1 שניות"
+msgstr[1] "%1 שניות"
+
+#: kjobtrackerformatters.cpp:104
+#, fuzzy, qt-format
+#| msgctxt ""
+#| "@item:intext days and hours. This uses the previous item:intext messages. "
+#| "If this does not fit the grammar of your language please contact the i18n "
+#| "team to solve the problem"
+#| msgid "%1 and %2"
+msgctxt "KJobTrackerFormatters|@item:intext days and hours."
+msgid "%1 and %2"
+msgstr "%1 ו־%2"
+
+#: kjobtrackerformatters.cpp:108
+#, fuzzy, qt-format
+#| msgctxt ""
+#| "@item:intext days and hours. This uses the previous item:intext messages. "
+#| "If this does not fit the grammar of your language please contact the i18n "
+#| "team to solve the problem"
+#| msgid "%1 and %2"
+msgctxt "KJobTrackerFormatters|@item:intext hours and minutes."
+msgid "%1 and %2"
+msgstr "%1 ו־%2"
+
+#: kjobtrackerformatters.cpp:112
+#, fuzzy, qt-format
+#| msgctxt ""
+#| "@item:intext days and hours. This uses the previous item:intext messages. "
+#| "If this does not fit the grammar of your language please contact the i18n "
+#| "team to solve the problem"
+#| msgid "%1 and %2"
+msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
+msgid "%1 and %2"
+msgstr "%1 ו־%2"
+
+#: kstatusbarjobtracker.cpp:163
+#, fuzzy
+#| msgid "Stop"
+msgctxt "KStatusBarJobTracker|"
+msgid "Stop"
+msgstr "עצור"
+
+#: kstatusbarjobtracker.cpp:244
+#, fuzzy
+#| msgid " Stalled "
+msgctxt "KStatusBarJobTracker|"
+msgid " Stalled "
+msgstr " תקוע "
+
+#: kstatusbarjobtracker.cpp:246
+#, fuzzy, qt-format
+#| msgid " %1/s "
+msgctxt "KStatusBarJobTracker|"
+msgid " %1/s "
+msgstr " %1 לשנייה "
+
+#: kwidgetjobtracker.cpp:270 kwidgetjobtracker.cpp:281
+#, fuzzy, qt-format
+#| msgctxt "%1 is the label, we add a ':' to it"
+#| msgid "%1:"
+msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
+msgid "%1:"
+msgstr "%1:"
+
+#: kwidgetjobtracker.cpp:335
+#, fuzzy, qt-format
+#| msgid "%2 of %3 complete"
+#| msgid_plural "%2 of %3 complete"
+msgctxt "KWidgetJobTracker|"
+msgid "%1 of %2 complete"
+msgid_plural "%1 of %2 complete"
+msgstr[0] "הושלם %2 מתוך %3"
+msgstr[1] "הושלמו %2 מתוך %3"
+
+#: kwidgetjobtracker.cpp:355 kwidgetjobtracker.cpp:372
+#, fuzzy, qt-format
+#| msgid "%2 / %1 folder"
+#| msgid_plural "%2 / %1 folders"
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n folder(s)"
+msgid_plural "%1 / %n folder(s)"
+msgstr[0] "‏‎%2/%1 תיקייה"
+msgstr[1] "‏‎%2/%1 תיקיות"
+
+#: kwidgetjobtracker.cpp:359 kwidgetjobtracker.cpp:377
+#, fuzzy, qt-format
+#| msgid "%2 / %1 file"
+#| msgid_plural "%2 / %1 files"
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n file(s)"
+msgid_plural "%1 / %n file(s)"
+msgstr[0] "‏‎%2/%1 קובץ"
+msgstr[1] "‏‎%2/%1 קבצים"
+
+#: kwidgetjobtracker.cpp:387
+#, fuzzy, qt-format
+#| msgid "%1% of %2"
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %2"
+msgstr "%1% מתוך %2 "
+
+#: kwidgetjobtracker.cpp:392
+#, fuzzy, qt-format
+#| msgid "%2% of 1 file"
+#| msgid_plural "%2% of %1 files"
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %n file(s)"
+msgid_plural "%1% of %n file(s)"
+msgstr[0] "%2% מתוך קובץ אחד"
+msgstr[1] "%2% מתוך %1 קבצים"
+
+#: kwidgetjobtracker.cpp:394
+#, fuzzy, qt-format
+#| msgid "%1%"
+msgctxt "KWidgetJobTracker|"
+msgid "%1%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:407
+#, fuzzy
+#| msgid "Stalled"
+msgctxt "KWidgetJobTracker|"
+msgid "Stalled"
+msgstr "תקוע"
+
+#: kwidgetjobtracker.cpp:414
+#, fuzzy, qt-format
+#| msgid "%2/s (%3 remaining)"
+#| msgid_plural "%2/s (%3 remaining)"
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (%2 remaining)"
+msgid_plural "%1/s (%2 remaining)"
+msgstr[0] "%2 לשנייה (נותרו %3)"
+msgstr[1] "%2 לשנייה (נותרו %3)"
+
+#: kwidgetjobtracker.cpp:417
+#, fuzzy, qt-format
+#| msgctxt "speed in bytes per second"
+#| msgid "%1/s"
+msgctxt "KWidgetJobTracker|speed in bytes per second"
+msgid "%1/s"
+msgstr " %1 בשנייה "
+
+#: kwidgetjobtracker.cpp:425
+#, fuzzy
+#| msgid "&Close"
+msgctxt "KWidgetJobTracker|"
+msgid "&Close"
+msgstr "&סגור"
+
+#: kwidgetjobtracker.cpp:427
+#, fuzzy
+#| msgid "Close the current window or document"
+msgctxt "KWidgetJobTracker|"
+msgid "Close the current window or document"
+msgstr "סגירת החלון או המסמך הנוכחיים"
+
+#: kwidgetjobtracker.cpp:440
+#, fuzzy, qt-format
+#| msgid "%1/s (done)"
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (done)"
+msgstr "%1 בשנייה (הושלם)"
+
+#: kwidgetjobtracker.cpp:447
+#, fuzzy
+#| msgid "&Resume"
+msgctxt "KWidgetJobTracker|"
+msgid "&Resume"
+msgstr "&המשך"
+
+#: kwidgetjobtracker.cpp:453 kwidgetjobtracker.cpp:524
+#, fuzzy
+#| msgid "&Pause"
+msgctxt "KWidgetJobTracker|"
+msgid "&Pause"
+msgstr "&השהה"
+
+#: kwidgetjobtracker.cpp:477
+#, fuzzy
+#| msgctxt "The source url of a job"
+#| msgid "Source:"
+msgctxt "KWidgetJobTracker|The source url of a job"
+msgid "Source:"
+msgstr "מקור:"
+
+#: kwidgetjobtracker.cpp:485
+#, fuzzy
+#| msgctxt "The destination url of a job"
+#| msgid "Destination:"
+msgctxt "KWidgetJobTracker|The destination url of a job"
+msgid "Destination:"
+msgstr "יעד:"
+
+#: kwidgetjobtracker.cpp:509 kwidgetjobtracker.cpp:685
+#, fuzzy
+#| msgid "Click this to expand the dialog, to show details"
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to expand the dialog, to show details"
+msgstr "לחץ כאן כדי להרחיב את תיבת הדו-שיח, להצגת פרטים נוספים"
+
+#: kwidgetjobtracker.cpp:543
+#, fuzzy
+#| msgid "&Keep this window open after transfer is complete"
+msgctxt "KWidgetJobTracker|"
+msgid "&Keep this window open after transfer is complete"
+msgstr "&השאר חלון זה פתוח לאחר סיום ההעברה"
+
+#: kwidgetjobtracker.cpp:551
+#, fuzzy
+#| msgid "Open &File"
+msgctxt "KWidgetJobTracker|"
+msgid "Open &File"
+msgstr "פתח &קובץ"
+
+#: kwidgetjobtracker.cpp:557
+#, fuzzy
+#| msgid "Open &Destination"
+msgctxt "KWidgetJobTracker|"
+msgid "Open &Destination"
+msgstr "פתח &יעד"
+
+#: kwidgetjobtracker.cpp:565
+#, fuzzy
+#| msgid "&Cancel"
+msgctxt "KWidgetJobTracker|"
+msgid "&Cancel"
+msgstr "&בטל"
+
+#: kwidgetjobtracker.cpp:573
+#, fuzzy
+#| msgid "Progress Dialog"
+msgctxt "KWidgetJobTracker|"
+msgid "Progress Dialog"
+msgstr "חלון התקדמות"
+
+#: kwidgetjobtracker.cpp:588
+#, fuzzy, qt-format
+#| msgid "%1 folder"
+#| msgid_plural "%1 folders"
+msgctxt "KWidgetJobTracker|"
+msgid "%n folder(s)"
+msgid_plural "%n folder(s)"
+msgstr[0] "תיקייה %1"
+msgstr[1] "%1 תיקיות"
+
+#: kwidgetjobtracker.cpp:592
+#, fuzzy, qt-format
+#| msgid "%1 file"
+#| msgid_plural "%1 files"
+msgctxt "KWidgetJobTracker|"
+msgid "%n file(s)"
+msgid_plural "%n file(s)"
+msgstr[0] "קובץ %1"
+msgstr[1] "%1 קבצים"
+
+#: kwidgetjobtracker.cpp:678
+#, fuzzy
+#| msgid "Click this to collapse the dialog, to hide details"
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to collapse the dialog, to hide details"
+msgstr "לחץ כאן כדי לצמצם את תיבת הדו-שיח, להסתרת פרטים נוספים"
