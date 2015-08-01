@@ -34,7 +34,7 @@ target_link_libraries(KF5JobWidgets
 )
 
 if (HAVE_X11)
-  find_package(Qt5X11Extras 5.2.0 REQUIRED NO_MODULE)
+  find_package(Qt5X11Extras ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
   target_link_libraries(KF5JobWidgets PRIVATE Qt5::X11Extras)
 endif ()
 
