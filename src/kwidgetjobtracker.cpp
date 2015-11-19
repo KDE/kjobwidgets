@@ -353,7 +353,7 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         //~ singular %1 / %n folder
         //~ plural %1 / %n folders
         tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
-        tmp += "   ";
+        tmp += QLatin1String("   ");
         //~ singular %1 / %n file
         //~ plural %1 / %n files
         tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
@@ -370,7 +370,7 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
             //~ singular %1 / %n folder
             //~ plural %1 / %n folders
             tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n folder(s)", "", totalDirs).arg(processedDirs);
-            tmp += "   ";
+            tmp += QLatin1String("   ");
         }
         //~ singular %1 / %n file
         //~ plural %1 / %n files
@@ -423,7 +423,7 @@ void KWidgetJobTracker::Private::ProgressWidget::slotClean()
 {
     percent(100);
     cancelClose->setText(QCoreApplication::translate("KWidgetJobTracker", "&Close"));
-    cancelClose->setIcon(QIcon::fromTheme("window-close"));
+    cancelClose->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
     cancelClose->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Close the current window or document"));
     openFile->setEnabled(true);
     if (!totalSizeKnown || totalSize < processedSize) {
@@ -465,7 +465,7 @@ void KWidgetJobTracker::Private::ProgressWidget::closeEvent(QCloseEvent *event)
 
 void KWidgetJobTracker::Private::ProgressWidget::init()
 {
-    setWindowIcon(QIcon::fromTheme("document-save"));
+    setWindowIcon(QIcon::fromTheme(QStringLiteral("document-save")));
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
 
@@ -505,7 +505,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
 
     arrowButton = new QPushButton(this);
     arrowButton->setMaximumSize(QSize(32, 25));
-    arrowButton->setIcon(QIcon::fromTheme("arrow-down"));
+    arrowButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
     arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to expand the dialog, to show details"));
     arrowState = Qt::DownArrow;
     connect(arrowButton, SIGNAL(clicked()), this, SLOT(_k_arrowToggled()));
@@ -563,7 +563,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
 
     cancelClose = new QPushButton(this);
     cancelClose->setText(QCoreApplication::translate("KWidgetJobTracker", "&Cancel"));
-    cancelClose->setIcon(QIcon::fromTheme("dialog-cancel"));
+    cancelClose->setIcon(QIcon::fromTheme(QStringLiteral("dialog-cancel")));
     connect(cancelClose, SIGNAL(clicked()), this, SLOT(_k_stop()));
     hBox->addWidget(cancelClose);
 
@@ -643,12 +643,12 @@ void KWidgetJobTracker::Private::ProgressWidget::_k_keepOpenToggled(bool keepOpe
 
 void KWidgetJobTracker::Private::ProgressWidget::_k_openFile()
 {
-    QProcess::startDetached("kde-open", QStringList() << location.toDisplayString());
+    QProcess::startDetached(QStringLiteral("kde-open"), QStringList() << location.toDisplayString());
 }
 
 void KWidgetJobTracker::Private::ProgressWidget::_k_openLocation()
 {
-    QProcess::startDetached("kde-open", QStringList() << location.adjusted(QUrl::RemoveFilename).toString());
+    QProcess::startDetached(QStringLiteral("kde-open"), QStringList() << location.adjusted(QUrl::RemoveFilename).toString());
 }
 
 void KWidgetJobTracker::Private::ProgressWidget::_k_pauseResumeClicked()
@@ -674,14 +674,14 @@ void KWidgetJobTracker::Private::ProgressWidget::_k_arrowToggled()
         //The arrow is in the down position, dialog is collapsed, expand it and change icon.
         progressLabel->show();
         speedLabel->show();
-        arrowButton->setIcon(QIcon::fromTheme("arrow-up"));
+        arrowButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
         arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to collapse the dialog, to hide details"));
         arrowState = Qt::UpArrow;
     } else {
         //Collapse the dialog
         progressLabel->hide();
         speedLabel->hide();
-        arrowButton->setIcon(QIcon::fromTheme("arrow-down"));
+        arrowButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
         arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to expand the dialog, to show details"));
         arrowState = Qt::DownArrow;
     }

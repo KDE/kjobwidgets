@@ -150,7 +150,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
 {
     widget = new QWidget(parent);
 
-    int w = fontMetrics().width(" 999.9 kB/s 00:00:01 ") + 8;
+    int w = fontMetrics().width(QStringLiteral(" 999.9 kB/s 00:00:01 ")) + 8;
     box = new QHBoxLayout(widget);
     box->setMargin(0);
     box->setSpacing(0);

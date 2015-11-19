@@ -97,7 +97,7 @@ void KUiServerJobTracker::registerJob(KJob *job)
 
     // If we got a valid reply, register the interface for later usage.
     if (reply.isValid()) {
-        org::kde::JobViewV2 *jobView = new org::kde::JobViewV2("org.kde.JobViewServer",
+        org::kde::JobViewV2 *jobView = new org::kde::JobViewV2(QStringLiteral("org.kde.JobViewServer"),
                 reply.value().path(),
                 QDBusConnection::sessionBus());
         if (!jobWatch) {
@@ -244,13 +244,13 @@ void KUiServerJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amo
 
     switch (unit) {
     case KJob::Bytes:
-        jobView->setTotalAmount(amount, "bytes");
+        jobView->setTotalAmount(amount, QStringLiteral("bytes"));
         break;
     case KJob::Files:
-        jobView->setTotalAmount(amount, "files");
+        jobView->setTotalAmount(amount, QStringLiteral("files"));
         break;
     case KJob::Directories:
-        jobView->setTotalAmount(amount, "dirs");
+        jobView->setTotalAmount(amount, QStringLiteral("dirs"));
         break;
     default:
         break;
@@ -267,13 +267,13 @@ void KUiServerJobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglong
 
     switch (unit) {
     case KJob::Bytes:
-        jobView->setProcessedAmount(amount, "bytes");
+        jobView->setProcessedAmount(amount, QStringLiteral("bytes"));
         break;
     case KJob::Files:
-        jobView->setProcessedAmount(amount, "files");
+        jobView->setProcessedAmount(amount, QStringLiteral("files"));
         break;
     case KJob::Directories:
-        jobView->setProcessedAmount(amount, "dirs");
+        jobView->setProcessedAmount(amount, QStringLiteral("dirs"));
         break;
     default:
         break;
@@ -303,14 +303,14 @@ void KUiServerJobTracker::speed(KJob *job, unsigned long value)
 }
 
 KSharedUiServerProxy::KSharedUiServerProxy()
-    : m_uiserver("org.kde.JobViewServer", "/JobViewServer", QDBusConnection::sessionBus())
+    : m_uiserver(QStringLiteral("org.kde.JobViewServer"), QStringLiteral("/JobViewServer"), QDBusConnection::sessionBus())
 {
     QDBusConnectionInterface *bus = QDBusConnection::sessionBus().interface();
-    if (!bus->isServiceRegistered("org.kde.JobViewServer")) {
-        QDBusReply<void> reply = bus->startService("org.kde.kuiserver");
+    if (!bus->isServiceRegistered(QStringLiteral("org.kde.JobViewServer"))) {
+        QDBusReply<void> reply = bus->startService(QStringLiteral("org.kde.kuiserver"));
         if (!reply.isValid()) {
             qCritical() << "Couldn't start kuiserver from org.kde.kuiserver.service:" << reply.error();
-        } else if (!bus->isServiceRegistered("org.kde.JobViewServer")) {
+        } else if (!bus->isServiceRegistered(QStringLiteral("org.kde.JobViewServer"))) {
             qCDebug(KJOBWIDGETS) << "The dbus name org.kde.JobViewServer is STILL NOT REGISTERED, even after starting kuiserver. Should not happen.";
         } else {
             qCDebug(KJOBWIDGETS) << "kuiserver registered";

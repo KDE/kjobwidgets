@@ -46,23 +46,23 @@ void KTestJob::start()
             this, SLOT(nextStep()));
     m_state = StatingDirs;
     m_timer.start(50);
-    emit description(this, QString("Copying"), qMakePair(QString("Source"), QString("file:/src")),
-                     qMakePair(QString("Destination"), QString("file:/dest")));
+    emit description(this, QStringLiteral("Copying"), qMakePair(QStringLiteral("Source"), QStringLiteral("file:/src")),
+                     qMakePair(QStringLiteral("Destination"), QStringLiteral("file:/dest")));
 }
 
 void KTestJob::nextStep()
 {
     switch (m_state) {
     case StatingDirs:
-        emit infoMessage(this, QString("Initial listing"));
+        emit infoMessage(this, QStringLiteral("Initial listing"));
         stateNextDir();
         break;
     case CreatingDirs:
-        emit infoMessage(this, QString("Folder creation"));
+        emit infoMessage(this, QStringLiteral("Folder creation"));
         createNextDir();
         break;
     case CopyingFiles:
-        emit infoMessage(this, QString("Actual file copying"));
+        emit infoMessage(this, QStringLiteral("Actual file copying"));
         copyNextFile();
         break;
     case Stopped:
@@ -85,7 +85,7 @@ void KTestJob::stateNextDir()
     setTotalAmount(KJob::Bytes, totalAmount(KJob::Files) * 1000);
 
     emit warning(this, directory_name, directory_name);
-    emit description(this, QString("Stating"), qMakePair(QString("Stating"), QString("file:/src/" + directory_name)));
+    emit description(this, QStringLiteral("Stating"), qMakePair(QStringLiteral("Stating"), QString("file:/src/" + directory_name)));
 }
 
 void KTestJob::createNextDir()
@@ -100,7 +100,7 @@ void KTestJob::createNextDir()
     qDebug() << "Creating " << directory_name;
     setProcessedAmount(KJob::Directories, processedAmount(KJob::Directories) + 1);
 
-    emit description(this, QString("Creating Dir"), qMakePair(QString("Creating"), QString("file:/dest/" + directory_name)));
+    emit description(this, QStringLiteral("Creating Dir"), qMakePair(QStringLiteral("Creating"), QString("file:/dest/" + directory_name)));
 }
 
 void KTestJob::copyNextFile()
@@ -119,8 +119,8 @@ void KTestJob::copyNextFile()
     setProcessedAmount(KJob::Files, processedAmount(KJob::Files) + 1);
     setProcessedAmount(KJob::Bytes, processedAmount(KJob::Bytes) + 1000);
 
-    emit description(this, QString("Copying"), qMakePair(QString("Source"), QString("file:/src/" + file_name)),
-                     qMakePair(QString("Destination"), QString("file:/dest/" + file_name)));
+    emit description(this, QStringLiteral("Copying"), qMakePair(QStringLiteral("Source"), QString("file:/src/" + file_name)),
+                     qMakePair(QStringLiteral("Destination"), QString("file:/dest/" + file_name)));
 
     emitSpeed(m_currentSpeed);
 }
@@ -146,7 +146,7 @@ bool KTestJob::doKill()
 
 int main(int argc, char **argv)
 {
-    QApplication::setApplicationName("kjobtrackerstest");
+    QApplication::setApplicationName(QStringLiteral("kjobtrackerstest"));
 
     QApplication app(argc, argv);
 
@@ -156,7 +156,7 @@ int main(int argc, char **argv)
     tracker1->registerJob(testJob);
 
     QMainWindow *main = new QMainWindow;
-    main->setWindowTitle("Mainwindow with statusbar-job-tracker");
+    main->setWindowTitle(QStringLiteral("Mainwindow with statusbar-job-tracker"));
     main->show();
 
     QStatusBar *statusBar = new QStatusBar(main);
