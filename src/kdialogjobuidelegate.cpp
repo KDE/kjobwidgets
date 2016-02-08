@@ -23,6 +23,7 @@
 
 #include <QWidget>
 #include <QQueue>
+#include <QPointer>
 
 #include <kmessagebox.h>
 #include <kjob.h>
@@ -77,7 +78,15 @@ void KDialogJobUiDelegate::Private::next()
     }
 
     QSharedPointer<MessageBoxData> data = queue.dequeue();
+
+    //kmessagebox starts a new event loop which can cause this to get deleted
+    //https://bugs.kde.org/show_bug.cgi?id=356321#c16
+    QPointer<KDialogJobUiDelegate::Private> thisGuard(this);
     KMessageBox::messageBox(data->widget, data->type, data->msg);
+
+    if (!thisGuard) {
+        return;
+    }
 
     QMetaObject::invokeMethod(this, "next", Qt::QueuedConnection);
 }
