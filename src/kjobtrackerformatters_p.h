@@ -36,6 +36,6 @@ QString hoursDuration(int n);
 QString minutesDuration(int n);
 QString secondsDuration(int n);
 QString duration(unsigned long mSec);
-};
+}
 
 #endif
