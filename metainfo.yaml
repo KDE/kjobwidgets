@@ -11,3 +11,7 @@ libraries:
  - qmake: KJobWidgets
    cmake: "KF5::JobWidgets"
 cmakename: KF5JobWidgets
+
+public_lib: true
+group: Frameworks
+subgroup: Tier 2
