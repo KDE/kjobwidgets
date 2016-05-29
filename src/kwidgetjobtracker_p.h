@@ -84,6 +84,10 @@ public:
           destEdit(0), progressLabel(0), destInvite(0), speedLabel(0), sizeLabel(0),
           resumeLabel(0), progressBar(0), suspendedProperty(false), refCount(1)
     {
+        if (!parent) {
+            setWindowFlags(windowFlags() | Qt::Dialog);
+        }
+
         init();
     }
 
