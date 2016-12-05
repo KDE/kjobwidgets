@@ -100,6 +100,29 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets COMPONENT Devel
 )
 
+if(BUILD_QCH)
+    ecm_add_qch(
+        KF5JobWidgets_QCH
+        NAME KJobWidgets
+        BASE_NAME KF5JobWidgets
+        VERSION ${KF5_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+            ${KJobWidgets_HEADERS}
+        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+        LINK_QCHS
+            KF5CoreAddons_QCH
+            Qt5Widgets_QCH
+            Qt5Gui_QCH
+            Qt5Core_QCH
+        BLANK_MACROS
+            KJOBWIDGETS_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
+
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KJobWidgets LIB_NAME KF5JobWidgets DEPS "widgets KCoreAddons" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
