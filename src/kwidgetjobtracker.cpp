@@ -53,6 +53,8 @@ void KWidgetJobTracker::Private::_k_showProgressWidget()
     QWidget *widget = q->widget(job);
 
     if (widget) {
+        // Don't steal the focus from the current widget (e. g. Kate)
+        widget->setAttribute(Qt::WA_ShowWithoutActivating);
         widget->show();
     }
 }
