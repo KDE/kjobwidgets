@@ -108,7 +108,7 @@ private Q_SLOTS:
     void killJob();
 
 protected:
-    virtual bool eventFilter(QObject *obj, QEvent *event);
+    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
 };
 
 #endif // KSTATUSBARJOBTRACKER_P_H

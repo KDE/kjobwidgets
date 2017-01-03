@@ -55,10 +55,10 @@ public:
         delete eventLoopLocker;
     }
 
-    virtual void setStopOnClose(KJob *job, bool stopOnClose);
-    virtual bool stopOnClose(KJob *job) const;
-    virtual void setAutoDelete(KJob *job, bool autoDelete);
-    virtual bool autoDelete(KJob *job) const;
+    void setStopOnClose(KJob *job, bool stopOnClose) Q_DECL_OVERRIDE;
+    bool stopOnClose(KJob *job) const Q_DECL_OVERRIDE;
+    void setAutoDelete(KJob *job, bool autoDelete) Q_DECL_OVERRIDE;
+    bool autoDelete(KJob *job) const Q_DECL_OVERRIDE;
 
     void _k_showProgressWidget();
 
@@ -143,7 +143,7 @@ public:
     void deref();
     void closeNow();
 
-    virtual bool eventFilter(QObject *watched, QEvent *event);
+    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
     virtual void infoMessage(const QString &plain, const QString &rich);
@@ -161,7 +161,7 @@ public Q_SLOTS:
     //TODO: Misses canResume()
 
 protected:
-    void closeEvent(QCloseEvent *event);
+    void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void _k_keepOpenToggled(bool);
