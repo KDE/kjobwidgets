@@ -46,7 +46,7 @@ public:
     Private(QWidget *parent, KWidgetJobTracker *tracker)
         : KAbstractWidgetJobTracker::Private(tracker)
         , parent(parent)
-        , eventLoopLocker(NULL)
+        , eventLoopLocker(nullptr)
     {
     }
 
@@ -79,10 +79,10 @@ public:
     ProgressWidget(KJob *job, KWidgetJobTracker *object, QWidget *parent)
         : QWidget(parent), tracker(object), job(job), totalSize(0), totalFiles(0), totalDirs(0),
           processedSize(0), processedDirs(0), processedFiles(0), totalSizeKnown(false),
-          stopOnClose(true), jobRegistered(false), cancelClose(0), openFile(0),
-          openLocation(0), keepOpenCheck(0), pauseButton(0), sourceEdit(0),
-          destEdit(0), progressLabel(0), destInvite(0), speedLabel(0), sizeLabel(0),
-          resumeLabel(0), progressBar(0), suspendedProperty(false), refCount(1)
+          stopOnClose(true), jobRegistered(false), cancelClose(nullptr), openFile(nullptr),
+          openLocation(nullptr), keepOpenCheck(nullptr), pauseButton(nullptr), sourceEdit(nullptr),
+          destEdit(nullptr), progressLabel(nullptr), destInvite(nullptr), speedLabel(nullptr), sizeLabel(nullptr),
+          resumeLabel(nullptr), progressBar(nullptr), suspendedProperty(false), refCount(1)
     {
         if (!parent) {
             setWindowFlags(windowFlags() | Qt::Dialog);
@@ -94,7 +94,7 @@ public:
     ~ProgressWidget()
     {
         delete tracker->d->eventLoopLocker;
-        tracker->d->eventLoopLocker = NULL;
+        tracker->d->eventLoopLocker = nullptr;
     }
 
     KWidgetJobTracker *const tracker;

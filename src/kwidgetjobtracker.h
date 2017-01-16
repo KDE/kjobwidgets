@@ -39,7 +39,7 @@ public:
      *
      * @param parent the parent of this object and of the widget displaying the job progresses
      */
-    KWidgetJobTracker(QWidget *parent = 0);
+    KWidgetJobTracker(QWidget *parent = nullptr);
 
     /**
      * Destroys a KWidgetJobTracker

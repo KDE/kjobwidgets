@@ -71,7 +71,7 @@ KWidgetJobTracker::~KWidgetJobTracker()
 
 QWidget *KWidgetJobTracker::widget(KJob *job)
 {
-    return d->progressWidget.value(job, 0);
+    return d->progressWidget.value(job, nullptr);
 }
 
 void KWidgetJobTracker::registerJob(KJob *job)
@@ -92,7 +92,7 @@ void KWidgetJobTracker::unregisterJob(KJob *job)
     KAbstractWidgetJobTracker::unregisterJob(job);
 
     d->progressWidgetsToBeShown.removeAll(job);
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -103,7 +103,7 @@ void KWidgetJobTracker::unregisterJob(KJob *job)
 
 bool KWidgetJobTracker::keepOpen(KJob *job) const
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return false;
     }
@@ -113,7 +113,7 @@ bool KWidgetJobTracker::keepOpen(KJob *job) const
 
 void KWidgetJobTracker::infoMessage(KJob *job, const QString &plain, const QString &rich)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -125,7 +125,7 @@ void KWidgetJobTracker::description(KJob *job, const QString &title,
                                     const QPair<QString, QString> &field1,
                                     const QPair<QString, QString> &field2)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -135,7 +135,7 @@ void KWidgetJobTracker::description(KJob *job, const QString &title,
 
 void KWidgetJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amount)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -145,7 +145,7 @@ void KWidgetJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amoun
 
 void KWidgetJobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglong amount)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -155,7 +155,7 @@ void KWidgetJobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglong a
 
 void KWidgetJobTracker::percent(KJob *job, unsigned long percent)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -165,7 +165,7 @@ void KWidgetJobTracker::percent(KJob *job, unsigned long percent)
 
 void KWidgetJobTracker::speed(KJob *job, unsigned long value)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -175,7 +175,7 @@ void KWidgetJobTracker::speed(KJob *job, unsigned long value)
 
 void KWidgetJobTracker::slotClean(KJob *job)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -185,7 +185,7 @@ void KWidgetJobTracker::slotClean(KJob *job)
 
 void KWidgetJobTracker::suspended(KJob *job)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -195,7 +195,7 @@ void KWidgetJobTracker::suspended(KJob *job)
 
 void KWidgetJobTracker::resumed(KJob *job)
 {
-    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, 0);
+    KWidgetJobTracker::Private::ProgressWidget *pWidget = d->progressWidget.value(job, nullptr);
     if (!pWidget) {
         return;
     }
@@ -639,7 +639,7 @@ void KWidgetJobTracker::Private::ProgressWidget::_k_keepOpenToggled(bool keepOpe
         tracker->d->eventLoopLocker = new QEventLoopLocker;
     } else {
         delete tracker->d->eventLoopLocker;
-        tracker->d->eventLoopLocker = NULL;
+        tracker->d->eventLoopLocker = nullptr;
     }
 }
 

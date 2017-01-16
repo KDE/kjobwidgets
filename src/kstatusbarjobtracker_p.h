@@ -39,7 +39,7 @@ class KStatusBarJobTracker::Private
 public:
     Private(QWidget *parent, bool withStopButton)
         : parent(parent)
-        , currentProgressWidget(0)
+        , currentProgressWidget(nullptr)
         , showStopButton(withStopButton)
     { }
 
@@ -62,8 +62,8 @@ class KStatusBarJobTracker::Private::ProgressWidget
 
 public:
     ProgressWidget(KJob *job, KStatusBarJobTracker *object, QWidget *parent)
-        : q(object), job(job), widget(0), progressBar(0), label(0), button(0),
-          box(0), stack(0), /*totalSize(-1),*/ mode(NoInformation), beingDeleted(false)
+        : q(object), job(job), widget(nullptr), progressBar(nullptr), label(nullptr), button(nullptr),
+          box(nullptr), stack(nullptr), /*totalSize(-1),*/ mode(NoInformation), beingDeleted(false)
     {
         init(job, parent);
     }

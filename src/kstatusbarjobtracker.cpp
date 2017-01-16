@@ -66,7 +66,7 @@ void KStatusBarJobTracker::unregisterJob(KJob *job)
     }
 
     if (d->currentProgressWidget == d->progressWidget[job]) {
-        d->currentProgressWidget = 0;
+        d->currentProgressWidget = nullptr;
     }
 
     if (!d->progressWidget[job]->beingDeleted) {
@@ -79,7 +79,7 @@ void KStatusBarJobTracker::unregisterJob(KJob *job)
 QWidget *KStatusBarJobTracker::widget(KJob *job)
 {
     if (!d->progressWidget.contains(job)) {
-        return 0;
+        return nullptr;
     }
 
     return d->progressWidget[job];
@@ -165,7 +165,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
         connect(button, SIGNAL(clicked(bool)),
                 this, SLOT(killJob()));
     } else {
-        button = 0;
+        button = nullptr;
     }
 
     progressBar = new QProgressBar(widget);

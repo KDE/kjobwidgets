@@ -44,7 +44,7 @@ class KDialogJobUiDelegate::Private : public QObject
 {
     Q_OBJECT
 public:
-    explicit Private(QObject *parent = 0);
+    explicit Private(QObject *parent = nullptr);
     virtual ~Private();
     void queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg);
 
@@ -60,7 +60,7 @@ private:
 
 KDialogJobUiDelegate::Private::Private(QObject *parent)
     : QObject(parent)
-    , window(0)
+    , window(nullptr)
     , running(false)
 {
 }
@@ -143,7 +143,7 @@ QWidget *KDialogJobUiDelegate::window() const
     } else if (job()) {
         return KJobWidgets::window(job());
     }
-    return 0;
+    return nullptr;
 }
 
 void KDialogJobUiDelegate::updateUserTimestamp(unsigned long time)
