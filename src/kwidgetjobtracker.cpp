@@ -467,7 +467,7 @@ void KWidgetJobTracker::Private::ProgressWidget::closeEvent(QCloseEvent *event)
 
 void KWidgetJobTracker::Private::ProgressWidget::init()
 {
-    setWindowIcon(QIcon::fromTheme(QStringLiteral("document-save")));
+    setWindowIcon(QIcon::fromTheme(QStringLiteral("document-save"), windowIcon()));
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
 
