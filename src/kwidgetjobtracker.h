@@ -26,6 +26,8 @@
 #include <kabstractwidgetjobtracker.h>
 
 /**
+ * @class KWidgetJobTracker kwidgetjobtracker.h KWidgetJobTracker
+ *
  * This class implements a job tracker with a widget suited for use as a
  * progress dialog.
  */

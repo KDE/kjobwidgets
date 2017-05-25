@@ -24,6 +24,8 @@
 #include <kabstractwidgetjobtracker.h>
 
 /**
+ * @class KStatusBarJobTracker kstatusbarjobtracker.h KStatusBarJobTracker
+ *
  * This class implements a job tracker with a widget suited for embedding in a
  * status bar.
  */

@@ -26,6 +26,8 @@
 class KJob;
 
 /**
+ * @class KUiServerJobTracker kuiserverjobtracker.h KUiServerJobTracker
+ *
  * The interface to implement to track the progresses of a job.
  */
 class KJOBWIDGETS_EXPORT KUiServerJobTracker : public KJobTrackerInterface

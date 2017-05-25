@@ -27,6 +27,8 @@
 #include <kjobwidgets_export.h>
 
 /**
+ * @class KDialogJobUiDelegate kdialogjobuidelegate.h KDialogJobUiDelegate
+ *
  * A UI delegate using KMessageBox for interaction (showing errors and warnings).
  *
  * The KMessageBox will use window as a parent in an application-modal.

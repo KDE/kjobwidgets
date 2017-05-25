@@ -29,6 +29,8 @@ class KJob;
 class QWidget;
 
 /**
+ * @class KAbstractWidgetJobTracker kabstractwidgetjobtracker.h KAbstractWidgetJobTracker
+ *
  * The base class for widget based job trackers.
  */
 class KJOBWIDGETS_EXPORT KAbstractWidgetJobTracker : public KJobTrackerInterface
