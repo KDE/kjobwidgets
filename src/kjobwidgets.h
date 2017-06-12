@@ -38,6 +38,8 @@ namespace KJobWidgets
  * @li by KWidgetJobTracker as parent widget for progress dialogs
  * @li by KIO::AbstractJobInteractionInterface as parent widget for rename/skip dialogs
  * and possibly more.
+ * @li by KIO::DropJob as parent widget of popup menus.
+ * This is required on Wayland to properly position the menu.
  * @since 5.0
  */
 KJOBWIDGETS_EXPORT void setWindow(KJob *job, QWidget *widget);
