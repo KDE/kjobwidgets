@@ -524,6 +524,7 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     hBox->addWidget(resumeLabel);
 
     pauseButton = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "&Pause"), this);
+    pauseButton->setVisible(job && (job->capabilities() & KJob::Suspendable));
     connect(pauseButton, SIGNAL(clicked()), this, SLOT(_k_pauseResumeClicked()));
     hBox->addWidget(pauseButton);
 
