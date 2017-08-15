@@ -39,7 +39,7 @@ class KSqueezedTextLabel;
 class QLabel;
 class QProgressBar;
 
-class KWidgetJobTracker::Private
+class Q_DECL_HIDDEN KWidgetJobTracker::Private
     : public KAbstractWidgetJobTracker::Private
 {
 public:

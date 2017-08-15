@@ -24,7 +24,7 @@
 
 #include "kabstractwidgetjobtracker.h"
 
-class KAbstractWidgetJobTracker::Private
+class Q_DECL_HIDDEN KAbstractWidgetJobTracker::Private
 {
 public:
     Private(KAbstractWidgetJobTracker *parent)

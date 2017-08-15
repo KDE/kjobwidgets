@@ -34,7 +34,7 @@ class QCheckBox;
 class QLabel;
 class QProgressBar;
 
-class KStatusBarJobTracker::Private
+class Q_DECL_HIDDEN KStatusBarJobTracker::Private
 {
 public:
     Private(QWidget *parent, bool withStopButton)

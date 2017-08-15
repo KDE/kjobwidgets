@@ -40,7 +40,7 @@ struct MessageBoxData {
     QString msg;
 };
 
-class KDialogJobUiDelegate::Private : public QObject
+class Q_DECL_HIDDEN KDialogJobUiDelegate::Private : public QObject
 {
     Q_OBJECT
 public:

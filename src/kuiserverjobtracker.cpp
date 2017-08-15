@@ -31,7 +31,7 @@
 
 Q_GLOBAL_STATIC(KSharedUiServerProxy, serverProxy)
 
-class KUiServerJobTracker::Private
+class Q_DECL_HIDDEN KUiServerJobTracker::Private
 {
 public:
     Private(KUiServerJobTracker *parent)

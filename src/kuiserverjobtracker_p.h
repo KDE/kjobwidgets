@@ -28,7 +28,7 @@
 
 #include "jobviewserverinterface.h"
 
-class KSharedUiServerProxy : public QObject
+class Q_DECL_HIDDEN KSharedUiServerProxy : public QObject
 {
     Q_OBJECT
 
