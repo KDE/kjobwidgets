@@ -1,0 +1,299 @@
+# translation of kdelibs4.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Martin Schlander, 2008.
+# Martin Schlander <mschlander@opensuse.org>, 2008.
+# Martin Schlander <mschlander@opensuse.org>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015.
+# Keld Simonsen <keld@keldix.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2015-04-25 15:17+0200\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Qt-Contexts: true\n"
+
+#: kjobtrackerformatters.cpp:32
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 B"
+msgstr "%1 B"
+
+#: kjobtrackerformatters.cpp:33
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 KiB"
+msgstr "%1 KiB"
+
+#: kjobtrackerformatters.cpp:34
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 MiB"
+msgstr "%1 MiB"
+
+#: kjobtrackerformatters.cpp:35
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 GiB"
+msgstr "%1 GiB"
+
+#: kjobtrackerformatters.cpp:36
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 TiB"
+msgstr "%1 TiB"
+
+#: kjobtrackerformatters.cpp:37
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 PiB"
+msgstr "%1 PiB"
+
+#: kjobtrackerformatters.cpp:38
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 EiB"
+msgstr "%1 EiB"
+
+#: kjobtrackerformatters.cpp:39
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 ZiB"
+msgstr "%1 ZiB"
+
+#: kjobtrackerformatters.cpp:40
+#, qt-format
+msgctxt "KJobTrackerFormatters|"
+msgid "%1 YiB"
+msgstr "%1 YiB"
+
+#: kjobtrackerformatters.cpp:62
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n day(s)"
+msgid_plural "%n day(s)"
+msgstr[0] "%n dage"
+msgstr[1] "%n dage"
+
+#: kjobtrackerformatters.cpp:69
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n hour(s)"
+msgid_plural "%n hour(s)"
+msgstr[0] "%n time"
+msgstr[1] "%n timer"
+
+#: kjobtrackerformatters.cpp:76
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n minute(s)"
+msgid_plural "%n minute(s)"
+msgstr[0] "%n minut"
+msgstr[1] "%n minutter"
+
+#: kjobtrackerformatters.cpp:83
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n second(s)"
+msgid_plural "%n second(s)"
+msgstr[0] "%n sekund"
+msgstr[1] "%n sekunder"
+
+#: kjobtrackerformatters.cpp:104
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext days and hours."
+msgid "%1 and %2"
+msgstr "%1 og %2"
+
+#: kjobtrackerformatters.cpp:108
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext hours and minutes."
+msgid "%1 and %2"
+msgstr "%1 og %2"
+
+#: kjobtrackerformatters.cpp:112
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
+msgid "%1 and %2"
+msgstr "%1 og %2"
+
+#: kstatusbarjobtracker.cpp:163
+msgctxt "KStatusBarJobTracker|"
+msgid "Stop"
+msgstr "Stop"
+
+#: kstatusbarjobtracker.cpp:244
+msgctxt "KStatusBarJobTracker|"
+msgid " Stalled "
+msgstr " Gået i stå "
+
+#: kstatusbarjobtracker.cpp:246
+#, qt-format
+msgctxt "KStatusBarJobTracker|"
+msgid " %1/s "
+msgstr " %1/s "
+
+#: kwidgetjobtracker.cpp:272 kwidgetjobtracker.cpp:283
+#, qt-format
+msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
+msgid "%1:"
+msgstr "%1:"
+
+#: kwidgetjobtracker.cpp:337
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 of %2 complete"
+msgid_plural "%1 of %2 complete"
+msgstr[0] "%1 af %2 gennemført"
+msgstr[1] "%1 af %2 gennemført"
+
+#: kwidgetjobtracker.cpp:357 kwidgetjobtracker.cpp:374
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n folder(s)"
+msgid_plural "%1 / %n folder(s)"
+msgstr[0] "%1 / %n mapper"
+msgstr[1] "%1 / %n mapper"
+
+#: kwidgetjobtracker.cpp:361 kwidgetjobtracker.cpp:379
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n file(s)"
+msgid_plural "%1 / %n file(s)"
+msgstr[0] "%1 / %n filer"
+msgstr[1] "%1 / %n filer"
+
+#: kwidgetjobtracker.cpp:389
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %2"
+msgstr "%1% af %2"
+
+#: kwidgetjobtracker.cpp:394
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %n file(s)"
+msgid_plural "%1% of %n file(s)"
+msgstr[0] "%1% ud af %n filer"
+msgstr[1] "%1% ud af %n filer"
+
+#: kwidgetjobtracker.cpp:396
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:409
+msgctxt "KWidgetJobTracker|"
+msgid "Stalled"
+msgstr "Gået i stå"
+
+#: kwidgetjobtracker.cpp:416
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (%2 remaining)"
+msgid_plural "%1/s (%2 remaining)"
+msgstr[0] "%1/s (%2 tilbage)"
+msgstr[1] "%1/s (%2 tilbage)"
+
+#: kwidgetjobtracker.cpp:419
+#, qt-format
+msgctxt "KWidgetJobTracker|speed in bytes per second"
+msgid "%1/s"
+msgstr "%1/s"
+
+#: kwidgetjobtracker.cpp:427
+msgctxt "KWidgetJobTracker|"
+msgid "&Close"
+msgstr "&Luk"
+
+#: kwidgetjobtracker.cpp:429
+msgctxt "KWidgetJobTracker|"
+msgid "Close the current window or document"
+msgstr "Luk det aktuelle vindue eller dokument"
+
+#: kwidgetjobtracker.cpp:442
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (done)"
+msgstr "%1/s (færdig)"
+
+#: kwidgetjobtracker.cpp:449
+msgctxt "KWidgetJobTracker|"
+msgid "&Resume"
+msgstr "&Genoptag"
+
+#: kwidgetjobtracker.cpp:455 kwidgetjobtracker.cpp:526
+msgctxt "KWidgetJobTracker|"
+msgid "&Pause"
+msgstr "&Pause"
+
+#: kwidgetjobtracker.cpp:479
+msgctxt "KWidgetJobTracker|The source url of a job"
+msgid "Source:"
+msgstr "Kilde:"
+
+#: kwidgetjobtracker.cpp:487
+msgctxt "KWidgetJobTracker|The destination url of a job"
+msgid "Destination:"
+msgstr "Destination:"
+
+#: kwidgetjobtracker.cpp:511 kwidgetjobtracker.cpp:688
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to expand the dialog, to show details"
+msgstr "Klik for at folde dialogen ud, så detaljer vises"
+
+#: kwidgetjobtracker.cpp:546
+msgctxt "KWidgetJobTracker|"
+msgid "&Keep this window open after transfer is complete"
+msgstr "&Hold dette vindue åbent efter overførsel er færdig"
+
+#: kwidgetjobtracker.cpp:554
+msgctxt "KWidgetJobTracker|"
+msgid "Open &File"
+msgstr "Åbn &fil"
+
+#: kwidgetjobtracker.cpp:560
+msgctxt "KWidgetJobTracker|"
+msgid "Open &Destination"
+msgstr "Åbn &destination"
+
+#: kwidgetjobtracker.cpp:568
+msgctxt "KWidgetJobTracker|"
+msgid "&Cancel"
+msgstr "&Annullér"
+
+#: kwidgetjobtracker.cpp:576
+msgctxt "KWidgetJobTracker|"
+msgid "Progress Dialog"
+msgstr "Fremgangsdialog"
+
+#: kwidgetjobtracker.cpp:591
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%n folder(s)"
+msgid_plural "%n folder(s)"
+msgstr[0] "%n mapper"
+msgstr[1] "%n mapper"
+
+#: kwidgetjobtracker.cpp:595
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%n file(s)"
+msgid_plural "%n file(s)"
+msgstr[0] "%n filer"
+msgstr[1] "%n filer"
+
+#: kwidgetjobtracker.cpp:681
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to collapse the dialog, to hide details"
+msgstr "Klik for at folde dialogen sammen, så detaljer skjules"
