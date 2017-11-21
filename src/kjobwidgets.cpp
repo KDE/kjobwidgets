@@ -27,29 +27,13 @@
 void KJobWidgets::setWindow(KJob *job, QWidget *widget)
 {
     job->setProperty("widget", QVariant::fromValue(widget));
-    QWindow *window = widget ? widget->windowHandle() : nullptr;
-    job->setProperty("window", QVariant::fromValue(window));
-    if (window) {
-        job->setProperty("window-id", QVariant::fromValue(qptrdiff(window->winId())));
-    }
+    KJobWindows::setWindow(job, widget ? widget->windowHandle() : nullptr);
 }
 
 QWidget *KJobWidgets::window(KJob *job)
 {
     return job->property("widget").value<QWidget *>();
 }
-
-#if 0
-void KJobWidgets::setWindow(KJob *job, QWindow *window)
-{
-    job->setProperty("window", QVariant::fromValue(window));
-}
-
-QWindow *KJobWidgets::window(KJob *job) // ### will have to be in a different namespace
-{
-    return job->property("window").value<QWindow *>();
-}
-#endif
 
 // duplicated from kwindowsystem
 static int timestampCompare(unsigned long time1_, unsigned long time2_)   // like strcmp()
@@ -75,3 +59,16 @@ unsigned long KJobWidgets::userTimestamp(KJob *job)
     return job->property("userTimestamp").toULongLong();
 }
 
+
+void KJobWindows::setWindow(KJob *job, QWindow *window)
+{
+    job->setProperty("window", QVariant::fromValue(window));
+    if (window) {
+        job->setProperty("window-id", QVariant::fromValue(window->winId()));
+    }
+}
+
+QWindow *KJobWindows::window(KJob *job)
+{
+    return job->property("window").value<QWindow *>();
+}
