@@ -10,9 +10,10 @@ set(kjobwidgets_SRCS
   kjobwidgets.cpp
   kstatusbarjobtracker.cpp
   kwidgetjobtracker.cpp
-  debug.cpp
   ${kjobwidgets_QM_LOADER}
 )
+
+ecm_qt_declare_logging_category(kjobwidgets_SRCS HEADER debug.h IDENTIFIER KJOBWIDGETS CATEGORY_NAME kf5.kjobwidgets)
 
 qt5_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
 qt5_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
