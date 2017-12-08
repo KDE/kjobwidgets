@@ -28,10 +28,8 @@ endif()
 
 set(HAVE_X11 ${X11_FOUND})
 
-if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-    find_package(KF5CoreAddons ${KF5_DEP_VERSION} REQUIRED)
-    find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
-endif()
+find_package(KF5CoreAddons ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
 
 
 include(GenerateExportHeader)
