@@ -23,36 +23,14 @@
 */
 
 #include "kjobtrackerformatters_p.h"
+#include <kformat.h>
 
 #include <QCoreApplication>
 
+
 QString KJobTrackerFormatters::byteSize(double size)
 {
-    QList<QString> units;
-    units << QCoreApplication::translate("KJobTrackerFormatters", "%1 B")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 KiB")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 MiB")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 GiB")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 TiB")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 PiB")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 EiB")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 ZiB")
-          << QCoreApplication::translate("KJobTrackerFormatters", "%1 YiB");
-
-    int unit = 0; // Selects what unit to use
-    const double multiplier = 1024.0;
-
-    while (qAbs(size) >= multiplier && unit < units.size()) {
-        size /= multiplier;
-        unit++;
-    }
-
-    if (unit == 0) {
-        // Bytes, no rounding
-        return units[unit].arg(QString::number(size, 'f', 0));
-    } else {
-        return units[unit].arg(QString::number(size, 'f', 1));
-    }
+    return KFormat().formatByteSize(size);
 }
 
 QString KJobTrackerFormatters::daysDuration(int n)
