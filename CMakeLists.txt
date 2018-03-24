@@ -19,7 +19,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMPoQmTools)
 
 
-set(REQUIRED_QT_VERSION 5.7.0)
+set(REQUIRED_QT_VERSION 5.8.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets DBus)
 
 if (NOT APPLE)
