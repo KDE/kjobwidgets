@@ -48,7 +48,7 @@ public:
     /**
      * Destroys a KAbstractWidgetJobTracker
      */
-    virtual ~KAbstractWidgetJobTracker();
+    ~KAbstractWidgetJobTracker() override;
 
 // KDE5: move this two virtual methods to be placed correctly (ereslibre)
 public Q_SLOTS:
@@ -59,14 +59,14 @@ public Q_SLOTS:
      *
      * @param job the job to register
      */
-    void registerJob(KJob *job) Q_DECL_OVERRIDE;
+    void registerJob(KJob *job) override;
 
     /**
      * Unregister a job from this tracker.
      *
      * @param job the job to unregister
      */
-    void unregisterJob(KJob *job) Q_DECL_OVERRIDE;
+    void unregisterJob(KJob *job) override;
 
 public:
     /**
@@ -127,7 +127,7 @@ protected Q_SLOTS:
      *
      * @param job the job that emitted this signal
      */
-    void finished(KJob *job) Q_DECL_OVERRIDE;
+    void finished(KJob *job) override;
 
     /**
      * This method should be called for correct cancellation of IO operation

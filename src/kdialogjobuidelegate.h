@@ -46,13 +46,13 @@ public:
     /**
      * Destroys the KDialogJobUiDelegate.
      */
-    virtual ~KDialogJobUiDelegate();
+    ~KDialogJobUiDelegate() override;
 
 public:
     /**
      * @reimp
      */
-    bool setJob(KJob *job) Q_DECL_OVERRIDE;
+    bool setJob(KJob *job) override;
 
     /**
      * Associate this job with a window given by @p window.
@@ -79,10 +79,10 @@ public:
      */
     unsigned long userTimestamp() const;
 
-    void showErrorMessage() Q_DECL_OVERRIDE;
+    void showErrorMessage() override;
 
 protected Q_SLOTS:
-    void slotWarning(KJob *job, const QString &plain, const QString &rich) Q_DECL_OVERRIDE;
+    void slotWarning(KJob *job, const QString &plain, const QString &rich) override;
 
 private:
     class Private;
