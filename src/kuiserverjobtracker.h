@@ -40,12 +40,12 @@ public:
      *
      * @param parent the parent object
      */
-    KUiServerJobTracker(QObject *parent = nullptr);
+    explicit KUiServerJobTracker(QObject *parent = nullptr);
 
     /**
      * Destroys a KJobTrackerInterface
      */
-    virtual ~KUiServerJobTracker();
+    ~KUiServerJobTracker() override;
 
     /**
      * Register a new job in this tracker.

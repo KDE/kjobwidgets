@@ -252,8 +252,6 @@ void KUiServerJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amo
     case KJob::Directories:
         jobView->setTotalAmount(amount, QStringLiteral("dirs"));
         break;
-    default:
-        break;
     }
 }
 
@@ -274,8 +272,6 @@ void KUiServerJobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglong
         break;
     case KJob::Directories:
         jobView->setProcessedAmount(amount, QStringLiteral("dirs"));
-        break;
-    default:
         break;
     }
 }
