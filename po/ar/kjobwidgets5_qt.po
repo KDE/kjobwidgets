@@ -1,0 +1,284 @@
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-28 15:38+0300\n"
+"PO-Revision-Date: 2014-06-17 22:15+0300\n"
+"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
+"Language-Team: Arabic <kde-i18n-doc@kde.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Qt-Contexts: true\n"
+
+#: kjobtrackerformatters.cpp:40
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n day(s)"
+msgid_plural "%n day(s)"
+msgstr[0] "لا أيام"
+msgstr[1] "يوم واحد"
+msgstr[2] "يومان"
+msgstr[3] "%n أيام"
+msgstr[4] "%n يومًا"
+msgstr[5] "%n يوم"
+
+#: kjobtrackerformatters.cpp:47
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n hour(s)"
+msgid_plural "%n hour(s)"
+msgstr[0] "لا ساعات"
+msgstr[1] "ساعة واحدة"
+msgstr[2] "ساعتان"
+msgstr[3] "%n ساعات"
+msgstr[4] "%n ساعة"
+msgstr[5] "%n ساعة"
+
+#: kjobtrackerformatters.cpp:54
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n minute(s)"
+msgid_plural "%n minute(s)"
+msgstr[0] "لا دقائق"
+msgstr[1] "دقيقة واحدة"
+msgstr[2] "دقيقتان"
+msgstr[3] "%n دقائق"
+msgstr[4] "%n دقيقة"
+msgstr[5] "%n دقيقة"
+
+#: kjobtrackerformatters.cpp:61
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n second(s)"
+msgid_plural "%n second(s)"
+msgstr[0] "لا ثوان"
+msgstr[1] "ثانية واحدة"
+msgstr[2] "ثانيتان"
+msgstr[3] "%n ثوان"
+msgstr[4] "%n ثانية"
+msgstr[5] "%n ثانية"
+
+#: kjobtrackerformatters.cpp:82
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext days and hours."
+msgid "%1 and %2"
+msgstr "%1 و%2"
+
+#: kjobtrackerformatters.cpp:86
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext hours and minutes."
+msgid "%1 and %2"
+msgstr "%1 و%2"
+
+#: kjobtrackerformatters.cpp:90
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
+msgid "%1 and %2"
+msgstr "%1 و%2"
+
+#: kstatusbarjobtracker.cpp:163
+msgctxt "KStatusBarJobTracker|"
+msgid "Stop"
+msgstr "أوقف"
+
+#: kstatusbarjobtracker.cpp:244
+msgctxt "KStatusBarJobTracker|"
+msgid " Stalled "
+msgstr ""
+
+#: kstatusbarjobtracker.cpp:246
+#, qt-format
+msgctxt "KStatusBarJobTracker|"
+msgid " %1/s "
+msgstr " %1/ث "
+
+#: kwidgetjobtracker.cpp:272 kwidgetjobtracker.cpp:283
+#, qt-format
+msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
+msgid "%1:"
+msgstr "%1:"
+
+#: kwidgetjobtracker.cpp:337
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 of %2 complete"
+msgid_plural "%1 of %2 complete"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: kwidgetjobtracker.cpp:357 kwidgetjobtracker.cpp:374
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n folder(s)"
+msgid_plural "%1 / %n folder(s)"
+msgstr[0] "%1 / لا مجلدات"
+msgstr[1] "%1 / مجلد واحد"
+msgstr[2] "%1 / مجلدان"
+msgstr[3] "%1 / %n مجلدات"
+msgstr[4] "%1 / %n مجلدًا"
+msgstr[5] "%1 / %n مجلد"
+
+#: kwidgetjobtracker.cpp:361 kwidgetjobtracker.cpp:379
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n file(s)"
+msgid_plural "%1 / %n file(s)"
+msgstr[0] "%1 / لا ملفات"
+msgstr[1] "%1 / ملف واحد"
+msgstr[2] "%1 / ملفان"
+msgstr[3] "%1 / %n ملفات"
+msgstr[4] "%1 / %n ملفًا"
+msgstr[5] "%1 / %n ملف"
+
+#: kwidgetjobtracker.cpp:389
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %2"
+msgstr "%1% من %2"
+
+#: kwidgetjobtracker.cpp:394
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %n file(s)"
+msgid_plural "%1% of %n file(s)"
+msgstr[0] "%1% من لا ملفات"
+msgstr[1] "%1% من ملف واحد"
+msgstr[2] "%1% من ملفان"
+msgstr[3] "%1% من %n ملفات"
+msgstr[4] "%1% من %n ملفًا"
+msgstr[5] "%1% من %n ملف"
+
+#: kwidgetjobtracker.cpp:396
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:409
+msgctxt "KWidgetJobTracker|"
+msgid "Stalled"
+msgstr ""
+
+#: kwidgetjobtracker.cpp:416
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (%2 remaining)"
+msgid_plural "%1/s (%2 remaining)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: kwidgetjobtracker.cpp:419
+#, qt-format
+msgctxt "KWidgetJobTracker|speed in bytes per second"
+msgid "%1/s"
+msgstr "%1/ث"
+
+#: kwidgetjobtracker.cpp:427
+msgctxt "KWidgetJobTracker|"
+msgid "&Close"
+msgstr "أ&غلق"
+
+#: kwidgetjobtracker.cpp:429
+msgctxt "KWidgetJobTracker|"
+msgid "Close the current window or document"
+msgstr "أغلق النافذة أو المستند الحالي"
+
+#: kwidgetjobtracker.cpp:442
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (done)"
+msgstr ""
+
+#: kwidgetjobtracker.cpp:449
+msgctxt "KWidgetJobTracker|"
+msgid "&Resume"
+msgstr "است&كمل"
+
+#: kwidgetjobtracker.cpp:455 kwidgetjobtracker.cpp:526
+msgctxt "KWidgetJobTracker|"
+msgid "&Pause"
+msgstr "أ&لبث"
+
+#: kwidgetjobtracker.cpp:479
+msgctxt "KWidgetJobTracker|The source url of a job"
+msgid "Source:"
+msgstr "المصدر:"
+
+#: kwidgetjobtracker.cpp:487
+msgctxt "KWidgetJobTracker|The destination url of a job"
+msgid "Destination:"
+msgstr "المقصد:"
+
+#: kwidgetjobtracker.cpp:511 kwidgetjobtracker.cpp:688
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to expand the dialog, to show details"
+msgstr "انقر هذا لتوسيع الحواري، لإظهار التفاصيل"
+
+#: kwidgetjobtracker.cpp:546
+msgctxt "KWidgetJobTracker|"
+msgid "&Keep this window open after transfer is complete"
+msgstr ""
+
+#: kwidgetjobtracker.cpp:554
+msgctxt "KWidgetJobTracker|"
+msgid "Open &File"
+msgstr "افتح ال&ملف"
+
+#: kwidgetjobtracker.cpp:560
+msgctxt "KWidgetJobTracker|"
+msgid "Open &Destination"
+msgstr "افتح الم&قصد"
+
+#: kwidgetjobtracker.cpp:568
+msgctxt "KWidgetJobTracker|"
+msgid "&Cancel"
+msgstr "أل&غِ"
+
+#: kwidgetjobtracker.cpp:576
+msgctxt "KWidgetJobTracker|"
+msgid "Progress Dialog"
+msgstr "حواري التقدّم"
+
+#: kwidgetjobtracker.cpp:591
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%n folder(s)"
+msgid_plural "%n folder(s)"
+msgstr[0] "لا مجلدات"
+msgstr[1] "مجلد واحد"
+msgstr[2] "مجلدان"
+msgstr[3] "%n مجلدات"
+msgstr[4] "%n مجلدًا"
+msgstr[5] "%n مجلد"
+
+#: kwidgetjobtracker.cpp:595
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%n file(s)"
+msgid_plural "%n file(s)"
+msgstr[0] "لا ملفات"
+msgstr[1] "ملف واحد"
+msgstr[2] "ملفان"
+msgstr[3] "%n ملفات"
+msgstr[4] "%n ملفًا"
+msgstr[5] "%n ملف"
+
+#: kwidgetjobtracker.cpp:681
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to collapse the dialog, to hide details"
+msgstr "انقر هذا لـ الحواري، لإظهار التفاصيل"
