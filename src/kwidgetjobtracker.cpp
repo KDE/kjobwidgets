@@ -335,8 +335,7 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
             //~ singular %1 of %2 complete
             //~ plural %1 of %2 complete
             tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 of %2 complete", "", amount)
-                  .arg(KJobTrackerFormatters::byteSize(amount))
-                  .arg(KJobTrackerFormatters::byteSize(totalSize));
+                  .arg(KJobTrackerFormatters::byteSize(amount), KJobTrackerFormatters::byteSize(totalSize));
         } else {
             tmp = KJobTrackerFormatters::byteSize(amount);
         }
@@ -413,8 +412,7 @@ void KWidgetJobTracker::Private::ProgressWidget::speed(unsigned long value)
             const int remaining = 1000 * (totalSize - processedSize) / value;
             //~ singular %1/s (%2 remaining)
             //~ plural %1/s (%2 remaining)
-            speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (%2 remaining)", "", remaining).arg(speedStr).arg(
-                                    KJobTrackerFormatters::duration(remaining)));
+            speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (%2 remaining)", "", remaining).arg(speedStr, KJobTrackerFormatters::duration(remaining)));
         } else { // total size is not known (#24228)
             speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s", "speed in bytes per second").arg(speedStr));
         }
