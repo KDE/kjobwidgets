@@ -64,7 +64,6 @@ if (PythonModuleGeneration_FOUND)
     TARGET KF5::JobWidgets
     PYTHONNAMESPACE PyKF5
     MODULENAME KJobWidgets
-    INSTALL_DIR_SUFFIX ${KDE_INSTALL_PYTHONBINDINGSDIR}
     SIP_DEPENDS
       QtWidgets/QtWidgetsmod.sip
       PyKF5/KCoreAddons/KCoreAddonsmod.sip
