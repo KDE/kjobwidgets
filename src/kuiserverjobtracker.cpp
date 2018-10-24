@@ -41,12 +41,12 @@ public:
 
     KUiServerJobTracker *const q;
 
-    void _k_killJob();
+    void killJob();
 
     QHash<KJob *, org::kde::JobViewV2 *> progressJobView;
 };
 
-void KUiServerJobTracker::Private::_k_killJob()
+void KUiServerJobTracker::Private::killJob()
 {
     org::kde::JobViewV2 *jobView = qobject_cast<org::kde::JobViewV2 *>(q->sender());
 
@@ -107,12 +107,12 @@ void KUiServerJobTracker::registerJob(KJob *job)
             return;
         }
 
-        QObject::connect(jobView, SIGNAL(cancelRequested()), this,
-                         SLOT(_k_killJob()));
-        QObject::connect(jobView, SIGNAL(suspendRequested()), job,
-                         SLOT(suspend()));
-        QObject::connect(jobView, SIGNAL(resumeRequested()), job,
-                         SLOT(resume()));
+        QObject::connect(jobView, &org::kde::JobViewV2::cancelRequested,
+                         this, [this]() { d->killJob(); });
+        QObject::connect(jobView, &org::kde::JobViewV2::suspendRequested,
+                         job, &KJob::suspend);
+        QObject::connect(jobView, &org::kde::JobViewV2::resumeRequested,
+                         job, &KJob::resume);
 
         QVariant destUrl = job->property("destUrl");
         if (destUrl.isValid()) {

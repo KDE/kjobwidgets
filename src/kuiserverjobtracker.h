@@ -80,8 +80,6 @@ protected Q_SLOTS:
 private:
     class Private;
     Private *const d;
-
-    Q_PRIVATE_SLOT(d, void _k_killJob())
 };
 
 #endif

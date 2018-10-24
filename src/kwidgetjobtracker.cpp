@@ -40,7 +40,7 @@
 #include <ksqueezedtextlabel.h>
 #include <kseparator.h>
 
-void KWidgetJobTracker::Private::_k_showProgressWidget()
+void KWidgetJobTracker::Private::showProgressWidget()
 {
     if (progressWidgetsToBeShown.isEmpty()) {
         return;
@@ -84,7 +84,7 @@ void KWidgetJobTracker::registerJob(KJob *job)
 
     KAbstractWidgetJobTracker::registerJob(job);
 
-    QTimer::singleShot(500, this, SLOT(_k_showProgressWidget()));
+    QTimer::singleShot(500, this, [this]() { d->showProgressWidget(); });
 }
 
 void KWidgetJobTracker::unregisterJob(KJob *job)
@@ -508,7 +508,8 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     arrowButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
     arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to expand the dialog, to show details"));
     arrowState = Qt::DownArrow;
-    connect(arrowButton, SIGNAL(clicked()), this, SLOT(_k_arrowToggled()));
+    connect(arrowButton, &QPushButton::clicked,
+            this, &KWidgetJobTracker::Private::ProgressWidget::arrowClicked);
     hBox->addWidget(arrowButton);
     hBox->addStretch(1);
 
@@ -523,7 +524,8 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
 
     pauseButton = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "&Pause"), this);
     pauseButton->setVisible(job && (job->capabilities() & KJob::Suspendable));
-    connect(pauseButton, SIGNAL(clicked()), this, SLOT(_k_pauseResumeClicked()));
+    connect(pauseButton, &QPushButton::clicked,
+            this, &KWidgetJobTracker::Private::ProgressWidget::pauseResumeClicked);
     hBox->addWidget(pauseButton);
 
     hBox = new QHBoxLayout();
@@ -542,7 +544,8 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     progressLabel->hide();
 
     keepOpenCheck = new QCheckBox(QCoreApplication::translate("KWidgetJobTracker", "&Keep this window open after transfer is complete"), this);
-    connect(keepOpenCheck, SIGNAL(toggled(bool)), this, SLOT(_k_keepOpenToggled(bool)));
+    connect(keepOpenCheck, &QCheckBox::toggled,
+            this, &KWidgetJobTracker::Private::ProgressWidget::keepOpenToggled);
     topLayout->addWidget(keepOpenCheck);
     keepOpenCheck->hide();
 
@@ -550,13 +553,15 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     topLayout->addLayout(hBox);
 
     openFile = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "Open &File"), this);
-    connect(openFile, SIGNAL(clicked()), this, SLOT(_k_openFile()));
+    connect(openFile, &QPushButton::clicked,
+            this, &KWidgetJobTracker::Private::ProgressWidget::openFileClicked);
     hBox->addWidget(openFile);
     openFile->setEnabled(false);
     openFile->hide();
 
     openLocation = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "Open &Destination"), this);
-    connect(openLocation, SIGNAL(clicked()), this, SLOT(_k_openLocation()));
+    connect(openLocation, &QPushButton::clicked,
+            this, &KWidgetJobTracker::Private::ProgressWidget::openLocationClicked);
     hBox->addWidget(openLocation);
     openLocation->hide();
 
@@ -565,7 +570,8 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
     cancelClose = new QPushButton(this);
     cancelClose->setText(QCoreApplication::translate("KWidgetJobTracker", "&Cancel"));
     cancelClose->setIcon(QIcon::fromTheme(QStringLiteral("dialog-cancel")));
-    connect(cancelClose, SIGNAL(clicked()), this, SLOT(_k_stop()));
+    connect(cancelClose, &QPushButton::clicked,
+            this, &KWidgetJobTracker::Private::ProgressWidget::cancelClicked);
     hBox->addWidget(cancelClose);
 
     resize(sizeHint());
@@ -631,7 +637,7 @@ void KWidgetJobTracker::Private::ProgressWidget::checkDestination(const QUrl &de
     }
 }
 
-void KWidgetJobTracker::Private::ProgressWidget::_k_keepOpenToggled(bool keepOpen)
+void KWidgetJobTracker::Private::ProgressWidget::keepOpenToggled(bool keepOpen)
 {
     if (keepOpen) {
         Q_ASSERT(!tracker->d->eventLoopLocker);
@@ -642,17 +648,17 @@ void KWidgetJobTracker::Private::ProgressWidget::_k_keepOpenToggled(bool keepOpe
     }
 }
 
-void KWidgetJobTracker::Private::ProgressWidget::_k_openFile()
+void KWidgetJobTracker::Private::ProgressWidget::openFileClicked()
 {
     QProcess::startDetached(QStringLiteral("kde-open"), QStringList() << location.toDisplayString());
 }
 
-void KWidgetJobTracker::Private::ProgressWidget::_k_openLocation()
+void KWidgetJobTracker::Private::ProgressWidget::openLocationClicked()
 {
     QProcess::startDetached(QStringLiteral("kde-open"), QStringList() << location.adjusted(QUrl::RemoveFilename).toString());
 }
 
-void KWidgetJobTracker::Private::ProgressWidget::_k_pauseResumeClicked()
+void KWidgetJobTracker::Private::ProgressWidget::pauseResumeClicked()
 {
     if (jobRegistered && !suspendedProperty) {
         tracker->slotSuspend(job);
@@ -661,7 +667,7 @@ void KWidgetJobTracker::Private::ProgressWidget::_k_pauseResumeClicked()
     }
 }
 
-void KWidgetJobTracker::Private::ProgressWidget::_k_stop()
+void KWidgetJobTracker::Private::ProgressWidget::cancelClicked()
 {
     if (jobRegistered) {
         tracker->slotStop(job);
@@ -669,7 +675,7 @@ void KWidgetJobTracker::Private::ProgressWidget::_k_stop()
     closeNow();
 }
 
-void KWidgetJobTracker::Private::ProgressWidget::_k_arrowToggled()
+void KWidgetJobTracker::Private::ProgressWidget::arrowClicked()
 {
     if (arrowState == Qt::DownArrow) {
         //The arrow is in the down position, dialog is collapsed, expand it and change icon.

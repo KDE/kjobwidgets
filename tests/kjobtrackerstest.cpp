@@ -42,8 +42,8 @@ KTestJob::~KTestJob()
 
 void KTestJob::start()
 {
-    connect(&m_timer, SIGNAL(timeout()),
-            this, SLOT(nextStep()));
+    connect(&m_timer, &QTimer::timeout,
+            this, &KTestJob::nextStep);
     m_state = StatingDirs;
     m_timer.start(50);
     emit description(this, QStringLiteral("Copying"), qMakePair(QStringLiteral("Source"), QStringLiteral("file:/src")),

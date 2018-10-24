@@ -162,8 +162,8 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
     if (q->d->showStopButton) {
         button = new QPushButton(QCoreApplication::translate("KStatusBarJobTracker", "Stop"), widget);
         box->addWidget(button);
-        connect(button, SIGNAL(clicked(bool)),
-                this, SLOT(killJob()));
+        connect(button, &QPushButton::clicked,
+                this, &KStatusBarJobTracker::Private::ProgressWidget::killJob);
     } else {
         button = nullptr;
     }
