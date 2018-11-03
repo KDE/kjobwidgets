@@ -40,7 +40,7 @@
 #include <ksqueezedtextlabel.h>
 #include <kseparator.h>
 
-void KWidgetJobTracker::Private::showProgressWidget()
+void KWidgetJobTracker::Private::_k_showProgressWidget()
 {
     if (progressWidgetsToBeShown.isEmpty()) {
         return;
@@ -84,7 +84,7 @@ void KWidgetJobTracker::registerJob(KJob *job)
 
     KAbstractWidgetJobTracker::registerJob(job);
 
-    QTimer::singleShot(500, this, [this]() { d->showProgressWidget(); });
+    QTimer::singleShot(500, this, SLOT(_k_showProgressWidget()));
 }
 
 void KWidgetJobTracker::unregisterJob(KJob *job)

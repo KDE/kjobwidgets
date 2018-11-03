@@ -60,7 +60,7 @@ public:
     void setAutoDelete(KJob *job, bool autoDelete) override;
     bool autoDelete(KJob *job) const override;
 
-    void showProgressWidget();
+    void _k_showProgressWidget();
 
     class ProgressWidget;
 
