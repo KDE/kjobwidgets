@@ -149,8 +149,11 @@ void KStatusBarJobTracker::Private::ProgressWidget::killJob()
 void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *parent)
 {
     widget = new QWidget(parent);
-
+#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
     int w = fontMetrics().width(QStringLiteral(" 999.9 kB/s 00:00:01 ")) + 8;
+#else
+    int w = fontMetrics().horizontalAdvance(QStringLiteral(" 999.9 kB/s 00:00:01 ")) + 8;
+#endif
     box = new QHBoxLayout(widget);
     box->setContentsMargins(0, 0, 0, 0);
     box->setSpacing(0);
