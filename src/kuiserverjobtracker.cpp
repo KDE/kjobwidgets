@@ -43,6 +43,8 @@ public:
 
     void _k_killJob();
 
+    static void updateDestUrl(KJob *job, org::kde::JobViewV2 *jobView);
+
     QHash<KJob *, org::kde::JobViewV2 *> progressJobView;
 };
 
@@ -56,6 +58,14 @@ void KUiServerJobTracker::Private::_k_killJob()
         if (job) {
             job->kill(KJob::EmitResult);
         }
+    }
+}
+
+void KUiServerJobTracker::Private::updateDestUrl(KJob *job, org::kde::JobViewV2 *jobView)
+{
+    const QVariant destUrl = job->property("destUrl");
+    if (destUrl.isValid()) {
+        jobView->setDestUrl(QDBusVariant(destUrl));
     }
 }
 
@@ -114,10 +124,7 @@ void KUiServerJobTracker::registerJob(KJob *job)
         QObject::connect(jobView, &org::kde::JobViewV2::resumeRequested,
                          job, &KJob::resume);
 
-        QVariant destUrl = job->property("destUrl");
-        if (destUrl.isValid()) {
-            jobView->setDestUrl(QDBusVariant(destUrl));
-        }
+        d->updateDestUrl(job, jobView);
 
         if (!jobWatch) {
             //qCDebug(KJOBWIDGETS) << "deleted out from under us when creating the dbus interface";
@@ -146,6 +153,8 @@ void KUiServerJobTracker::unregisterJob(KJob *job)
 
     org::kde::JobViewV2 *jobView = d->progressJobView.take(job);
 
+    d->updateDestUrl(job, jobView);
+
     jobView->setError(job->error());
 
     if (job->error()) {
@@ -164,6 +173,8 @@ void KUiServerJobTracker::finished(KJob *job)
     }
 
     org::kde::JobViewV2 *jobView = d->progressJobView.take(job);
+
+    d->updateDestUrl(job, jobView);
 
     jobView->setError(job->error());
 
