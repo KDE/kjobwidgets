@@ -25,6 +25,7 @@
 #define KUISERVERJOBTRACKER_P_H
 
 #include <QMap>
+#include <QDBusServiceWatcher>
 
 #include "jobviewserverinterface.h"
 
@@ -38,8 +39,15 @@ public:
 
     org::kde::JobViewServer &uiserver();
 
+Q_SIGNALS:
+    void serverRegistered();
+    void serverUnregistered();
+
 private:
+    void uiserverOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner);
+
     org::kde::JobViewServer m_uiserver;
+    QDBusServiceWatcher m_watcher;
 };
 
 #endif

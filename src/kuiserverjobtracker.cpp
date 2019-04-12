@@ -27,6 +27,7 @@
 #include <kjob.h>
 
 #include <QApplication>
+#include <QDBusConnection>
 #include <QIcon>
 
 Q_GLOBAL_STATIC(KSharedUiServerProxy, serverProxy)
@@ -46,6 +47,8 @@ public:
     static void updateDestUrl(KJob *job, org::kde::JobViewV2 *jobView);
 
     QHash<KJob *, org::kde::JobViewV2 *> progressJobView;
+
+    QMetaObject::Connection serverRegisteredConnection;
 };
 
 void KUiServerJobTracker::Private::_k_killJob()
@@ -90,6 +93,21 @@ void KUiServerJobTracker::registerJob(KJob *job)
     // Already registered job?
     if (d->progressJobView.contains(job)) {
         return;
+    }
+
+    // Watch the server registering/unregistering and re-register the jobs as needed
+    if (!d->serverRegisteredConnection) {
+        d->serverRegisteredConnection = connect(serverProxy(), &KSharedUiServerProxy::serverRegistered, this, [this]() {
+            // Remember the list of jobs to re-register and then delete the old ones
+            const QList<KJob *> staleJobs = d->progressJobView.keys();
+
+            qDeleteAll(d->progressJobView);
+            d->progressJobView.clear();
+
+            for (KJob *job : staleJobs) {
+                registerJob(job);
+            }
+        });
     }
 
     const QString appName = QCoreApplication::applicationName();
@@ -311,29 +329,48 @@ void KUiServerJobTracker::speed(KJob *job, unsigned long value)
 
 KSharedUiServerProxy::KSharedUiServerProxy()
     : m_uiserver(QStringLiteral("org.kde.JobViewServer"), QStringLiteral("/JobViewServer"), QDBusConnection::sessionBus())
+    , m_watcher(QStringLiteral("org.kde.JobViewServer"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange)
 {
     QDBusConnectionInterface *bus = QDBusConnection::sessionBus().interface();
     if (!bus->isServiceRegistered(QStringLiteral("org.kde.JobViewServer"))) {
         QDBusReply<void> reply = bus->startService(QStringLiteral("org.kde.kuiserver"));
         if (!reply.isValid()) {
             qCritical() << "Couldn't start kuiserver from org.kde.kuiserver.service:" << reply.error();
-        } else if (!bus->isServiceRegistered(QStringLiteral("org.kde.JobViewServer"))) {
-            qCDebug(KJOBWIDGETS) << "The dbus name org.kde.JobViewServer is STILL NOT REGISTERED, even after starting kuiserver. Should not happen.";
-        } else {
-            qCDebug(KJOBWIDGETS) << "kuiserver registered";
+            return;
         }
+
+        if (!bus->isServiceRegistered(QStringLiteral("org.kde.JobViewServer"))) {
+            qCDebug(KJOBWIDGETS) << "The dbus name org.kde.JobViewServer is STILL NOT REGISTERED, even after starting kuiserver. Should not happen.";
+            return;
+        }
+
+        qCDebug(KJOBWIDGETS) << "kuiserver registered";
     } else {
         qCDebug(KJOBWIDGETS) << "kuiserver found";
     }
+
+    connect(&m_watcher, &QDBusServiceWatcher::serviceOwnerChanged, this, &KSharedUiServerProxy::uiserverOwnerChanged);
 }
 
 KSharedUiServerProxy::~KSharedUiServerProxy()
 {
+
 }
 
 org::kde::JobViewServer &KSharedUiServerProxy::uiserver()
 {
     return m_uiserver;
+}
+
+void KSharedUiServerProxy::uiserverOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner)
+{
+    Q_UNUSED(serviceName);
+
+    if (oldOwner.isEmpty()) { // registered
+        emit serverRegistered();
+    } else if (newOwner.isEmpty()) { // unregistered
+        emit serverUnregistered();
+    }
 }
 
 #include "moc_kuiserverjobtracker.cpp"
