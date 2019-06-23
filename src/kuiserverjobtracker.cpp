@@ -365,8 +365,9 @@ org::kde::JobViewServer &KSharedUiServerProxy::uiserver()
 void KSharedUiServerProxy::uiserverOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner)
 {
     Q_UNUSED(serviceName);
+    Q_UNUSED(oldOwner);
 
-    if (oldOwner.isEmpty()) { // registered
+    if (!newOwner.isEmpty()) { // registered
         emit serverRegistered();
     } else if (newOwner.isEmpty()) { // unregistered
         emit serverUnregistered();
