@@ -25,7 +25,6 @@
 
 #include <QWidget>
 #include <QMap>
-#include <QTime>
 #include <QBoxLayout>
 #include <QStackedWidget>
 

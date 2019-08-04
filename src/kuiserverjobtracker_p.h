@@ -24,7 +24,6 @@
 #ifndef KUISERVERJOBTRACKER_P_H
 #define KUISERVERJOBTRACKER_P_H
 
-#include <QMap>
 #include <QDBusServiceWatcher>
 
 #include "jobviewserverinterface.h"

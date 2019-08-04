@@ -29,7 +29,6 @@
 #include <QPushButton>
 #include <QProgressBar>
 #include <QLabel>
-#include <QBoxLayout>
 #include <QStackedWidget>
 #include <QMouseEvent>
 

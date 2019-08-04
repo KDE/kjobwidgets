@@ -33,7 +33,6 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QGridLayout>
-#include <QMenu>
 #include <QEvent>
 #include <QStyle>
 
