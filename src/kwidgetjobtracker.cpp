@@ -381,7 +381,7 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
 
 void KWidgetJobTracker::Private::ProgressWidget::percent(unsigned long percent)
 {
-    QString title = caption + QStringLiteral(" (");
+    QString title = caption + QLatin1String(" (");
 
     if (totalSizeKnown) {
         title += QCoreApplication::translate("KWidgetJobTracker", "%1% of %2").arg(percent).arg(
@@ -591,7 +591,7 @@ void KWidgetJobTracker::Private::ProgressWidget::showTotals()
         {
             //~ singular %n folder
             //~ plural %n folders
-            tmps = QCoreApplication::translate("KWidgetJobTracker", "%n folder(s)", "", totalDirs) + QStringLiteral("   ");
+            tmps = QCoreApplication::translate("KWidgetJobTracker", "%n folder(s)", "", totalDirs) + QLatin1String("   ");
         }
         //~ singular %n file
         //~ plural %n files
