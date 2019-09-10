@@ -25,10 +25,10 @@
 #include "kabstractwidgetjobtracker_p.h"
 #include "kwidgetjobtracker.h"
 
+#include <QElapsedTimer>
 #include <QEventLoopLocker>
 #include <QWidget>
 #include <QMap>
-#include <QTime>
 #include <QQueue>
 #include <QCheckBox>
 #include <QUrl>
@@ -117,7 +117,7 @@ public:
     QPushButton *openLocation;
     QCheckBox   *keepOpenCheck;
     QUrl        location;
-    QTime       startTime;
+    QElapsedTimer startTime;
     QPushButton *pauseButton;
     KSqueezedTextLabel *sourceEdit;
     KSqueezedTextLabel *destEdit;

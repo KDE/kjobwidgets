@@ -296,7 +296,7 @@ void KWidgetJobTracker::Private::ProgressWidget::totalAmount(KJob::Unit unit, qu
             return;
         }
         totalSize = amount;
-        if (startTime.isNull()) {
+        if (!startTime.isValid()) {
             startTime.start();
         }
         break;
@@ -431,7 +431,7 @@ void KWidgetJobTracker::Private::ProgressWidget::slotClean()
     processedAmount(KJob::Bytes, totalSize);
     keepOpenCheck->setEnabled(false);
     pauseButton->setEnabled(false);
-    if (!startTime.isNull()) {
+    if (startTime.isValid()) {
         int s = startTime.elapsed();
         if (!s) {
             s = 1;
