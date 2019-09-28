@@ -24,6 +24,8 @@
 #ifndef KUISERVERJOBTRACKER_P_H
 #define KUISERVERJOBTRACKER_P_H
 
+#include <memory>
+
 #include <QDBusServiceWatcher>
 
 #include "jobviewserverinterface.h"
@@ -36,7 +38,7 @@ public:
     KSharedUiServerProxy();
     ~KSharedUiServerProxy();
 
-    org::kde::JobViewServer &uiserver();
+    org::kde::JobViewServer *uiserver();
 
 Q_SIGNALS:
     void serverRegistered();
@@ -45,8 +47,8 @@ Q_SIGNALS:
 private:
     void uiserverOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner);
 
-    org::kde::JobViewServer m_uiserver;
-    QDBusServiceWatcher m_watcher;
+    std::unique_ptr<org::kde::JobViewServer> m_uiserver;
+    std::unique_ptr<QDBusServiceWatcher> m_watcher;
 };
 
 #endif

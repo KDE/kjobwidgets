@@ -85,6 +85,8 @@ KUiServerJobTracker::~KUiServerJobTracker()
                    << d->progressJobView.size() << "stalled jobs";
     }
 
+    qDeleteAll(d->progressJobView);
+
     delete d;
 }
 
@@ -119,7 +121,7 @@ void KUiServerJobTracker::registerJob(KJob *job)
     }
 
     QPointer<KJob> jobWatch = job;
-    QDBusReply<QDBusObjectPath> reply = serverProxy()->uiserver().requestView(appName,
+    QDBusReply<QDBusObjectPath> reply = serverProxy()->uiserver()->requestView(appName,
                                         programIconName,
                                         job->capabilities());
 
@@ -328,8 +330,8 @@ void KUiServerJobTracker::speed(KJob *job, unsigned long value)
 }
 
 KSharedUiServerProxy::KSharedUiServerProxy()
-    : m_uiserver(QStringLiteral("org.kde.JobViewServer"), QStringLiteral("/JobViewServer"), QDBusConnection::sessionBus())
-    , m_watcher(QStringLiteral("org.kde.JobViewServer"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange)
+    : m_uiserver(new org::kde::JobViewServer(QStringLiteral("org.kde.JobViewServer"), QStringLiteral("/JobViewServer"), QDBusConnection::sessionBus()))
+    , m_watcher(new QDBusServiceWatcher(QStringLiteral("org.kde.JobViewServer"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange))
 {
     QDBusConnectionInterface *bus = QDBusConnection::sessionBus().interface();
     if (!bus->isServiceRegistered(QStringLiteral("org.kde.JobViewServer"))) {
@@ -349,7 +351,14 @@ KSharedUiServerProxy::KSharedUiServerProxy()
         qCDebug(KJOBWIDGETS) << "kuiserver found";
     }
 
-    connect(&m_watcher, &QDBusServiceWatcher::serviceOwnerChanged, this, &KSharedUiServerProxy::uiserverOwnerChanged);
+    connect(m_watcher.get(), &QDBusServiceWatcher::serviceOwnerChanged, this, &KSharedUiServerProxy::uiserverOwnerChanged);
+
+    // cleanup early enough to avoid issues with dbus at application exit
+    // see e.g. https://phabricator.kde.org/D2545
+    qAddPostRoutine([]() {
+        serverProxy->m_uiserver.reset();
+        serverProxy->m_watcher.reset();
+    });
 }
 
 KSharedUiServerProxy::~KSharedUiServerProxy()
@@ -357,9 +366,9 @@ KSharedUiServerProxy::~KSharedUiServerProxy()
 
 }
 
-org::kde::JobViewServer &KSharedUiServerProxy::uiserver()
+org::kde::JobViewServer *KSharedUiServerProxy::uiserver()
 {
-    return m_uiserver;
+    return m_uiserver.get();
 }
 
 void KSharedUiServerProxy::uiserverOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner)
