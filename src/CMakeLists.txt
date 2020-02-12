@@ -13,7 +13,13 @@ set(kjobwidgets_SRCS
   ${kjobwidgets_QM_LOADER}
 )
 
-ecm_qt_declare_logging_category(kjobwidgets_SRCS HEADER debug.h IDENTIFIER KJOBWIDGETS CATEGORY_NAME kf5.kjobwidgets)
+ecm_qt_declare_logging_category(kjobwidgets_SRCS
+    HEADER debug.h
+    IDENTIFIER KJOBWIDGETS
+    CATEGORY_NAME kf5.kjobwidgets
+    DESCRIPTION "KJobWidgets"
+    EXPORT KJOBWIDGETS
+)
 
 qt5_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
 qt5_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
@@ -98,6 +104,12 @@ install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_export.h
   ${KJobWidgets_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets COMPONENT Devel
+)
+
+ecm_qt_install_logging_categories(
+    EXPORT KJOBWIDGETS
+    FILE kjobwidgets.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
 if(BUILD_QCH)
