@@ -107,8 +107,14 @@ void KDialogJobUiDelegate::Private::queuedMessageBox(QWidget *widget, KMessageBo
 }
 
 KDialogJobUiDelegate::KDialogJobUiDelegate()
-    : d(new KDialogJobUiDelegate::Private)
+    : KJobUiDelegate(), d(new KDialogJobUiDelegate::Private)
 {
+}
+
+KDialogJobUiDelegate::KDialogJobUiDelegate(KJobUiDelegate::Flags flags, QWidget *window)
+    : KJobUiDelegate(flags), d(new KDialogJobUiDelegate::Private)
+{
+    d->window = window;
 }
 
 KDialogJobUiDelegate::~KDialogJobUiDelegate()

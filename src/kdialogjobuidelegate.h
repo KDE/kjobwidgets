@@ -44,6 +44,14 @@ public:
     KDialogJobUiDelegate();
 
     /**
+     * Constructs a new KDialogJobUiDelegate.
+     * @param flags allows to enable automatic error/warning handling
+     * @param window the window associated with this delegate, see setWindow.
+     * @since 5.70
+     */
+    explicit KDialogJobUiDelegate(KJobUiDelegate::Flags flags, QWidget *window);
+
+    /**
      * Destroys the KDialogJobUiDelegate.
      */
     ~KDialogJobUiDelegate() override;
@@ -55,14 +63,15 @@ public:
     bool setJob(KJob *job) override;
 
     /**
-     * Associate this job with a window given by @p window.
+     * Associate this delegate with a window given by @p window.
+     * Needed for dialog boxes to respect stacking order, centering to parent, focus going back to parent after closing...
      * @param window the window to associate to
      * @see window()
      */
     virtual void setWindow(QWidget *window);
 
     /**
-     * Returns the window this job is associated with.
+     * Returns the window this delegate is associated with.
      * @return the associated window
      * @see setWindow()
      */
