@@ -77,8 +77,8 @@ class KWidgetJobTracker::Private::ProgressWidget
 
 public:
     ProgressWidget(KJob *job, KWidgetJobTracker *object, QWidget *parent)
-        : QWidget(parent), tracker(object), job(job), totalSize(0), totalFiles(0), totalDirs(0),
-          processedSize(0), processedDirs(0), processedFiles(0), totalSizeKnown(false),
+        : QWidget(parent), tracker(object), job(job), totalSize(0), totalFiles(0), totalDirs(0), totalItems(0),
+          processedSize(0), processedDirs(0), processedFiles(0), processedItems(0), totalSizeKnown(false),
           stopOnClose(true), jobRegistered(false), cancelClose(nullptr), openFile(nullptr),
           openLocation(nullptr), keepOpenCheck(nullptr), pauseButton(nullptr), sourceEdit(nullptr),
           destEdit(nullptr), progressLabel(nullptr), destInvite(nullptr), speedLabel(nullptr), sizeLabel(nullptr),
@@ -103,9 +103,11 @@ public:
     qulonglong totalSize;
     qulonglong totalFiles;
     qulonglong totalDirs;
+    qulonglong totalItems;
     qulonglong processedSize;
     qulonglong processedDirs;
     qulonglong processedFiles;
+    qulonglong processedItems;
 
     bool totalSizeKnown;
     bool stopOnClose;

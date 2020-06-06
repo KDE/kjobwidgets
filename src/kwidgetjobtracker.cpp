@@ -316,6 +316,14 @@ void KWidgetJobTracker::Private::ProgressWidget::totalAmount(KJob::Unit unit, qu
         totalDirs = amount;
         showTotals();
         break;
+
+    case KJob::Items:
+        if (totalItems == amount) {
+            return;
+        }
+        totalItems = amount;
+        showTotals();
+        break;
     }
 }
 
@@ -376,6 +384,16 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
         //~ plural %1 / %n files
         tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
         progressLabel->setText(tmp);
+        break;
+
+    case KJob::Items:
+        if (processedItems == amount) {
+            return;
+        }
+        processedItems = amount;
+        tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n item(s)", "", totalItems).arg(processedItems);
+        progressLabel->setText(tmp);
+        break;
     }
 }
 
@@ -584,19 +602,18 @@ void KWidgetJobTracker::Private::ProgressWidget::showTotals()
     // Show the totals in the progress label, if we still haven't
     // processed anything. This is useful when the stat'ing phase
     // of CopyJob takes a long time (e.g. over networks).
-    if (processedFiles == 0 && processedDirs == 0) {
-        QString tmps;
-        if (totalDirs > 1)
-            // that we have a singular to translate looks weired but is only logical
-        {
-            //~ singular %n folder
-            //~ plural %n folders
-            tmps = QCoreApplication::translate("KWidgetJobTracker", "%n folder(s)", "", totalDirs) + QLatin1String("   ");
+    if (processedFiles == 0 && processedDirs == 0 && processedItems == 0) {
+        QString total;
+        if (totalItems > 1) {
+            total = QCoreApplication::translate("KWidgetJobTracker", "%n item(s)", "", totalItems);
+            progressLabel->setText(total);
+        } else {
+            if (totalDirs > 1) {
+                total = QCoreApplication::translate("KWidgetJobTracker", "%n folder(s)", "", totalDirs) + QLatin1String("   ");
+            }
+            total += QCoreApplication::translate("KWidgetJobTracker", "%n file(s)", "", totalFiles);
+            progressLabel->setText(total);
         }
-        //~ singular %n file
-        //~ plural %n files
-        tmps += QCoreApplication::translate("KWidgetJobTracker", "%n file(s)", "", totalFiles);
-        progressLabel->setText(tmps);
     }
 }
 
