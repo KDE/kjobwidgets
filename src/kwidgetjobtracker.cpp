@@ -488,8 +488,8 @@ void KWidgetJobTracker::Private::ProgressWidget::init()
 
     QGridLayout *grid = new QGridLayout();
     topLayout->addLayout(grid);
-    const int spacingHint = style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    grid->addItem(new QSpacerItem(spacingHint, 0), 0, 1);
+    const int horizontalSpacing = style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing);
+    grid->addItem(new QSpacerItem(horizontalSpacing, 0), 0, 1);
     // filenames or action name
     sourceInvite = new QLabel(QCoreApplication::translate("KWidgetJobTracker", "Source:", "The source url of a job"), this);
     grid->addWidget(sourceInvite, 0, 0);
