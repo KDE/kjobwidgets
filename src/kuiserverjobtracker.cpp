@@ -24,7 +24,7 @@
 #include "jobviewiface.h"
 #include "debug.h"
 
-#include <kjob.h>
+#include <KJob>
 
 #include <QApplication>
 #include <QDBusConnection>

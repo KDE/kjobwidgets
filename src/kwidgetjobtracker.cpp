@@ -36,8 +36,8 @@
 #include <QEvent>
 #include <QStyle>
 
-#include <ksqueezedtextlabel.h>
-#include <kseparator.h>
+#include <KSqueezedTextLabel>
+#include <KSeparator>
 
 void KWidgetJobTracker::Private::_k_showProgressWidget()
 {

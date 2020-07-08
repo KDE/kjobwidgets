@@ -20,7 +20,7 @@
 #ifndef KJOBTRACKERSTEST_H
 #define KJOBTRACKERSTEST_H
 
-#include <kjob.h>
+#include <KJob>
 
 #include <QTimer>
 

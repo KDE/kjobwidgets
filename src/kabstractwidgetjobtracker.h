@@ -23,7 +23,7 @@
 #define KABSTRACTWIDGETJOBTRACKER_H
 
 #include <kjobwidgets_export.h>
-#include <kjobtrackerinterface.h>
+#include <KJobTrackerInterface>
 
 class KJob;
 class QWidget;

@@ -22,7 +22,7 @@
 #ifndef KDIALOGJOBUIDELEGATE_H
 #define KDIALOGJOBUIDELEGATE_H
 
-#include <kjobuidelegate.h>
+#include <KJobUiDelegate>
 
 #include <kjobwidgets_export.h>
 

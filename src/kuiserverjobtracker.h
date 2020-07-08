@@ -21,7 +21,7 @@
 #define KUISERVERJOBTRACKER_H
 
 #include <kjobwidgets_export.h>
-#include <kjobtrackerinterface.h>
+#include <KJobTrackerInterface>
 
 class KJob;
 

@@ -25,8 +25,8 @@
 #include <QQueue>
 #include <QPointer>
 
-#include <kmessagebox.h>
-#include <kjob.h>
+#include <KMessageBox>
+#include <KJob>
 #include <kjobwidgets.h>
 
 #include <config-kjobwidgets.h>

@@ -23,7 +23,7 @@
 */
 
 #include "kjobtrackerformatters_p.h"
-#include <kformat.h>
+#include <KFormat>
 
 #include <QCoreApplication>
 

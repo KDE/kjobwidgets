@@ -19,7 +19,7 @@
  */
 
 #include "kjobwidgets.h"
-#include <kjob.h>
+#include <KJob>
 #include <QVariant>
 #include <QWidget>
 #include <QWindow>
