@@ -16,7 +16,8 @@ set(kjobwidgets_SRCS
 ecm_qt_declare_logging_category(kjobwidgets_SRCS
     HEADER debug.h
     IDENTIFIER KJOBWIDGETS
-    CATEGORY_NAME kf5.kjobwidgets
+    CATEGORY_NAME kf.jobwidgets
+    OLD_CATEGORY_NAMES kf5.kjobwidgets
     DESCRIPTION "KJobWidgets"
     EXPORT KJOBWIDGETS
 )
