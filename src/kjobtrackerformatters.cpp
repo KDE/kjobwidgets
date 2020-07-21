@@ -1,25 +1,13 @@
-/*  This file is part of the KDE project
-    Copyright (c) 1997,2001 Stephan Kulow <coolo@kde.org>
-    Copyright (c) 1999 Preston Brown <pbrown@kde.org>
-    Copyright (c) 1999-2002 Hans Petter Bieker <bieker@kde.org>
-    Copyright (c) 2002 Lukas Tinkl <lukas@kde.org>
-    Copyright (C) 2007 Bernhard Loos <nhuh.put@web.de>
-    Copyright (C) 2009, 2010 John Layt <john@layt.net>
+/*
+    This file is part of the KDE project
+    SPDX-FileCopyrightText: 1997, 2001 Stephan Kulow <coolo@kde.org>
+    SPDX-FileCopyrightText: 1999 Preston Brown <pbrown@kde.org>
+    SPDX-FileCopyrightText: 1999-2002 Hans Petter Bieker <bieker@kde.org>
+    SPDX-FileCopyrightText: 2002 Lukas Tinkl <lukas@kde.org>
+    SPDX-FileCopyrightText: 2007 Bernhard Loos <nhuh.put@web.de>
+    SPDX-FileCopyrightText: 2009, 2010 John Layt <john@layt.net>
 
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Library General Public
-    License version 2 as published by the Free Software Foundation.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Library General Public License for more details.
-
-    You should have received a copy of the GNU Library General Public License
-    along with this library; see the file COPYING.LIB.  If not, write to
-    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-    Boston, MA 02110-1301, USA.
-
+    SPDX-License-Identifier: LGPL-2.0-only
 */
 
 #include "kjobtrackerformatters_p.h"
