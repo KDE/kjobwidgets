@@ -27,6 +27,7 @@ namespace KJobWidgets
  * and possibly more.
  * @li by KIO::DropJob as parent widget of popup menus.
  * This is required on Wayland to properly position the menu.
+ *
  * @since 5.0
  */
 KJOBWIDGETS_EXPORT void setWindow(KJob *job, QWidget *widget);
@@ -63,6 +64,7 @@ namespace KJobWindows
  * and possibly more.
  * @li by KIO::DropJob as parent widget of popup menus.
  * This is required on Wayland to properly position the menu.
+ *
  * @since 5.42
  */
 KJOBWIDGETS_EXPORT void setWindow(KJob *job, QWindow *window);
