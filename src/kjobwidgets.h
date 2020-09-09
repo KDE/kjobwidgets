@@ -49,6 +49,9 @@ KJOBWIDGETS_EXPORT void updateUserTimestamp(KJob *job, unsigned long time);
 KJOBWIDGETS_EXPORT unsigned long userTimestamp(KJob *job);
 }
 
+/**
+ * KJobWindows namespace
+ */
 namespace KJobWindows
 {
 /**
