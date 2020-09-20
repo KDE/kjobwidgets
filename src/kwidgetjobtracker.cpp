@@ -379,6 +379,8 @@ void KWidgetJobTracker::Private::ProgressWidget::processedAmount(KJob::Unit unit
             return;
         }
         processedItems = amount;
+        //~ singular %1 / %n item
+        //~ plural %1 / %n items
         tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n item(s)", "", totalItems).arg(processedItems);
         progressLabel->setText(tmp);
         break;
@@ -593,12 +595,18 @@ void KWidgetJobTracker::Private::ProgressWidget::showTotals()
     if (processedFiles == 0 && processedDirs == 0 && processedItems == 0) {
         QString total;
         if (totalItems > 1) {
+            //~ singular %n item
+            //~ plural %n items
             total = QCoreApplication::translate("KWidgetJobTracker", "%n item(s)", "", totalItems);
             progressLabel->setText(total);
         } else {
             if (totalDirs > 1) {
+                //~ singular %n folder
+                //~ plural %n folders
                 total = QCoreApplication::translate("KWidgetJobTracker", "%n folder(s)", "", totalDirs) + QLatin1String("   ");
             }
+            //~ singular %n file
+            //~ plural %n files
             total += QCoreApplication::translate("KWidgetJobTracker", "%n file(s)", "", totalFiles);
             progressLabel->setText(total);
         }
