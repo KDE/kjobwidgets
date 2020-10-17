@@ -33,7 +33,6 @@ protected:
     void stateNextDir();
     void createNextDir();
     void copyNextFile();
-    void deleteNextFile();
 
     bool doSuspend() override;
     bool doResume() override;
