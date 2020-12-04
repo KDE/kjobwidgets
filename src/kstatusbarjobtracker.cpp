@@ -140,7 +140,6 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
     box = new QHBoxLayout(widget);
     box->setContentsMargins(0, 0, 0, 0);
     box->setSpacing(0);
-    widget->setLayout(box);
 
     stack = new QStackedWidget(widget);
     box->addWidget(stack);
@@ -170,9 +169,8 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
 
     q->setAutoDelete(job, true);
 
-    QVBoxLayout *layout = new QVBoxLayout;
+    QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(widget);
-    setLayout(layout);
 }
 
 void KStatusBarJobTracker::Private::ProgressWidget::setMode(StatusBarModes newMode)
