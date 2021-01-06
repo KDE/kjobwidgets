@@ -13,15 +13,17 @@
 #include <QWidget>
 
 KAbstractWidgetJobTracker::KAbstractWidgetJobTracker(QWidget *parent)
-    : KJobTrackerInterface(parent)
-    , d(new Private(this))
+    : KAbstractWidgetJobTracker(*new KAbstractWidgetJobTrackerPrivate(this), parent)
 {
 }
 
-KAbstractWidgetJobTracker::~KAbstractWidgetJobTracker()
+KAbstractWidgetJobTracker::KAbstractWidgetJobTracker(KAbstractWidgetJobTrackerPrivate &dd, QWidget *parent)
+    : KJobTrackerInterface(parent)
+    , d(&dd)
 {
-    delete d;
 }
+
+KAbstractWidgetJobTracker::~KAbstractWidgetJobTracker() = default;
 
 void KAbstractWidgetJobTracker::registerJob(KJob *job)
 {
@@ -35,21 +37,29 @@ void KAbstractWidgetJobTracker::unregisterJob(KJob *job)
 
 void KAbstractWidgetJobTracker::setStopOnClose(KJob *job, bool stopOnClose)
 {
+    Q_D(KAbstractWidgetJobTracker);
+
     d->setStopOnClose(job, stopOnClose);
 }
 
 bool KAbstractWidgetJobTracker::stopOnClose(KJob *job) const
 {
+    Q_D(const KAbstractWidgetJobTracker);
+
     return d->stopOnClose(job);
 }
 
 void KAbstractWidgetJobTracker::setAutoDelete(KJob *job, bool autoDelete)
 {
+    Q_D(KAbstractWidgetJobTracker);
+
     d->setAutoDelete(job, autoDelete);
 }
 
 bool KAbstractWidgetJobTracker::autoDelete(KJob *job) const
 {
+    Q_D(const KAbstractWidgetJobTracker);
+
     return d->autoDelete(job);
 }
 

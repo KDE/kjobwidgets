@@ -27,18 +27,19 @@ class KSqueezedTextLabel;
 class QLabel;
 class QProgressBar;
 
-class Q_DECL_HIDDEN KWidgetJobTracker::Private
-    : public KAbstractWidgetJobTracker::Private
+class KWidgetJobTrackerPrivate : public KAbstractWidgetJobTrackerPrivate
 {
+    Q_DECLARE_PUBLIC(KWidgetJobTracker)
+
 public:
-    Private(QWidget *parent, KWidgetJobTracker *tracker)
-        : KAbstractWidgetJobTracker::Private(tracker)
+    KWidgetJobTrackerPrivate(QWidget *parent, KWidgetJobTracker *q)
+        : KAbstractWidgetJobTrackerPrivate(q)
         , parent(parent)
         , eventLoopLocker(nullptr)
     {
     }
 
-    virtual ~Private()
+    ~KWidgetJobTrackerPrivate() override
     {
         delete eventLoopLocker;
     }
@@ -58,7 +59,7 @@ public:
     QQueue<KJob *> progressWidgetsToBeShown;
 };
 
-class KWidgetJobTracker::Private::ProgressWidget
+class KWidgetJobTrackerPrivate::ProgressWidget
     : public QWidget
 {
     Q_OBJECT
@@ -81,8 +82,8 @@ public:
 
     ~ProgressWidget()
     {
-        delete tracker->d->eventLoopLocker;
-        tracker->d->eventLoopLocker = nullptr;
+        delete tracker->d_func()->eventLoopLocker;
+        tracker->d_func()->eventLoopLocker = nullptr;
     }
 
     KWidgetJobTracker *const tracker;
@@ -162,7 +163,7 @@ private Q_SLOTS:
     void arrowClicked();
 };
 
-void KWidgetJobTracker::Private::setStopOnClose(KJob *job, bool stopOnClose)
+void KWidgetJobTrackerPrivate::setStopOnClose(KJob *job, bool stopOnClose)
 {
     if (!progressWidget.contains(job)) {
         return;
@@ -170,7 +171,7 @@ void KWidgetJobTracker::Private::setStopOnClose(KJob *job, bool stopOnClose)
     progressWidget[job]->stopOnClose = stopOnClose;
 }
 
-bool KWidgetJobTracker::Private::stopOnClose(KJob *job) const
+bool KWidgetJobTrackerPrivate::stopOnClose(KJob *job) const
 {
     if (!progressWidget.contains(job)) {
         qWarning() << "no widget found for job" << job;
@@ -179,7 +180,7 @@ bool KWidgetJobTracker::Private::stopOnClose(KJob *job) const
     return progressWidget[job]->stopOnClose;
 }
 
-void KWidgetJobTracker::Private::setAutoDelete(KJob *job, bool autoDelete)
+void KWidgetJobTrackerPrivate::setAutoDelete(KJob *job, bool autoDelete)
 {
     if (!progressWidget.contains(job)) {
         return;
@@ -187,7 +188,7 @@ void KWidgetJobTracker::Private::setAutoDelete(KJob *job, bool autoDelete)
     progressWidget[job]->setAttribute(Qt::WA_DeleteOnClose, autoDelete);
 }
 
-bool KWidgetJobTracker::Private::autoDelete(KJob *job) const
+bool KWidgetJobTrackerPrivate::autoDelete(KJob *job) const
 {
     if (!progressWidget.contains(job)) {
         qWarning() << "no widget found for job" << job;

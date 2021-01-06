@@ -21,24 +21,23 @@
 #include <QMouseEvent>
 
 KStatusBarJobTracker::KStatusBarJobTracker(QWidget *parent, bool button)
-    : KAbstractWidgetJobTracker(parent), d(new Private(parent, button))
+    : KAbstractWidgetJobTracker(*new KStatusBarJobTrackerPrivate(this, parent, button), parent)
 {
 }
 
-KStatusBarJobTracker::~KStatusBarJobTracker()
-{
-    delete d;
-}
+KStatusBarJobTracker::~KStatusBarJobTracker() = default;
 
 void KStatusBarJobTracker::registerJob(KJob *job)
 {
+    Q_D(KStatusBarJobTracker);
+
     KAbstractWidgetJobTracker::registerJob(job);
 
     if (d->progressWidget.contains(job)) {
         return;
     }
 
-    Private::ProgressWidget *vi = new Private::ProgressWidget(job, this, d->parent);
+    auto *vi = new KStatusBarJobTrackerPrivate::ProgressWidget(job, this, d->parent);
     d->currentProgressWidget = vi;
 
     d->progressWidget.insert(job, vi);
@@ -46,6 +45,8 @@ void KStatusBarJobTracker::registerJob(KJob *job)
 
 void KStatusBarJobTracker::unregisterJob(KJob *job)
 {
+    Q_D(KStatusBarJobTracker);
+
     KAbstractWidgetJobTracker::unregisterJob(job);
 
     if (!d->progressWidget.contains(job)) {
@@ -65,6 +66,8 @@ void KStatusBarJobTracker::unregisterJob(KJob *job)
 
 QWidget *KStatusBarJobTracker::widget(KJob *job)
 {
+    Q_D(KStatusBarJobTracker);
+
     if (!d->progressWidget.contains(job)) {
         return nullptr;
     }
@@ -74,6 +77,8 @@ QWidget *KStatusBarJobTracker::widget(KJob *job)
 
 void KStatusBarJobTracker::setStatusBarMode(StatusBarModes statusBarMode)
 {
+    Q_D(KStatusBarJobTracker);
+
     if (!d->currentProgressWidget) {
         return;
     }
@@ -85,6 +90,8 @@ void KStatusBarJobTracker::description(KJob *job, const QString &title,
                                        const QPair<QString, QString> &field1,
                                        const QPair<QString, QString> &field2)
 {
+    Q_D(KStatusBarJobTracker);
+
     if (!d->progressWidget.contains(job)) {
         return;
     }
@@ -94,6 +101,8 @@ void KStatusBarJobTracker::description(KJob *job, const QString &title,
 
 void KStatusBarJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amount)
 {
+    Q_D(KStatusBarJobTracker);
+
     if (!d->progressWidget.contains(job)) {
         return;
     }
@@ -103,6 +112,8 @@ void KStatusBarJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong am
 
 void KStatusBarJobTracker::percent(KJob *job, unsigned long percent)
 {
+    Q_D(KStatusBarJobTracker);
+
     if (!d->progressWidget.contains(job)) {
         return;
     }
@@ -112,6 +123,8 @@ void KStatusBarJobTracker::percent(KJob *job, unsigned long percent)
 
 void KStatusBarJobTracker::speed(KJob *job, unsigned long value)
 {
+    Q_D(KStatusBarJobTracker);
+
     if (!d->progressWidget.contains(job)) {
         return;
     }
@@ -121,6 +134,8 @@ void KStatusBarJobTracker::speed(KJob *job, unsigned long value)
 
 void KStatusBarJobTracker::slotClean(KJob *job)
 {
+    Q_D(KStatusBarJobTracker);
+
     if (!d->progressWidget.contains(job)) {
         return;
     }
@@ -128,12 +143,12 @@ void KStatusBarJobTracker::slotClean(KJob *job)
     d->progressWidget[job]->slotClean();
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::killJob()
+void KStatusBarJobTrackerPrivate::ProgressWidget::killJob()
 {
     job->kill(KJob::EmitResult); // notify that the job has been killed
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *parent)
+void KStatusBarJobTrackerPrivate::ProgressWidget::init(KJob *job, QWidget *parent)
 {
     widget = new QWidget(parent);
     int w = fontMetrics().horizontalAdvance(QStringLiteral(" 999.9 kB/s 00:00:01 ")) + 8;
@@ -144,11 +159,11 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
     stack = new QStackedWidget(widget);
     box->addWidget(stack);
 
-    if (q->d->showStopButton) {
+    if (q->d_func()->showStopButton) {
         button = new QPushButton(QCoreApplication::translate("KStatusBarJobTracker", "Stop"), widget);
         box->addWidget(button);
         connect(button, &QPushButton::clicked,
-                this, &KStatusBarJobTracker::Private::ProgressWidget::killJob);
+                this, &KStatusBarJobTrackerPrivate::ProgressWidget::killJob);
     } else {
         button = nullptr;
     }
@@ -173,7 +188,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::init(KJob *job, QWidget *par
     layout->addWidget(widget);
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::setMode(StatusBarModes newMode)
+void KStatusBarJobTrackerPrivate::ProgressWidget::setMode(KStatusBarJobTracker::StatusBarModes newMode)
 {
     mode = newMode;
 
@@ -196,7 +211,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::setMode(StatusBarModes newMo
     }
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::description(const QString &title,
+void KStatusBarJobTrackerPrivate::ProgressWidget::description(const QString &title,
         const QPair<QString, QString> &field1,
         const QPair<QString, QString> &field2)
 {
@@ -206,7 +221,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::description(const QString &t
     label->setText(title);
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::totalAmount(KJob::Unit unit, qulonglong amount)
+void KStatusBarJobTrackerPrivate::ProgressWidget::totalAmount(KJob::Unit unit, qulonglong amount)
 {
     Q_UNUSED(unit);
     Q_UNUSED(amount);
@@ -217,12 +232,12 @@ void KStatusBarJobTracker::Private::ProgressWidget::totalAmount(KJob::Unit unit,
 #endif
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::percent(unsigned long percent)
+void KStatusBarJobTrackerPrivate::ProgressWidget::percent(unsigned long percent)
 {
     progressBar->setValue(percent);
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::speed(unsigned long value)
+void KStatusBarJobTrackerPrivate::ProgressWidget::speed(unsigned long value)
 {
     if (value == 0) {  // speed is measured in bytes-per-second
         label->setText(QCoreApplication::translate("KStatusBarJobTracker", " Stalled "));
@@ -231,7 +246,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::speed(unsigned long value)
     }
 }
 
-void KStatusBarJobTracker::Private::ProgressWidget::slotClean()
+void KStatusBarJobTrackerPrivate::ProgressWidget::slotClean()
 {
     // we don't want to delete this widget, only clean
     progressBar->setValue(0);
@@ -240,7 +255,7 @@ void KStatusBarJobTracker::Private::ProgressWidget::slotClean()
     setMode(KStatusBarJobTracker::NoInformation);
 }
 
-bool KStatusBarJobTracker::Private::ProgressWidget::eventFilter(QObject *obj, QEvent *event)
+bool KStatusBarJobTrackerPrivate::ProgressWidget::eventFilter(QObject *obj, QEvent *event)
 {
     if (obj == progressBar || obj == label) {
 

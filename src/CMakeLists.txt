@@ -27,7 +27,15 @@ qt5_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobV
 
 add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 
-generate_export_header(KF5JobWidgets BASE_NAME KJobWidgets)
+ecm_generate_export_header(KF5JobWidgets
+    BASE_NAME KJobWidgets
+    GROUP_BASE_NAME KF
+    VERSION ${KF5_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    DEPRECATION_VERSIONS 5.79
+    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+)
+
 add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
 
 target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets>")

@@ -12,9 +12,11 @@
 
 #include <kjobwidgets_export.h>
 #include <KJobTrackerInterface>
+#include <memory>
 
 class KJob;
 class QWidget;
+class KAbstractWidgetJobTrackerPrivate;
 
 /**
  * @class KAbstractWidgetJobTracker kabstractwidgetjobtracker.h KAbstractWidgetJobTracker
@@ -172,8 +174,16 @@ Q_SIGNALS:
     void resume(KJob *job);
 
 protected:
-    class Private;
-    Private *const d;
+    KAbstractWidgetJobTracker(KAbstractWidgetJobTrackerPrivate &dd, QWidget *parent = nullptr);
+
+protected:
+    friend class KStatusBarJobTracker;
+    friend class KWidgetJobTracker;
+    std::unique_ptr<KAbstractWidgetJobTrackerPrivate> const d;
+    // KF6 TODO: change d to d_ptr, use normal Q_DECLARE_PRIVATE, remove friend
+
+private:
+    Q_DECLARE_PRIVATE_D(d, KAbstractWidgetJobTracker)
 };
 
 #endif

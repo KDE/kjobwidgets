@@ -12,19 +12,20 @@
 
 #include "kabstractwidgetjobtracker.h"
 
-class Q_DECL_HIDDEN KAbstractWidgetJobTracker::Private
+class KAbstractWidgetJobTrackerPrivate
 {
+    Q_DECLARE_PUBLIC(KAbstractWidgetJobTracker)
 public:
-    Private(KAbstractWidgetJobTracker *parent)
-        : q(parent)
+    KAbstractWidgetJobTrackerPrivate(KAbstractWidgetJobTracker *q)
+        : q_ptr(q)
     {
     }
 
-    virtual ~Private()
+    virtual ~KAbstractWidgetJobTrackerPrivate()
     {
     }
 
-    KAbstractWidgetJobTracker *const q;
+    KAbstractWidgetJobTracker *const q_ptr;
 
     //### KDE 5: make this methods virtual on KAbstractWidgetJobTracker and get rid out of this
     //           workaround. (ereslibre)

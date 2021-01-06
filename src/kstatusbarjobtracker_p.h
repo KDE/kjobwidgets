@@ -9,6 +9,7 @@
 #ifndef KSTATUSBARJOBTRACKER_P_H
 #define KSTATUSBARJOBTRACKER_P_H
 
+#include "kabstractwidgetjobtracker_p.h"
 #include "kstatusbarjobtracker.h"
 
 #include <QWidget>
@@ -21,18 +22,17 @@ class QCheckBox;
 class QLabel;
 class QProgressBar;
 
-class Q_DECL_HIDDEN KStatusBarJobTracker::Private
+class KStatusBarJobTrackerPrivate : public KAbstractWidgetJobTrackerPrivate
 {
+    Q_DECLARE_PUBLIC(KStatusBarJobTracker)
+
 public:
-    Private(QWidget *parent, bool withStopButton)
-        : parent(parent)
+    KStatusBarJobTrackerPrivate(KStatusBarJobTracker *q, QWidget *parent, bool withStopButton)
+        : KAbstractWidgetJobTrackerPrivate(q)
+        , parent(parent)
         , currentProgressWidget(nullptr)
         , showStopButton(withStopButton)
     { }
-
-    ~Private()
-    {
-    }
 
     class ProgressWidget;
 
@@ -42,15 +42,15 @@ public:
     bool showStopButton;
 };
 
-class KStatusBarJobTracker::Private::ProgressWidget
+class KStatusBarJobTrackerPrivate::ProgressWidget
     : public QWidget
 {
     Q_OBJECT
 
 public:
     ProgressWidget(KJob *job, KStatusBarJobTracker *object, QWidget *parent)
-        : q(object), job(job), widget(nullptr), progressBar(nullptr), label(nullptr), button(nullptr),
-          box(nullptr), stack(nullptr), /*totalSize(-1),*/ mode(NoInformation), beingDeleted(false)
+        : q(object)
+        , job(job)
     {
         init(job, parent);
     }
@@ -66,21 +66,21 @@ public:
     KStatusBarJobTracker *const q;
     KJob *const job;
 
-    QWidget *widget;
-    QProgressBar *progressBar;
-    QLabel *label;
-    QPushButton *button;
-    QBoxLayout *box;
-    QStackedWidget *stack;
+    QWidget *widget = nullptr;
+    QProgressBar *progressBar = nullptr;
+    QLabel *label = nullptr;
+    QPushButton *button = nullptr;
+    QBoxLayout *box = nullptr;
+    QStackedWidget *stack = nullptr;
 
-    //qlonglong totalSize;
+    //qlonglong totalSize = -1;
 
-    StatusBarModes mode;
-    bool beingDeleted;
+    KStatusBarJobTracker::StatusBarModes mode = KStatusBarJobTracker::NoInformation;
+    bool beingDeleted = false;
 
     void init(KJob *job, QWidget *parent);
 
-    void setMode(StatusBarModes newMode);
+    void setMode(KStatusBarJobTracker::StatusBarModes newMode);
 
 public Q_SLOTS:
     virtual void description(const QString &title,

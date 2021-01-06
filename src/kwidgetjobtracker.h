@@ -13,6 +13,8 @@
 #include <kjobwidgets_export.h>
 #include <kabstractwidgetjobtracker.h>
 
+class KWidgetJobTrackerPrivate;
+
 /**
  * @class KWidgetJobTracker kwidgetjobtracker.h KWidgetJobTracker
  *
@@ -82,10 +84,13 @@ protected Q_SLOTS:
     //TODO: Misses canResume()
 
 private:
-    class Private;
-    Private *const d;
+    Q_DECLARE_PRIVATE_D(KAbstractWidgetJobTracker::d, KWidgetJobTracker)
+#if KJOBWIDGETS_BUILD_DEPRECATED_SINCE(5, 79)
+    // Unused, kept for ABI compatibility
+    const void * __kjobwidgets_d_do_not_use;
+#endif
 
-    Q_PRIVATE_SLOT(d, void _k_showProgressWidget())
+    Q_PRIVATE_SLOT(d_func(), void _k_showProgressWidget())
 };
 
 #endif

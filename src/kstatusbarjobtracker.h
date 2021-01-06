@@ -11,6 +11,8 @@
 
 #include <kabstractwidgetjobtracker.h>
 
+class KStatusBarJobTrackerPrivate;
+
 /**
  * @class KStatusBarJobTracker kstatusbarjobtracker.h KStatusBarJobTracker
  *
@@ -91,8 +93,11 @@ public Q_SLOTS:
     void slotClean(KJob *job) override;
 
 private:
-    class Private;
-    Private *const d;
+    Q_DECLARE_PRIVATE_D(KAbstractWidgetJobTracker::d, KStatusBarJobTracker)
+#if KJOBWIDGETS_BUILD_DEPRECATED_SINCE(5, 79)
+    // Unused, kept for ABI compatibility
+    const void * __kjobwidgets_d_do_not_use;
+#endif
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(KStatusBarJobTracker::StatusBarModes)
