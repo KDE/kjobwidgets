@@ -28,12 +28,12 @@ struct MessageBoxData {
     QString msg;
 };
 
-class Q_DECL_HIDDEN KDialogJobUiDelegate::Private : public QObject
+class KDialogJobUiDelegatePrivate : public QObject
 {
     Q_OBJECT
 public:
-    explicit Private(QObject *parent = nullptr);
-    virtual ~Private();
+    explicit KDialogJobUiDelegatePrivate(QObject *parent = nullptr);
+    ~KDialogJobUiDelegatePrivate() override;
     void queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg);
 
     QWidget *window;
@@ -46,19 +46,19 @@ private:
     QQueue<QSharedPointer<MessageBoxData> > queue;
 };
 
-KDialogJobUiDelegate::Private::Private(QObject *parent)
+KDialogJobUiDelegatePrivate::KDialogJobUiDelegatePrivate(QObject *parent)
     : QObject(parent)
     , window(nullptr)
     , running(false)
 {
 }
 
-KDialogJobUiDelegate::Private::~Private()
+KDialogJobUiDelegatePrivate::~KDialogJobUiDelegatePrivate()
 {
     queue.clear();
 }
 
-void KDialogJobUiDelegate::Private::next()
+void KDialogJobUiDelegatePrivate::next()
 {
     if (queue.isEmpty()) {
         running = false;
@@ -69,7 +69,7 @@ void KDialogJobUiDelegate::Private::next()
 
     //kmessagebox starts a new event loop which can cause this to get deleted
     //https://bugs.kde.org/show_bug.cgi?id=356321#c16
-    QPointer<KDialogJobUiDelegate::Private> thisGuard(this);
+    QPointer<KDialogJobUiDelegatePrivate> thisGuard(this);
     KMessageBox::messageBox(data->widget, data->type, data->msg);
 
     if (!thisGuard) {
@@ -79,7 +79,7 @@ void KDialogJobUiDelegate::Private::next()
     QMetaObject::invokeMethod(this, "next", Qt::QueuedConnection);
 }
 
-void KDialogJobUiDelegate::Private::queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg)
+void KDialogJobUiDelegatePrivate::queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg)
 {
     QSharedPointer<MessageBoxData> data(new MessageBoxData);
     data->type = type;
@@ -95,20 +95,19 @@ void KDialogJobUiDelegate::Private::queuedMessageBox(QWidget *widget, KMessageBo
 }
 
 KDialogJobUiDelegate::KDialogJobUiDelegate()
-    : KJobUiDelegate(), d(new KDialogJobUiDelegate::Private)
+    : KJobUiDelegate()
+    , d(new KDialogJobUiDelegatePrivate)
 {
 }
 
 KDialogJobUiDelegate::KDialogJobUiDelegate(KJobUiDelegate::Flags flags, QWidget *window)
-    : KJobUiDelegate(flags), d(new KDialogJobUiDelegate::Private)
+    : KJobUiDelegate(flags)
+    , d(new KDialogJobUiDelegatePrivate)
 {
     d->window = window;
 }
 
-KDialogJobUiDelegate::~KDialogJobUiDelegate()
-{
-    delete d;
-}
+KDialogJobUiDelegate::~KDialogJobUiDelegate() = default;
 
 bool KDialogJobUiDelegate::setJob(KJob *job)
 {

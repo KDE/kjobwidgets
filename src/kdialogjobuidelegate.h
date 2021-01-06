@@ -11,6 +11,7 @@
 #define KDIALOGJOBUIDELEGATE_H
 
 #include <KJobUiDelegate>
+#include <memory>
 
 #include <kjobwidgets_export.h>
 
@@ -82,8 +83,7 @@ protected Q_SLOTS:
     void slotWarning(KJob *job, const QString &plain, const QString &rich) override;
 
 private:
-    class Private;
-    Private *const d;
+    std::unique_ptr<class KDialogJobUiDelegatePrivate> const d;
 };
 
 #endif
