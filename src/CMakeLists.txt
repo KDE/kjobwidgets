@@ -7,6 +7,7 @@ set(kjobwidgets_SRCS
   kdialogjobuidelegate.cpp
   kjobtrackerformatters.cpp
   kuiserverjobtracker.cpp
+  kuiserverv2jobtracker.cpp
   kjobwidgets.cpp
   kstatusbarjobtracker.cpp
   kwidgetjobtracker.cpp
@@ -24,6 +25,9 @@ ecm_qt_declare_logging_category(kjobwidgets_SRCS
 
 qt5_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
 qt5_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
+
+qt5_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServerV2.xml )
+qt5_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
 
 add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 
@@ -65,6 +69,7 @@ ecm_generate_headers(KJobWidgets_HEADERS
   KAbstractWidgetJobTracker
   KDialogJobUiDelegate
   KUiServerJobTracker
+  KUiServerV2JobTracker
   KJobWidgets
   KStatusBarJobTracker
   KWidgetJobTracker
@@ -86,6 +91,7 @@ if (PythonModuleGeneration_FOUND)
       kabstractwidgetjobtracker.h
       kdialogjobuidelegate.h
       kuiserverjobtracker.h
+      kuiserverv2jobtracker.h
       kjobwidgets.h
       kstatusbarjobtracker.h
       kwidgetjobtracker.h
