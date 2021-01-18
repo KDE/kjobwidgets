@@ -371,9 +371,9 @@ void KSharedUiServerProxy::uiserverOwnerChanged(const QString &serviceName, cons
     Q_UNUSED(oldOwner);
 
     if (!newOwner.isEmpty()) { // registered
-        emit serverRegistered();
+        Q_EMIT serverRegistered();
     } else if (newOwner.isEmpty()) { // unregistered
-        emit serverUnregistered();
+        Q_EMIT serverUnregistered();
     }
 }
 
