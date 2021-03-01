@@ -12,10 +12,10 @@
 #include "kabstractwidgetjobtracker_p.h"
 #include "kstatusbarjobtracker.h"
 
-#include <QWidget>
-#include <QMap>
 #include <QBoxLayout>
+#include <QMap>
 #include <QStackedWidget>
+#include <QWidget>
 
 class QPushButton;
 class QCheckBox;
@@ -32,7 +32,8 @@ public:
         , parent(parent)
         , currentProgressWidget(nullptr)
         , showStopButton(withStopButton)
-    { }
+    {
+    }
 
     class ProgressWidget;
 
@@ -42,8 +43,7 @@ public:
     bool showStopButton;
 };
 
-class KStatusBarJobTrackerPrivate::ProgressWidget
-    : public QWidget
+class KStatusBarJobTrackerPrivate::ProgressWidget : public QWidget
 {
     Q_OBJECT
 
@@ -73,7 +73,7 @@ public:
     QBoxLayout *box = nullptr;
     QStackedWidget *stack = nullptr;
 
-    //qlonglong totalSize = -1;
+    // qlonglong totalSize = -1;
 
     KStatusBarJobTracker::StatusBarModes mode = KStatusBarJobTracker::NoInformation;
     bool beingDeleted = false;
@@ -83,9 +83,7 @@ public:
     void setMode(KStatusBarJobTracker::StatusBarModes newMode);
 
 public Q_SLOTS:
-    virtual void description(const QString &title,
-                             const QPair<QString, QString> &field1,
-                             const QPair<QString, QString> &field2);
+    virtual void description(const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2);
     virtual void totalAmount(KJob::Unit unit, qulonglong amount);
     virtual void percent(unsigned long percent);
     virtual void speed(unsigned long value);

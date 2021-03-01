@@ -9,23 +9,23 @@
 */
 
 #include "kwidgetjobtracker.h"
-#include "kwidgetjobtracker_p.h"
 #include "kjobtrackerformatters_p.h"
+#include "kwidgetjobtracker_p.h"
 
 #include <QCoreApplication>
 #include <QDir>
-#include <QProcess>
-#include <QTimer>
+#include <QEvent>
+#include <QGridLayout>
 #include <QLabel>
+#include <QProcess>
 #include <QProgressBar>
 #include <QPushButton>
-#include <QVBoxLayout>
-#include <QGridLayout>
-#include <QEvent>
 #include <QStyle>
+#include <QTimer>
+#include <QVBoxLayout>
 
-#include <KSqueezedTextLabel>
 #include <KSeparator>
+#include <KSqueezedTextLabel>
 
 void KWidgetJobTrackerPrivate::_k_showProgressWidget()
 {
@@ -117,9 +117,7 @@ void KWidgetJobTracker::infoMessage(KJob *job, const QString &plain, const QStri
     pWidget->infoMessage(plain, rich);
 }
 
-void KWidgetJobTracker::description(KJob *job, const QString &title,
-                                    const QPair<QString, QString> &field1,
-                                    const QPair<QString, QString> &field2)
+void KWidgetJobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
 {
     Q_D(KWidgetJobTracker);
 
@@ -268,22 +266,17 @@ bool KWidgetJobTrackerPrivate::ProgressWidget::eventFilter(QObject *watched, QEv
     return QWidget::eventFilter(watched, event);
 }
 
-void KWidgetJobTrackerPrivate::ProgressWidget::infoMessage(const QString &plain, const QString &/*rich*/)
+void KWidgetJobTrackerPrivate::ProgressWidget::infoMessage(const QString &plain, const QString & /*rich*/)
 {
     speedLabel->setText(plain);
     speedLabel->setAlignment(speedLabel->alignment() & ~Qt::TextWordWrap);
 }
 
-void KWidgetJobTrackerPrivate::ProgressWidget::description(const QString &title,
-        const QPair<QString, QString> &field1,
-        const QPair<QString, QString> &field2)
+void KWidgetJobTrackerPrivate::ProgressWidget::description(const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
 {
     setWindowTitle(title);
     caption = title;
-    sourceInvite->setText(
-        QCoreApplication::translate("KWidgetJobTracker",
-            "%1:", "%1 is the label, we add a ':' to it"
-            ).arg(field1.first));
+    sourceInvite->setText(QCoreApplication::translate("KWidgetJobTracker", "%1:", "%1 is the label, we add a ':' to it").arg(field1.first));
     sourceEdit->setText(field1.second);
 
     if (field2.first.isEmpty()) {
@@ -291,10 +284,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::description(const QString &title,
     } else {
         setDestVisible(true);
         checkDestination(QUrl::fromUserInput(field2.second)); // path or URL
-        destInvite->setText(
-            QCoreApplication::translate("KWidgetJobTracker",
-                "%1:", "%1 is the label, we add a ':' to it"
-                ).arg(field2.first));
+        destInvite->setText(QCoreApplication::translate("KWidgetJobTracker", "%1:", "%1 is the label, we add a ':' to it").arg(field2.first));
         destEdit->setText(field2.second);
     }
 }
@@ -355,7 +345,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::processedAmount(KJob::Unit unit, 
             //~ singular %1 of %2 complete
             //~ plural %1 of %2 complete
             tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 of %2 complete", "", amount)
-                  .arg(KJobTrackerFormatters::byteSize(amount), KJobTrackerFormatters::byteSize(totalSize));
+                      .arg(KJobTrackerFormatters::byteSize(amount), KJobTrackerFormatters::byteSize(totalSize));
         } else {
             tmp = KJobTrackerFormatters::byteSize(amount);
         }
@@ -417,8 +407,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::percent(unsigned long percent)
     QString title = caption + QLatin1String(" (");
 
     if (totalSizeKnown) {
-        title += QCoreApplication::translate("KWidgetJobTracker", "%1% of %2").arg(percent).arg(
-                     KJobTrackerFormatters::byteSize(totalSize));
+        title += QCoreApplication::translate("KWidgetJobTracker", "%1% of %2").arg(percent).arg(KJobTrackerFormatters::byteSize(totalSize));
     } else if (totalFiles) {
         //~ singular %1% of %n file
         //~ plural %1% of %n files
@@ -444,7 +433,8 @@ void KWidgetJobTrackerPrivate::ProgressWidget::speed(unsigned long value)
             const int remaining = 1000 * (totalSize - processedSize) / value;
             //~ singular %1/s (%2 remaining)
             //~ plural %1/s (%2 remaining)
-            speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (%2 remaining)", "", remaining).arg(speedStr, KJobTrackerFormatters::duration(remaining)));
+            speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (%2 remaining)", "", remaining)
+                                    .arg(speedStr, KJobTrackerFormatters::duration(remaining)));
         } else { // total size is not known (#24228)
             speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s", "speed in bytes per second").arg(speedStr));
         }
@@ -469,8 +459,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::slotClean()
         if (!s) {
             s = 1;
         }
-        speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (done)").arg(
-                                KJobTrackerFormatters::byteSize(1000 * totalSize / s)));
+        speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (done)").arg(KJobTrackerFormatters::byteSize(1000 * totalSize / s)));
     }
 }
 
@@ -540,8 +529,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     arrowButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
     arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to expand the dialog, to show details"));
     arrowState = Qt::DownArrow;
-    connect(arrowButton, &QPushButton::clicked,
-            this, &KWidgetJobTrackerPrivate::ProgressWidget::arrowClicked);
+    connect(arrowButton, &QPushButton::clicked, this, &KWidgetJobTrackerPrivate::ProgressWidget::arrowClicked);
     hBox->addWidget(arrowButton);
     hBox->addStretch(1);
 
@@ -556,8 +544,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
 
     pauseButton = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "&Pause"), this);
     pauseButton->setVisible(job && (job->capabilities() & KJob::Suspendable));
-    connect(pauseButton, &QPushButton::clicked,
-            this, &KWidgetJobTrackerPrivate::ProgressWidget::pauseResumeClicked);
+    connect(pauseButton, &QPushButton::clicked, this, &KWidgetJobTrackerPrivate::ProgressWidget::pauseResumeClicked);
     hBox->addWidget(pauseButton);
 
     hBox = new QHBoxLayout();
@@ -576,8 +563,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     progressLabel->hide();
 
     keepOpenCheck = new QCheckBox(QCoreApplication::translate("KWidgetJobTracker", "&Keep this window open after transfer is complete"), this);
-    connect(keepOpenCheck, &QCheckBox::toggled,
-            this, &KWidgetJobTrackerPrivate::ProgressWidget::keepOpenToggled);
+    connect(keepOpenCheck, &QCheckBox::toggled, this, &KWidgetJobTrackerPrivate::ProgressWidget::keepOpenToggled);
     topLayout->addWidget(keepOpenCheck);
     keepOpenCheck->hide();
 
@@ -585,15 +571,13 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     topLayout->addLayout(hBox);
 
     openFile = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "Open &File"), this);
-    connect(openFile, &QPushButton::clicked,
-            this, &KWidgetJobTrackerPrivate::ProgressWidget::openFileClicked);
+    connect(openFile, &QPushButton::clicked, this, &KWidgetJobTrackerPrivate::ProgressWidget::openFileClicked);
     hBox->addWidget(openFile);
     openFile->setEnabled(false);
     openFile->hide();
 
     openLocation = new QPushButton(QCoreApplication::translate("KWidgetJobTracker", "Open &Destination"), this);
-    connect(openLocation, &QPushButton::clicked,
-            this, &KWidgetJobTrackerPrivate::ProgressWidget::openLocationClicked);
+    connect(openLocation, &QPushButton::clicked, this, &KWidgetJobTrackerPrivate::ProgressWidget::openLocationClicked);
     hBox->addWidget(openLocation);
     openLocation->hide();
 
@@ -602,8 +586,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     cancelClose = new QPushButton(this);
     cancelClose->setText(QCoreApplication::translate("KWidgetJobTracker", "&Cancel"));
     cancelClose->setIcon(QIcon::fromTheme(QStringLiteral("dialog-cancel")));
-    connect(cancelClose, &QPushButton::clicked,
-            this, &KWidgetJobTrackerPrivate::ProgressWidget::cancelClicked);
+    connect(cancelClose, &QPushButton::clicked, this, &KWidgetJobTrackerPrivate::ProgressWidget::cancelClicked);
     hBox->addWidget(cancelClose);
 
     resize(sizeHint());
@@ -661,7 +644,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::checkDestination(const QUrl &dest
     if (dest.isLocalFile()) {
         const QString path = dest.toLocalFile();
         if (path.contains(QDir::tempPath())) {
-            ok = false;    // it's in the tmp directory
+            ok = false; // it's in the tmp directory
         }
     }
 
@@ -715,14 +698,14 @@ void KWidgetJobTrackerPrivate::ProgressWidget::cancelClicked()
 void KWidgetJobTrackerPrivate::ProgressWidget::arrowClicked()
 {
     if (arrowState == Qt::DownArrow) {
-        //The arrow is in the down position, dialog is collapsed, expand it and change icon.
+        // The arrow is in the down position, dialog is collapsed, expand it and change icon.
         progressLabel->show();
         speedLabel->show();
         arrowButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
         arrowButton->setToolTip(QCoreApplication::translate("KWidgetJobTracker", "Click this to collapse the dialog, to hide details"));
         arrowState = Qt::UpArrow;
     } else {
-        //Collapse the dialog
+        // Collapse the dialog
         progressLabel->hide();
         speedLabel->hide();
         arrowButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));

@@ -9,12 +9,12 @@
 
 #include "kdialogjobuidelegate.h"
 
-#include <QWidget>
-#include <QQueue>
 #include <QPointer>
+#include <QQueue>
+#include <QWidget>
 
-#include <KMessageBox>
 #include <KJob>
+#include <KMessageBox>
 #include <kjobwidgets.h>
 
 #include <config-kjobwidgets.h>
@@ -43,7 +43,7 @@ public Q_SLOTS:
 
 private:
     bool running;
-    QQueue<QSharedPointer<MessageBoxData> > queue;
+    QQueue<QSharedPointer<MessageBoxData>> queue;
 };
 
 KDialogJobUiDelegatePrivate::KDialogJobUiDelegatePrivate(QObject *parent)
@@ -67,8 +67,8 @@ void KDialogJobUiDelegatePrivate::next()
 
     QSharedPointer<MessageBoxData> data = queue.dequeue();
 
-    //kmessagebox starts a new event loop which can cause this to get deleted
-    //https://bugs.kde.org/show_bug.cgi?id=356321#c16
+    // kmessagebox starts a new event loop which can cause this to get deleted
+    // https://bugs.kde.org/show_bug.cgi?id=356321#c16
     QPointer<KDialogJobUiDelegatePrivate> thisGuard(this);
     KMessageBox::messageBox(data->widget, data->type, data->msg);
 
@@ -156,7 +156,7 @@ void KDialogJobUiDelegate::showErrorMessage()
     }
 }
 
-void KDialogJobUiDelegate::slotWarning(KJob * /*job*/, const QString &plain, const QString &/*rich*/)
+void KDialogJobUiDelegate::slotWarning(KJob * /*job*/, const QString &plain, const QString & /*rich*/)
 {
     if (isAutoWarningHandlingEnabled()) {
         d->queuedMessageBox(window(), KMessageBox::Information, plain);

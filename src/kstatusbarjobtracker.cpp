@@ -8,17 +8,17 @@
 */
 
 #include "kstatusbarjobtracker.h"
-#include "kstatusbarjobtracker_p.h"
 #include "kjobtrackerformatters_p.h"
+#include "kstatusbarjobtracker_p.h"
 
 #include <QCoreApplication>
-#include <QObject>
-#include <QWidget>
-#include <QPushButton>
-#include <QProgressBar>
 #include <QLabel>
-#include <QStackedWidget>
 #include <QMouseEvent>
+#include <QObject>
+#include <QProgressBar>
+#include <QPushButton>
+#include <QStackedWidget>
+#include <QWidget>
 
 KStatusBarJobTracker::KStatusBarJobTracker(QWidget *parent, bool button)
     : KAbstractWidgetJobTracker(*new KStatusBarJobTrackerPrivate(this, parent, button), parent)
@@ -86,9 +86,7 @@ void KStatusBarJobTracker::setStatusBarMode(StatusBarModes statusBarMode)
     d->currentProgressWidget->setMode(statusBarMode);
 }
 
-void KStatusBarJobTracker::description(KJob *job, const QString &title,
-                                       const QPair<QString, QString> &field1,
-                                       const QPair<QString, QString> &field2)
+void KStatusBarJobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
 {
     Q_D(KStatusBarJobTracker);
 
@@ -162,8 +160,7 @@ void KStatusBarJobTrackerPrivate::ProgressWidget::init(KJob *job, QWidget *paren
     if (q->d_func()->showStopButton) {
         button = new QPushButton(QCoreApplication::translate("KStatusBarJobTracker", "Stop"), widget);
         box->addWidget(button);
-        connect(button, &QPushButton::clicked,
-                this, &KStatusBarJobTrackerPrivate::ProgressWidget::killJob);
+        connect(button, &QPushButton::clicked, this, &KStatusBarJobTrackerPrivate::ProgressWidget::killJob);
     } else {
         button = nullptr;
     }
@@ -212,8 +209,8 @@ void KStatusBarJobTrackerPrivate::ProgressWidget::setMode(KStatusBarJobTracker::
 }
 
 void KStatusBarJobTrackerPrivate::ProgressWidget::description(const QString &title,
-        const QPair<QString, QString> &field1,
-        const QPair<QString, QString> &field2)
+                                                              const QPair<QString, QString> &field1,
+                                                              const QPair<QString, QString> &field2)
 {
     Q_UNUSED(field1);
     Q_UNUSED(field2);
@@ -239,7 +236,7 @@ void KStatusBarJobTrackerPrivate::ProgressWidget::percent(unsigned long percent)
 
 void KStatusBarJobTrackerPrivate::ProgressWidget::speed(unsigned long value)
 {
-    if (value == 0) {  // speed is measured in bytes-per-second
+    if (value == 0) { // speed is measured in bytes-per-second
         label->setText(QCoreApplication::translate("KStatusBarJobTracker", " Stalled "));
     } else {
         label->setText(QCoreApplication::translate("KStatusBarJobTracker", " %1/s ").arg(KJobTrackerFormatters::byteSize(value)));
@@ -258,12 +255,11 @@ void KStatusBarJobTrackerPrivate::ProgressWidget::slotClean()
 bool KStatusBarJobTrackerPrivate::ProgressWidget::eventFilter(QObject *obj, QEvent *event)
 {
     if (obj == progressBar || obj == label) {
-
         if (event->type() == QEvent::MouseButtonPress) {
             QMouseEvent *e = static_cast<QMouseEvent *>(event);
 
             // TODO: we should make possible to show an informative label and the progress bar
-            if (e->button() == Qt::LeftButton) {    // toggle view on left mouse button
+            if (e->button() == Qt::LeftButton) { // toggle view on left mouse button
                 if (mode == KStatusBarJobTracker::LabelOnly) {
                     setMode(KStatusBarJobTracker::ProgressOnly);
                 } else if (mode == KStatusBarJobTracker::ProgressOnly) {

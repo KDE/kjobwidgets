@@ -13,14 +13,14 @@
 #include "kabstractwidgetjobtracker_p.h"
 #include "kwidgetjobtracker.h"
 
+#include <QCheckBox>
+#include <QDebug>
 #include <QElapsedTimer>
 #include <QEventLoopLocker>
-#include <QWidget>
 #include <QMap>
 #include <QQueue>
-#include <QCheckBox>
 #include <QUrl>
-#include <QDebug>
+#include <QWidget>
 
 class QPushButton;
 class KSqueezedTextLabel;
@@ -59,19 +59,41 @@ public:
     QQueue<KJob *> progressWidgetsToBeShown;
 };
 
-class KWidgetJobTrackerPrivate::ProgressWidget
-    : public QWidget
+class KWidgetJobTrackerPrivate::ProgressWidget : public QWidget
 {
     Q_OBJECT
 
 public:
     ProgressWidget(KJob *job, KWidgetJobTracker *object, QWidget *parent)
-        : QWidget(parent), tracker(object), job(job), totalSize(0), totalFiles(0), totalDirs(0), totalItems(0),
-          processedSize(0), processedDirs(0), processedFiles(0), processedItems(0), totalSizeKnown(false),
-          stopOnClose(true), jobRegistered(false), cancelClose(nullptr), openFile(nullptr),
-          openLocation(nullptr), keepOpenCheck(nullptr), pauseButton(nullptr), sourceEdit(nullptr),
-          destEdit(nullptr), progressLabel(nullptr), destInvite(nullptr), speedLabel(nullptr), sizeLabel(nullptr),
-          resumeLabel(nullptr), progressBar(nullptr), suspendedProperty(false), refCount(1)
+        : QWidget(parent)
+        , tracker(object)
+        , job(job)
+        , totalSize(0)
+        , totalFiles(0)
+        , totalDirs(0)
+        , totalItems(0)
+        , processedSize(0)
+        , processedDirs(0)
+        , processedFiles(0)
+        , processedItems(0)
+        , totalSizeKnown(false)
+        , stopOnClose(true)
+        , jobRegistered(false)
+        , cancelClose(nullptr)
+        , openFile(nullptr)
+        , openLocation(nullptr)
+        , keepOpenCheck(nullptr)
+        , pauseButton(nullptr)
+        , sourceEdit(nullptr)
+        , destEdit(nullptr)
+        , progressLabel(nullptr)
+        , destInvite(nullptr)
+        , speedLabel(nullptr)
+        , sizeLabel(nullptr)
+        , resumeLabel(nullptr)
+        , progressBar(nullptr)
+        , suspendedProperty(false)
+        , refCount(1)
     {
         if (!parent) {
             setWindowFlags(windowFlags() | Qt::Dialog);
@@ -106,8 +128,8 @@ public:
     QPushButton *cancelClose;
     QPushButton *openFile;
     QPushButton *openLocation;
-    QCheckBox   *keepOpenCheck;
-    QUrl        location;
+    QCheckBox *keepOpenCheck;
+    QUrl location;
     QElapsedTimer startTime;
     QPushButton *pauseButton;
     KSqueezedTextLabel *sourceEdit;
@@ -138,9 +160,7 @@ public:
 
 public Q_SLOTS:
     virtual void infoMessage(const QString &plain, const QString &rich);
-    virtual void description(const QString &title,
-                             const QPair<QString, QString> &field1,
-                             const QPair<QString, QString> &field2);
+    virtual void description(const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2);
     virtual void totalAmount(KJob::Unit unit, qulonglong amount);
     virtual void processedAmount(KJob::Unit unit, qulonglong amount);
     virtual void percent(unsigned long percent);
@@ -149,7 +169,7 @@ public Q_SLOTS:
     virtual void suspended();
     virtual void resumed();
 
-    //TODO: Misses canResume()
+    // TODO: Misses canResume()
 
 protected:
     void closeEvent(QCloseEvent *event) override;

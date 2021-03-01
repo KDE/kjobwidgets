@@ -10,8 +10,8 @@
 #ifndef KABSTRACTWIDGETJOBTRACKER_H
 #define KABSTRACTWIDGETJOBTRACKER_H
 
-#include <kjobwidgets_export.h>
 #include <KJobTrackerInterface>
+#include <kjobwidgets_export.h>
 #include <memory>
 
 class KJob;
@@ -40,7 +40,7 @@ public:
      */
     ~KAbstractWidgetJobTracker() override;
 
-// KDE5: move this two virtual methods to be placed correctly (ereslibre)
+    // KDE5: move this two virtual methods to be placed correctly (ereslibre)
 public Q_SLOTS:
     /**
      * Register a new job in this tracker.

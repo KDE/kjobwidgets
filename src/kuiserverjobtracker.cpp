@@ -9,8 +9,8 @@
 #include "kuiserverjobtracker.h"
 #include "kuiserverjobtracker_p.h"
 
-#include "jobviewiface.h"
 #include "debug.h"
+#include "jobviewiface.h"
 
 #include <KJob>
 
@@ -61,16 +61,15 @@ void KUiServerJobTracker::Private::updateDestUrl(KJob *job, org::kde::JobViewV2 
 }
 
 KUiServerJobTracker::KUiServerJobTracker(QObject *parent)
-    : KJobTrackerInterface(parent), d(new Private(this))
+    : KJobTrackerInterface(parent)
+    , d(new Private(this))
 {
-
 }
 
 KUiServerJobTracker::~KUiServerJobTracker()
 {
     if (!d->progressJobView.isEmpty()) {
-        qWarning() << "A KUiServerJobTracker instance contains"
-                   << d->progressJobView.size() << "stalled jobs";
+        qWarning() << "A KUiServerJobTracker instance contains" << d->progressJobView.size() << "stalled jobs";
     }
 
     qDeleteAll(d->progressJobView);
@@ -109,33 +108,26 @@ void KUiServerJobTracker::registerJob(KJob *job)
     }
 
     QPointer<KJob> jobWatch = job;
-    QDBusReply<QDBusObjectPath> reply = serverProxy()->uiserver()->requestView(appName,
-                                        programIconName,
-                                        job->capabilities());
+    QDBusReply<QDBusObjectPath> reply = serverProxy()->uiserver()->requestView(appName, programIconName, job->capabilities());
 
     // If we got a valid reply, register the interface for later usage.
     if (reply.isValid()) {
-        org::kde::JobViewV2 *jobView = new org::kde::JobViewV2(QStringLiteral("org.kde.JobViewServer"),
-                reply.value().path(),
-                QDBusConnection::sessionBus());
+        org::kde::JobViewV2 *jobView = new org::kde::JobViewV2(QStringLiteral("org.kde.JobViewServer"), reply.value().path(), QDBusConnection::sessionBus());
         if (!jobWatch) {
-            //qCDebug(KJOBWIDGETS) << "deleted out from under us when asking the server proxy for the view";
+            // qCDebug(KJOBWIDGETS) << "deleted out from under us when asking the server proxy for the view";
             jobView->terminate(QString());
             delete jobView;
             return;
         }
 
-        QObject::connect(jobView, SIGNAL(cancelRequested()),
-                         this, SLOT(_k_killJob()));
-        QObject::connect(jobView, &org::kde::JobViewV2::suspendRequested,
-                         job, &KJob::suspend);
-        QObject::connect(jobView, &org::kde::JobViewV2::resumeRequested,
-                         job, &KJob::resume);
+        QObject::connect(jobView, SIGNAL(cancelRequested()), this, SLOT(_k_killJob()));
+        QObject::connect(jobView, &org::kde::JobViewV2::suspendRequested, job, &KJob::suspend);
+        QObject::connect(jobView, &org::kde::JobViewV2::resumeRequested, job, &KJob::resume);
 
         d->updateDestUrl(job, jobView);
 
         if (!jobWatch) {
-            //qCDebug(KJOBWIDGETS) << "deleted out from under us when creating the dbus interface";
+            // qCDebug(KJOBWIDGETS) << "deleted out from under us when creating the dbus interface";
             jobView->terminate(QString());
             delete jobView;
             return;
@@ -215,9 +207,7 @@ void KUiServerJobTracker::resumed(KJob *job)
     jobView->setSuspended(false);
 }
 
-void KUiServerJobTracker::description(KJob *job, const QString &title,
-                                      const QPair<QString, QString> &field1,
-                                      const QPair<QString, QString> &field2)
+void KUiServerJobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
 {
     if (!d->progressJobView.contains(job)) {
         return;
@@ -357,7 +347,6 @@ KSharedUiServerProxy::KSharedUiServerProxy()
 
 KSharedUiServerProxy::~KSharedUiServerProxy()
 {
-
 }
 
 org::kde::JobViewServer *KSharedUiServerProxy::uiserver()

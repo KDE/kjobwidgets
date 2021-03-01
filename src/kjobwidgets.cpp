@@ -23,7 +23,7 @@ QWidget *KJobWidgets::window(KJob *job)
 }
 
 // duplicated from kwindowsystem
-static int timestampCompare(unsigned long time1_, unsigned long time2_)   // like strcmp()
+static int timestampCompare(unsigned long time1_, unsigned long time2_) // like strcmp()
 {
     quint32 time1 = time1_;
     quint32 time2 = time2_;
@@ -45,7 +45,6 @@ unsigned long KJobWidgets::userTimestamp(KJob *job)
 {
     return job->property("userTimestamp").toULongLong();
 }
-
 
 void KJobWindows::setWindow(KJob *job, QWindow *window)
 {

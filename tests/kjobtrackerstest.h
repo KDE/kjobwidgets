@@ -17,7 +17,12 @@ class KTestJob : public KJob
     Q_OBJECT
 
 public:
-    enum State { StatingDirs, CreatingDirs, CopyingFiles, Stopped, };
+    enum State {
+        StatingDirs,
+        CreatingDirs,
+        CopyingFiles,
+        Stopped,
+    };
 
     // 10 files per directory
     // 1000 bytes per files

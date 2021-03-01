@@ -15,7 +15,6 @@
 
 #include <QCoreApplication>
 
-
 QString KJobTrackerFormatters::byteSize(double size)
 {
     return KFormat().formatByteSize(size);
@@ -71,15 +70,16 @@ QString KJobTrackerFormatters::duration(unsigned long mSec)
     } else if (days) {
         return daysDuration(days);
     } else if (hours && minutes) {
-        return QCoreApplication::translate("KJobTrackerFormatters", "%1 and %2", "@item:intext hours and minutes.").arg(hoursDuration(hours), minutesDuration(minutes));
+        return QCoreApplication::translate("KJobTrackerFormatters", "%1 and %2", "@item:intext hours and minutes.")
+            .arg(hoursDuration(hours), minutesDuration(minutes));
     } else if (hours) {
         return hoursDuration(hours);
     } else if (minutes && seconds) {
-        return QCoreApplication::translate("KJobTrackerFormatters", "%1 and %2", "@item:intext minutes and seconds.").arg(minutesDuration(minutes), secondsDuration(seconds));
+        return QCoreApplication::translate("KJobTrackerFormatters", "%1 and %2", "@item:intext minutes and seconds.")
+            .arg(minutesDuration(minutes), secondsDuration(seconds));
     } else if (minutes) {
         return minutesDuration(minutes);
     } else {
         return secondsDuration(seconds);
     }
 }
-
