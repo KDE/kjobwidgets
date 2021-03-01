@@ -104,8 +104,8 @@ void KTestJob::copyNextFile()
         return;
     }
 
-    QString file_name = QStringLiteral("dir") + QString::number(processedAmount(KJob::Files) / 10) + QStringLiteral("/file")
-        + QString::number(processedAmount(KJob::Files) % 10);
+    QString file_name =
+        QLatin1String("dir%1/file%2").arg(QString::number(processedAmount(KJob::Files) / 10), QString::number(processedAmount(KJob::Files) % 10));
 
     qDebug() << "Copying " << file_name;
     setProcessedAmount(KJob::Files, processedAmount(KJob::Files) + 1);

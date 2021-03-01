@@ -11,9 +11,9 @@
 #define KDIALOGJOBUIDELEGATE_H
 
 #include <KJobUiDelegate>
-#include <memory>
-
 #include <kjobwidgets_export.h>
+
+#include <memory>
 
 /**
  * @class KDialogJobUiDelegate kdialogjobuidelegate.h KDialogJobUiDelegate

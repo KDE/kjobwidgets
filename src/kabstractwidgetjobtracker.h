@@ -12,6 +12,7 @@
 
 #include <KJobTrackerInterface>
 #include <kjobwidgets_export.h>
+
 #include <memory>
 
 class KJob;

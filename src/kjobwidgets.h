@@ -9,6 +9,7 @@
 #define KJOBWIDGETS_H
 
 #include <kjobwidgets_export.h>
+
 class QWidget;
 class QWindow;
 class KJob;
