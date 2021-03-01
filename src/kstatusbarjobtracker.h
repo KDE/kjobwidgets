@@ -30,7 +30,7 @@ public:
     enum StatusBarMode {
         NoInformation = 0x0000, ///< Does not show any information
         LabelOnly     = 0x0001, ///< Shows an informative label for job progress
-        ProgressOnly  = 0x0002  ///< Shows a progress bar with the job completion
+        ProgressOnly  = 0x0002,  ///< Shows a progress bar with the job completion
     };
 
     /**
