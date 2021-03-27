@@ -102,9 +102,13 @@ void KUiServerV2JobTrackerPrivate::updateDestUrl(KJob *job)
 void KUiServerV2JobTrackerPrivate::requestView(KJob *job, const QString &desktopEntry)
 {
     QPointer<KJob> jobGuard = job;
+    auto &view = jobViews[job];
 
+    QVariantMap hints = view.currentState;
     // Tells Plasma to show the job view right away, since the delay is always handled on our side
-    const QVariantMap hints{{QStringLiteral("immediate"), true}};
+    hints.insert(QStringLiteral("immediate"), true);
+    // Must not clear currentState as only Plasma 5.22+ will use properties from "hints",
+    // there must still be a full update() call for earlier versions!
 
     auto reply = serverProxy()->uiserver()->requestView(desktopEntry, job->capabilities(), hints);
 
