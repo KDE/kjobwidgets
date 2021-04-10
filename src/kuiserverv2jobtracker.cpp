@@ -214,6 +214,27 @@ void KUiServerV2JobTracker::registerJob(KJob *job)
         });
     }
 
+    // Send along current job state
+    if (job->isSuspended()) {
+        suspended(job);
+    }
+    if (job->error()) {
+        d->scheduleUpdate(job, QStringLiteral("errorCode"), static_cast<uint>(job->error()));
+        d->scheduleUpdate(job, QStringLiteral("errorMessage"), job->errorText());
+    }
+    for (int i = KJob::Bytes; i <= KJob::Items; ++i) {
+        const auto unit = static_cast<KJob::Unit>(i);
+
+        if (job->processedAmount(unit) > 0) {
+            processedAmount(job, unit, job->processedAmount(unit));
+        }
+        if (job->totalAmount(unit) > 0) {
+            totalAmount(job, unit, job->totalAmount(unit));
+        }
+    }
+    if (job->percent() > 0) {
+        percent(job, job->percent());
+    }
     d->updateDestUrl(job);
 
     if (job->property("immediateProgressReporting").toBool()) {
