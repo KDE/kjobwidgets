@@ -58,7 +58,7 @@ if (HAVE_X11)
   target_link_libraries(KF5JobWidgets PRIVATE Qt5::X11Extras)
 endif ()
 
-set_target_properties(KF5JobWidgets PROPERTIES VERSION   ${KJOBWIDGETS_VERSION_STRING}
+set_target_properties(KF5JobWidgets PROPERTIES VERSION   ${KJOBWIDGETS_VERSION}
                                                SOVERSION ${KJOBWIDGETS_SOVERSION}
                                                EXPORT_NAME JobWidgets
 )
