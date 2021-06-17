@@ -1,20 +1,36 @@
 configure_file(config-kjobwidgets.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kjobwidgets.h )
 
-ecm_create_qm_loader(kjobwidgets_QM_LOADER kjobwidgets5_qt)
+add_library(KF5JobWidgets)
+add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
 
-set(kjobwidgets_SRCS
-  kabstractwidgetjobtracker.cpp
-  kdialogjobuidelegate.cpp
-  kjobtrackerformatters.cpp
-  kuiserverjobtracker.cpp
-  kuiserverv2jobtracker.cpp
-  kjobwidgets.cpp
-  kstatusbarjobtracker.cpp
-  kwidgetjobtracker.cpp
-  ${kjobwidgets_QM_LOADER}
+set_target_properties(KF5JobWidgets PROPERTIES
+    VERSION     ${KJOBWIDGETS_VERSION}
+    SOVERSION   ${KJOBWIDGETS_SOVERSION}
+    EXPORT_NAME JobWidgets
 )
 
-ecm_qt_declare_logging_category(kjobwidgets_SRCS
+ecm_create_qm_loader(KF5JobWidgets kjobwidgets5_qt)
+
+set(kjobwidgets_dbus_SRCS)
+qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
+qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
+
+qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServerV2.xml )
+qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
+
+target_sources(KF5JobWidgets PRIVATE
+    kabstractwidgetjobtracker.cpp
+    kdialogjobuidelegate.cpp
+    kjobtrackerformatters.cpp
+    kuiserverjobtracker.cpp
+    kuiserverv2jobtracker.cpp
+    kjobwidgets.cpp
+    kstatusbarjobtracker.cpp
+    kwidgetjobtracker.cpp
+    ${kjobwidgets_dbus_SRCS}
+)
+
+ecm_qt_declare_logging_category(KF5JobWidgets
     HEADER debug.h
     IDENTIFIER KJOBWIDGETS
     CATEGORY_NAME kf.jobwidgets
@@ -22,14 +38,6 @@ ecm_qt_declare_logging_category(kjobwidgets_SRCS
     DESCRIPTION "KJobWidgets"
     EXPORT KJOBWIDGETS
 )
-
-qt_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
-qt_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
-
-qt_add_dbus_interfaces(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServerV2.xml )
-qt_add_dbus_interface(kjobwidgets_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
-
-add_library(KF5JobWidgets ${kjobwidgets_SRCS})
 
 ecm_generate_export_header(KF5JobWidgets
     BASE_NAME KJobWidgets
@@ -39,8 +47,6 @@ ecm_generate_export_header(KF5JobWidgets
     DEPRECATION_VERSIONS 5.79
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
-
-add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
 
 target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KJobWidgets>")
 
@@ -57,12 +63,6 @@ if (HAVE_X11)
   find_package(Qt5X11Extras ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
   target_link_libraries(KF5JobWidgets PRIVATE Qt5::X11Extras)
 endif ()
-
-set_target_properties(KF5JobWidgets PROPERTIES VERSION   ${KJOBWIDGETS_VERSION}
-                                               SOVERSION ${KJOBWIDGETS_SOVERSION}
-                                               EXPORT_NAME JobWidgets
-)
-
 
 ecm_generate_headers(KJobWidgets_HEADERS
   HEADER_NAMES
