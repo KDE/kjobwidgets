@@ -14,3 +14,9 @@ endmacro()
 kjobwidgets_executable_tests(
    kjobtrackerstest
 )
+
+set(kjobcreator_SRCS kjobcreator.cpp)
+qt_wrap_ui(kjobcreator_SRCS kjobcreator.ui)
+add_executable(kjobcreator ${kjobcreator_SRCS})
+target_link_libraries(kjobcreator Qt5::Widgets KF5::JobWidgets)
+ecm_mark_as_test(kjobcreator)
