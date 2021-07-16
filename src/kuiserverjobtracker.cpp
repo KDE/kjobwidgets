@@ -321,7 +321,7 @@ KSharedUiServerProxy::KSharedUiServerProxy()
     if (!bus->isServiceRegistered(QStringLiteral("org.kde.JobViewServer"))) {
         QDBusReply<void> reply = bus->startService(QStringLiteral("org.kde.kuiserver"));
         if (!reply.isValid()) {
-            qCritical() << "Couldn't start kuiserver from org.kde.kuiserver.service:" << reply.error();
+            qCCritical(KJOBWIDGETS) << "Couldn't start kuiserver from org.kde.kuiserver.service:" << reply.error();
             return;
         }
 
