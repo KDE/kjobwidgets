@@ -1,0 +1,278 @@
+# translation of kdelibs4.po to
+# Malayalam translation of kdelibs4.
+# Copyright (C) 2007-2010 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+# Anoop | അനൂപ് Panavalappil | പനവളപ്പില്‍ <gnuanu@gmail.com>, 2008.
+# ANI PETER|അനി പീറ്റര്‍ <peter.ani@gmail.com>, 2008.
+# Maxin B. John <maxinbjohn@gmail.com>, 2007.
+# Manu S Madhav | മനു എസ് മാധവ് <manusmad@gmail.com>, 2008.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2010-12-29 15:32+0530\n"
+"Last-Translator: \n"
+"Language-Team: SMC <smc.org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Qt-Contexts: true\n"
+
+#: kjobtrackerformatters.cpp:27
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n day(s)"
+msgid_plural "%n day(s)"
+msgstr[0] "%1 ദിവസങ്ങള്‍"
+msgstr[1] "%1 ദിവസങ്ങള്‍"
+
+#: kjobtrackerformatters.cpp:34
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n hour(s)"
+msgid_plural "%n hour(s)"
+msgstr[0] "%1 മണിക്കൂറുകള്‍"
+msgstr[1] "%1 മണിക്കൂറുകള്‍"
+
+#: kjobtrackerformatters.cpp:41
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n minute(s)"
+msgid_plural "%n minute(s)"
+msgstr[0] "%1 മിനിറ്റുകള്‍"
+msgstr[1] "%1 മിനിറ്റുകള്‍"
+
+#: kjobtrackerformatters.cpp:48
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n second(s)"
+msgid_plural "%n second(s)"
+msgstr[0] "%1 സെക്കന്റുകള്‍"
+msgstr[1] "%1 സെക്കന്റുകള്‍"
+
+#: kjobtrackerformatters.cpp:69
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext days and hours."
+msgid "%1 and %2"
+msgstr "%1 ഉം %2 ഉം"
+
+#: kjobtrackerformatters.cpp:73
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext hours and minutes."
+msgid "%1 and %2"
+msgstr "%1 ഉം %2 ഉം"
+
+#: kjobtrackerformatters.cpp:78
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
+msgid "%1 and %2"
+msgstr "%1 ഉം %2 ഉം"
+
+#: kstatusbarjobtracker.cpp:161
+#, fuzzy
+msgctxt "KStatusBarJobTracker|"
+msgid "Stop"
+msgstr "നിര്‍ത്തുക"
+
+#: kstatusbarjobtracker.cpp:240
+#, fuzzy
+msgctxt "KStatusBarJobTracker|"
+msgid " Stalled "
+msgstr "തടസ്സപ്പെട്ടു"
+
+#: kstatusbarjobtracker.cpp:242
+#, fuzzy, qt-format
+msgctxt "KStatusBarJobTracker|"
+msgid " %1/s "
+msgstr " %1/സെ "
+
+#: kwidgetjobtracker.cpp:279 kwidgetjobtracker.cpp:287
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
+msgid "%1:"
+msgstr "%1:"
+
+#: kwidgetjobtracker.cpp:347
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 of %2 complete"
+msgid_plural "%1 of %2 complete"
+msgstr[0] "%3 ലെ %2 പൂര്‍ത്തിയായി"
+msgstr[1] "%3 ലെ %2 പൂര്‍ത്തിയായി"
+
+#: kwidgetjobtracker.cpp:366 kwidgetjobtracker.cpp:383
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n folder(s)"
+msgid_plural "%1 / %n folder(s)"
+msgstr[0] "%2 / %1 ഫോള്‍ഡര്‍"
+msgstr[1] "%2 / %1 ഫോള്‍ഡറുകള്‍"
+
+#: kwidgetjobtracker.cpp:370 kwidgetjobtracker.cpp:388
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n file(s)"
+msgid_plural "%1 / %n file(s)"
+msgstr[0] "%2 / %1 ഫയല്‍"
+msgstr[1] "%2 / %1 ഫയലുകള്‍"
+
+#: kwidgetjobtracker.cpp:399
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n item(s)"
+msgid_plural "%1 / %n item(s)"
+msgstr[0] "%2 / %1 ഫയല്‍"
+msgstr[1] "%2 / %1 ഫയലുകള്‍"
+
+#: kwidgetjobtracker.cpp:410
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %2"
+msgstr "%2 ലെ %1 "
+
+#: kwidgetjobtracker.cpp:414
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %n file(s)"
+msgid_plural "%1% of %n file(s)"
+msgstr[0] "1 ഫയലിന്റെ %2%"
+msgstr[1] "%1 ഫയലുകളുടെ %2%"
+
+#: kwidgetjobtracker.cpp:416
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:429
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Stalled"
+msgstr "തടസ്സപ്പെട്ടു"
+
+#: kwidgetjobtracker.cpp:436
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (%2 remaining)"
+msgid_plural "%1/s (%2 remaining)"
+msgstr[0] "%2/s (%3 ബാക്കിയുണ്ട്)"
+msgstr[1] "%2/s (%3 ബാക്കിയുണ്ട്)"
+
+#: kwidgetjobtracker.cpp:439
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|speed in bytes per second"
+msgid "%1/s"
+msgstr "%1/s"
+
+#: kwidgetjobtracker.cpp:447
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "&Close"
+msgstr "അടയ്ക്കുക &c"
+
+#: kwidgetjobtracker.cpp:449
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Close the current window or document"
+msgstr "ഇപ്പോഴുള്ള രചനയോ ജാലകമോ അടയ്ക്കുക"
+
+#: kwidgetjobtracker.cpp:462
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (done)"
+msgstr "%1/s (പൂര്‍ത്തിയായി)"
+
+#: kwidgetjobtracker.cpp:468
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "&Resume"
+msgstr "&തുടരുക"
+
+#: kwidgetjobtracker.cpp:474 kwidgetjobtracker.cpp:545
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "&Pause"
+msgstr "&തടസ്സപ്പെടുത്തുക"
+
+#: kwidgetjobtracker.cpp:498
+#, fuzzy
+msgctxt "KWidgetJobTracker|The source url of a job"
+msgid "Source:"
+msgstr "സ്രോതസ്സ്:"
+
+#: kwidgetjobtracker.cpp:506
+#, fuzzy
+msgctxt "KWidgetJobTracker|The destination url of a job"
+msgid "Destination:"
+msgstr "ലക്ഷ്യം:"
+
+#: kwidgetjobtracker.cpp:530 kwidgetjobtracker.cpp:712
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to expand the dialog, to show details"
+msgstr "കൂടുതല്‍ വിവരങ്ങള്‍ കാണിച്ചു് സംവാദം വിപുലമാക്കാന്‍ അമര്‍ത്തുക"
+
+#: kwidgetjobtracker.cpp:565
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "&Keep this window open after transfer is complete"
+msgstr "കൈമാറ്റം പൂര്‍ത്തിയായതിനുശേഷവും ജാലകം തുറന്നുവയ്ക്കുക &k"
+
+#: kwidgetjobtracker.cpp:573
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Open &File"
+msgstr "ഫയല്‍ തുറക്കുക &f"
+
+#: kwidgetjobtracker.cpp:579
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Open &Destination"
+msgstr "ലക്ഷ്യസ്ഥാനം തുറക്കുക &d"
+
+#: kwidgetjobtracker.cpp:587
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "&Cancel"
+msgstr "&റദ്ദാക്കുക"
+
+#: kwidgetjobtracker.cpp:595
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Progress Dialog"
+msgstr "പുരോഗതി ഡയലോഗ്"
+
+#: kwidgetjobtracker.cpp:608
+#, fuzzy, qt-format
+#| msgid "Delete item(s)"
+msgctxt "KWidgetJobTracker|"
+msgid "%n item(s)"
+msgid_plural "%n item(s)"
+msgstr[0] "വസ്തു(ക്കള്‍) നീക്കം ചെയ്യുക"
+msgstr[1] "വസ്തു(ക്കള്‍) നീക്കം ചെയ്യുക"
+
+#: kwidgetjobtracker.cpp:614
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%n folder(s)"
+msgid_plural "%n folder(s)"
+msgstr[0] "%1 ഫോള്‍ഡര്‍"
+msgstr[1] "%1 ഫോള്‍ഡറുകള്‍"
+
+#: kwidgetjobtracker.cpp:618
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%n file(s)"
+msgid_plural "%n file(s)"
+msgstr[0] "%1 ഫയല്‍"
+msgstr[1] "%1 ഫയലുകള്‍"
+
+#: kwidgetjobtracker.cpp:705
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to collapse the dialog, to hide details"
+msgstr "വിശദാംശങ്ങള്‍ ഒളിപ്പിച്ചു് സംവാദം ചുരുക്കാന്‍ ഇവിടെ അമര്‍ത്തുക"
