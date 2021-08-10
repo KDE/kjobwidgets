@@ -12,23 +12,29 @@ set_target_properties(KF5JobWidgets PROPERTIES
 ecm_create_qm_loader(KF5JobWidgets kjobwidgets5_qt)
 
 set(kjobwidgets_dbus_SRCS)
-qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
-qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
+if (TARGET Qt5::DBus)
+    qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
 
-qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServerV2.xml )
-qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
+    qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServerV2.xml )
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
+endif()
 
 target_sources(KF5JobWidgets PRIVATE
     kabstractwidgetjobtracker.cpp
     kdialogjobuidelegate.cpp
     kjobtrackerformatters.cpp
-    kuiserverjobtracker.cpp
-    kuiserverv2jobtracker.cpp
     kjobwidgets.cpp
     kstatusbarjobtracker.cpp
     kwidgetjobtracker.cpp
     ${kjobwidgets_dbus_SRCS}
 )
+if (TARGET Qt5::DBus)
+    target_sources(KF5JobWidgets PRIVATE
+        kuiserverjobtracker.cpp
+        kuiserverv2jobtracker.cpp
+    )
+endif()
 
 ecm_qt_declare_logging_category(KF5JobWidgets
     HEADER debug.h
@@ -55,9 +61,11 @@ target_link_libraries(KF5JobWidgets
       Qt5::Widgets
       KF5::CoreAddons    # KJob
    PRIVATE
-      Qt5::DBus
       KF5::WidgetsAddons # KSqueezedTextLabel
 )
+if (TARGET Qt5::DBus)
+    target_link_libraries(KF5JobWidgets PRIVATE Qt5::DBus)
+endif()
 
 if (HAVE_X11)
   find_package(Qt5X11Extras ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
