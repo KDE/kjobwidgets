@@ -32,8 +32,8 @@ class KWidgetJobTrackerPrivate : public KAbstractWidgetJobTrackerPrivate
     Q_DECLARE_PUBLIC(KWidgetJobTracker)
 
 public:
-    KWidgetJobTrackerPrivate(QWidget *parent, KWidgetJobTracker *q)
-        : KAbstractWidgetJobTrackerPrivate(q)
+    KWidgetJobTrackerPrivate(QWidget *parent, KWidgetJobTracker *qq)
+        : KAbstractWidgetJobTrackerPrivate(qq)
         , parent(parent)
         , eventLoopLocker(nullptr)
     {

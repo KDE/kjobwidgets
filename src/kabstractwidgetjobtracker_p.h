@@ -16,8 +16,8 @@ class KAbstractWidgetJobTrackerPrivate
 {
     Q_DECLARE_PUBLIC(KAbstractWidgetJobTracker)
 public:
-    KAbstractWidgetJobTrackerPrivate(KAbstractWidgetJobTracker *q)
-        : q_ptr(q)
+    KAbstractWidgetJobTrackerPrivate(KAbstractWidgetJobTracker *qq)
+        : q_ptr(qq)
     {
     }
 
