@@ -163,22 +163,22 @@ TestDialog::TestDialog(QWidget *parent)
     });
 
     connect(m_ui.percent, &QSlider::valueChanged, this, &TestDialog::updateJob);
-    connect(m_ui.processedBytes, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.totalBytes, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.processedFiles, QOverload<int>::of(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.totalFiles, QOverload<int>::of(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.processedDirectories, QOverload<int>::of(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.totalDirectories, QOverload<int>::of(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.processedItems, QOverload<int>::of(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.totalItems, QOverload<int>::of(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
-    connect(m_ui.speed, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.processedBytes, qOverload<double>(&QDoubleSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.totalBytes, qOverload<double>(&QDoubleSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.processedFiles, qOverload<int>(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.totalFiles, qOverload<int>(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.processedDirectories, qOverload<int>(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.totalDirectories, qOverload<int>(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.processedItems, qOverload<int>(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.totalItems, qOverload<int>(&QSpinBox::valueChanged), this, &TestDialog::updateJob);
+    connect(m_ui.speed, qOverload<double>(&QDoubleSpinBox::valueChanged), this, &TestDialog::updateJob);
 
     connect(m_ui.infoMessage, &QLineEdit::returnPressed, m_ui.emitInfoMessage, &QPushButton::click);
     connect(m_ui.emitInfoMessage, &QPushButton::clicked, this, [this] {
         m_job->infoMessage(m_job, m_ui.infoMessage->text(), QString());
     });
 
-    connect(m_ui.errorCombo, QOverload<int>::of(&QComboBox::activated), this, &TestDialog::updateJob);
+    connect(m_ui.errorCombo, qOverload<int>(&QComboBox::activated), this, &TestDialog::updateJob);
     connect(m_ui.errorText, &QLineEdit::editingFinished, this, &TestDialog::updateJob);
 
     connect(m_ui.suspendableCheck, &QCheckBox::toggled, this, &TestDialog::updateJob);
