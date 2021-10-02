@@ -1,0 +1,283 @@
+# translation of kdelibs4.po to Luxembourgish
+# kevin claude everard <kevin@math.uni-sb.de>, 2005.
+# Michel Ludwig <michel.ludwig@kdemail.net>, 2005, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2006-06-22 16:29+0200\n"
+"Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
+"Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
+"Language: lb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Qt-Contexts: true\n"
+
+#: kjobtrackerformatters.cpp:27
+#, fuzzy, qt-format
+#| msgid "Monday"
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n day(s)"
+msgid_plural "%n day(s)"
+msgstr[0] "Méinden"
+msgstr[1] "Méinden"
+
+#: kjobtrackerformatters.cpp:34
+#, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n hour(s)"
+msgid_plural "%n hour(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kjobtrackerformatters.cpp:41
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n minute(s)"
+msgid_plural "%n minute(s)"
+msgstr[0] "%1 Optiounen"
+msgstr[1] "%1 Optiounen"
+
+#: kjobtrackerformatters.cpp:48
+#, fuzzy, qt-format
+msgctxt "KJobTrackerFormatters|@item:intext"
+msgid "%n second(s)"
+msgid_plural "%n second(s)"
+msgstr[0] "%1 Optiounen"
+msgstr[1] "%1 Optiounen"
+
+#: kjobtrackerformatters.cpp:69
+#, fuzzy, qt-format
+#| msgctxt "concatenation of dates and time"
+#| msgid "%1 %2"
+msgctxt "KJobTrackerFormatters|@item:intext days and hours."
+msgid "%1 and %2"
+msgstr "%1 %2"
+
+#: kjobtrackerformatters.cpp:73
+#, fuzzy, qt-format
+#| msgctxt "concatenation of dates and time"
+#| msgid "%1 %2"
+msgctxt "KJobTrackerFormatters|@item:intext hours and minutes."
+msgid "%1 and %2"
+msgstr "%1 %2"
+
+#: kjobtrackerformatters.cpp:78
+#, fuzzy, qt-format
+#| msgctxt "concatenation of dates and time"
+#| msgid "%1 %2"
+msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
+msgid "%1 and %2"
+msgstr "%1 %2"
+
+#: kstatusbarjobtracker.cpp:161
+#, fuzzy
+#| msgid "Stop"
+msgctxt "KStatusBarJobTracker|"
+msgid "Stop"
+msgstr "Stop"
+
+#: kstatusbarjobtracker.cpp:240
+#, fuzzy
+msgctxt "KStatusBarJobTracker|"
+msgid " Stalled "
+msgstr "Status"
+
+#: kstatusbarjobtracker.cpp:242
+#, fuzzy, qt-format
+msgctxt "KStatusBarJobTracker|"
+msgid " %1/s "
+msgstr "(%1/s)"
+
+#: kwidgetjobtracker.cpp:279 kwidgetjobtracker.cpp:287
+#, fuzzy, qt-format
+#| msgid "%1%"
+msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
+msgid "%1:"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:347
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 of %2 complete"
+msgid_plural "%1 of %2 complete"
+msgstr[0] "%1 (%2)"
+msgstr[1] "%1 (%2)"
+
+#: kwidgetjobtracker.cpp:366 kwidgetjobtracker.cpp:383
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n folder(s)"
+msgid_plural "%1 / %n folder(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kwidgetjobtracker.cpp:370 kwidgetjobtracker.cpp:388
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n file(s)"
+msgid_plural "%1 / %n file(s)"
+msgstr[0] "Nei Datei."
+msgstr[1] "Nei Datei."
+
+#: kwidgetjobtracker.cpp:399
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1 / %n item(s)"
+msgid_plural "%1 / %n item(s)"
+msgstr[0] "Nei Datei."
+msgstr[1] "Nei Datei."
+
+#: kwidgetjobtracker.cpp:410
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %2"
+msgstr "%1 (%2)"
+
+#: kwidgetjobtracker.cpp:414
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1% of %n file(s)"
+msgid_plural "%1% of %n file(s)"
+msgstr[0] "Nei Datei."
+msgstr[1] "Nei Datei."
+
+#: kwidgetjobtracker.cpp:416
+#, fuzzy, qt-format
+#| msgid "%1%"
+msgctxt "KWidgetJobTracker|"
+msgid "%1%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:429
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Stalled"
+msgstr "Status"
+
+#: kwidgetjobtracker.cpp:436
+#, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (%2 remaining)"
+msgid_plural "%1/s (%2 remaining)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kwidgetjobtracker.cpp:439
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|speed in bytes per second"
+msgid "%1/s"
+msgstr "(%1/s)"
+
+#: kwidgetjobtracker.cpp:447
+#, fuzzy
+#| msgid "&Close"
+msgctxt "KWidgetJobTracker|"
+msgid "&Close"
+msgstr "&Zoumaachen"
+
+#: kwidgetjobtracker.cpp:449
+#, fuzzy
+#| msgid "Close the current window or document"
+msgctxt "KWidgetJobTracker|"
+msgid "Close the current window or document"
+msgstr "D'Fënster oder d'Dokument zoumaachen"
+
+#: kwidgetjobtracker.cpp:462
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%1/s (done)"
+msgstr "%1 (Link)"
+
+#: kwidgetjobtracker.cpp:468
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "&Resume"
+msgstr "Zerécksetzen"
+
+#: kwidgetjobtracker.cpp:474 kwidgetjobtracker.cpp:545
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "&Pause"
+msgstr "Paus"
+
+#: kwidgetjobtracker.cpp:498
+#, fuzzy
+msgctxt "KWidgetJobTracker|The source url of a job"
+msgid "Source:"
+msgstr "Ressource"
+
+#: kwidgetjobtracker.cpp:506
+#, fuzzy
+msgctxt "KWidgetJobTracker|The destination url of a job"
+msgid "Destination:"
+msgstr "Beschreiwung:"
+
+#: kwidgetjobtracker.cpp:530 kwidgetjobtracker.cpp:712
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to expand the dialog, to show details"
+msgstr ""
+
+#: kwidgetjobtracker.cpp:565
+msgctxt "KWidgetJobTracker|"
+msgid "&Keep this window open after transfer is complete"
+msgstr ""
+
+#: kwidgetjobtracker.cpp:573
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Open &File"
+msgstr "Eng Datei opmaachen"
+
+#: kwidgetjobtracker.cpp:579
+#, fuzzy
+msgctxt "KWidgetJobTracker|"
+msgid "Open &Destination"
+msgstr "Ausriichtung"
+
+#: kwidgetjobtracker.cpp:587
+#, fuzzy
+#| msgid "&Cancel"
+msgctxt "KWidgetJobTracker|"
+msgid "&Cancel"
+msgstr "&Ofbriechen"
+
+#: kwidgetjobtracker.cpp:595
+msgctxt "KWidgetJobTracker|"
+msgid "Progress Dialog"
+msgstr ""
+
+#: kwidgetjobtracker.cpp:608
+#, fuzzy, qt-format
+#| msgid "Delete item(s)"
+msgctxt "KWidgetJobTracker|"
+msgid "%n item(s)"
+msgid_plural "%n item(s)"
+msgstr[0] "Element(er) läschen"
+msgstr[1] "Element(er) läschen"
+
+#: kwidgetjobtracker.cpp:614
+#, fuzzy, qt-format
+#| msgid "Files"
+msgctxt "KWidgetJobTracker|"
+msgid "%n folder(s)"
+msgid_plural "%n folder(s)"
+msgstr[0] "Dateien"
+msgstr[1] "Dateien"
+
+#: kwidgetjobtracker.cpp:618
+#, fuzzy, qt-format
+msgctxt "KWidgetJobTracker|"
+msgid "%n file(s)"
+msgid_plural "%n file(s)"
+msgstr[0] "Nei Datei."
+msgstr[1] "Nei Datei."
+
+#: kwidgetjobtracker.cpp:705
+msgctxt "KWidgetJobTracker|"
+msgid "Click this to collapse the dialog, to hide details"
+msgstr ""
