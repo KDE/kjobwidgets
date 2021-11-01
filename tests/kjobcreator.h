@@ -64,7 +64,7 @@ class TestDialog : public QDialog
 
 public:
     TestDialog(QWidget *parent = nullptr);
-    ~TestDialog();
+    ~TestDialog() override;
 
 protected:
     void closeEvent(QCloseEvent *event) override;

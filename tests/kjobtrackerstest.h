@@ -27,7 +27,7 @@ public:
     // 10 files per directory
     // 1000 bytes per files
     KTestJob(int numberOfDirs = 5);
-    ~KTestJob();
+    ~KTestJob() override;
 
     void start() override;
 

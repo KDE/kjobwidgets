@@ -20,7 +20,7 @@ class Q_DECL_HIDDEN KSharedUiServerV2Proxy : public QObject
 
 public:
     KSharedUiServerV2Proxy();
-    ~KSharedUiServerV2Proxy();
+    ~KSharedUiServerV2Proxy() override;
 
     org::kde::JobViewServerV2 *uiserver();
 

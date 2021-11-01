@@ -102,7 +102,7 @@ public:
         init();
     }
 
-    ~ProgressWidget()
+    ~ProgressWidget() override
     {
         delete tracker->d_func()->eventLoopLocker;
         tracker->d_func()->eventLoopLocker = nullptr;

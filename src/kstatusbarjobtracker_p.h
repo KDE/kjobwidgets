@@ -55,7 +55,7 @@ public:
         init(job, parent);
     }
 
-    ~ProgressWidget()
+    ~ProgressWidget() override
     {
         beingDeleted = true;
         delete widget;
