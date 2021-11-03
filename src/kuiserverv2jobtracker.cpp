@@ -13,6 +13,7 @@
 
 #include <kjob.h>
 
+#include <QtGlobal>
 #include <QDBusConnection>
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
@@ -341,6 +342,9 @@ void KUiServerV2JobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong a
     case KJob::Items:
         d->scheduleUpdate(job, QStringLiteral("totalItems"), amount);
         break;
+    case KJob::UnitsCount:
+        Q_UNREACHABLE();
+        break;
     }
 }
 
@@ -358,6 +362,9 @@ void KUiServerV2JobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglo
         break;
     case KJob::Items:
         d->scheduleUpdate(job, QStringLiteral("processedItems"), amount);
+        break;
+    case KJob::UnitsCount:
+        Q_UNREACHABLE();
         break;
     }
 }

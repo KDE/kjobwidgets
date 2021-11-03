@@ -14,6 +14,7 @@
 
 #include <KJob>
 
+#include <QtGlobal>
 #include <QApplication>
 #include <QDBusConnection>
 #include <QIcon>
@@ -264,6 +265,9 @@ void KUiServerJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amo
     case KJob::Items:
         jobView->setTotalAmount(amount, QStringLiteral("items"));
         break;
+    case KJob::UnitsCount:
+        Q_UNREACHABLE();
+        break;
     }
 }
 
@@ -287,6 +291,9 @@ void KUiServerJobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglong
         break;
     case KJob::Items:
         jobView->setProcessedAmount(amount, QStringLiteral("items"));
+        break;
+    case KJob::UnitsCount:
+        Q_UNREACHABLE();
         break;
     }
 }
