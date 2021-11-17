@@ -22,11 +22,27 @@ endif()
 
 target_sources(KF5JobWidgets PRIVATE
     kabstractwidgetjobtracker.cpp
+    kabstractwidgetjobtracker.h
+    kabstractwidgetjobtracker_p.h
     kdialogjobuidelegate.cpp
+    kdialogjobuidelegate.h
     kjobtrackerformatters.cpp
+    kjobtrackerformatters_p.h
     kjobwidgets.cpp
+    kjobwidgets.h
     kstatusbarjobtracker.cpp
+    kstatusbarjobtracker.h
+    kstatusbarjobtracker_p.h
+    kuiserverjobtracker.cpp
+    kuiserverjobtracker.h
+    kuiserverjobtracker_p.h
+    kuiserverv2jobtracker.cpp
+    kuiserverv2jobtracker.h
+    kuiserverv2jobtracker_p.h
     kwidgetjobtracker.cpp
+    kwidgetjobtracker.h
+    kwidgetjobtracker_p.h
+
     ${kjobwidgets_dbus_SRCS}
 )
 if (TARGET Qt5::DBus)
