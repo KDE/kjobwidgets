@@ -33,12 +33,6 @@ target_sources(KF5JobWidgets PRIVATE
     kstatusbarjobtracker.cpp
     kstatusbarjobtracker.h
     kstatusbarjobtracker_p.h
-    kuiserverjobtracker.cpp
-    kuiserverjobtracker.h
-    kuiserverjobtracker_p.h
-    kuiserverv2jobtracker.cpp
-    kuiserverv2jobtracker.h
-    kuiserverv2jobtracker_p.h
     kwidgetjobtracker.cpp
     kwidgetjobtracker.h
     kwidgetjobtracker_p.h
@@ -48,7 +42,11 @@ target_sources(KF5JobWidgets PRIVATE
 if (TARGET Qt5::DBus)
     target_sources(KF5JobWidgets PRIVATE
         kuiserverjobtracker.cpp
+        kuiserverjobtracker.h
+        kuiserverjobtracker_p.h
         kuiserverv2jobtracker.cpp
+        kuiserverv2jobtracker.h
+        kuiserverv2jobtracker_p.h
     )
 endif()
 
