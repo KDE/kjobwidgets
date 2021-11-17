@@ -300,6 +300,13 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QCheckBox" name="transientCheck">
+         <property name="text">
+          <string>Transient</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item row="12" column="0">

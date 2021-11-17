@@ -111,6 +111,10 @@ void KUiServerV2JobTrackerPrivate::requestView(KJob *job, const QString &desktop
     // Must not clear currentState as only Plasma 5.22+ will use properties from "hints",
     // there must still be a full update() call for earlier versions!
 
+    if (job->property("transientProgressReporting").toBool()) {
+        hints.insert(QStringLiteral("transient"), true);
+    }
+
     auto reply = serverProxy()->uiserver()->requestView(desktopEntry, job->capabilities(), hints);
 
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, q);
