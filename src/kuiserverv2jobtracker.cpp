@@ -11,7 +11,7 @@
 #include "jobviewv3iface.h"
 #include "debug.h"
 
-#include <kjob.h>
+#include <KJob>
 
 #include <QtGlobal>
 #include <QDBusConnection>

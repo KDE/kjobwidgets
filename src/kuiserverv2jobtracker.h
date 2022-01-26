@@ -8,8 +8,8 @@
 #ifndef KUISERVERV2JOBTRACKER_H
 #define KUISERVERV2JOBTRACKER_H
 
+#include <KJobTrackerInterface>
 #include <kjobwidgets_export.h>
-#include <kjobtrackerinterface.h>
 
 class KJob;
 class KUiServerV2JobTrackerPrivate;
