@@ -9,6 +9,7 @@
 */
 
 #include "kwidgetjobtracker.h"
+#include "debug.h"
 #include "kjobtrackerformatters_p.h"
 #include "kwidgetjobtracker_p.h"
 
@@ -20,6 +21,7 @@
 #include <QProcess>
 #include <QProgressBar>
 #include <QPushButton>
+#include <QStandardPaths>
 #include <QStyle>
 #include <QTimer>
 #include <QVBoxLayout>
@@ -668,14 +670,29 @@ void KWidgetJobTrackerPrivate::ProgressWidget::keepOpenToggled(bool keepOpen)
     }
 }
 
+static QString findKdeOpen()
+{
+    const QString exec = QStandardPaths::findExecutable(QStringLiteral("kde-open"));
+    if (exec.isEmpty()) {
+        qCWarning(KJOBWIDGETS) << "Could not find kde-open executable in PATH";
+    }
+    return exec;
+}
+
 void KWidgetJobTrackerPrivate::ProgressWidget::openFileClicked()
 {
-    QProcess::startDetached(QStringLiteral("kde-open"), QStringList() << location.toDisplayString());
+    const QString exec = findKdeOpen();
+    if (!exec.isEmpty()) {
+        QProcess::startDetached(exec, QStringList() << location.toDisplayString());
+    }
 }
 
 void KWidgetJobTrackerPrivate::ProgressWidget::openLocationClicked()
 {
-    QProcess::startDetached(QStringLiteral("kde-open"), QStringList() << location.adjusted(QUrl::RemoveFilename).toString());
+    const QString exec = findKdeOpen();
+    if (!exec.isEmpty()) {
+        QProcess::startDetached(exec, QStringList() << location.adjusted(QUrl::RemoveFilename).toString());
+    }
 }
 
 void KWidgetJobTrackerPrivate::ProgressWidget::pauseResumeClicked()
