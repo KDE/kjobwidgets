@@ -102,27 +102,6 @@ ecm_generate_headers(KJobWidgets_HEADERS
   REQUIRED_HEADERS KJobWidgets_HEADERS
 )
 
-find_package(PythonModuleGeneration)
-
-if (PythonModuleGeneration_FOUND)
-  ecm_generate_python_binding(
-    TARGET KF5::JobWidgets
-    PYTHONNAMESPACE PyKF5
-    MODULENAME KJobWidgets
-    SIP_DEPENDS
-      QtWidgets/QtWidgetsmod.sip
-      PyKF5/KCoreAddons/KCoreAddonsmod.sip
-    HEADERS
-      kabstractwidgetjobtracker.h
-      kdialogjobuidelegate.h
-      kuiserverjobtracker.h
-      kuiserverv2jobtracker.h
-      kjobwidgets.h
-      kstatusbarjobtracker.h
-      kwidgetjobtracker.h
-  )
-endif()
-
 install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
