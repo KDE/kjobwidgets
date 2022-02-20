@@ -111,7 +111,7 @@ void KUiServerV2JobTrackerPrivate::requestView(KJob *job, const QString &desktop
     // Must not clear currentState as only Plasma 5.22+ will use properties from "hints",
     // there must still be a full update() call for earlier versions!
 
-    if (job->property("transientProgressReporting").toBool()) {
+    if (job->isFinishedNotificationHidden()) {
         hints.insert(QStringLiteral("transient"), true);
     }
 

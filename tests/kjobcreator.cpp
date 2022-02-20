@@ -302,7 +302,7 @@ void TestDialog::updateJob()
 
     m_job->setProperty("destUrl", m_ui.destUrl->text());
     m_job->setProperty("immediateProgressReporting", m_ui.immediateCheck->isChecked());
-    m_job->setProperty("transientProgressReporting", m_ui.transientCheck->isChecked());
+    m_job->setFinishedNotificationHidden(m_ui.transientCheck->isChecked());
 
     m_job->setPercentage(m_ui.percent->value());
 
