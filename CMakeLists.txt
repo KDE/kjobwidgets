@@ -21,6 +21,7 @@ include(ECMPoQmTools)
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
+include(ECMDeprecationSettings)
 include(ECMAddQch)
 include(CMakePackageConfigHelpers)
 
@@ -56,8 +57,12 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KJOBWIDGETS
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5JobWidgetsConfigVersion.cmake"
                         SOVERSION 5)
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055900)
+
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+    KF 5.95
+)
+
 ecm_install_po_files_as_qm(po)
 
 add_subdirectory(src)
