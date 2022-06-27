@@ -9,16 +9,20 @@ find_package(ECM 5.95.0  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
-
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
-include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+
 include(KDEGitCommitHooks)
 include(ECMQtDeclareLoggingCategory)
 include(ECMPoQmTools)
-
+include(ECMGenerateExportHeader)
+include(ECMSetupVersion)
+include(ECMGenerateHeaders)
+include(ECMAddQch)
+include(CMakePackageConfigHelpers)
 
 set(REQUIRED_QT_VERSION 5.15.2)
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
@@ -42,12 +46,6 @@ endif()
 
 find_package(KF5CoreAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
-
-
-include(ECMGenerateExportHeader)
-include(ECMSetupVersion)
-include(ECMGenerateHeaders)
-include(ECMAddQch)
 
 set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
 
@@ -80,8 +78,6 @@ if (BUILD_QCH)
     )
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5JobWidgetsQchTargets.cmake\")")
 endif()
-
-include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF5JobWidgetsConfig.cmake.in"
