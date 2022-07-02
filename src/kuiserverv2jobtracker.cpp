@@ -209,12 +209,24 @@ void KUiServerV2JobTracker::registerJob(KJob *job)
 
                 const auto oldState = view.currentState;
 
-                delete view.jobView;
-                d->jobViews.remove(job);
+                // It is possible that the KJob has been deleted already so do not
+                // use or deference if marked as terminated
+                if (oldState.value(QStringLiteral("terminated")).toBool()) {
+                    const uint errorCode = oldState.value(QStringLiteral("errorCode")).toUInt();
+                    const QString errorMessage = oldState.value(QStringLiteral("errorMessage")).toString();
 
-                registerJob(job);
+                    view.jobView->terminate(errorCode, errorMessage, QVariantMap() /*hints*/);
 
-                d->jobViews[job].currentState = oldState;
+                    delete view.jobView;
+                    d->jobViews.remove(job);
+                } else {
+                    delete view.jobView;
+                    d->jobViews.remove(job); // must happen before registerJob
+
+                    registerJob(job);
+
+                    d->jobViews[job].currentState = oldState;
+                }
             }
         });
     }
