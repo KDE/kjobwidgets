@@ -329,6 +329,10 @@ void KWidgetJobTrackerPrivate::ProgressWidget::totalAmount(KJob::Unit unit, qulo
         totalItems = amount;
         showTotals();
         break;
+
+    case KJob::UnitsCount:
+        Q_UNREACHABLE();
+        break;
     }
 }
 
@@ -400,6 +404,10 @@ void KWidgetJobTrackerPrivate::ProgressWidget::processedAmount(KJob::Unit unit, 
         //~ plural %1 / %n items
         tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n item(s)", "", totalItems).arg(processedItems);
         progressLabel->setText(tmp);
+        break;
+
+    case KJob::UnitsCount:
+        Q_UNREACHABLE();
         break;
     }
 }

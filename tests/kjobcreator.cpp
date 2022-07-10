@@ -156,10 +156,10 @@ TestDialog::TestDialog(QWidget *parent)
     connect(m_ui.destUrl, &QLineEdit::editingFinished, this, &TestDialog::updateJob);
 
     connect(m_ui.emitDescriptionButton, &QPushButton::clicked, this, [this] {
-        m_job->description(m_job,
-                           m_ui.title->text(),
-                           qMakePair(m_ui.descriptionLabel1->text(), m_ui.descriptionValue1->text()),
-                           qMakePair(m_ui.descriptionLabel2->text(), m_ui.descriptionValue2->text()));
+        Q_EMIT m_job->description(m_job,
+                                  m_ui.title->text(),
+                                  qMakePair(m_ui.descriptionLabel1->text(), m_ui.descriptionValue1->text()),
+                                  qMakePair(m_ui.descriptionLabel2->text(), m_ui.descriptionValue2->text()));
     });
 
     connect(m_ui.percent, &QSlider::valueChanged, this, &TestDialog::updateJob);
@@ -175,7 +175,7 @@ TestDialog::TestDialog(QWidget *parent)
 
     connect(m_ui.infoMessage, &QLineEdit::returnPressed, m_ui.emitInfoMessage, &QPushButton::click);
     connect(m_ui.emitInfoMessage, &QPushButton::clicked, this, [this] {
-        m_job->infoMessage(m_job, m_ui.infoMessage->text(), QString());
+        Q_EMIT m_job->infoMessage(m_job, m_ui.infoMessage->text(), QString());
     });
 
     connect(m_ui.errorCombo, qOverload<int>(&QComboBox::activated), this, &TestDialog::updateJob);

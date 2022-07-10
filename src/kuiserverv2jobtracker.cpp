@@ -96,7 +96,6 @@ void KUiServerV2JobTrackerPrivate::sendUpdate(JobView &view)
 
 void KUiServerV2JobTrackerPrivate::updateDestUrl(KJob *job)
 {
-    const QVariant destUrl = job->property("destUrl");
     scheduleUpdate(job, QStringLiteral("destUrl"), job->property("destUrl").toString());
 }
 
