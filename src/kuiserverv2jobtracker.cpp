@@ -214,7 +214,9 @@ void KUiServerV2JobTracker::registerJob(KJob *job)
                     const uint errorCode = oldState.value(QStringLiteral("errorCode")).toUInt();
                     const QString errorMessage = oldState.value(QStringLiteral("errorMessage")).toString();
 
-                    view.jobView->terminate(errorCode, errorMessage, QVariantMap() /*hints*/);
+                    if (view.jobView) {
+                        view.jobView->terminate(errorCode, errorMessage, QVariantMap() /*hints*/);
+                    }
 
                     delete view.jobView;
                     d->jobViews.remove(job);
