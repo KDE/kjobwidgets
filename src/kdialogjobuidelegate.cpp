@@ -80,7 +80,7 @@ void KDialogJobUiDelegatePrivate::next()
         return;
     }
 
-    QMetaObject::invokeMethod(this, "next", Qt::QueuedConnection);
+    QMetaObject::invokeMethod(this, &KDialogJobUiDelegatePrivate::next, Qt::QueuedConnection);
 }
 
 void KDialogJobUiDelegatePrivate::queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg)
@@ -94,7 +94,7 @@ void KDialogJobUiDelegatePrivate::queuedMessageBox(QWidget *widget, KMessageBox:
 
     if (!running) {
         running = true;
-        QMetaObject::invokeMethod(this, "next", Qt::QueuedConnection);
+        QMetaObject::invokeMethod(this, &KDialogJobUiDelegatePrivate::next, Qt::QueuedConnection);
     }
 }
 
