@@ -102,7 +102,7 @@ ecm_generate_headers(KJobWidgets_HEADERS
   REQUIRED_HEADERS KJobWidgets_HEADERS
 )
 
-install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   org.kde.JobViewServer.xml
