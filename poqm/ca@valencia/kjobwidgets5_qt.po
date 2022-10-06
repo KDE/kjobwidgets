@@ -214,12 +214,12 @@ msgstr "Cliqueu açò per a expandir el diàleg, per a mostrar els detalls"
 #: kwidgetjobtracker.cpp:575
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
-msgstr "&Mantín esta finestra oberta en acabar la transferència"
+msgstr "Man&tín esta finestra oberta en acabar la transferència"
 
 #: kwidgetjobtracker.cpp:583
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
-msgstr "Obri un &fitxer"
+msgstr "Obri un fi&txer"
 
 #: kwidgetjobtracker.cpp:589
 msgctxt "KWidgetJobTracker|"
@@ -229,7 +229,7 @@ msgstr "Obri la &destinació"
 #: kwidgetjobtracker.cpp:597
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
-msgstr "&Cancel·la"
+msgstr "C&ancel·la"
 
 #: kwidgetjobtracker.cpp:605
 msgctxt "KWidgetJobTracker|"
