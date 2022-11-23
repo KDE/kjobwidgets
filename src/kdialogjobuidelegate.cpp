@@ -26,9 +26,11 @@
 #endif
 #endif
 
+enum DialogType { ErrorDialog, WarningDialog };
+
 struct MessageBoxData {
     QWidget *widget;
-    KMessageBox::DialogType type;
+    DialogType type = ErrorDialog;
     QString msg;
 };
 
@@ -38,7 +40,7 @@ class KDialogJobUiDelegatePrivate : public QObject
 public:
     explicit KDialogJobUiDelegatePrivate(QObject *parent = nullptr);
     ~KDialogJobUiDelegatePrivate() override;
-    void queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg);
+    void queuedMessageBox(QWidget *widget, DialogType type, const QString &msg);
 
     QWidget *window;
 
@@ -74,7 +76,15 @@ void KDialogJobUiDelegatePrivate::next()
     // kmessagebox starts a new event loop which can cause this to get deleted
     // https://bugs.kde.org/show_bug.cgi?id=356321#c16
     QPointer<KDialogJobUiDelegatePrivate> thisGuard(this);
-    KMessageBox::messageBox(data->widget, data->type, data->msg);
+
+    switch (data->type) {
+    case ErrorDialog:
+        KMessageBox::error(data->widget, data->msg);
+        break;
+    case WarningDialog:
+        KMessageBox::information(data->widget, data->msg);
+        break;
+    };
 
     if (!thisGuard) {
         return;
@@ -83,12 +93,9 @@ void KDialogJobUiDelegatePrivate::next()
     QMetaObject::invokeMethod(this, &KDialogJobUiDelegatePrivate::next, Qt::QueuedConnection);
 }
 
-void KDialogJobUiDelegatePrivate::queuedMessageBox(QWidget *widget, KMessageBox::DialogType type, const QString &msg)
+void KDialogJobUiDelegatePrivate::queuedMessageBox(QWidget *widget, DialogType type, const QString &msg)
 {
-    QSharedPointer<MessageBoxData> data(new MessageBoxData);
-    data->type = type;
-    data->widget = widget;
-    data->msg = msg;
+    QSharedPointer<MessageBoxData> data(new MessageBoxData{widget, type, msg});
 
     queue.enqueue(data);
 
@@ -156,14 +163,14 @@ unsigned long KDialogJobUiDelegate::userTimestamp() const
 void KDialogJobUiDelegate::showErrorMessage()
 {
     if (job()->error() != KJob::KilledJobError) {
-        d->queuedMessageBox(window(), KMessageBox::Error, job()->errorString());
+        d->queuedMessageBox(window(), ErrorDialog, job()->errorString());
     }
 }
 
 void KDialogJobUiDelegate::slotWarning(KJob * /*job*/, const QString &plain, const QString & /*rich*/)
 {
     if (isAutoWarningHandlingEnabled()) {
-        d->queuedMessageBox(window(), KMessageBox::Information, plain);
+        d->queuedMessageBox(window(), WarningDialog, plain);
     }
 }
 
