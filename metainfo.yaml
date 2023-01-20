@@ -13,8 +13,8 @@ deprecated: false
 release: true
 libraries:
  - qmake: KJobWidgets
-   cmake: "KF5::JobWidgets"
-cmakename: KF5JobWidgets
+   cmake: "KF6::JobWidgets"
+cmakename: KF6JobWidgets
 
 public_lib: true
 group: Frameworks

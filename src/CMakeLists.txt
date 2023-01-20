@@ -1,15 +1,15 @@
 configure_file(config-kjobwidgets.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kjobwidgets.h )
 
-add_library(KF5JobWidgets)
-add_library(KF5::JobWidgets ALIAS KF5JobWidgets)
+add_library(KF6JobWidgets)
+add_library(KF6::JobWidgets ALIAS KF6JobWidgets)
 
-set_target_properties(KF5JobWidgets PROPERTIES
+set_target_properties(KF6JobWidgets PROPERTIES
     VERSION     ${KJOBWIDGETS_VERSION}
     SOVERSION   ${KJOBWIDGETS_SOVERSION}
     EXPORT_NAME JobWidgets
 )
 
-ecm_create_qm_loader(KF5JobWidgets kjobwidgets5_qt)
+ecm_create_qm_loader(KF6JobWidgets kjobwidgets5_qt)
 
 set(kjobwidgets_dbus_SRCS)
 if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
@@ -20,7 +20,7 @@ if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
     qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
 endif()
 
-target_sources(KF5JobWidgets PRIVATE
+target_sources(KF6JobWidgets PRIVATE
     kabstractwidgetjobtracker.cpp
     kabstractwidgetjobtracker.h
     kabstractwidgetjobtracker_p.h
@@ -40,7 +40,7 @@ target_sources(KF5JobWidgets PRIVATE
     ${kjobwidgets_dbus_SRCS}
 )
 if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
-    target_sources(KF5JobWidgets PRIVATE
+    target_sources(KF6JobWidgets PRIVATE
         kuiserverjobtracker.cpp
         kuiserverjobtracker.h
         kuiserverjobtracker_p.h
@@ -50,7 +50,7 @@ if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
     )
 endif()
 
-ecm_qt_declare_logging_category(KF5JobWidgets
+ecm_qt_declare_logging_category(KF6JobWidgets
     HEADER debug.h
     IDENTIFIER KJOBWIDGETS
     CATEGORY_NAME kf.jobwidgets
@@ -59,7 +59,7 @@ ecm_qt_declare_logging_category(KF5JobWidgets
     EXPORT KJOBWIDGETS
 )
 
-ecm_generate_export_header(KF5JobWidgets
+ecm_generate_export_header(KF6JobWidgets
     BASE_NAME KJobWidgets
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
@@ -68,24 +68,24 @@ ecm_generate_export_header(KF5JobWidgets
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
-target_include_directories(KF5JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KJobWidgets>")
+target_include_directories(KF6JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KJobWidgets>")
 
-target_link_libraries(KF5JobWidgets
+target_link_libraries(KF6JobWidgets
    PUBLIC
       Qt${QT_MAJOR_VERSION}::Widgets
-      KF5::CoreAddons    # KJob
+      KF6::CoreAddons    # KJob
    PRIVATE
-      KF5::WidgetsAddons # KSqueezedTextLabel
+      KF6::WidgetsAddons # KSqueezedTextLabel
 )
 if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
-    target_link_libraries(KF5JobWidgets PRIVATE Qt${QT_MAJOR_VERSION}::DBus)
+    target_link_libraries(KF6JobWidgets PRIVATE Qt${QT_MAJOR_VERSION}::DBus)
 endif()
 
 if (HAVE_X11)
     if (TARGET Qt5::X11Extras)
-        target_link_libraries(KF5JobWidgets PRIVATE Qt5::X11Extras)
+        target_link_libraries(KF6JobWidgets PRIVATE Qt5::X11Extras)
     elseif (TARGET Qt6::Gui)
-        target_link_libraries(KF5JobWidgets PRIVATE Qt6::GuiPrivate) # qtx11extras_p.h
+        target_link_libraries(KF6JobWidgets PRIVATE Qt6::GuiPrivate) # qtx11extras_p.h
     endif()
 endif ()
 
@@ -102,7 +102,7 @@ ecm_generate_headers(KJobWidgets_HEADERS
   REQUIRED_HEADERS KJobWidgets_HEADERS
 )
 
-install(TARGETS KF5JobWidgets EXPORT KF5JobWidgetsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6JobWidgets EXPORT KF6JobWidgetsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   org.kde.JobViewServer.xml
@@ -133,16 +133,16 @@ ecm_qt_install_logging_categories(
 
 if(BUILD_QCH)
     ecm_add_qch(
-        KF5JobWidgets_QCH
+        KF6JobWidgets_QCH
         NAME KJobWidgets
-        BASE_NAME KF5JobWidgets
+        BASE_NAME KF6JobWidgets
         VERSION ${KF_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
             ${KJobWidgets_HEADERS}
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         LINK_QCHS
-            KF5CoreAddons_QCH
+            KF6CoreAddons_QCH
             Qt5Widgets_QCH
             Qt5Gui_QCH
             Qt5Core_QCH
@@ -157,5 +157,5 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KJobWidgets LIB_NAME KF5JobWidgets DEPS "widgets KCoreAddons" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KJobWidgets)
+ecm_generate_pri_file(BASE_NAME KJobWidgets LIB_NAME KF6JobWidgets DEPS "widgets KCoreAddons" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KJobWidgets)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
