@@ -83,10 +83,6 @@ protected Q_SLOTS:
 
 private:
     Q_DECLARE_PRIVATE_D(KAbstractWidgetJobTracker::d, KWidgetJobTracker)
-#if KJOBWIDGETS_BUILD_DEPRECATED_SINCE(5, 79)
-    // Unused, kept for ABI compatibility
-    const void *__kjobwidgets_d_do_not_use;
-#endif
 
     Q_PRIVATE_SLOT(d_func(), void _k_showProgressWidget())
 };
