@@ -26,24 +26,16 @@ include(ECMAddQch)
 include(CMakePackageConfigHelpers)
 
 set(REQUIRED_QT_VERSION 6.4.0)
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
+find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
 
 if (NOT ANDROID)
-    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
 endif()
 if (NOT APPLE)
     find_package(X11)
 endif()
 
 set(HAVE_X11 ${X11_FOUND})
-
-if (HAVE_X11)
-    if (QT_MAJOR_VERSION STREQUAL "5")
-        find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED X11Extras)
-    else()
-        # qtx11extras_p.h is in Qt6Gui, which implied by the Qt6Widgets above
-    endif()
-endif()
 
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
@@ -59,8 +51,8 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KJOBWIDGETS
                         SOVERSION 6)
 
 ecm_set_disabled_deprecation_versions(
-    QT 5.15.2
-    KF 5.95
+    QT 6.4
+    KF 5.102
 )
 
 ecm_install_po_files_as_qm(poqm)

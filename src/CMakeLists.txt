@@ -12,7 +12,7 @@ set_target_properties(KF6JobWidgets PROPERTIES
 ecm_create_qm_loader(KF6JobWidgets kjobwidgets5_qt)
 
 set(kjobwidgets_dbus_SRCS)
-if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
+if (TARGET Qt6::DBus)
     qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
     qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
 
@@ -39,7 +39,7 @@ target_sources(KF6JobWidgets PRIVATE
 
     ${kjobwidgets_dbus_SRCS}
 )
-if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
+if (TARGET Qt6::DBus)
     target_sources(KF6JobWidgets PRIVATE
         kuiserverjobtracker.cpp
         kuiserverjobtracker.h
@@ -72,21 +72,17 @@ target_include_directories(KF6JobWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_IN
 
 target_link_libraries(KF6JobWidgets
    PUBLIC
-      Qt${QT_MAJOR_VERSION}::Widgets
+      Qt6::Widgets
       KF6::CoreAddons    # KJob
    PRIVATE
       KF6::WidgetsAddons # KSqueezedTextLabel
 )
-if (TARGET Qt${QT_MAJOR_VERSION}::DBus)
-    target_link_libraries(KF6JobWidgets PRIVATE Qt${QT_MAJOR_VERSION}::DBus)
+if (TARGET Qt6::DBus)
+    target_link_libraries(KF6JobWidgets PRIVATE Qt6::DBus)
 endif()
 
 if (HAVE_X11)
-    if (TARGET Qt5::X11Extras)
-        target_link_libraries(KF6JobWidgets PRIVATE Qt5::X11Extras)
-    elseif (TARGET Qt6::Gui)
-        target_link_libraries(KF6JobWidgets PRIVATE Qt6::GuiPrivate) # qtx11extras_p.h
-    endif()
+    target_link_libraries(KF6JobWidgets PRIVATE Qt6::GuiPrivate) # qtx11extras_p.h
 endif ()
 
 ecm_generate_headers(KJobWidgets_HEADERS
@@ -143,9 +139,9 @@ if(BUILD_QCH)
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         LINK_QCHS
             KF6CoreAddons_QCH
-            Qt5Widgets_QCH
-            Qt5Gui_QCH
-            Qt5Core_QCH
+            Qt6Widgets_QCH
+            Qt6Gui_QCH
+            Qt6Core_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
