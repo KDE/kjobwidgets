@@ -52,7 +52,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KJOBWIDGETS
 
 ecm_set_disabled_deprecation_versions(
     QT 6.4
-    KF 5.102
+    KF 5.240
 )
 
 ecm_install_po_files_as_qm(poqm)
