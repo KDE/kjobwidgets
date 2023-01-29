@@ -82,7 +82,7 @@ protected Q_SLOTS:
     // TODO: Misses canResume()
 
 private:
-    Q_DECLARE_PRIVATE_D(KAbstractWidgetJobTracker::d, KWidgetJobTracker)
+    Q_DECLARE_PRIVATE(KWidgetJobTracker)
 
     Q_PRIVATE_SLOT(d_func(), void _k_showProgressWidget())
 };

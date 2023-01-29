@@ -91,7 +91,7 @@ public Q_SLOTS:
     void slotClean(KJob *job) override;
 
 private:
-    Q_DECLARE_PRIVATE_D(KAbstractWidgetJobTracker::d, KStatusBarJobTracker)
+    Q_DECLARE_PRIVATE(KStatusBarJobTracker)
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(KStatusBarJobTracker::StatusBarModes)

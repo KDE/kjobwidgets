@@ -19,7 +19,7 @@ KAbstractWidgetJobTracker::KAbstractWidgetJobTracker(QWidget *parent)
 
 KAbstractWidgetJobTracker::KAbstractWidgetJobTracker(KAbstractWidgetJobTrackerPrivate &dd, QWidget *parent)
     : KJobTrackerInterface(parent)
-    , d(&dd)
+    , d_ptr(&dd)
 {
 }
 
