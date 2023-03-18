@@ -9,7 +9,7 @@ set_target_properties(KF6JobWidgets PROPERTIES
     EXPORT_NAME JobWidgets
 )
 
-ecm_create_qm_loader(KF6JobWidgets kjobwidgets5_qt)
+ecm_create_qm_loader(KF6JobWidgets kjobwidgets6_qt)
 
 set(kjobwidgets_dbus_SRCS)
 if (TARGET Qt6::DBus)
