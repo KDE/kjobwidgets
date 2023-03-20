@@ -1,4 +1,4 @@
-# Translation of kjobwidgets5_qt.po to Catalan
+# Translation of kjobwidgets6_qt.po to Catalan
 # Copyright (C) 1998-2021 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
@@ -264,39 +264,3 @@ msgstr[1] "%n fitxers"
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "Cliqueu això per a reduir el diàleg, per a ocultar els detalls"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 B"
-#~ msgstr "%1 B"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 KiB"
-#~ msgstr "%1 KiB"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 MiB"
-#~ msgstr "%1 MiB"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 GiB"
-#~ msgstr "%1 GiB"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 TiB"
-#~ msgstr "%1 TiB"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 PiB"
-#~ msgstr "%1 PiB"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 EiB"
-#~ msgstr "%1 EiB"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 ZiB"
-#~ msgstr "%1 ZiB"
-
-#~ msgctxt "KJobTrackerFormatters|"
-#~ msgid "%1 YiB"
-#~ msgstr "%1 YiB"
