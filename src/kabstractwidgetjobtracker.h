@@ -175,7 +175,7 @@ Q_SIGNALS:
     void resume(KJob *job);
 
 protected:
-    KAbstractWidgetJobTracker(KAbstractWidgetJobTrackerPrivate &dd, QWidget *parent = nullptr);
+    KJOBWIDGETS_NO_EXPORT explicit KAbstractWidgetJobTracker(KAbstractWidgetJobTrackerPrivate &dd, QWidget *parent = nullptr);
 
 protected:
     std::unique_ptr<KAbstractWidgetJobTrackerPrivate> const d_ptr;
