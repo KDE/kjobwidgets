@@ -11,6 +11,8 @@
 #include <KJobTrackerInterface>
 #include <kjobwidgets_export.h>
 
+#include <memory>
+
 class KJob;
 
 /**
@@ -65,7 +67,7 @@ protected Q_SLOTS:
 
 private:
     class Private;
-    Private *const d;
+    std::unique_ptr<Private> const d;
 
     Q_PRIVATE_SLOT(d, void _k_killJob())
 };

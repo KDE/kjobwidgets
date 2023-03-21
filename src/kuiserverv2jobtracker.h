@@ -11,6 +11,8 @@
 #include <KJobTrackerInterface>
 #include <kjobwidgets_export.h>
 
+#include <memory>
+
 class KJob;
 class KUiServerV2JobTrackerPrivate;
 
@@ -69,8 +71,7 @@ protected Q_SLOTS:
     void speed(KJob *job, unsigned long value) override;
 
 private:
-    KUiServerV2JobTrackerPrivate *const d;
-
+    std::unique_ptr<KUiServerV2JobTrackerPrivate> const d;
 };
 
 #endif

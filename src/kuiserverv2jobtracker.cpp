@@ -173,8 +173,6 @@ KUiServerV2JobTracker::~KUiServerV2JobTracker()
         qCWarning(KJOBWIDGETS) << "A KUiServerV2JobTracker instance contains"
                                << d->jobViews.size() << "stalled jobs";
     }
-
-    delete d;
 }
 
 void KUiServerV2JobTracker::registerJob(KJob *job)

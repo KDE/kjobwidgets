@@ -74,8 +74,6 @@ KUiServerJobTracker::~KUiServerJobTracker()
     }
 
     qDeleteAll(d->progressJobView);
-
-    delete d;
 }
 
 void KUiServerJobTracker::registerJob(KJob *job)
