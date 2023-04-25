@@ -1,7 +1,6 @@
 # translation of kdelibs4.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2008, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
@@ -9,19 +8,22 @@
 # Marce Villarino <mvillarino@kde-espana.es>, 2009, 2010, 2011, 2012.
 # Xosé <xosecalvo@gmail.com>, 2010.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2014-05-13 22:49+0200\n"
-"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-04-24 07:01+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-Qt-Contexts: true\n"
 
 #: kjobtrackerformatters.cpp:27
@@ -121,15 +123,12 @@ msgstr[0] "%1 / %n ficheiro"
 msgstr[1] "%1 / %n ficheiros"
 
 #: kwidgetjobtracker.cpp:405
-#, fuzzy, qt-format
-#| msgctxt "KWidgetJobTracker|"
-#| msgid "%1 / %n file(s)"
-#| msgid_plural "%1 / %n file(s)"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n item(s)"
 msgid_plural "%1 / %n item(s)"
-msgstr[0] "%1 / %n ficheiro"
-msgstr[1] "%1 / %n ficheiros"
+msgstr[0] "%1 / %n elemento"
+msgstr[1] "%1 / %n elementos"
 
 #: kwidgetjobtracker.cpp:420
 #, qt-format
@@ -237,13 +236,12 @@ msgid "Progress Dialog"
 msgstr "Diálogo de progreso"
 
 #: kwidgetjobtracker.cpp:618
-#, fuzzy, qt-format
-#| msgid "Delete item(s)"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
 msgid_plural "%n item(s)"
-msgstr[0] "Eliminar o(s) elemento(s)"
-msgstr[1] "Eliminar o(s) elemento(s)"
+msgstr[0] "%n elemento"
+msgstr[1] "%n elementos"
 
 #: kwidgetjobtracker.cpp:624
 #, qt-format
