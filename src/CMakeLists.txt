@@ -104,17 +104,17 @@ install(TARGETS KF6JobWidgets EXPORT KF6JobWidgetsTargets ${KF_INSTALL_TARGETS_D
 install(FILES
   org.kde.JobViewServer.xml
   DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
-  RENAME kf5_org.kde.JobViewServer.xml)
+  RENAME kf6_org.kde.JobViewServer.xml)
 
 install(FILES
   org.kde.JobView.xml
   DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
-  RENAME kf5_org.kde.JobView.xml)
+  RENAME kf6_org.kde.JobView.xml)
 
 install(FILES
   org.kde.JobViewV2.xml
   DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
-  RENAME kf5_org.kde.JobViewV2.xml)
+  RENAME kf6_org.kde.JobViewV2.xml)
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_export.h
