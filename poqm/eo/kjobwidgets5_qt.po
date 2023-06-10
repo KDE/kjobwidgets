@@ -12,10 +12,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdelibs4\n"
+"Project-Id-Version: kjobwidgets\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2023-01-05 05:00+0100\n"
+"PO-Revision-Date: 2023-06-09 20:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -208,7 +208,7 @@ msgstr "Celo:"
 #: kwidgetjobtracker.cpp:540 kwidgetjobtracker.cpp:737
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
-msgstr ""
+msgstr "Alklaku ĉi tion por vastigi la dialogon, por montri detalojn"
 
 #: kwidgetjobtracker.cpp:575
 msgctxt "KWidgetJobTracker|"
@@ -262,4 +262,4 @@ msgstr[1] "%n dosieroj"
 #: kwidgetjobtracker.cpp:730
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
-msgstr ""
+msgstr "Alklaku ĉi tion por kolapsigi la dialogon, por kaŝi detalojn"
