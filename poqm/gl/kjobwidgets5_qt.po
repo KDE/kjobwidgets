@@ -208,7 +208,7 @@ msgstr "Destino:"
 #: kwidgetjobtracker.cpp:540 kwidgetjobtracker.cpp:737
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
-msgstr "Prema aquí para expandir o diálogo, para mostrar os detalles"
+msgstr "Prema aquí para expandir o diálogo, para amosar os detalles"
 
 #: kwidgetjobtracker.cpp:575
 msgctxt "KWidgetJobTracker|"
