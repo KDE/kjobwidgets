@@ -175,3 +175,4 @@ void KDialogJobUiDelegate::slotWarning(KJob * /*job*/, const QString &plain, con
 }
 
 #include "kdialogjobuidelegate.moc"
+#include "moc_kdialogjobuidelegate.cpp"
