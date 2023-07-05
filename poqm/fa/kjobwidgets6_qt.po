@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.4\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Qt-Contexts: true\n"
 
 #: kjobtrackerformatters.cpp:27
@@ -30,6 +30,7 @@ msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n day(s)"
 msgid_plural "%n day(s)"
 msgstr[0] "%1 روز"
+msgstr[1] ""
 
 #: kjobtrackerformatters.cpp:34
 #, fuzzy, qt-format
@@ -39,6 +40,7 @@ msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n hour(s)"
 msgid_plural "%n hour(s)"
 msgstr[0] "%1 ساعت"
+msgstr[1] ""
 
 #: kjobtrackerformatters.cpp:41
 #, fuzzy, qt-format
@@ -48,6 +50,7 @@ msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n minute(s)"
 msgid_plural "%n minute(s)"
 msgstr[0] "%1 دقیقه"
+msgstr[1] ""
 
 #: kjobtrackerformatters.cpp:48
 #, fuzzy, qt-format
@@ -57,6 +60,7 @@ msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n second(s)"
 msgid_plural "%n second(s)"
 msgstr[0] "%1 ثانیه"
+msgstr[1] ""
 
 # %1 %2
 #: kjobtrackerformatters.cpp:69
@@ -131,6 +135,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%1 of %2 complete"
 msgid_plural "%1 of %2 complete"
 msgstr[0] "تکمیل %1 از %2"
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:372 kwidgetjobtracker.cpp:389
 #, fuzzy, qt-format
@@ -140,6 +145,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n folder(s)"
 msgid_plural "%1 / %n folder(s)"
 msgstr[0] "%2 / %1 پوشه"
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:376 kwidgetjobtracker.cpp:394
 #, fuzzy, qt-format
@@ -149,6 +155,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n file(s)"
 msgid_plural "%1 / %n file(s)"
 msgstr[0] "%2 / %1 پرونده"
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:405
 #, fuzzy, qt-format
@@ -158,6 +165,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n item(s)"
 msgid_plural "%1 / %n item(s)"
 msgstr[0] "%2 / %1 پرونده"
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:420
 #, fuzzy, qt-format
@@ -174,6 +182,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%1% of %n file(s)"
 msgid_plural "%1% of %n file(s)"
 msgstr[0] "%2% از %1 پرونده"
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:426
 #, fuzzy, qt-format
@@ -197,6 +206,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
 msgid_plural "%1/s (%2 remaining)"
 msgstr[0] "%1/ثانیه ( %2 باقی‌مانده )"
+msgstr[1] ""
 
 # %1/s
 #: kwidgetjobtracker.cpp:449
@@ -305,6 +315,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
 msgid_plural "%n item(s)"
 msgstr[0] "حذف فقره)ها("
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:624
 #, fuzzy, qt-format
@@ -314,6 +325,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
 msgid_plural "%n folder(s)"
 msgstr[0] "%1 پوشه"
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:628
 #, fuzzy, qt-format
@@ -323,6 +335,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
 msgid_plural "%n file(s)"
 msgstr[0] "%1 پرونده"
+msgstr[1] ""
 
 #: kwidgetjobtracker.cpp:730
 msgctxt "KWidgetJobTracker|"
