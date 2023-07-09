@@ -14,8 +14,8 @@
 #include <QWidget>
 
 #include <KJob>
+#include <KJobWidgets>
 #include <KMessageBox>
-#include <kjobwidgets.h>
 
 #include <config-kjobwidgets.h>
 #if HAVE_X11

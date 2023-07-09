@@ -13,7 +13,7 @@
 #include <QMainWindow>
 #include <QStatusBar>
 
-#include <kjobwidgets.h>
+#include <KJobWidgets>
 #include <kstatusbarjobtracker.h>
 #include <kuiserverjobtracker.h>
 #include <kwidgetjobtracker.h>

@@ -28,8 +28,6 @@ target_sources(KF6JobWidgets PRIVATE
     kdialogjobuidelegate.h
     kjobtrackerformatters.cpp
     kjobtrackerformatters_p.h
-    kjobwidgets.cpp
-    kjobwidgets.h
     kstatusbarjobtracker.cpp
     kstatusbarjobtracker.h
     kstatusbarjobtracker_p.h
@@ -92,7 +90,6 @@ ecm_generate_headers(KJobWidgets_HEADERS
   KDialogJobUiDelegate
   KUiServerJobTracker
   KUiServerV2JobTracker
-  KJobWidgets
   KStatusBarJobTracker
   KWidgetJobTracker
 
