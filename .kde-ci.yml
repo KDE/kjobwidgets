@@ -4,6 +4,7 @@ Dependencies:
     'frameworks/extra-cmake-modules': '@same'
     'frameworks/kcoreaddons': '@same'
     'frameworks/kwidgetsaddons': '@same'
+    'frameworks/knotifications': '@same'
 
 Options:
   test-before-installing: True

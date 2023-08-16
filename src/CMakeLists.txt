@@ -34,6 +34,8 @@ target_sources(KF6JobWidgets PRIVATE
     kwidgetjobtracker.cpp
     kwidgetjobtracker.h
     kwidgetjobtracker_p.h
+    knotificationjobuidelegate.cpp
+    knotificationjobuidelegate.h
 
     ${kjobwidgets_dbus_SRCS}
 )
@@ -75,6 +77,7 @@ target_link_libraries(KF6JobWidgets
       KF6::CoreAddons    # KJob
    PRIVATE
       KF6::WidgetsAddons # KSqueezedTextLabel
+      KF6::Notifications
 )
 if (TARGET Qt6::DBus)
     target_link_libraries(KF6JobWidgets PRIVATE Qt6::DBus)
@@ -92,6 +95,7 @@ ecm_generate_headers(KJobWidgets_HEADERS
   KUiServerV2JobTracker
   KStatusBarJobTracker
   KWidgetJobTracker
+  KNotificationJobUiDelegate
 
   REQUIRED_HEADERS KJobWidgets_HEADERS
 )
