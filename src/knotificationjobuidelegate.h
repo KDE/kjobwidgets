@@ -21,7 +21,7 @@ class KNotificationJobUiDelegatePrivate;
  *
  * A UI delegate using KNotification for interaction (showing errors and warnings).
  *
- * @since 5.69
+ * @since 6.0
  */
 class KJOBWIDGETS_EXPORT KNotificationJobUiDelegate : public KJobUiDelegate
 {
