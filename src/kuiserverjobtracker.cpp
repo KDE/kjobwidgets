@@ -229,17 +229,15 @@ void KUiServerJobTracker::description(KJob *job, const QString &title, const QPa
     }
 }
 
-void KUiServerJobTracker::infoMessage(KJob *job, const QString &plain, const QString &rich)
+void KUiServerJobTracker::infoMessage(KJob *job, const QString &message)
 {
-    Q_UNUSED(rich)
-
     if (!d->progressJobView.contains(job)) {
         return;
     }
 
     org::kde::JobViewV2 *jobView = d->progressJobView[job];
 
-    jobView->setInfoMessage(plain);
+    jobView->setInfoMessage(message);
 }
 
 void KUiServerJobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amount)

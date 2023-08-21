@@ -163,10 +163,10 @@ void KDialogJobUiDelegate::showErrorMessage()
     }
 }
 
-void KDialogJobUiDelegate::slotWarning(KJob * /*job*/, const QString &plain, const QString & /*rich*/)
+void KDialogJobUiDelegate::slotWarning(KJob * /*job*/, const QString &message)
 {
     if (isAutoWarningHandlingEnabled()) {
-        d->queuedMessageBox(window(), WarningDialog, plain);
+        d->queuedMessageBox(window(), WarningDialog, message);
     }
 }
 

@@ -107,7 +107,7 @@ bool KWidgetJobTracker::keepOpen(KJob *job) const
     return pWidget->keepOpenCheck->isChecked();
 }
 
-void KWidgetJobTracker::infoMessage(KJob *job, const QString &plain, const QString &rich)
+void KWidgetJobTracker::infoMessage(KJob *job, const QString &message)
 {
     Q_D(KWidgetJobTracker);
 
@@ -116,7 +116,7 @@ void KWidgetJobTracker::infoMessage(KJob *job, const QString &plain, const QStri
         return;
     }
 
-    pWidget->infoMessage(plain, rich);
+    pWidget->infoMessage(message);
 }
 
 void KWidgetJobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
@@ -268,9 +268,9 @@ bool KWidgetJobTrackerPrivate::ProgressWidget::eventFilter(QObject *watched, QEv
     return QWidget::eventFilter(watched, event);
 }
 
-void KWidgetJobTrackerPrivate::ProgressWidget::infoMessage(const QString &plain, const QString & /*rich*/)
+void KWidgetJobTrackerPrivate::ProgressWidget::infoMessage(const QString &message)
 {
-    speedLabel->setText(plain);
+    speedLabel->setText(message);
     speedLabel->setAlignment(speedLabel->alignment() & ~Qt::TextWordWrap);
 }
 

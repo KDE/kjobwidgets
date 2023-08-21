@@ -159,7 +159,7 @@ public:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 public Q_SLOTS:
-    virtual void infoMessage(const QString &plain, const QString &rich);
+    virtual void infoMessage(const QString &plain);
     virtual void description(const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2);
     virtual void totalAmount(KJob::Unit unit, qulonglong amount);
     virtual void processedAmount(KJob::Unit unit, qulonglong amount);

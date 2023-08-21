@@ -175,7 +175,7 @@ TestDialog::TestDialog(QWidget *parent)
 
     connect(m_ui.infoMessage, &QLineEdit::returnPressed, m_ui.emitInfoMessage, &QPushButton::click);
     connect(m_ui.emitInfoMessage, &QPushButton::clicked, this, [this] {
-        Q_EMIT m_job->infoMessage(m_job, m_ui.infoMessage->text(), QString());
+        Q_EMIT m_job->infoMessage(m_job, m_ui.infoMessage->text());
     });
 
     connect(m_ui.errorCombo, qOverload<int>(&QComboBox::activated), this, &TestDialog::updateJob);

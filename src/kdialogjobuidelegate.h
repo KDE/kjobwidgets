@@ -80,7 +80,7 @@ public:
     void showErrorMessage() override;
 
 protected Q_SLOTS:
-    void slotWarning(KJob *job, const QString &plain, const QString &rich) override;
+    void slotWarning(KJob *job, const QString &message) override;
 
 private:
     std::unique_ptr<class KDialogJobUiDelegatePrivate> const d;

@@ -336,10 +336,9 @@ void KUiServerV2JobTracker::description(KJob *job, const QString &title,
     d->scheduleUpdate(job, QStringLiteral("descriptionValue2"), field2.second);
 }
 
-void KUiServerV2JobTracker::infoMessage(KJob *job, const QString &plain, const QString &rich)
+void KUiServerV2JobTracker::infoMessage(KJob *job, const QString &message)
 {
-    Q_UNUSED(rich);
-    d->scheduleUpdate(job, QStringLiteral("infoMessage"), plain);
+    d->scheduleUpdate(job, QStringLiteral("infoMessage"), message);
 }
 
 void KUiServerV2JobTracker::totalAmount(KJob *job, KJob::Unit unit, qulonglong amount)

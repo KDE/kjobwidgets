@@ -76,7 +76,7 @@ void KTestJob::stateNextDir()
     setTotalAmount(KJob::Files, totalAmount(KJob::Directories) * 10);
     setTotalAmount(KJob::Bytes, totalAmount(KJob::Files) * 1000);
 
-    Q_EMIT warning(this, directory_name, directory_name);
+    Q_EMIT warning(this, directory_name);
     Q_EMIT description(this, QStringLiteral("Stating"), qMakePair(QStringLiteral("Stating"), QString(QStringLiteral("file:/src/") + directory_name)));
 }
 
