@@ -76,6 +76,14 @@ msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
 msgid "%1 and %2"
 msgstr "%1 e %2"
 
+#. Job name, e.g. Copying has failed
+#: knotificationjobuidelegate.cpp:28
+#, fuzzy, qt-format
+#| msgid "%1 (Link)"
+msgctxt "KNotificationJobUiDelegate|"
+msgid "%1 (Failed)"
+msgstr "%1 (Ligazón)"
+
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
 msgid "Stop"
@@ -7468,9 +7476,6 @@ msgstr "Prema aquí para pregar o diálogo e agochar os detalles"
 
 #~ msgid "Symbolic Link"
 #~ msgstr "Ligazón simbólica"
-
-#~ msgid "%1 (Link)"
-#~ msgstr "%1 (Ligazón)"
 
 #~ msgid "%2 (%1 byte)"
 #~ msgid_plural "%2 (%1 bytes)"

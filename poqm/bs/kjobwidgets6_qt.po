@@ -62,6 +62,13 @@ msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
 msgid "%1 and %2"
 msgstr ""
 
+#. Job name, e.g. Copying has failed
+#: knotificationjobuidelegate.cpp:28
+#, qt-format
+msgctxt "KNotificationJobUiDelegate|"
+msgid "%1 (Failed)"
+msgstr ""
+
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
 msgid "Stop"
