@@ -4,13 +4,13 @@
 # Sivakumar Shanmugasundaram <sshanmu@yahoo.com>, 2000.
 # Thuraiappah Vaseeharan <t_vasee@yahoo.com>, 2000-2001.
 # ம. ஸ்ரீ ராமதாஸ் | Sri Ramadoss M <amachu@yavarkkum.org>, 2007-2012.
-# Kishore G <kishore96@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2023-03-19 12:44+0530\n"
+"PO-Revision-Date: 2023-09-10 19:07+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.0\n"
 "X-Qt-Contexts: true\n"
 
 #: kjobtrackerformatters.cpp:27
@@ -73,11 +73,10 @@ msgstr "%1 %2"
 
 #. Job name, e.g. Copying has failed
 #: knotificationjobuidelegate.cpp:28
-#, fuzzy, qt-format
-#| msgid "%1 (Link)"
+#, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "%1 (Failed)"
-msgstr "%1 (இணைப்பு) "
+msgstr "%1 (தோல்வியடைந்தது)"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
