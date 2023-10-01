@@ -12,8 +12,7 @@ portingAid: false
 deprecated: false
 release: true
 libraries:
- - qmake: KJobWidgets
-   cmake: "KF6::JobWidgets"
+ - cmake: "KF6::JobWidgets"
 cmakename: KF6JobWidgets
 
 public_lib: true
