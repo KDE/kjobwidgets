@@ -525,6 +525,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     topLayout->addLayout(progressHBox);
 
     progressBar = new QProgressBar(this);
+    progressBar->setFormat(QCoreApplication::translate("KWidgetJobTracker", "%p%", "Progress bar percent value, %p is the value, % is the percent sign. Make sure to include %p in your translation."));
     progressBar->setMaximum(0); // want a jumping progress bar if percent is not emitted
     progressHBox->addWidget(progressBar);
 
