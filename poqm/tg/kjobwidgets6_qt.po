@@ -197,7 +197,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "&Давом додан"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:555
+#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "&Таваққуф кардан"
@@ -212,39 +212,49 @@ msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "Ҷои таъйинот:"
 
-#: kwidgetjobtracker.cpp:540 kwidgetjobtracker.cpp:737
+#: kwidgetjobtracker.cpp:528
+#, fuzzy
+#| msgctxt "KWidgetJobTracker|"
+#| msgid "%1%"
+msgctxt ""
+"KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
+"percent sign. Make sure to include %p in your translation."
+msgid "%p%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr ""
 "Барои баркушодани равзанаи гуфтугӯ ё нишон додани тафсилот, дар ин ҷо зер "
 "кунед"
 
-#: kwidgetjobtracker.cpp:575
+#: kwidgetjobtracker.cpp:576
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "&Кушода нигоҳ доштани ин равзана баъд аз анҷоми интиқол"
 
-#: kwidgetjobtracker.cpp:583
+#: kwidgetjobtracker.cpp:584
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Кушодани &файл"
 
-#: kwidgetjobtracker.cpp:589
+#: kwidgetjobtracker.cpp:590
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Кушодани ҷои &таъйинот"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Бекор кардан"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Равзанаи гуфтугӯи раванд"
 
-#: kwidgetjobtracker.cpp:618
+#: kwidgetjobtracker.cpp:619
 #, fuzzy, qt-format
 #| msgid "Delete item(s)"
 msgctxt "KWidgetJobTracker|"
@@ -253,7 +263,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "Чизҳоро нест кунед"
 msgstr[1] "Чизҳоро нест кунед"
 
-#: kwidgetjobtracker.cpp:624
+#: kwidgetjobtracker.cpp:625
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -261,7 +271,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "%n ҷузвадон"
 msgstr[1] "%n ҷузвадон"
 
-#: kwidgetjobtracker.cpp:628
+#: kwidgetjobtracker.cpp:629
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -269,7 +279,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "%n файл"
 msgstr[1] "%n файл"
 
-#: kwidgetjobtracker.cpp:730
+#: kwidgetjobtracker.cpp:731
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr ""

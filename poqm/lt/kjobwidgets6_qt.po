@@ -215,7 +215,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "&Pratęsti"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:555
+#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "&Pristabdyti"
@@ -230,38 +230,48 @@ msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "Paskirties vieta:"
 
-#: kwidgetjobtracker.cpp:540 kwidgetjobtracker.cpp:737
+#: kwidgetjobtracker.cpp:528
+#, fuzzy
+#| msgctxt "KWidgetJobTracker|"
+#| msgid "%1%"
+msgctxt ""
+"KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
+"percent sign. Make sure to include %p in your translation."
+msgid "%p%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr ""
 "Spustelėkite čia norėdami išskleisti dialogą parodant išsamesnę informaciją"
 
-#: kwidgetjobtracker.cpp:575
+#: kwidgetjobtracker.cpp:576
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "&Užbaigus perkėlimą, palikti šį langą atvertą"
 
-#: kwidgetjobtracker.cpp:583
+#: kwidgetjobtracker.cpp:584
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Atverti &failą"
 
-#: kwidgetjobtracker.cpp:589
+#: kwidgetjobtracker.cpp:590
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Atverti paskirties &vietą"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Atsisakyti"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Eigos dialogas"
 
-#: kwidgetjobtracker.cpp:618
+#: kwidgetjobtracker.cpp:619
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -271,7 +281,7 @@ msgstr[1] "%n elementai"
 msgstr[2] "%n elementų"
 msgstr[3] "%n elementas"
 
-#: kwidgetjobtracker.cpp:624
+#: kwidgetjobtracker.cpp:625
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -281,7 +291,7 @@ msgstr[1] "%n aplank."
 msgstr[2] "%n aplank."
 msgstr[3] "%n aplank."
 
-#: kwidgetjobtracker.cpp:628
+#: kwidgetjobtracker.cpp:629
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -291,7 +301,7 @@ msgstr[1] "%n fail."
 msgstr[2] "%n fail."
 msgstr[3] "%n fail."
 
-#: kwidgetjobtracker.cpp:730
+#: kwidgetjobtracker.cpp:731
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr ""

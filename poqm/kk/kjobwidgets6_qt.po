@@ -236,7 +236,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "&Жалғастыру"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:555
+#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
 #, fuzzy
 #| msgid "&Pause"
 msgctxt "KWidgetJobTracker|"
@@ -259,49 +259,58 @@ msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "Қайда:"
 
-#: kwidgetjobtracker.cpp:540 kwidgetjobtracker.cpp:737
+#: kwidgetjobtracker.cpp:528
+#, fuzzy
+#| msgid "%1%"
+msgctxt ""
+"KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
+"percent sign. Make sure to include %p in your translation."
+msgid "%p%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 #, fuzzy
 #| msgid "Click this to expand the dialog, to show details"
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "Егжей-тегжейін көрсетіп, диалогты тарқату үшін түртіңіз."
 
-#: kwidgetjobtracker.cpp:575
+#: kwidgetjobtracker.cpp:576
 #, fuzzy
 #| msgid "&Keep this window open after transfer is complete"
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "Берілім аяқталған соң терезесі ашық күйінде қа&лсын"
 
-#: kwidgetjobtracker.cpp:583
+#: kwidgetjobtracker.cpp:584
 #, fuzzy
 #| msgid "Open &File"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "&Файлды ашу"
 
-#: kwidgetjobtracker.cpp:589
+#: kwidgetjobtracker.cpp:590
 #, fuzzy
 #| msgid "Open &Destination"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Көздегенді &ашу"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 #, fuzzy
 #| msgid "&Cancel"
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "Қ&айту"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 #, fuzzy
 #| msgid "Progress Dialog"
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Барыс диалогы"
 
-#: kwidgetjobtracker.cpp:618
+#: kwidgetjobtracker.cpp:619
 #, fuzzy, qt-format
 #| msgid "Delete item(s)"
 msgctxt "KWidgetJobTracker|"
@@ -309,7 +318,7 @@ msgid "%n item(s)"
 msgid_plural "%n item(s)"
 msgstr[0] "Нысанд(ард)ы өшіру"
 
-#: kwidgetjobtracker.cpp:624
+#: kwidgetjobtracker.cpp:625
 #, fuzzy, qt-format
 #| msgid "%1 folder"
 #| msgid_plural "%1 folders"
@@ -318,7 +327,7 @@ msgid "%n folder(s)"
 msgid_plural "%n folder(s)"
 msgstr[0] "%1 қапшық"
 
-#: kwidgetjobtracker.cpp:628
+#: kwidgetjobtracker.cpp:629
 #, fuzzy, qt-format
 #| msgid "%1 file"
 #| msgid_plural "%1 files"
@@ -327,7 +336,7 @@ msgid "%n file(s)"
 msgid_plural "%n file(s)"
 msgstr[0] "%1 файл"
 
-#: kwidgetjobtracker.cpp:730
+#: kwidgetjobtracker.cpp:731
 #, fuzzy
 #| msgid "Click this to collapse the dialog, to hide details"
 msgctxt "KWidgetJobTracker|"

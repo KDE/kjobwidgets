@@ -200,7 +200,7 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "ਮੁੜ-ਚਾਲੂ(&R)"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:555
+#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "ਵਿਰਾਮ(&P)"
@@ -215,37 +215,47 @@ msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "ਟਿਕਾਣਾ:"
 
-#: kwidgetjobtracker.cpp:540 kwidgetjobtracker.cpp:737
+#: kwidgetjobtracker.cpp:528
+#, fuzzy
+#| msgctxt "KWidgetJobTracker|"
+#| msgid "%1%"
+msgctxt ""
+"KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
+"percent sign. Make sure to include %p in your translation."
+msgid "%p%"
+msgstr "%1%"
+
+#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "ਡਾਈਲਾਗ ਫੈਲਾਉਣ, ਵੇਰਵਾ ਵੇਖਣ, ਲਈ ਇੱਥੇ ਕਲਿੱਕ ਕਰੋ"
 
-#: kwidgetjobtracker.cpp:575
+#: kwidgetjobtracker.cpp:576
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "ਟਰਾਂਸਫਰ ਹੋਣ ਮਗਰੋਂ ਵੀ ਇਹ ਵਿੰਡੋ ਖੁੱਲੀ ਰੱਖੋ(&K)"
 
-#: kwidgetjobtracker.cpp:583
+#: kwidgetjobtracker.cpp:584
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "ਫਾਈਲ ਖੋਲ੍ਹੋ(&F)"
 
-#: kwidgetjobtracker.cpp:589
+#: kwidgetjobtracker.cpp:590
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "ਨਿਯਤ ਟਿਕਾਣਾ ਖੋਲ੍ਹੋ(&D)"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "ਰੱਦ ਕਰੋ(&C)"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "ਤਰੱਕੀ ਡਾਈਲਾਗ"
 
-#: kwidgetjobtracker.cpp:618
+#: kwidgetjobtracker.cpp:619
 #, fuzzy, qt-format
 #| msgid "Delete item(s)"
 msgctxt "KWidgetJobTracker|"
@@ -254,7 +264,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "ਆਈਟਮਾਂ ਹਟਾਓ"
 msgstr[1] "ਆਈਟਮਾਂ ਹਟਾਓ"
 
-#: kwidgetjobtracker.cpp:624
+#: kwidgetjobtracker.cpp:625
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -262,7 +272,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "%n ਫੋਲਡਰ"
 msgstr[1] "%n ਫੋਲਡਰ"
 
-#: kwidgetjobtracker.cpp:628
+#: kwidgetjobtracker.cpp:629
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -270,7 +280,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "%n ਫਾਈਲ"
 msgstr[1] "%n ਫਾਈਲਾਂ"
 
-#: kwidgetjobtracker.cpp:730
+#: kwidgetjobtracker.cpp:731
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "ਡਾਈਲਾਗ ਨੂੰ ਸਮੇਟਣ, ਵੇਰਵਾ ਉਹਲੇ ਕਰਨ ਲਈ, ਇੱਥੇ ਕਲਿੱਕ ਕਰੋ"

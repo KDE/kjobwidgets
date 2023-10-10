@@ -87,7 +87,7 @@ msgid_plural "%1/s (%2 remaining)"
 msgstr[0] "%1/s (%2 remaining)"
 msgstr[1] "%1/s (%2 remaining)"
 
-#: ../kwidgetjobtracker.cpp:618
+#: ../kwidgetjobtracker.cpp:619
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -95,7 +95,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "%n item"
 msgstr[1] "%n items"
 
-#: ../kwidgetjobtracker.cpp:624
+#: ../kwidgetjobtracker.cpp:625
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -103,7 +103,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "%n folder"
 msgstr[1] "%n folders"
 
-#: ../kwidgetjobtracker.cpp:628
+#: ../kwidgetjobtracker.cpp:629
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
