@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #: kjobtrackerformatters.cpp:27
 #, qt-format
@@ -200,14 +200,11 @@ msgid "Destination:"
 msgstr "დანიშნულება:"
 
 #: kwidgetjobtracker.cpp:528
-#, fuzzy
-#| msgctxt "KWidgetJobTracker|"
-#| msgid "%1%"
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
-msgstr "%1%"
+msgstr "%p%"
 
 #: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 msgctxt "KWidgetJobTracker|"
