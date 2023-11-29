@@ -55,6 +55,7 @@ public:
 
     void requestView(KJob *job, const QString &desktopEntry);
 
+    QMutex jobViewsMutex;
     QHash<KJob *, JobView> jobViews;
     QTimer updateTimer;
 
@@ -118,6 +119,7 @@ void KUiServerV2JobTrackerPrivate::requestView(KJob *job, const QString &desktop
 
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, q);
     QObject::connect(watcher, &QDBusPendingCallWatcher::finished, q, [this, watcher, jobGuard, job] {
+        QMutexLocker locker(&jobViewsMutex);
         QDBusPendingReply<QDBusObjectPath> reply = *watcher;
         watcher->deleteLater();
 
@@ -194,6 +196,7 @@ void KUiServerV2JobTracker::registerJob(KJob *job)
     // Watch the server registering/unregistering and re-register the jobs as needed
     if (!d->serverRegisteredConnection) {
         d->serverRegisteredConnection = connect(serverProxy(), &KSharedUiServerV2Proxy::serverRegistered, this, [this]() {
+            QMutexLocker locker(&d->jobViewsMutex);
             const auto staleViews = d->jobViews;
 
             // Delete the old views, remove the old struct but keep the state,
@@ -287,6 +290,7 @@ void KUiServerV2JobTracker::unregisterJob(KJob *job)
 
 void KUiServerV2JobTracker::finished(KJob *job)
 {
+    QMutexLocker locker(&d->jobViewsMutex);
     d->updateDestUrl(job);
 
     // send all pending updates before terminating to ensure state is correct
