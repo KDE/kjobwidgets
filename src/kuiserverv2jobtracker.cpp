@@ -201,7 +201,7 @@ void KUiServerV2JobTracker::registerJob(KJob *job)
             // and then restore its previous state, which is safe because the DBus
             // is async and is only processed once event loop returns
             for (auto it = staleViews.begin(), end = staleViews.end(); it != end; ++it) {
-                KJob *job = it.key();
+                QPointer<KJob> jobGuard = it.key();
                 const JobView &view = it.value();
 
                 const auto oldState = view.currentState;
@@ -217,14 +217,16 @@ void KUiServerV2JobTracker::registerJob(KJob *job)
                     }
 
                     delete view.jobView;
-                    d->jobViews.remove(job);
+                    d->jobViews.remove(it.key());
                 } else {
                     delete view.jobView;
-                    d->jobViews.remove(job); // must happen before registerJob
+                    d->jobViews.remove(it.key()); // must happen before registerJob
 
-                    registerJob(job);
+                    if (jobGuard) {
+                        registerJob(jobGuard);
 
-                    d->jobViews[job].currentState = oldState;
+                        d->jobViews[jobGuard].currentState = oldState;
+                    }
                 }
             }
         });
