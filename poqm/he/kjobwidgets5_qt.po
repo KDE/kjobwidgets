@@ -20,15 +20,17 @@
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-05-16 06:50-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2023-12-15 22:10+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.4.1\n"
 "X-Qt-Contexts: true\n"
 
 #: kjobtrackerformatters.cpp:27
@@ -36,7 +38,7 @@ msgstr ""
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n day(s)"
 msgid_plural "%n day(s)"
-msgstr[0] "%n ימים"
+msgstr[0] "יום"
 msgstr[1] "%n ימים"
 
 #: kjobtrackerformatters.cpp:34
@@ -44,7 +46,7 @@ msgstr[1] "%n ימים"
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n hour(s)"
 msgid_plural "%n hour(s)"
-msgstr[0] "%n שעות"
+msgstr[0] "שעה"
 msgstr[1] "%n שעות"
 
 #: kjobtrackerformatters.cpp:41
@@ -52,7 +54,7 @@ msgstr[1] "%n שעות"
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n minute(s)"
 msgid_plural "%n minute(s)"
-msgstr[0] "%n דקות"
+msgstr[0] "דקה"
 msgstr[1] "%n דקות"
 
 #: kjobtrackerformatters.cpp:48
@@ -60,7 +62,7 @@ msgstr[1] "%n דקות"
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n second(s)"
 msgid_plural "%n second(s)"
-msgstr[0] "%n שניות"
+msgstr[0] "שנייה"
 msgstr[1] "%n שניות"
 
 #: kjobtrackerformatters.cpp:69
@@ -84,7 +86,7 @@ msgstr "%1 ו־%2"
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
 msgid "Stop"
-msgstr "עצור"
+msgstr "עצירה"
 
 #: kstatusbarjobtracker.cpp:240
 msgctxt "KStatusBarJobTracker|"
@@ -112,7 +114,7 @@ msgstr[0] "הושלם %1 מתוך %2"
 msgstr[1] "הושלמו %1 מתוך %2"
 
 #: kwidgetjobtracker.cpp:372 kwidgetjobtracker.cpp:389
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n folder(s)"
 msgid_plural "%1 / %n folder(s)"
@@ -128,10 +130,7 @@ msgstr[0] "‏‎%n/%1 קובץ"
 msgstr[1] "‏‎%n/%1 קבצים"
 
 #: kwidgetjobtracker.cpp:405
-#, fuzzy, qt-format
-#| msgctxt "KWidgetJobTracker|"
-#| msgid "%1 / %n file(s)"
-#| msgid_plural "%1 / %n file(s)"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n item(s)"
 msgid_plural "%1 / %n item(s)"
@@ -142,7 +141,7 @@ msgstr[1] "‏‎%n/%1 קבצים"
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
-msgstr "%1% מתוך %2 "
+msgstr "%1% מתוך %2"
 
 #: kwidgetjobtracker.cpp:424
 #, qt-format
@@ -175,12 +174,12 @@ msgstr[1] "%1 לשנייה (נותרו %2)"
 #, qt-format
 msgctxt "KWidgetJobTracker|speed in bytes per second"
 msgid "%1/s"
-msgstr " %1 בשנייה "
+msgstr "%1 לשנייה"
 
 #: kwidgetjobtracker.cpp:457
 msgctxt "KWidgetJobTracker|"
 msgid "&Close"
-msgstr "&סגור"
+msgstr "&סגירה"
 
 #: kwidgetjobtracker.cpp:459
 msgctxt "KWidgetJobTracker|"
@@ -191,17 +190,17 @@ msgstr "סגירת החלון או המסמך הנוכחיים"
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
-msgstr "%1 בשנייה (הושלם)"
+msgstr "%1 לשנייה (הושלם)"
 
 #: kwidgetjobtracker.cpp:478
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
-msgstr "&המשך"
+msgstr "ה&משך"
 
 #: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:555
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
-msgstr "&השהה"
+msgstr "ה&שהיה"
 
 #: kwidgetjobtracker.cpp:508
 msgctxt "KWidgetJobTracker|The source url of a job"
@@ -216,27 +215,27 @@ msgstr "יעד:"
 #: kwidgetjobtracker.cpp:540 kwidgetjobtracker.cpp:737
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
-msgstr "לחץ כאן כדי להרחיב את תיבת הדו-שיח, להצגת פרטים נוספים"
+msgstr "לחיצה כאן תרחיב את החלונית, להצגת פרטים נוספים"
 
 #: kwidgetjobtracker.cpp:575
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
-msgstr "&השאר חלון זה פתוח לאחר סיום ההעברה"
+msgstr "להש&איר חלון זה פתוח לאחר סיום ההעברה"
 
 #: kwidgetjobtracker.cpp:583
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
-msgstr "פתח &קובץ"
+msgstr "פתיחת &קובץ"
 
 #: kwidgetjobtracker.cpp:589
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
-msgstr "פתח &יעד"
+msgstr "פתיחת &יעד"
 
 #: kwidgetjobtracker.cpp:597
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
-msgstr "&בטל"
+msgstr "&ביטול"
 
 #: kwidgetjobtracker.cpp:605
 msgctxt "KWidgetJobTracker|"
@@ -248,15 +247,15 @@ msgstr "חלון התקדמות"
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
 msgid_plural "%n item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "פריט"
+msgstr[1] "%n פריטים"
 
 #: kwidgetjobtracker.cpp:624
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
 msgid_plural "%n folder(s)"
-msgstr[0] "תיקייה %n"
+msgstr[0] "תיקייה"
 msgstr[1] "%n תיקיות"
 
 #: kwidgetjobtracker.cpp:628
@@ -264,13 +263,13 @@ msgstr[1] "%n תיקיות"
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
 msgid_plural "%n file(s)"
-msgstr[0] "קובץ %n"
+msgstr[0] "קובץ"
 msgstr[1] "%n קבצים"
 
 #: kwidgetjobtracker.cpp:730
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
-msgstr "לחץ כאן כדי לצמצם את תיבת הדו-שיח, להסתרת הפרטים"
+msgstr "לחיצה כאן תצמצם את החלונית, להסתרת פרטים"
 
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 B"
