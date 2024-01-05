@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kjobwidgets\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2023-10-10 07:12+0100\n"
+"PO-Revision-Date: 2024-01-04 19:44+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -195,7 +195,7 @@ msgstr "%1/s (preta)"
 #: kwidgetjobtracker.cpp:478
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
-msgstr "&Restarigi"
+msgstr "Daŭ&rigi"
 
 #: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
 msgctxt "KWidgetJobTracker|"
