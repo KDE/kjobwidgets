@@ -1,11 +1,11 @@
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2018.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-28 15:38+0300\n"
-"PO-Revision-Date: 2021-07-26 23:38+0400\n"
+"PO-Revision-Date: 2024-01-17 17:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 "X-Qt-Contexts: true\n"
 
 #: kjobtrackerformatters.cpp:27
@@ -88,7 +88,7 @@ msgstr "%1 و%2"
 #, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "%1 (Failed)"
-msgstr ""
+msgstr "%1 (فشلت)"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
@@ -244,14 +244,11 @@ msgid "Destination:"
 msgstr "المقصد:"
 
 #: kwidgetjobtracker.cpp:528
-#, fuzzy
-#| msgctxt "KWidgetJobTracker|"
-#| msgid "%1%"
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
-msgstr "%1%"
+msgstr "%p٪"
 
 #: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 msgctxt "KWidgetJobTracker|"
