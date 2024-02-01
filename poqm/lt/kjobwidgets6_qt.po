@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2020-11-06 13:51+0200\n"
+"PO-Revision-Date: 2024-01-31 17:19+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@aksioma.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Qt-Contexts: true\n"
 
 #: kjobtrackerformatters.cpp:27
@@ -87,7 +87,7 @@ msgstr "%1 ir %2"
 #, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "%1 (Failed)"
-msgstr ""
+msgstr "%1 (Nepavyko)"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
@@ -231,14 +231,11 @@ msgid "Destination:"
 msgstr "Paskirties vieta:"
 
 #: kwidgetjobtracker.cpp:528
-#, fuzzy
-#| msgctxt "KWidgetJobTracker|"
-#| msgid "%1%"
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
-msgstr "%1%"
+msgstr "%p%"
 
 #: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 msgctxt "KWidgetJobTracker|"
