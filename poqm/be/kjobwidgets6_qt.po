@@ -9,10 +9,10 @@
 # kom <me@komzpa.net>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
+"Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2023-01-19 10:16\n"
+"PO-Revision-Date: 2024-02-28 19:42\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
 "Language: be\n"
@@ -24,11 +24,12 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
 "X-Qt-Contexts: true\n"
-"X-Crowdin-Project: 86ff119b1606fcaa910d6b44fc14b611\n"
-"X-Crowdin-Project-ID: 127\n"
+"X-Crowdin-Project: fc57ad16a28d02dea100ceb1c60de14e\n"
+"X-Crowdin-Project-ID: 136\n"
 "X-Crowdin-Language: be\n"
-"X-Crowdin-File: /main/be/kjobwidgets/kjobwidgets5_qt.po\n"
-"X-Crowdin-File-ID: 8045\n"
+"X-Crowdin-File: /[antikruk.KDE] main/KDE6/be/messages/kjobwidgets/"
+"kjobwidgets6_qt.po\n"
+"X-Crowdin-File-ID: 10154\n"
 
 #: kjobtrackerformatters.cpp:27
 #, qt-format
@@ -90,11 +91,10 @@ msgstr "%1 і %2"
 
 #. Job name, e.g. Copying has failed
 #: knotificationjobuidelegate.cpp:28
-#, fuzzy, qt-format
-#| msgid "%1 (Link)"
+#, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "%1 (Failed)"
-msgstr "%1 (спасылка)"
+msgstr "%1 (Памылка)"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
@@ -238,14 +238,11 @@ msgid "Destination:"
 msgstr "Мэта:"
 
 #: kwidgetjobtracker.cpp:528
-#, fuzzy
-#| msgctxt "KWidgetJobTracker|"
-#| msgid "%1%"
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
-msgstr "%1%"
+msgstr "%p%"
 
 #: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
 msgctxt "KWidgetJobTracker|"
