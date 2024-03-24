@@ -1,5 +1,3 @@
-configure_file(config-kjobwidgets.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kjobwidgets.h )
-
 add_library(KF6JobWidgets)
 add_library(KF6::JobWidgets ALIAS KF6JobWidgets)
 
@@ -83,7 +81,7 @@ if (TARGET Qt6::DBus)
     target_link_libraries(KF6JobWidgets PRIVATE Qt6::DBus)
 endif()
 
-if (HAVE_X11)
+if (NOT WIN32 AND NOT APPLE AND NOT ANDROID)
     target_link_libraries(KF6JobWidgets PRIVATE Qt6::GuiPrivate) # qtx11extras_p.h
 endif ()
 

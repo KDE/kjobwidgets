@@ -17,9 +17,11 @@
 #include <KJobWidgets>
 #include <KMessageBox>
 
-#include <config-kjobwidgets.h>
-#if HAVE_X11
+#if __has_include(<private/qtx11extras_p.h>)
 #include <private/qtx11extras_p.h>
+#define HAVE_X11 1
+#else
+#define HAVE_X11 0
 #endif
 
 enum DialogType { ErrorDialog, WarningDialog };
