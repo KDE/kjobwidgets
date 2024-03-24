@@ -31,11 +31,6 @@ find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
 if (NOT ANDROID)
     find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
 endif()
-if (NOT APPLE)
-    find_package(X11)
-endif()
-
-set(HAVE_X11 ${X11_FOUND})
 
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
