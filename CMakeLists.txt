@@ -30,6 +30,7 @@ find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
     find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
+    set(HAVE_QTDBUS ${Qt6DBus_FOUND})
 endif()
 
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)

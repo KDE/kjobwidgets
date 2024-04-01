@@ -10,7 +10,7 @@ set_target_properties(KF6JobWidgets PROPERTIES
 ecm_create_qm_loader(KF6JobWidgets kjobwidgets6_qt)
 
 set(kjobwidgets_dbus_SRCS)
-if (TARGET Qt6::DBus)
+if (HAVE_QTDBUS)
     qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
     qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
 
@@ -37,7 +37,7 @@ target_sources(KF6JobWidgets PRIVATE
 
     ${kjobwidgets_dbus_SRCS}
 )
-if (TARGET Qt6::DBus)
+if (HAVE_QTDBUS)
     target_sources(KF6JobWidgets PRIVATE
         kuiserverjobtracker.cpp
         kuiserverjobtracker.h
@@ -77,7 +77,7 @@ target_link_libraries(KF6JobWidgets
       KF6::WidgetsAddons # KSqueezedTextLabel
       KF6::Notifications
 )
-if (TARGET Qt6::DBus)
+if (HAVE_QTDBUS)
     target_link_libraries(KF6JobWidgets PRIVATE Qt6::DBus)
 endif()
 
