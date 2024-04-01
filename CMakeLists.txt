@@ -28,7 +28,7 @@ include(CMakePackageConfigHelpers)
 set(REQUIRED_QT_VERSION 6.5.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
 
-if (NOT ANDROID)
+if (UNIX AND NOT APPLE AND NOT ANDROID)
     find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
 endif()
 
