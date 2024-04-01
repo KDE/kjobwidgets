@@ -11,9 +11,9 @@ macro(kjobwidgets_executable_tests)
   endforeach(_testname)
 endmacro()
 
-kjobwidgets_executable_tests(
-   kjobtrackerstest
-)
+if (HAVE_QTDBUS)
+  kjobwidgets_executable_tests(kjobtrackerstest)
+endif()
 
 set(kjobcreator_SRCS kjobcreator.cpp)
 qt_wrap_ui(kjobcreator_SRCS kjobcreator.ui)
