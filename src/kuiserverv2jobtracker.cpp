@@ -263,13 +263,12 @@ void KUiServerV2JobTracker::registerJob(KJob *job)
         QTimer *delayTimer = new QTimer();
         delayTimer->setSingleShot(true);
         connect(delayTimer, &QTimer::timeout, this, [this, job, jobGuard, desktopEntry] {
-            auto &view = d->jobViews[job];
-            if (view.delayTimer) {
-                view.delayTimer->deleteLater();
-                view.delayTimer = nullptr;
-            }
-
             if (jobGuard) {
+                auto &view = d->jobViews[job];
+                if (view.delayTimer) {
+                    view.delayTimer->deleteLater();
+                    view.delayTimer = nullptr;
+                }
                 d->requestView(job, desktopEntry);
             }
         });
