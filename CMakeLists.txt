@@ -23,6 +23,7 @@ include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMDeprecationSettings)
 include(ECMAddQch)
+include(ECMOptionalPackageProperties)
 include(CMakePackageConfigHelpers)
 
 set(REQUIRED_QT_VERSION 6.5.0)
@@ -42,7 +43,9 @@ endif()
 
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
-find_package(KF6Notifications ${KF_DEP_VERSION} REQUIRED)
+find_package(KF6Notifications ${KF_DEP_VERSION})
+ecm_set_optional_package_properties(KF6Notifications PROPERTIES
+    PURPOSE "Required for the KNotification-based KJob UI delegate.")
 
 set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
 
