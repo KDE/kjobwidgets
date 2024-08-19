@@ -70,7 +70,7 @@ protected Q_SLOTS:
      * The following slots are inherited from KJobTrackerInterface.
      */
     void infoMessage(KJob *job, const QString &message) override;
-    virtual void description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override;
+    void description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override;
     void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount) override;
     void processedAmount(KJob *job, KJob::Unit unit, qulonglong amount) override;
     void percent(KJob *job, unsigned long percent) override;

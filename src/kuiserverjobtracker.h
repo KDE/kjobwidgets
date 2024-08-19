@@ -58,7 +58,7 @@ protected Q_SLOTS:
     void finished(KJob *job) override;
     void suspended(KJob *job) override;
     void resumed(KJob *job) override;
-    virtual void description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override;
+    void description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override;
     void infoMessage(KJob *job, const QString &message) override;
     void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount) override;
     void processedAmount(KJob *job, KJob::Unit unit, qulonglong amount) override;
