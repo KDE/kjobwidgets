@@ -100,20 +100,22 @@ ecm_generate_headers(KJobWidgets_HEADERS
 
 install(TARGETS KF6JobWidgets EXPORT KF6JobWidgetsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES
-  org.kde.JobViewServer.xml
-  DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
-  RENAME kf6_org.kde.JobViewServer.xml)
+if (HAVE_QTDBUS)
+    install(FILES
+    org.kde.JobViewServer.xml
+    DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
+    RENAME kf6_org.kde.JobViewServer.xml)
 
-install(FILES
-  org.kde.JobView.xml
-  DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
-  RENAME kf6_org.kde.JobView.xml)
+    install(FILES
+    org.kde.JobView.xml
+    DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
+    RENAME kf6_org.kde.JobView.xml)
 
-install(FILES
-  org.kde.JobViewV2.xml
-  DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
-  RENAME kf6_org.kde.JobViewV2.xml)
+    install(FILES
+    org.kde.JobViewV2.xml
+    DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
+    RENAME kf6_org.kde.JobViewV2.xml)
+endif()
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kjobwidgets_export.h
