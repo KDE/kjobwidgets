@@ -270,6 +270,7 @@ bool KWidgetJobTrackerPrivate::ProgressWidget::eventFilter(QObject *watched, QEv
 
 void KWidgetJobTrackerPrivate::ProgressWidget::infoMessage(const QString &message)
 {
+    arrowButton->show();
     speedLabel->setText(message);
     speedLabel->setAlignment(speedLabel->alignment() & ~Qt::TextWordWrap);
 }
@@ -375,6 +376,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::processedAmount(KJob::Unit unit, 
         //~ plural %1 / %n files
         tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
         progressLabel->setText(tmp);
+        arrowButton->show();
         break;
 
     case KJob::Files:
@@ -393,6 +395,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::processedAmount(KJob::Unit unit, 
         //~ plural %1 / %n files
         tmp += QCoreApplication::translate("KWidgetJobTracker", "%1 / %n file(s)", "", totalFiles).arg(processedFiles);
         progressLabel->setText(tmp);
+        arrowButton->show();
         break;
 
     case KJob::Items:
@@ -404,6 +407,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::processedAmount(KJob::Unit unit, 
         //~ plural %1 / %n items
         tmp = QCoreApplication::translate("KWidgetJobTracker", "%1 / %n item(s)", "", totalItems).arg(processedItems);
         progressLabel->setText(tmp);
+        arrowButton->show();
         break;
 
     case KJob::UnitsCount:
@@ -435,6 +439,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::percent(unsigned long percent)
 
 void KWidgetJobTrackerPrivate::ProgressWidget::speed(unsigned long value)
 {
+    arrowButton->show();
     if (value == 0) {
         speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "Stalled"));
     } else {
@@ -469,6 +474,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::slotClean()
         if (!s) {
             s = 1;
         }
+        arrowButton->show();
         speedLabel->setText(QCoreApplication::translate("KWidgetJobTracker", "%1/s (done)").arg(KJobTrackerFormatters::byteSize(1000 * totalSize / s)));
     }
 }
@@ -543,6 +549,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     connect(arrowButton, &QPushButton::clicked, this, &KWidgetJobTrackerPrivate::ProgressWidget::arrowClicked);
     hBox->addWidget(arrowButton);
     hBox->addStretch(1);
+    arrowButton->hide();
 
     KSeparator *separator1 = new KSeparator(Qt::Horizontal, this);
     topLayout->addWidget(separator1);
@@ -629,6 +636,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::showTotals()
             total += QCoreApplication::translate("KWidgetJobTracker", "%n file(s)", "", totalFiles);
             progressLabel->setText(total);
         }
+        arrowButton->show();
     }
 }
 
