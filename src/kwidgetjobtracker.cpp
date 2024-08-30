@@ -583,6 +583,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     keepOpenCheck = new QCheckBox(QCoreApplication::translate("KWidgetJobTracker", "&Keep this window open after transfer is complete"), this);
     connect(keepOpenCheck, &QCheckBox::toggled, this, &KWidgetJobTrackerPrivate::ProgressWidget::keepOpenToggled);
     topLayout->addWidget(keepOpenCheck);
+    const int widthWithKeepOpenCheck = sizeHint().width();
     keepOpenCheck->hide();
 
     hBox = new QHBoxLayout();
@@ -607,7 +608,7 @@ void KWidgetJobTrackerPrivate::ProgressWidget::init()
     connect(cancelClose, &QPushButton::clicked, this, &KWidgetJobTrackerPrivate::ProgressWidget::cancelClicked);
     hBox->addWidget(cancelClose);
 
-    resize(sizeHint());
+    resize(widthWithKeepOpenCheck, sizeHint().height());
     setMaximumHeight(sizeHint().height());
 
     setWindowTitle(QCoreApplication::translate("KWidgetJobTracker", "Progress Dialog")); // show something better than kuiserver
