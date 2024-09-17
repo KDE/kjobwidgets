@@ -242,7 +242,7 @@ msgstr "Διατήρηση του παράθυρου ανοι&χτού όταν 
 #: kwidgetjobtracker.cpp:584
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
-msgstr "&Άνοιγμα αρχείου"
+msgstr "Άνοι&γμα αρχείου"
 
 #: kwidgetjobtracker.cpp:590
 msgctxt "KWidgetJobTracker|"
