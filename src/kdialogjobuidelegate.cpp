@@ -17,11 +17,9 @@
 #include <KJobWidgets>
 #include <KMessageBox>
 
-#if __has_include(<private/qtx11extras_p.h>)
+#include <config-kjobwidgets.h>
+#if WITH_X11
 #include <private/qtx11extras_p.h>
-#define HAVE_X11 1
-#else
-#define HAVE_X11 0
 #endif
 
 enum DialogType { ErrorDialog, WarningDialog };
@@ -121,7 +119,7 @@ KDialogJobUiDelegate::~KDialogJobUiDelegate() = default;
 bool KDialogJobUiDelegate::setJob(KJob *job)
 {
     bool ret = KJobUiDelegate::setJob(job);
-#if HAVE_X11
+#if WITH_X11
     if (ret) {
         unsigned long time = QX11Info::appUserTime();
         KJobWidgets::updateUserTimestamp(job, time);

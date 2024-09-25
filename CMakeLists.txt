@@ -28,6 +28,10 @@ include(CMakePackageConfigHelpers)
 set(REQUIRED_QT_VERSION 6.5.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
 
+if(NOT WIN32 AND NOT APPLE AND NOT ANDROID)
+    option(WITH_X11 "Build with support for QX11Info::appUserTime()" ON)
+endif()
+
 # shall we use DBus?
 # enabled per default on Linux & BSD systems
 set(USE_DBUS_DEFAULT OFF)
