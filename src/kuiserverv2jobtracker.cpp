@@ -367,6 +367,7 @@ void KUiServerV2JobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglo
 {
     switch (unit) {
     case KJob::Bytes:
+        d->scheduleUpdate(job, QStringLiteral("elapsedTime"), job->elapsedTime());
         d->scheduleUpdate(job, QStringLiteral("processedBytes"), amount);
         break;
     case KJob::Files:

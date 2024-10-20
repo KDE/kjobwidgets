@@ -275,6 +275,8 @@ void KUiServerJobTracker::processedAmount(KJob *job, KJob::Unit unit, qulonglong
 
     org::kde::JobViewV2 *jobView = d->progressJobView[job];
 
+    jobView->setElapsedTime(job->elapsedTime());
+
     switch (unit) {
     case KJob::Bytes:
         jobView->setProcessedAmount(amount, QStringLiteral("bytes"));
