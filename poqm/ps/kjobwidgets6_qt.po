@@ -118,7 +118,7 @@ msgctxt "KStatusBarJobTracker|"
 msgid " %1/s "
 msgstr " %1/س"
 
-#: kwidgetjobtracker.cpp:281 kwidgetjobtracker.cpp:289
+#: kwidgetjobtracker.cpp:282 kwidgetjobtracker.cpp:290
 #, fuzzy, qt-format
 #| msgctxt "@application/plain"
 #| msgid "%1"
@@ -126,7 +126,7 @@ msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
 msgid "%1:"
 msgstr "%1"
 
-#: kwidgetjobtracker.cpp:353
+#: kwidgetjobtracker.cpp:354
 #, fuzzy, qt-format
 #| msgid "%2 of %3 complete"
 #| msgid_plural "%2 of %3 complete"
@@ -136,7 +136,7 @@ msgid_plural "%1 of %2 complete"
 msgstr[0] "بشپړ شوی %3 له %2"
 msgstr[1] "بشپړ شوي %3 له %2"
 
-#: kwidgetjobtracker.cpp:372 kwidgetjobtracker.cpp:389
+#: kwidgetjobtracker.cpp:373 kwidgetjobtracker.cpp:391
 #, fuzzy, qt-format
 #| msgid "%2 / %1 folder"
 #| msgid_plural "%2 / %1 folders"
@@ -146,7 +146,7 @@ msgid_plural "%1 / %n folder(s)"
 msgstr[0] "پوښۍ %2 / %1"
 msgstr[1] "پوښۍ %2 / %1"
 
-#: kwidgetjobtracker.cpp:376 kwidgetjobtracker.cpp:394
+#: kwidgetjobtracker.cpp:377 kwidgetjobtracker.cpp:396
 #, fuzzy, qt-format
 #| msgid "%2 / %1 file"
 #| msgid_plural "%2 / %1 files"
@@ -156,7 +156,7 @@ msgid_plural "%1 / %n file(s)"
 msgstr[0] "دوتنه %2 / %1"
 msgstr[1] "دوتنې %2 / %1"
 
-#: kwidgetjobtracker.cpp:405
+#: kwidgetjobtracker.cpp:408
 #, fuzzy, qt-format
 #| msgid "%2 / %1 file"
 #| msgid_plural "%2 / %1 files"
@@ -166,14 +166,14 @@ msgid_plural "%1 / %n item(s)"
 msgstr[0] "دوتنه %2 / %1"
 msgstr[1] "دوتنې %2 / %1"
 
-#: kwidgetjobtracker.cpp:420
+#: kwidgetjobtracker.cpp:424
 #, fuzzy, qt-format
 #| msgid "%1 % of %2 "
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
 msgstr "%1 % له %2 "
 
-#: kwidgetjobtracker.cpp:424
+#: kwidgetjobtracker.cpp:428
 #, fuzzy, qt-format
 #| msgid "%2 % of 1 file"
 #| msgid_plural "%2 % of %1 files"
@@ -183,21 +183,21 @@ msgid_plural "%1% of %n file(s)"
 msgstr[0] "له يوې دوتنې %2 %"
 msgstr[1] "دوتنو %1 له %2 %"
 
-#: kwidgetjobtracker.cpp:426
+#: kwidgetjobtracker.cpp:430
 #, fuzzy, qt-format
 #| msgid "%1%"
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:439
+#: kwidgetjobtracker.cpp:444
 #, fuzzy
 #| msgid "Stalled"
 msgctxt "KWidgetJobTracker|"
 msgid "Stalled"
 msgstr "درېدلی"
 
-#: kwidgetjobtracker.cpp:446
+#: kwidgetjobtracker.cpp:451
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
@@ -205,7 +205,7 @@ msgid_plural "%1/s (%2 remaining)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: kwidgetjobtracker.cpp:449
+#: kwidgetjobtracker.cpp:454
 #, fuzzy, qt-format
 #| msgctxt "speed in bytes per second"
 #| msgid "%1/s"
@@ -213,56 +213,56 @@ msgctxt "KWidgetJobTracker|speed in bytes per second"
 msgid "%1/s"
 msgstr "%1/س"
 
-#: kwidgetjobtracker.cpp:457
+#: kwidgetjobtracker.cpp:462
 #, fuzzy
 #| msgid "&Close"
 msgctxt "KWidgetJobTracker|"
 msgid "&Close"
 msgstr "بندول"
 
-#: kwidgetjobtracker.cpp:459
+#: kwidgetjobtracker.cpp:464
 #, fuzzy
 #| msgid "Close the current window or document"
 msgctxt "KWidgetJobTracker|"
 msgid "Close the current window or document"
 msgstr "اوسنۍ کړکۍ يا لاسوند بندول"
 
-#: kwidgetjobtracker.cpp:472
+#: kwidgetjobtracker.cpp:478
 #, fuzzy, qt-format
 #| msgid "%1/s (done)"
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
 msgstr "%1/س (شوی)"
 
-#: kwidgetjobtracker.cpp:478
+#: kwidgetjobtracker.cpp:484
 #, fuzzy
 #| msgid "Resume"
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "پرمخبيول"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
+#: kwidgetjobtracker.cpp:490 kwidgetjobtracker.cpp:563
 #, fuzzy
 #| msgid "Pause"
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "ځنډول"
 
-#: kwidgetjobtracker.cpp:508
+#: kwidgetjobtracker.cpp:514
 #, fuzzy
 #| msgid "Source:"
 msgctxt "KWidgetJobTracker|The source url of a job"
 msgid "Source:"
 msgstr ":سرچينه"
 
-#: kwidgetjobtracker.cpp:516
+#: kwidgetjobtracker.cpp:522
 #, fuzzy
 #| msgid "Destination:"
 msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr ":موخه"
 
-#: kwidgetjobtracker.cpp:528
+#: kwidgetjobtracker.cpp:534
 #, fuzzy
 #| msgid "%1%"
 msgctxt ""
@@ -271,47 +271,47 @@ msgctxt ""
 msgid "%p%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr ""
 
-#: kwidgetjobtracker.cpp:576
+#: kwidgetjobtracker.cpp:583
 #, fuzzy
 #| msgid "&Keep this window open after transfer is complete"
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "د لېږنې د بشپړېدو نه وروسته دا کړکۍ پرانيستې ساتل"
 
-#: kwidgetjobtracker.cpp:584
+#: kwidgetjobtracker.cpp:591
 #, fuzzy
 #| msgid "Open &File"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "دوتنه &پرانيستل"
 
-#: kwidgetjobtracker.cpp:590
+#: kwidgetjobtracker.cpp:597
 #, fuzzy
 #| msgid "Open &Destination"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "موخه &پرانيستل"
 
-#: kwidgetjobtracker.cpp:598
+#: kwidgetjobtracker.cpp:605
 #, fuzzy
 #| msgid "&Cancel"
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "بندول"
 
-#: kwidgetjobtracker.cpp:606
+#: kwidgetjobtracker.cpp:613
 #, fuzzy
 #| msgid "Progress Dialog"
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "پرمختګ کړکۍ"
 
-#: kwidgetjobtracker.cpp:619
+#: kwidgetjobtracker.cpp:626
 #, fuzzy, qt-format
 #| msgid "Delete item(s)"
 msgctxt "KWidgetJobTracker|"
@@ -320,7 +320,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "توکي ړنګول"
 msgstr[1] "توکي ړنګول"
 
-#: kwidgetjobtracker.cpp:625
+#: kwidgetjobtracker.cpp:632
 #, fuzzy, qt-format
 #| msgid "%1 folder"
 #| msgid_plural "%1 folders"
@@ -330,7 +330,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "پوښۍ %1"
 msgstr[1] "پوښۍ %1"
 
-#: kwidgetjobtracker.cpp:629
+#: kwidgetjobtracker.cpp:636
 #, fuzzy, qt-format
 #| msgid "%1 file"
 #| msgid_plural "%1 files"
@@ -340,7 +340,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "دوتنه %1"
 msgstr[1] "دوتنې %1"
 
-#: kwidgetjobtracker.cpp:731
+#: kwidgetjobtracker.cpp:739
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr ""

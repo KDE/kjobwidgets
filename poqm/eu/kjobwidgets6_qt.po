@@ -97,13 +97,13 @@ msgctxt "KStatusBarJobTracker|"
 msgid " %1/s "
 msgstr " %1/s "
 
-#: kwidgetjobtracker.cpp:281 kwidgetjobtracker.cpp:289
+#: kwidgetjobtracker.cpp:282 kwidgetjobtracker.cpp:290
 #, qt-format
 msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
 msgid "%1:"
 msgstr "%1:"
 
-#: kwidgetjobtracker.cpp:353
+#: kwidgetjobtracker.cpp:354
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 of %2 complete"
@@ -111,7 +111,7 @@ msgid_plural "%1 of %2 complete"
 msgstr[0] "%2(e)tatik %1 burututa"
 msgstr[1] "%2(e)tatik %1 burututa"
 
-#: kwidgetjobtracker.cpp:372 kwidgetjobtracker.cpp:389
+#: kwidgetjobtracker.cpp:373 kwidgetjobtracker.cpp:391
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n folder(s)"
@@ -119,7 +119,7 @@ msgid_plural "%1 / %n folder(s)"
 msgstr[0] "Karpeta: %1 / %n"
 msgstr[1] "Karpeta: %1 / %n"
 
-#: kwidgetjobtracker.cpp:376 kwidgetjobtracker.cpp:394
+#: kwidgetjobtracker.cpp:377 kwidgetjobtracker.cpp:396
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n file(s)"
@@ -127,7 +127,7 @@ msgid_plural "%1 / %n file(s)"
 msgstr[0] "Fitxategi: %1 / %n"
 msgstr[1] "Fitxategi: %1 / %n"
 
-#: kwidgetjobtracker.cpp:405
+#: kwidgetjobtracker.cpp:408
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n item(s)"
@@ -135,13 +135,13 @@ msgid_plural "%1 / %n item(s)"
 msgstr[0] "%1 / %n elementu"
 msgstr[1] "%1 / %n elementu"
 
-#: kwidgetjobtracker.cpp:420
+#: kwidgetjobtracker.cpp:424
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
 msgstr "%2(e)tik % %1"
 
-#: kwidgetjobtracker.cpp:424
+#: kwidgetjobtracker.cpp:428
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %n file(s)"
@@ -149,18 +149,18 @@ msgid_plural "%1% of %n file(s)"
 msgstr[0] "Fitxategi: %n(e)tik % %1"
 msgstr[1] "Fitxategi: %n(e)tik % %1"
 
-#: kwidgetjobtracker.cpp:426
+#: kwidgetjobtracker.cpp:430
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
 msgstr "% %1"
 
-#: kwidgetjobtracker.cpp:439
+#: kwidgetjobtracker.cpp:444
 msgctxt "KWidgetJobTracker|"
 msgid "Stalled"
 msgstr "Trabatua"
 
-#: kwidgetjobtracker.cpp:446
+#: kwidgetjobtracker.cpp:451
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
@@ -168,86 +168,86 @@ msgid_plural "%1/s (%2 remaining)"
 msgstr[0] "%1/s (%2 gelditzen da )"
 msgstr[1] "%1/s (%2 gelditzen dira )"
 
-#: kwidgetjobtracker.cpp:449
+#: kwidgetjobtracker.cpp:454
 #, qt-format
 msgctxt "KWidgetJobTracker|speed in bytes per second"
 msgid "%1/s"
 msgstr "%1/s"
 
-#: kwidgetjobtracker.cpp:457
+#: kwidgetjobtracker.cpp:462
 msgctxt "KWidgetJobTracker|"
 msgid "&Close"
 msgstr "&Itxi"
 
-#: kwidgetjobtracker.cpp:459
+#: kwidgetjobtracker.cpp:464
 msgctxt "KWidgetJobTracker|"
 msgid "Close the current window or document"
 msgstr "Itxi uneko leihoa edo dokumentua"
 
-#: kwidgetjobtracker.cpp:472
+#: kwidgetjobtracker.cpp:478
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
 msgstr "%1/s (egina)"
 
-#: kwidgetjobtracker.cpp:478
+#: kwidgetjobtracker.cpp:484
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "&Berrekin"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
+#: kwidgetjobtracker.cpp:490 kwidgetjobtracker.cpp:563
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "&Pausatu"
 
-#: kwidgetjobtracker.cpp:508
+#: kwidgetjobtracker.cpp:514
 msgctxt "KWidgetJobTracker|The source url of a job"
 msgid "Source:"
 msgstr "Iturburua:"
 
-#: kwidgetjobtracker.cpp:516
+#: kwidgetjobtracker.cpp:522
 msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "Helmuga:"
 
-#: kwidgetjobtracker.cpp:528
+#: kwidgetjobtracker.cpp:534
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
 msgstr "%%p"
 
-#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "Egin klik elkarrizketa-koadroa zabaltzeko, xehetasunak erakusteko"
 
-#: kwidgetjobtracker.cpp:576
+#: kwidgetjobtracker.cpp:583
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "&Mantendu leiho hau irekia transferentzia bukatu ondoren"
 
-#: kwidgetjobtracker.cpp:584
+#: kwidgetjobtracker.cpp:591
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Ireki &fitxategia"
 
-#: kwidgetjobtracker.cpp:590
+#: kwidgetjobtracker.cpp:597
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Ireki &helmuga"
 
-#: kwidgetjobtracker.cpp:598
+#: kwidgetjobtracker.cpp:605
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Utzi"
 
-#: kwidgetjobtracker.cpp:606
+#: kwidgetjobtracker.cpp:613
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Aurrerapen elkarrizketa-koadroa"
 
-#: kwidgetjobtracker.cpp:619
+#: kwidgetjobtracker.cpp:626
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -255,7 +255,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "%n elementu"
 msgstr[1] "%n elementu"
 
-#: kwidgetjobtracker.cpp:625
+#: kwidgetjobtracker.cpp:632
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -263,7 +263,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "Karpeta %n"
 msgstr[1] "%n karpeta"
 
-#: kwidgetjobtracker.cpp:629
+#: kwidgetjobtracker.cpp:636
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -271,7 +271,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "Fitxategi %n"
 msgstr[1] "%n fitxategi"
 
-#: kwidgetjobtracker.cpp:731
+#: kwidgetjobtracker.cpp:739
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "Egin klik elkarrizketa-koadroa tolesteko, xehetasunak ezkutatzeko"

@@ -104,13 +104,13 @@ msgctxt "KStatusBarJobTracker|"
 msgid " %1/s "
 msgstr " %1/sek. "
 
-#: kwidgetjobtracker.cpp:281 kwidgetjobtracker.cpp:289
+#: kwidgetjobtracker.cpp:282 kwidgetjobtracker.cpp:290
 #, qt-format
 msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
 msgid "%1:"
 msgstr "%1:"
 
-#: kwidgetjobtracker.cpp:353
+#: kwidgetjobtracker.cpp:354
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 of %2 complete"
@@ -119,7 +119,7 @@ msgstr[0] "pabeigts %1 no %2 "
 msgstr[1] "pabeigti %1 no %2 "
 msgstr[2] "pabeigti %1 no %2 "
 
-#: kwidgetjobtracker.cpp:372 kwidgetjobtracker.cpp:389
+#: kwidgetjobtracker.cpp:373 kwidgetjobtracker.cpp:391
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n folder(s)"
@@ -128,7 +128,7 @@ msgstr[0] "%1 mape no %n"
 msgstr[1] "%1 mapes no %n"
 msgstr[2] "%1 mapju no %n"
 
-#: kwidgetjobtracker.cpp:376 kwidgetjobtracker.cpp:394
+#: kwidgetjobtracker.cpp:377 kwidgetjobtracker.cpp:396
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n file(s)"
@@ -137,7 +137,7 @@ msgstr[0] "%1 datne no %n"
 msgstr[1] "%1 datnes no %n"
 msgstr[2] "%1 datņu no %n"
 
-#: kwidgetjobtracker.cpp:405
+#: kwidgetjobtracker.cpp:408
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n item(s)"
@@ -146,13 +146,13 @@ msgstr[0] "%1 vienums no %n"
 msgstr[1] "%1 vienumi no %n"
 msgstr[2] "%1 vienumu no %n"
 
-#: kwidgetjobtracker.cpp:420
+#: kwidgetjobtracker.cpp:424
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
 msgstr "%1% no %2"
 
-#: kwidgetjobtracker.cpp:424
+#: kwidgetjobtracker.cpp:428
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %n file(s)"
@@ -161,18 +161,18 @@ msgstr[0] "%1% no %n datnes"
 msgstr[1] "%1% no %n datnēm"
 msgstr[2] "%1% no %n datņu"
 
-#: kwidgetjobtracker.cpp:426
+#: kwidgetjobtracker.cpp:430
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:439
+#: kwidgetjobtracker.cpp:444
 msgctxt "KWidgetJobTracker|"
 msgid "Stalled"
 msgstr "Apstājies"
 
-#: kwidgetjobtracker.cpp:446
+#: kwidgetjobtracker.cpp:451
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
@@ -181,86 +181,86 @@ msgstr[0] "%1/sek. (atlicis: %2)"
 msgstr[1] "%1/sek. (atlicis: %2)"
 msgstr[2] "%1/sek. (atlicis: %2)"
 
-#: kwidgetjobtracker.cpp:449
+#: kwidgetjobtracker.cpp:454
 #, qt-format
 msgctxt "KWidgetJobTracker|speed in bytes per second"
 msgid "%1/s"
 msgstr "%1/sek."
 
-#: kwidgetjobtracker.cpp:457
+#: kwidgetjobtracker.cpp:462
 msgctxt "KWidgetJobTracker|"
 msgid "&Close"
 msgstr "&Aizvērt"
 
-#: kwidgetjobtracker.cpp:459
+#: kwidgetjobtracker.cpp:464
 msgctxt "KWidgetJobTracker|"
 msgid "Close the current window or document"
 msgstr "Aizvērt aktīvo logu vai dokumentu"
 
-#: kwidgetjobtracker.cpp:472
+#: kwidgetjobtracker.cpp:478
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
 msgstr "%1/sek. (pabeigts)"
 
-#: kwidgetjobtracker.cpp:478
+#: kwidgetjobtracker.cpp:484
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "&Atsākt"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
+#: kwidgetjobtracker.cpp:490 kwidgetjobtracker.cpp:563
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "&Pauze"
 
-#: kwidgetjobtracker.cpp:508
+#: kwidgetjobtracker.cpp:514
 msgctxt "KWidgetJobTracker|The source url of a job"
 msgid "Source:"
 msgstr "Avots:"
 
-#: kwidgetjobtracker.cpp:516
+#: kwidgetjobtracker.cpp:522
 msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "Galamērķis:"
 
-#: kwidgetjobtracker.cpp:528
+#: kwidgetjobtracker.cpp:534
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
 msgstr "%p%"
 
-#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "Spiediet, lai paplašinātu logu un parādītu informāciju"
 
-#: kwidgetjobtracker.cpp:576
+#: kwidgetjobtracker.cpp:583
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "&Paturēt logu atvērtu pēc datu pārsūtīšanas"
 
-#: kwidgetjobtracker.cpp:584
+#: kwidgetjobtracker.cpp:591
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Atvērt &datni"
 
-#: kwidgetjobtracker.cpp:590
+#: kwidgetjobtracker.cpp:597
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Atvērt &galamērķi"
 
-#: kwidgetjobtracker.cpp:598
+#: kwidgetjobtracker.cpp:605
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Atcelt"
 
-#: kwidgetjobtracker.cpp:606
+#: kwidgetjobtracker.cpp:613
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Progresa logs"
 
-#: kwidgetjobtracker.cpp:619
+#: kwidgetjobtracker.cpp:626
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -269,7 +269,7 @@ msgstr[0] "%n vienība"
 msgstr[1] "%n vienības"
 msgstr[2] "%n vienību"
 
-#: kwidgetjobtracker.cpp:625
+#: kwidgetjobtracker.cpp:632
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -278,7 +278,7 @@ msgstr[0] "%n mape"
 msgstr[1] "%n mapes"
 msgstr[2] "%n mapju"
 
-#: kwidgetjobtracker.cpp:629
+#: kwidgetjobtracker.cpp:636
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -287,7 +287,7 @@ msgstr[0] "%n datne"
 msgstr[1] "%n datnes"
 msgstr[2] "%n datņu"
 
-#: kwidgetjobtracker.cpp:731
+#: kwidgetjobtracker.cpp:739
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "Spiediet, lai sakļautu logu un noslēptu informāciju"

@@ -105,13 +105,13 @@ msgctxt "KStatusBarJobTracker|"
 msgid " %1/s "
 msgstr " %1/s "
 
-#: kwidgetjobtracker.cpp:281 kwidgetjobtracker.cpp:289
+#: kwidgetjobtracker.cpp:282 kwidgetjobtracker.cpp:290
 #, qt-format
 msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
 msgid "%1:"
 msgstr "%1:"
 
-#: kwidgetjobtracker.cpp:353
+#: kwidgetjobtracker.cpp:354
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 of %2 complete"
@@ -120,7 +120,7 @@ msgstr[0] "Ukończono %1 z %2"
 msgstr[1] "Ukończono %1 z %2"
 msgstr[2] "Ukończono %1 z %2"
 
-#: kwidgetjobtracker.cpp:372 kwidgetjobtracker.cpp:389
+#: kwidgetjobtracker.cpp:373 kwidgetjobtracker.cpp:391
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n folder(s)"
@@ -129,7 +129,7 @@ msgstr[0] "%1 / %n katalogu"
 msgstr[1] "%1 / %n katalogów"
 msgstr[2] "%1 / %n katalogów"
 
-#: kwidgetjobtracker.cpp:376 kwidgetjobtracker.cpp:394
+#: kwidgetjobtracker.cpp:377 kwidgetjobtracker.cpp:396
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n file(s)"
@@ -138,7 +138,7 @@ msgstr[0] "%1 / %n pliku"
 msgstr[1] "%1 / %n plików"
 msgstr[2] "%1 / %n plików"
 
-#: kwidgetjobtracker.cpp:405
+#: kwidgetjobtracker.cpp:408
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n item(s)"
@@ -147,13 +147,13 @@ msgstr[0] "%1 / %n elementu"
 msgstr[1] "%1 / %n elementów"
 msgstr[2] "%1 / %n elementów"
 
-#: kwidgetjobtracker.cpp:420
+#: kwidgetjobtracker.cpp:424
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
 msgstr "%1% z %2"
 
-#: kwidgetjobtracker.cpp:424
+#: kwidgetjobtracker.cpp:428
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %n file(s)"
@@ -162,18 +162,18 @@ msgstr[0] "%1% z %n pliku"
 msgstr[1] "%1% z %n plików"
 msgstr[2] "%1% z %n plików"
 
-#: kwidgetjobtracker.cpp:426
+#: kwidgetjobtracker.cpp:430
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:439
+#: kwidgetjobtracker.cpp:444
 msgctxt "KWidgetJobTracker|"
 msgid "Stalled"
 msgstr "Zawieszona"
 
-#: kwidgetjobtracker.cpp:446
+#: kwidgetjobtracker.cpp:451
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
@@ -182,86 +182,86 @@ msgstr[0] "%1/s (pozostało %2)"
 msgstr[1] "%1/s (pozostało %2)"
 msgstr[2] "%1/s (pozostało %2)"
 
-#: kwidgetjobtracker.cpp:449
+#: kwidgetjobtracker.cpp:454
 #, qt-format
 msgctxt "KWidgetJobTracker|speed in bytes per second"
 msgid "%1/s"
 msgstr "%1/s"
 
-#: kwidgetjobtracker.cpp:457
+#: kwidgetjobtracker.cpp:462
 msgctxt "KWidgetJobTracker|"
 msgid "&Close"
 msgstr "Z&amknij"
 
-#: kwidgetjobtracker.cpp:459
+#: kwidgetjobtracker.cpp:464
 msgctxt "KWidgetJobTracker|"
 msgid "Close the current window or document"
 msgstr "Zamknij bieżące okno lub dokument"
 
-#: kwidgetjobtracker.cpp:472
+#: kwidgetjobtracker.cpp:478
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
 msgstr "%1/s (zrobiona)"
 
-#: kwidgetjobtracker.cpp:478
+#: kwidgetjobtracker.cpp:484
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "&Wznów"
 
-#: kwidgetjobtracker.cpp:484 kwidgetjobtracker.cpp:556
+#: kwidgetjobtracker.cpp:490 kwidgetjobtracker.cpp:563
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "&Wstrzymaj"
 
-#: kwidgetjobtracker.cpp:508
+#: kwidgetjobtracker.cpp:514
 msgctxt "KWidgetJobTracker|The source url of a job"
 msgid "Source:"
 msgstr "Z:"
 
-#: kwidgetjobtracker.cpp:516
+#: kwidgetjobtracker.cpp:522
 msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "Do:"
 
-#: kwidgetjobtracker.cpp:528
+#: kwidgetjobtracker.cpp:534
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
 msgstr "%p%"
 
-#: kwidgetjobtracker.cpp:541 kwidgetjobtracker.cpp:738
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "Naciśnij, aby rozwinąć to okno i zobaczyć szczegóły"
 
-#: kwidgetjobtracker.cpp:576
+#: kwidgetjobtracker.cpp:583
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "Nie zamykaj t&ego okna po ukończeniu przesyłania"
 
-#: kwidgetjobtracker.cpp:584
+#: kwidgetjobtracker.cpp:591
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Otwórz &plik"
 
-#: kwidgetjobtracker.cpp:590
+#: kwidgetjobtracker.cpp:597
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Otwórz miejsce &docelowe"
 
-#: kwidgetjobtracker.cpp:598
+#: kwidgetjobtracker.cpp:605
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Anuluj"
 
-#: kwidgetjobtracker.cpp:606
+#: kwidgetjobtracker.cpp:613
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Okno dialogowe postępu"
 
-#: kwidgetjobtracker.cpp:619
+#: kwidgetjobtracker.cpp:626
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -270,7 +270,7 @@ msgstr[0] "%n element"
 msgstr[1] "%n elementy"
 msgstr[2] "%n elementów"
 
-#: kwidgetjobtracker.cpp:625
+#: kwidgetjobtracker.cpp:632
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -279,7 +279,7 @@ msgstr[0] "%n katalog"
 msgstr[1] "%n katalogi"
 msgstr[2] "%n katalogów"
 
-#: kwidgetjobtracker.cpp:629
+#: kwidgetjobtracker.cpp:636
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -288,7 +288,7 @@ msgstr[0] "%n plik"
 msgstr[1] "%n pliki"
 msgstr[2] "%n plików"
 
-#: kwidgetjobtracker.cpp:731
+#: kwidgetjobtracker.cpp:739
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "Naciśnij, aby zwinąć to okno dialogowe i ukryć szczegóły"
