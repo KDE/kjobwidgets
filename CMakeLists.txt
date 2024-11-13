@@ -25,7 +25,7 @@ include(ECMDeprecationSettings)
 include(ECMAddQch)
 include(CMakePackageConfigHelpers)
 
-set(REQUIRED_QT_VERSION 6.5.0)
+set(REQUIRED_QT_VERSION 6.6.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
 
 if(NOT WIN32 AND NOT APPLE AND NOT ANDROID AND NOT HAIKU)
