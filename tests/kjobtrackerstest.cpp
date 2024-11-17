@@ -18,11 +18,12 @@
 #include <kuiserverjobtracker.h>
 #include <kwidgetjobtracker.h>
 
-KTestJob::KTestJob(int numberOfDirs)
+KTestJob::KTestJob(int numberOfDirs, uint durationMs)
     : KJob()
     , m_numberOfDirs(numberOfDirs)
     , m_currentSpeed(1000)
     , m_state(Stopped)
+    , m_durationMs(durationMs)
 {
     setCapabilities(KJob::Killable | KJob::Suspendable);
 }
@@ -35,7 +36,7 @@ void KTestJob::start()
 {
     connect(&m_timer, &QTimer::timeout, this, &KTestJob::nextStep);
     m_state = StatingDirs;
-    m_timer.start(50);
+    m_timer.start(m_durationMs);
     Q_EMIT description(this,
                        QStringLiteral("Copying"),
                        qMakePair(QStringLiteral("Source"), QStringLiteral("file:/src")),

@@ -26,7 +26,7 @@ public:
 
     // 10 files per directory
     // 1000 bytes per files
-    KTestJob(int numberOfDirs = 5);
+    KTestJob(int numberOfDirs = 5, uint durationMs = 50);
     ~KTestJob() override;
 
     void start() override;
@@ -47,6 +47,7 @@ private:
     qulonglong m_numberOfDirs;
     qulonglong m_currentSpeed;
     State m_state;
+    uint m_durationMs;
     QTimer m_timer;
 };
 
