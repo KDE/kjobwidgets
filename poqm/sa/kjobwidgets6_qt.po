@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-12-14 01:08+0530\n"
+"PO-Revision-Date: 2024-12-20 22:10+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -68,7 +68,7 @@ msgstr "%1 तथा %2"
 #, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "%1 (Failed)"
-msgstr "%1 (विफलम्) २."
+msgstr "%1 (विफलम्)"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
@@ -90,7 +90,7 @@ msgstr " %1/s "
 #, qt-format
 msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
 msgid "%1:"
-msgstr "%1: १."
+msgstr "%1:"
 
 #: kwidgetjobtracker.cpp:354
 #, qt-format
@@ -142,7 +142,7 @@ msgstr[1] "%n सञ्चिका(s) इत्यस्य %1%"
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
-msgstr "%1% २."
+msgstr "%1%"
 
 #: kwidgetjobtracker.cpp:444
 msgctxt "KWidgetJobTracker|"
@@ -154,8 +154,8 @@ msgstr "स्थगितम्"
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
 msgid_plural "%1/s (%2 remaining)"
-msgstr[0] "%1/s (%2 अवशिष्टम्) २."
-msgstr[1] "%1/s (%2 अवशिष्टम्) २."
+msgstr[0] "%1/s (%2 अवशिष्टम्)"
+msgstr[1] "%1/s (%2 अवशिष्टम्)"
 
 #: kwidgetjobtracker.cpp:454
 #, qt-format
@@ -177,7 +177,7 @@ msgstr "वर्तमानविण्डो अथवा दस्ताव�
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
-msgstr "%1/s (कृतम्) २."
+msgstr "%1/s (कृतम्)"
 
 #: kwidgetjobtracker.cpp:484
 msgctxt "KWidgetJobTracker|"
@@ -204,7 +204,7 @@ msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
-msgstr "%प% ९."
+msgstr "%p%"
 
 #: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
 msgctxt "KWidgetJobTracker|"
