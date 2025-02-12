@@ -16,32 +16,33 @@
 
 class KNotificationJobUiDelegatePrivate;
 
-/**
- * @class KNotificationJobUiDelegate knotificationjobuidelegate.h KNotificationJobUiDelegate
+/*!
+ * \class KNotificationJobUiDelegate
  *
- * A UI delegate using KNotification for interaction (showing errors and warnings).
+ * \inmodule KJobWidgets
  *
- * @since 6.0
+ * \brief A UI delegate using KNotification for interaction (showing errors and warnings).
+ *
+ * \since 6.0
  */
 class KJOBWIDGETS_EXPORT KNotificationJobUiDelegate : public KJobUiDelegate
 {
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Constructs a new KNotificationJobUiDelegate.
-     * @param flags allows to enable automatic error/warning handling
-     * @since 6.0
+     *
+     * \a flags allows to enable automatic error/warning handling
+     *
+     * \since 6.0
      */
     explicit KNotificationJobUiDelegate(KJobUiDelegate::Flags flags = {KJobUiDelegate::AutoHandlingDisabled});
 
-    /**
-     * Destroys the KNotificationJobUiDelegate.
-     */
     ~KNotificationJobUiDelegate() override;
 
 public:
-    /**
+    /*!
      * Display a notification to inform the user of the error given by
      * this job.
      */
