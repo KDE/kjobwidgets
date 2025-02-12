@@ -16,48 +16,44 @@
 class KJob;
 class KUiServerV2JobTrackerPrivate;
 
-/**
- * @class KUiServerV2JobTracker kuiserverv2jobtracker.h KUiServerV2JobTracker
+/*!
+ * \class KUiServerV2JobTracker
  *
- * The interface to implement to track the progresses of a job.
+ * \inmodule KJobWidgets
  *
- * @since 5.81
+ * \brief The interface to implement to track the progresses of a job.
+ *
+ * \since 5.81
  */
 class KJOBWIDGETS_EXPORT KUiServerV2JobTracker : public KJobTrackerInterface
 {
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Creates a new KJobTrackerInterface
      *
-     * @param parent the parent object
+     * \a parent the parent object
      */
     explicit KUiServerV2JobTracker(QObject *parent = nullptr);
 
-    /**
-     * Destroys a KJobTrackerInterface
-     */
     ~KUiServerV2JobTracker() override;
 
-    /**
+    /*!
      * Register a new job in this tracker.
      *
-     * @param job the job to register
+     * \a job the job to register
      */
     void registerJob(KJob *job) override;
 
-    /**
+    /*!
      * Unregister a job from this tracker.
      *
-     * @param job the job to unregister
+     * \a job the job to unregister
      */
     void unregisterJob(KJob *job) override;
 
 protected Q_SLOTS:
-    /**
-     * The following slots are inherited from KJobTrackerInterface.
-     */
     void finished(KJob *job) override;
     void suspended(KJob *job) override;
     void resumed(KJob *job) override;
