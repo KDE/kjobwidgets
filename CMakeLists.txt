@@ -22,8 +22,8 @@ include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMDeprecationSettings)
-include(ECMAddQch)
 include(CMakePackageConfigHelpers)
+include(ECMGenerateQDoc)
 
 set(REQUIRED_QT_VERSION 6.7.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
@@ -53,9 +53,6 @@ find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Notifications ${KF_DEP_VERSION} REQUIRED)
 
 set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
-
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 set(kjobwidgets_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/kjobwidgets_version.h")
 ecm_setup_version(PROJECT VARIABLE_PREFIX KJOBWIDGETS
@@ -93,16 +90,6 @@ endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6JobWidgets")
-
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6JobWidgets_QCH
-        FILE KF6JobWidgetsQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6JobWidgetsQchTargets.cmake\")")
-endif()
 
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF6JobWidgetsConfig.cmake.in"

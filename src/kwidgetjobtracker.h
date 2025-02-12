@@ -15,10 +15,12 @@
 
 class KWidgetJobTrackerPrivate;
 
-/**
- * @class KWidgetJobTracker kwidgetjobtracker.h KWidgetJobTracker
+/*!
+ * \class KWidgetJobTracker
  *
- * This class implements a job tracker with a widget suited for use as a
+ * \inmodule KJobWidgets
+ *
+ * \brief This class implements a job tracker with a widget suited for use as a
  * progress dialog.
  */
 class KJOBWIDGETS_EXPORT KWidgetJobTracker : public KAbstractWidgetJobTracker
@@ -26,49 +28,29 @@ class KJOBWIDGETS_EXPORT KWidgetJobTracker : public KAbstractWidgetJobTracker
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Creates a new KWidgetJobTracker
      *
-     * @param parent the parent of this object and of the widget displaying the job progresses
+     * \a parent the parent of this object and of the widget displaying the job progresses
      */
     explicit KWidgetJobTracker(QWidget *parent = nullptr);
 
-    /**
-     * Destroys a KWidgetJobTracker
-     */
     ~KWidgetJobTracker() override;
 
-    /**
-     * The widget associated to this tracker.
-     *
-     * @param job the job that is assigned the widget we want to get
-     * @return the widget displaying the job progresses
-     */
     QWidget *widget(KJob *job) override;
 
     // KDE5: move this two virtual methods to be placed correctly (ereslibre)
 public Q_SLOTS:
-    /**
-     * Register a new job in this tracker.
-     *
-     * @param job the job to register
-     */
     void registerJob(KJob *job) override;
 
-    /**
-     * Unregister a job from this tracker.
-     *
-     * @param job the job to unregister
-     */
     void unregisterJob(KJob *job) override;
 
 public:
+    /*!
+     */
     bool keepOpen(KJob *job) const;
 
 protected Q_SLOTS:
-    /**
-     * The following slots are inherited from KJobTrackerInterface.
-     */
     void infoMessage(KJob *job, const QString &message) override;
     void description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override;
     void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount) override;

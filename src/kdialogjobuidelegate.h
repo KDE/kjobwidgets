@@ -15,10 +15,12 @@
 
 #include <memory>
 
-/**
- * @class KDialogJobUiDelegate kdialogjobuidelegate.h KDialogJobUiDelegate
+/*!
+ * \class KDialogJobUiDelegate
  *
- * A UI delegate using KMessageBox for interaction (showing errors and warnings).
+ * \inmodule KJobWidgets
+ *
+ * \brief A UI delegate using KMessageBox for interaction (showing errors and warnings).
  *
  * The KMessageBox will use window as a parent in an application-modal.
  */
@@ -27,53 +29,52 @@ class KJOBWIDGETS_EXPORT KDialogJobUiDelegate : public KJobUiDelegate
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Constructs a new KDialogJobUiDelegate.
      */
     KDialogJobUiDelegate();
 
-    /**
+    /*!
      * Constructs a new KDialogJobUiDelegate.
-     * @param flags allows to enable automatic error/warning handling
-     * @param window the window associated with this delegate, see setWindow.
-     * @since 5.70
+     *
+     * \a flags allows to enable automatic error/warning handling
+     *
+     * \a window the window associated with this delegate, see setWindow.
+     *
+     * \since 5.70
      */
     explicit KDialogJobUiDelegate(KJobUiDelegate::Flags flags, QWidget *window);
 
-    /**
-     * Destroys the KDialogJobUiDelegate.
-     */
     ~KDialogJobUiDelegate() override;
 
 public:
-    /**
-     * @reimp
-     */
     bool setJob(KJob *job) override;
 
-    /**
-     * Associate this delegate with a window given by @p window.
+    /*!
+     * Associate this delegate with a window given by \a window.
+     *
      * Needed for dialog boxes to respect stacking order, centering to parent, focus going back to parent after closing...
-     * @param window the window to associate to
-     * @see window()
+     *
+     * \a window the window to associate to
+     *
+     * \sa window()
      */
     virtual void setWindow(QWidget *window);
 
-    /**
+    /*!
      * Returns the window this delegate is associated with.
-     * @return the associated window
-     * @see setWindow()
+     *
+     * \sa setWindow()
      */
     QWidget *window() const;
 
-    /**
+    /*!
      * Updates the last user action timestamp to the given time.
-     * See KApplication::updateUserTimestamp().
      */
     void updateUserTimestamp(unsigned long time);
 
-    /**
-     * @internal
+    /*!
+     * \internal
      */
     unsigned long userTimestamp() const;
 

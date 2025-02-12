@@ -27,8 +27,8 @@ public:
 
     KAbstractWidgetJobTracker *const q_ptr;
 
-    //### KDE 5: make this methods virtual on KAbstractWidgetJobTracker and get rid out of this
-    //           workaround. (ereslibre)
+    // ### KDE 5: make this methods virtual on KAbstractWidgetJobTracker and get rid out of this
+    //            workaround. (ereslibre)
     virtual void setStopOnClose(KJob *job, bool stopOnClose)
     {
         Q_UNUSED(job);
