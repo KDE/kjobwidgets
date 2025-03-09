@@ -24,6 +24,7 @@ TestJob::TestJob(QObject *parent)
 void TestJob::start()
 {
     m_started = true;
+    startElapsedTimer();
 }
 
 bool TestJob::started() const
