@@ -71,6 +71,21 @@ ecm_set_disabled_deprecation_versions(
 ecm_install_po_files_as_qm(poqm)
 
 add_subdirectory(src)
+
+# For the Python bindings
+find_package(Python3 3.9 COMPONENTS Interpreter Development)
+find_package(Shiboken6)
+find_package(PySide6)
+
+include(CMakeDependentOption)
+cmake_dependent_option(BUILD_PYTHON_BINDINGS "Generate Python Bindings" ON "TARGET Shiboken6::libshiboken AND TARGET PySide6::pyside6" OFF)
+add_feature_info(PYTHON_BINDINGS ${BUILD_PYTHON_BINDINGS} "Python bindings")
+
+if (BUILD_PYTHON_BINDINGS)
+    include(ECMGeneratePythonBindings)
+    add_subdirectory(python)
+endif()
+
 if (BUILD_TESTING)
     add_subdirectory(tests)
     add_subdirectory(autotests)
