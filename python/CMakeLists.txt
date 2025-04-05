@@ -11,7 +11,6 @@ set(generated_sources
     ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets/kabstractwidgetjobtracker_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets/kdialogjobuidelegate_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets/knotificationjobuidelegate_wrapper.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets/knotificationjobuidelegate_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets/kstatusbarjobtracker_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets/kuiserverjobtracker_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/KJobWidgets/kuiserverv2jobtracker_wrapper.cpp
