@@ -12,6 +12,8 @@ imagedirs = ../docs/pics
 
 outputformats = HTML
 
+navigation.landingpage = "KJobWidgets"
+
 depends += kde qtwidgets kcoreaddons
 
 qhp.projects            = KJobWidgets
