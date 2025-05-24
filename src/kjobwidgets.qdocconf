@@ -29,3 +29,5 @@ qhp.KJobWidgets.subprojects.classes.title = C++ Classes
 qhp.KJobWidgets.subprojects.classes.indexTitle = KJobWidgets C++ Classes
 qhp.KJobWidgets.subprojects.classes.selectors = class fake:headerfile
 qhp.KJobWidgets.subprojects.classes.sortPages = true
+
+tagfile = kjobwidgets.tags
