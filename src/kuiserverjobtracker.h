@@ -22,7 +22,8 @@ class KJob;
  * \inmodule KJobWidgets
  *
  * \brief The interface to implement to track the progresses of a job.
- * \deprecated[6,16]
+ * \deprecated[6.16]
+ * Use KUiServerV2JobTracker
  */
 class KJOBWIDGETS_EXPORT KJOBWIDGETS_DEPRECATED_VERSION(6, 16, "Use KUiServerV2JobTracker") KUiServerJobTracker : public KJobTrackerInterface
 {
