@@ -18,6 +18,10 @@ if (HAVE_QTDBUS)
 
     qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS dbus/org.kde.JobViewServerV2.xml )
     qt_add_dbus_interface(kjobwidgets_dbus_SRCS dbus/org.kde.JobViewV3.xml jobviewv3iface )
+
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS dbus/org.freedesktop.PowerManagement.Inhibit.xml inhibit_interface)
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS dbus/org.freedesktop.portal.Inhibit.xml portal_inhibit_interface)
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS dbus/org.freedesktop.portal.Request.xml portal_request_interface)
 endif()
 
 target_sources(KF6JobWidgets PRIVATE
@@ -26,6 +30,9 @@ target_sources(KF6JobWidgets PRIVATE
     kabstractwidgetjobtracker_p.h
     kdialogjobuidelegate.cpp
     kdialogjobuidelegate.h
+    kinhibitionjobtracker.cpp
+    kinhibitionjobtracker.h
+    kinhibitionjobtracker_p.h
     kjobtrackerformatters.cpp
     kjobtrackerformatters_p.h
     kstatusbarjobtracker.cpp
@@ -91,6 +98,7 @@ ecm_generate_headers(KJobWidgets_HEADERS
   HEADER_NAMES
   KAbstractWidgetJobTracker
   KDialogJobUiDelegate
+  KInhibitionJobTracker
   KUiServerJobTracker
   KUiServerV2JobTracker
   KStatusBarJobTracker
@@ -104,17 +112,17 @@ install(TARGETS KF6JobWidgets EXPORT KF6JobWidgetsTargets ${KF_INSTALL_TARGETS_D
 
 if (HAVE_QTDBUS)
     install(FILES
-    org.kde.JobViewServer.xml
+    dbus/org.kde.JobViewServer.xml
     DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
     RENAME kf6_org.kde.JobViewServer.xml)
 
     install(FILES
-    org.kde.JobView.xml
+    dbus/org.kde.JobView.xml
     DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
     RENAME kf6_org.kde.JobView.xml)
 
     install(FILES
-    org.kde.JobViewV2.xml
+    dbus/org.kde.JobViewV2.xml
     DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
     RENAME kf6_org.kde.JobViewV2.xml)
 endif()

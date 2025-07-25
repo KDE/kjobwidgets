@@ -10,6 +10,7 @@
 #include <QIcon>
 #include <QPushButton>
 
+#include <KInhibitionJobTracker>
 #include <KUiServerJobTracker>
 #include <KUiServerV2JobTracker>
 #include <KWidgetJobTracker>
@@ -190,6 +191,7 @@ TestDialog::TestDialog(QWidget *parent)
         m_job = new TestJob(this);
         connect(m_job, &KJob::finished, this, [this] {
             m_job = nullptr;
+            m_registeredWithInhibitionTracker = false;
             m_registeredWithWidgetTracker = false;
             m_registeredWithUiServerTracker = false;
             m_registeredWithUiServerV2Tracker = false;
@@ -225,6 +227,14 @@ TestDialog::TestDialog(QWidget *parent)
         m_job->finish();
     });
 
+    connect(m_ui.registerKInhibitionJobTracker, &QPushButton::clicked, this, [this] {
+        if (!m_inhibitionTracker) {
+            m_inhibitionTracker.reset(new KInhibitionJobTracker(nullptr));
+        }
+        m_inhibitionTracker->registerJob(m_job.data());
+        m_registeredWithInhibitionTracker = true;
+        updateUiState();
+    });
     connect(m_ui.registerKWidgetJobTracker, &QPushButton::clicked, this, [this] {
         if (!m_widgetTracker) {
             // not passing "parent" so it spawns a new window
@@ -290,6 +300,7 @@ void TestDialog::updateUiState()
     m_ui.killButton->setEnabled(m_job);
     m_ui.finishButton->setEnabled(m_job);
 
+    m_ui.registerKInhibitionJobTracker->setEnabled(m_job && !m_registeredWithInhibitionTracker);
     m_ui.registerKWidgetJobTracker->setEnabled(m_job && !m_registeredWithWidgetTracker);
     m_ui.registerKUIServerJobTracker->setEnabled(m_job && !m_registeredWithUiServerTracker);
     m_ui.registerKUIServerV2JobTracker->setEnabled(m_job && !m_registeredWithUiServerV2Tracker && !QGuiApplication::desktopFileName().isEmpty());

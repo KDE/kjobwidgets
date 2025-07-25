@@ -15,6 +15,7 @@
 
 #include "ui_kjobcreator.h"
 
+class KInhibitionJobTracker;
 class KWidgetJobTracker;
 class KUiServerJobTracker;
 class KUiServerV2JobTracker;
@@ -77,6 +78,8 @@ private:
 
     QPointer<TestJob> m_job;
 
+    QScopedPointer<KInhibitionJobTracker> m_inhibitionTracker;
+    bool m_registeredWithInhibitionTracker = false;
     QScopedPointer<KWidgetJobTracker> m_widgetTracker;
     bool m_registeredWithWidgetTracker = false;
     QScopedPointer<KUiServerJobTracker> m_uiServerTracker;
