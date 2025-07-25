@@ -18,6 +18,10 @@ if (HAVE_QTDBUS)
 
     qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServerV2.xml )
     qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
+
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.freedesktop.PowerManagement.Inhibit.xml inhibit_interface)
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.freedesktop.portal.Inhibit.xml portal_inhibit_interface)
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.freedesktop.portal.Request.xml portal_request_interface)
 endif()
 
 target_sources(KF6JobWidgets PRIVATE
@@ -41,6 +45,9 @@ target_sources(KF6JobWidgets PRIVATE
 )
 if (HAVE_QTDBUS)
     target_sources(KF6JobWidgets PRIVATE
+        kinhibitionjobtracker.cpp
+        kinhibitionjobtracker.h
+        kinhibitionjobtracker_p.h
         kuiserverjobtracker.cpp
         kuiserverjobtracker.h
         kuiserverjobtracker_p.h
@@ -91,6 +98,7 @@ ecm_generate_headers(KJobWidgets_HEADERS
   HEADER_NAMES
   KAbstractWidgetJobTracker
   KDialogJobUiDelegate
+  KInhibitionJobTracker
   KUiServerJobTracker
   KUiServerV2JobTracker
   KStatusBarJobTracker
