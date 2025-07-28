@@ -16,6 +16,8 @@
 class KJob;
 class KUiServerV2JobTrackerPrivate;
 
+// TODO KF7 rename to KUiServerJobTracker
+
 /*!
  * \class KUiServerV2JobTracker
  *

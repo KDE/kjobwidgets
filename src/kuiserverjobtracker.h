@@ -8,10 +8,11 @@
 #ifndef KUISERVERJOBTRACKER_H
 #define KUISERVERJOBTRACKER_H
 
-#include <KJobTrackerInterface>
 #include <kjobwidgets_export.h>
 
-#include <memory>
+#if KJOBWIDGETS_ENABLE_DEPRECATED_SINCE(6, 17)
+
+#include <KJobTrackerInterface>
 
 class KJob;
 
@@ -21,8 +22,10 @@ class KJob;
  * \inmodule KJobWidgets
  *
  * \brief The interface to implement to track the progresses of a job.
+ * \deprecated[6.17]
+ * Use KUiServerV2JobTracker
  */
-class KJOBWIDGETS_EXPORT KUiServerJobTracker : public KJobTrackerInterface
+class KJOBWIDGETS_EXPORT KJOBWIDGETS_DEPRECATED_VERSION(6, 17, "Use KUiServerV2JobTracker") KUiServerJobTracker : public KJobTrackerInterface
 {
     Q_OBJECT
 
@@ -67,5 +70,6 @@ private:
 
     Q_PRIVATE_SLOT(d, void _k_killJob())
 };
+#endif // KWIDGETS_ENABLE_DEPRECATED_SINCE
 
 #endif

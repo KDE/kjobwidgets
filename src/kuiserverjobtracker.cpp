@@ -7,6 +7,8 @@
 */
 
 #include "kuiserverjobtracker.h"
+
+#if KJOBWIDGETS_ENABLE_DEPRECATED_SINCE(6, 17)
 #include "kuiserverjobtracker_p.h"
 
 #include "debug.h"
@@ -372,4 +374,5 @@ void KSharedUiServerProxy::uiserverOwnerChanged(const QString &serviceName, cons
 }
 
 #include "moc_kuiserverjobtracker.cpp"
+#endif
 #include "moc_kuiserverjobtracker_p.cpp"

@@ -12,6 +12,10 @@
 #ifndef KUISERVERJOBTRACKER_P_H
 #define KUISERVERJOBTRACKER_P_H
 
+#include <kjobwidgets_export.h>
+
+#if KJOBWIDGETS_ENABLE_DEPRECATED_SINCE(6, 17)
+
 #include <memory>
 
 #include <QDBusServiceWatcher>
@@ -38,5 +42,7 @@ private:
     std::unique_ptr<org::kde::JobViewServer> m_uiserver;
     std::unique_ptr<QDBusServiceWatcher> m_watcher;
 };
+
+#endif // KJOBWIDGETS_DEPRECATED_WARNINGS_SINCE
 
 #endif
