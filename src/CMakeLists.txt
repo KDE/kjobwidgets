@@ -13,11 +13,11 @@ ecm_create_qm_loader(KF6JobWidgets kjobwidgets6_qt)
 
 set(kjobwidgets_dbus_SRCS)
 if (HAVE_QTDBUS)
-    qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServer.xml )
-    qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobView.xml jobviewiface )
+    qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS dbus/org.kde.JobViewServer.xml )
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS dbus/org.kde.JobView.xml jobviewiface )
 
-    qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewServerV2.xml )
-    qt_add_dbus_interface(kjobwidgets_dbus_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.JobViewV3.xml jobviewv3iface )
+    qt_add_dbus_interfaces(kjobwidgets_dbus_SRCS dbus/org.kde.JobViewServerV2.xml )
+    qt_add_dbus_interface(kjobwidgets_dbus_SRCS dbus/org.kde.JobViewV3.xml jobviewv3iface )
 endif()
 
 target_sources(KF6JobWidgets PRIVATE
