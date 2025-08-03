@@ -17,6 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Qt-Contexts: true\n"
 
+#: kinhibitionjobtracker.cpp:80
+msgctxt "KInhibitionJobTracker|"
+msgid "Job in progress"
+msgstr ""
+
 #: kjobtrackerformatters.cpp:27
 #, fuzzy, qt-format
 #| msgid "Monday"

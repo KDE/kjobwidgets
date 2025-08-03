@@ -21,6 +21,11 @@ msgstr ""
 "3 : 4\n"
 "X-Qt-Contexts: true\n"
 
+#: kinhibitionjobtracker.cpp:80
+msgctxt "KInhibitionJobTracker|"
+msgid "Job in progress"
+msgstr ""
+
 #: kjobtrackerformatters.cpp:27
 #, fuzzy, qt-format
 #| msgctxt "@item:intext %1 is a real number, e.g. 1.23 days"

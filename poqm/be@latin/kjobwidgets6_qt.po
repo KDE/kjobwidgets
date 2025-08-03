@@ -21,6 +21,11 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Qt-Contexts: true\n"
 
+#: kinhibitionjobtracker.cpp:80
+msgctxt "KInhibitionJobTracker|"
+msgid "Job in progress"
+msgstr ""
+
 #: kjobtrackerformatters.cpp:27
 #, fuzzy, qt-format
 #| msgid "%1 days"

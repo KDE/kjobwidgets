@@ -19,6 +19,11 @@ msgstr ""
 "X-Generator: Lokalize 0.2\n"
 "X-Qt-Contexts: true\n"
 
+#: kinhibitionjobtracker.cpp:80
+msgctxt "KInhibitionJobTracker|"
+msgid "Job in progress"
+msgstr ""
+
 #: kjobtrackerformatters.cpp:27
 #, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext"

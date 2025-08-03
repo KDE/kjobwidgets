@@ -15,6 +15,11 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/kjobwidgets/kjobwidgets6_qt.pot\n"
 "X-Crowdin-File-ID: 43405\n"
 
+#: kinhibitionjobtracker.cpp:80
+msgctxt "KInhibitionJobTracker|"
+msgid "Job in progress"
+msgstr ""
+
 #: kjobtrackerformatters.cpp:27
 #, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext"
