@@ -11,12 +11,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.6\n"
 
 #: kinhibitionjobtracker.cpp:80
 msgctxt "KInhibitionJobTracker|"
 msgid "Job in progress"
-msgstr ""
+msgstr "მიმდინარეობს დავალების შესრულება"
 
 #: kjobtrackerformatters.cpp:27
 #, qt-format
