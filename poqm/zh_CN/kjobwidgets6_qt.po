@@ -18,7 +18,7 @@ msgstr ""
 #: kinhibitionjobtracker.cpp:80
 msgctxt "KInhibitionJobTracker|"
 msgid "Job in progress"
-msgstr ""
+msgstr "正在进行中的任务"
 
 #: kjobtrackerformatters.cpp:27
 #, qt-format
