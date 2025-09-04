@@ -10,13 +10,13 @@
 #include <QObject>
 #include <QTest>
 
+#include <QObject>
+#include <QSignalSpy>
+#include <QTest>
 #include <kjobwidgets_export.h>
 #include <kstatusbarjobtracker.h>
 #include <kuiserverjobtracker.h>
 #include <kwidgetjobtracker.h>
-#include <qobject.h>
-#include <qsignalspy.h>
-#include <qtest.h>
 
 class KTestJobTracker : public KJobTrackerInterface
 {
