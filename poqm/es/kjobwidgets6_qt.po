@@ -146,21 +146,21 @@ msgstr[1] "%1 / %n elementos"
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
-msgstr "%1% de %2"
+msgstr "%1 % de %2"
 
 #: kwidgetjobtracker.cpp:428
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %n file(s)"
 msgid_plural "%1% of %n file(s)"
-msgstr[0] "%1% de %n archivo"
-msgstr[1] "%1% de %n archivos"
+msgstr[0] "%1 % de %n archivo"
+msgstr[1] "%1 % de %n archivos"
 
 #: kwidgetjobtracker.cpp:430
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: kwidgetjobtracker.cpp:444
 msgctxt "KWidgetJobTracker|"
@@ -222,7 +222,7 @@ msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
-msgstr "%p%"
+msgstr "%p %"
 
 #: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
 msgctxt "KWidgetJobTracker|"
