@@ -1,96 +1,131 @@
 /*
     This file is part of the KDE libraries
     SPDX-FileCopyrightText: 2024 Méven Car <meven@kde.org>
-    SPDX-FileCopyrightText: 2024 Waqar Ahmed <waqar.17a@gmail.com>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <kuiserverv2jobtracker.h>
-
+#include "../tests/kjobtrackerstest.h"
 #include <QDebug>
-#include <QFileInfo>
 #include <QObject>
-#include <QPointer>
+#include <QTest>
+
+#include <QObject>
 #include <QSignalSpy>
 #include <QTest>
-#include <QTimer>
-
 #include <kjobwidgets_export.h>
 #include <kstatusbarjobtracker.h>
 #include <kuiserverjobtracker.h>
 #include <kwidgetjobtracker.h>
-#include <qobject.h>
-#include <qsignalspy.h>
-#include <qtest.h>
 
-#include <KJob>
-
-class TestJob : public KJob
+class KTestJobTracker : public KJobTrackerInterface
 {
     Q_OBJECT
 
 public:
-    TestJob()
+    KTestJobTracker(QObject *parent = nullptr)
+        : KJobTrackerInterface(parent)
     {
-        m_timer.callOnTimeout(this, &TestJob::emitResult);
     }
 
-    ~TestJob() override = default;
-
-    void start() override
+public Q_SLOTS:
+    void registerJob(KJob *job) override
     {
-        m_timer.start(100);
+        registeredJobs.append(job);
+    }
+    void unregisterJob(KJob *job) override
+    {
+        unregisteredJobs.append(job);
     }
 
-    bool doSuspend() override
+protected Q_SLOTS:
+    void finished(KJob *job) override
     {
-        m_timer.stop();
-        return true;
+        finishedSpy.append(job);
+    }
+    void suspended(KJob *job) override
+    {
+        suspendedSpy.append(job);
+    }
+    void resumed(KJob *job) override
+    {
+        resumedSpy.append(job);
+    }
+    void description(KJob * /*job */, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override
+    {
+        jobTitle = title;
+        jobField1 = field1;
+        jobField2 = field2;
+    }
+    void infoMessage(KJob * /* job */, const QString &message) override
+    {
+        jobInfoMessage = message;
+    }
+    void warning(KJob * /* job */, const QString &message) override
+    {
+        jobWarning = message;
+    }
+    void totalAmount(KJob * /* job */, KJob::Unit unit, qulonglong amount) override
+    {
+        jobTotalUnit = unit;
+        jobTotalAmount = amount;
+    }
+    void processedAmount(KJob * /* job */, KJob::Unit unit, qulonglong amount) override
+    {
+        jobUnit = unit;
+        jobAmount = amount;
+    }
+    void percent(KJob * /* job */, unsigned long percent) override
+    {
+        jobPercent = percent;
+    }
+    void speed(KJob * /* job */, unsigned long value) override
+    {
+        jobSpeed = value;
     }
 
-    bool doResume() override
-    {
-        m_timer.start();
-        return true;
-    }
-    bool doKill() override
-    {
-        m_timer.stop();
-        return true;
-    }
+public:
+    QList<KJob *> registeredJobs;
+    QList<KJob *> unregisteredJobs;
+    QList<KJob *> finishedSpy;
+    QList<KJob *> suspendedSpy;
+    QList<KJob *> resumedSpy;
+    QString jobTitle;
+    QPair<QString, QString> jobField1;
+    QPair<QString, QString> jobField2;
+    QString jobInfoMessage;
+    QString jobWarning;
+    KJob::Unit jobTotalUnit;
+    qulonglong jobTotalAmount;
+    KJob::Unit jobUnit;
+    qulonglong jobAmount;
 
-private:
-    QTimer m_timer;
+    unsigned long jobPercent;
+    unsigned long jobSpeed;
 };
 
 class KUiServerV2JobTrackerTest : public QObject
 {
-    Q_OBJECT
-public:
-    KUiServerV2JobTrackerTest(QObject *parent = nullptr)
-        : QObject(parent)
-    {
-        qGuiApp->setDesktopFileName(QStringLiteral("nonexisting.desktop"));
-    }
-
-private Q_SLOTS:
     void simpleTest()
     {
-        QPointer<TestJob> job = new TestJob;
+        KTestJob *testJob = new KTestJob(10 /* 100000 bytes to process */, 5);
 
-        KUiServerV2JobTracker *tracker = new KUiServerV2JobTracker(this);
-        tracker->registerJob(job);
+        KTestJobTracker *tracker = new KTestJobTracker(this);
+        tracker->registerJob(testJob);
 
-        job->start();
-        job->suspend();
-        job->resume();
-        QTRY_VERIFY(job == nullptr);
+        QCOMPARE(tracker->registeredJobs.at(0), testJob);
+        QCOMPARE(tracker->finishedSpy.count(), 0);
 
-        delete tracker;
+        testJob->start();
+
+        QSignalSpy jobFinishedSpy(testJob, &KJob::finished);
+
+        QVERIFY(jobFinishedSpy.wait());
+
+        QCOMPARE(tracker->finishedSpy.count(), 1);
     }
 };
 
-QTEST_MAIN(KUiServerV2JobTrackerTest)
+QTEST_GUILESS_MAIN(KUiServerV2JobTrackerTest)
 
 #include "kuiserver2jobtrackertest.moc"
