@@ -218,7 +218,7 @@ msgctxt ""
 msgid "%p%"
 msgstr "%p%"
 
-#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr ""
@@ -230,27 +230,27 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "&Оставете този прозорец отворен след приключване на прехвърлянето"
 
-#: kwidgetjobtracker.cpp:591
+#: kwidgetjobtracker.cpp:592
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Отваряне на &файл"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Отваряне на &дестинация"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Отказ"
 
-#: kwidgetjobtracker.cpp:613
+#: kwidgetjobtracker.cpp:614
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Диалогов прозорец за напредък"
 
-#: kwidgetjobtracker.cpp:626
+#: kwidgetjobtracker.cpp:627
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -258,7 +258,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "%n елемент"
 msgstr[1] "%n елемента"
 
-#: kwidgetjobtracker.cpp:632
+#: kwidgetjobtracker.cpp:633
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -266,7 +266,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "%n папка"
 msgstr[1] "%n папки"
 
-#: kwidgetjobtracker.cpp:636
+#: kwidgetjobtracker.cpp:637
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -274,7 +274,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "%n файл"
 msgstr[1] "%n файла"
 
-#: kwidgetjobtracker.cpp:739
+#: kwidgetjobtracker.cpp:740
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr ""

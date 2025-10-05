@@ -253,7 +253,7 @@ msgctxt ""
 msgid "%p%"
 msgstr "%p%"
 
-#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "לחיצה כאן תרחיב את החלונית ותציג פרטים"
@@ -263,27 +263,27 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "לה&שאיר חלון זה פתוח לאחר סיום ההעברה"
 
-#: kwidgetjobtracker.cpp:591
+#: kwidgetjobtracker.cpp:592
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "פתיחת &קובץ"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "פתיחת י&עד"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&ביטול"
 
-#: kwidgetjobtracker.cpp:613
+#: kwidgetjobtracker.cpp:614
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "חלונית התקדמות"
 
-#: kwidgetjobtracker.cpp:626
+#: kwidgetjobtracker.cpp:627
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -293,7 +293,7 @@ msgstr[1] "שני פריטים"
 msgstr[2] "%n פריטים"
 msgstr[3] "%n פריטים"
 
-#: kwidgetjobtracker.cpp:632
+#: kwidgetjobtracker.cpp:633
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -303,7 +303,7 @@ msgstr[1] "שתי תיקיות"
 msgstr[2] "%n תיקיות"
 msgstr[3] "%n תיקיות"
 
-#: kwidgetjobtracker.cpp:636
+#: kwidgetjobtracker.cpp:637
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -313,7 +313,7 @@ msgstr[1] "שני קבצים"
 msgstr[2] "%n קבצים"
 msgstr[3] "%n קבצים"
 
-#: kwidgetjobtracker.cpp:739
+#: kwidgetjobtracker.cpp:740
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "לחיצה כאן תצמצם את החלונית ותסתיר את הפרטים"

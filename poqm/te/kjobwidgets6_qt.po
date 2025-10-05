@@ -319,7 +319,7 @@ msgctxt ""
 msgid "%p%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
 #, fuzzy
 #| msgid "Click this to expand the dialog, to show details"
 msgctxt "KWidgetJobTracker|"
@@ -333,35 +333,35 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "(&K) బదిలీకరణ పూర్తైనతర్వాత ఈ విండోను తెరిచివుంచుము"
 
-#: kwidgetjobtracker.cpp:591
+#: kwidgetjobtracker.cpp:592
 #, fuzzy
 #| msgid "Open &File"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "(&F) దస్త్రం తెరువు"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 #, fuzzy
 #| msgid "Open &Destination"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "(&D) గమ్యం తెరువు"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 #, fuzzy
 #| msgid "&Cancel"
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "(&C) రద్దు"
 
-#: kwidgetjobtracker.cpp:613
+#: kwidgetjobtracker.cpp:614
 #, fuzzy
 #| msgid "Progress Dialog"
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "పురోగతి డైలగ్"
 
-#: kwidgetjobtracker.cpp:626
+#: kwidgetjobtracker.cpp:627
 #, fuzzy, qt-format
 #| msgid "Delete item(s)"
 msgctxt "KWidgetJobTracker|"
@@ -370,7 +370,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "అంశాలను తీసివేయండి"
 msgstr[1] "అంశాలను తీసివేయండి"
 
-#: kwidgetjobtracker.cpp:632
+#: kwidgetjobtracker.cpp:633
 #, fuzzy, qt-format
 #| msgid "%1 folder"
 #| msgid_plural "%1 folders"
@@ -383,7 +383,7 @@ msgstr[2] "%1 ఫొల్డర్లు"
 msgstr[3] "%1 ఫొల్డర్లు"
 msgstr[4] "%1 ఫొల్డర్లు"
 
-#: kwidgetjobtracker.cpp:636
+#: kwidgetjobtracker.cpp:637
 #, fuzzy, qt-format
 #| msgid "%1 file"
 #| msgid_plural "%1 files"
@@ -396,7 +396,7 @@ msgstr[2] "%1 దస్త్రాలు"
 msgstr[3] "%1 దస్త్రాలు"
 msgstr[4] "%1 దస్త్రాలు"
 
-#: kwidgetjobtracker.cpp:739
+#: kwidgetjobtracker.cpp:740
 #, fuzzy
 #| msgid "Click this to collapse the dialog, to hide details"
 msgctxt "KWidgetJobTracker|"

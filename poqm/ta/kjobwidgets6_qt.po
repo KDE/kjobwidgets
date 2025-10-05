@@ -219,7 +219,7 @@ msgctxt ""
 msgid "%p%"
 msgstr "%p%"
 
-#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "சாளரத்தைப் பெரிதாக்கி விவரங்களைக் காட்ட இதைக் கிளிக் செய்யலாம்"
@@ -229,27 +229,27 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "இடமாற்றம் மு&டிந்தபின்னும் இச்சாளரத்தை மூடாதே"
 
-#: kwidgetjobtracker.cpp:591
+#: kwidgetjobtracker.cpp:592
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "&கோப்பை திற"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "&சேருமிடத்தை திற"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&ரத்து செய்"
 
-#: kwidgetjobtracker.cpp:613
+#: kwidgetjobtracker.cpp:614
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "முன்னேற்றச் சாளரம்"
 
-#: kwidgetjobtracker.cpp:626
+#: kwidgetjobtracker.cpp:627
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -257,7 +257,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "%n உருப்படி"
 msgstr[1] "%n உருப்படி(கள்)"
 
-#: kwidgetjobtracker.cpp:632
+#: kwidgetjobtracker.cpp:633
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -265,7 +265,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "%n அடைவு"
 msgstr[1] "%n அடைவுகள்"
 
-#: kwidgetjobtracker.cpp:636
+#: kwidgetjobtracker.cpp:637
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -273,7 +273,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "%n கோப்பு"
 msgstr[1] "%n கோப்புகள்"
 
-#: kwidgetjobtracker.cpp:739
+#: kwidgetjobtracker.cpp:740
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "சாளரத்தைச் சிறிதாக்க விவரங்களை மறைக்க இதைக் கிளிக் சேய்யலாம்"

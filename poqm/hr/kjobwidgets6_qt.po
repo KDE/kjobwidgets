@@ -304,7 +304,7 @@ msgctxt ""
 msgid "%p%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
 #, fuzzy
 #| msgid "Click this to expand the dialog, to show details"
 msgctxt "KWidgetJobTracker|"
@@ -318,35 +318,35 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "&Ostavi prozor otvorenim nakon izvršenog prijenosa"
 
-#: kwidgetjobtracker.cpp:591
+#: kwidgetjobtracker.cpp:592
 #, fuzzy
 #| msgid "Open &File"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Otvori &Datoteku"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 #, fuzzy
 #| msgid "Open &Destination"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Otvori D&estinaciju"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 #, fuzzy
 #| msgid "&Cancel"
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Odustani"
 
-#: kwidgetjobtracker.cpp:613
+#: kwidgetjobtracker.cpp:614
 #, fuzzy
 #| msgid "Progress Dialog"
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Dialog napretka"
 
-#: kwidgetjobtracker.cpp:626
+#: kwidgetjobtracker.cpp:627
 #, fuzzy, qt-format
 #| msgid "Delete item(s)"
 msgctxt "KWidgetJobTracker|"
@@ -356,7 +356,7 @@ msgstr[0] "Izbriši stavku(e)"
 msgstr[1] "Izbriši stavku(e)"
 msgstr[2] "Izbriši stavku(e)"
 
-#: kwidgetjobtracker.cpp:632
+#: kwidgetjobtracker.cpp:633
 #, fuzzy, qt-format
 #| msgid "%1 folder"
 #| msgid_plural "%1 folders"
@@ -367,7 +367,7 @@ msgstr[0] "%1 mapa"
 msgstr[1] "%1 mape"
 msgstr[2] "%1 mapa"
 
-#: kwidgetjobtracker.cpp:636
+#: kwidgetjobtracker.cpp:637
 #, fuzzy, qt-format
 #| msgid "%1 file"
 #| msgid_plural "%1 files"
@@ -378,7 +378,7 @@ msgstr[0] "%1 datoteka"
 msgstr[1] "%1 datoteke"
 msgstr[2] "%1 datoteka"
 
-#: kwidgetjobtracker.cpp:739
+#: kwidgetjobtracker.cpp:740
 #, fuzzy
 #| msgid "Click this to collapse the dialog, to hide details"
 msgctxt "KWidgetJobTracker|"

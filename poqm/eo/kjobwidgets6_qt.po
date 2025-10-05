@@ -224,7 +224,7 @@ msgctxt ""
 msgid "%p%"
 msgstr "%p%"
 
-#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:746
+#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "Alkalku tion por vastigi la dialogon, malkaŝante detalojn"
@@ -234,27 +234,27 @@ msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "Daŭri &preni ĉi tiun fenestron malferman post transmeto"
 
-#: kwidgetjobtracker.cpp:591
+#: kwidgetjobtracker.cpp:592
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Malfermi &Dosieron"
 
-#: kwidgetjobtracker.cpp:597
+#: kwidgetjobtracker.cpp:598
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Malfermi &Celon"
 
-#: kwidgetjobtracker.cpp:605
+#: kwidgetjobtracker.cpp:606
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Rezigni"
 
-#: kwidgetjobtracker.cpp:613
+#: kwidgetjobtracker.cpp:614
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Progresdialogo"
 
-#: kwidgetjobtracker.cpp:626
+#: kwidgetjobtracker.cpp:627
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
@@ -262,7 +262,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "%n ero(j)"
 msgstr[1] "%n ero(j)"
 
-#: kwidgetjobtracker.cpp:632
+#: kwidgetjobtracker.cpp:633
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -270,7 +270,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "%n dosierujo(j)"
 msgstr[1] "%n dosierujo(j)"
 
-#: kwidgetjobtracker.cpp:636
+#: kwidgetjobtracker.cpp:637
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -278,7 +278,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "%n dosiero"
 msgstr[1] "%n dosieroj"
 
-#: kwidgetjobtracker.cpp:739
+#: kwidgetjobtracker.cpp:740
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "Alkalku tion por malvastigi la dialogon, kaŝante detalojn"
