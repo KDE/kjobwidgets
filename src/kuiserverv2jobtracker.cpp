@@ -170,7 +170,8 @@ void KUiServerV2JobTrackerPrivate::requestView(KJob *job, const QString &desktop
         }
 
         const QString viewObjectPath = reply.value().path();
-        auto *jobView = new org::kde::JobViewV3(QStringLiteral("org.kde.JobViewServer"), viewObjectPath, QDBusConnection::sessionBus());
+        auto uniqueJobView = std::make_unique<org::kde::JobViewV3>(QStringLiteral("org.kde.JobViewServer"), viewObjectPath, QDBusConnection::sessionBus());
+        auto *jobView = uniqueJobView.get();
 
         TrackedJob *trackedJob = findJob(job);
         if (trackedJob->job) {
@@ -180,7 +181,7 @@ void KUiServerV2JobTrackerPrivate::requestView(KJob *job, const QString &desktop
             QObject::connect(jobView, &org::kde::JobViewV3::suspendRequested, job, &KJob::suspend);
             QObject::connect(jobView, &org::kde::JobViewV3::resumeRequested, job, &KJob::resume);
 
-            trackedJob->jobView.reset(jobView);
+            trackedJob->jobView = std::move(uniqueJobView);
         }
 
         // Now send the full current job state over
@@ -194,8 +195,6 @@ void KUiServerV2JobTrackerPrivate::requestView(KJob *job, const QString &desktop
             const QString errorMessage = trackedJob->currentState.value(QStringLiteral("errorMessage")).toString();
 
             jobView->terminate(errorCode, errorMessage, QVariantMap() /*hints*/);
-            delete jobView;
-
             removeJob(job);
         }
     });
