@@ -239,7 +239,7 @@ msgstr "%p %"
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr ""
-"Cliquez ici pour développer la boîte de dialogue, pour afficher les détails"
+"Cliquez ici pour développer la boite de dialogue, pour afficher les détails"
 
 #: kwidgetjobtracker.cpp:583
 msgctxt "KWidgetJobTracker|"
@@ -294,7 +294,7 @@ msgstr[1] "%n fichier(s)"
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr ""
-"Cliquez ici pour réduire la boîte de dialogue, pour masquer les détails"
+"Cliquez ici pour réduire la boite de dialogue, pour masquer les détails"
 
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 B"
