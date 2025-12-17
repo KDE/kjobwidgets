@@ -7,8 +7,6 @@
 
 #include "../tests/kjobtrackerstest.h"
 #include <QDebug>
-#include <QObject>
-#include <QTest>
 
 #include <QObject>
 #include <QSignalSpy>
