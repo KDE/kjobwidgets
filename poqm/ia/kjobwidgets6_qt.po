@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2026-01-21 16:46+0100\n"
+"PO-Revision-Date: 2026-03-03 17:08+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -84,7 +84,7 @@ msgstr "%1 (Fallite)"
 #, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "An unknown error occurred while executing a job: %1"
-msgstr ""
+msgstr "Un error incognite occurreva durante que on executeva un labor: %1"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
