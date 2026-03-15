@@ -1,7 +1,7 @@
 # translation of kdelibs4.po to Polish
 # translation of kdelibs4.po to
 # Version: $Revision: 685926 $
-# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2019, 2020, 2021, 2023, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2019, 2020, 2021, 2023, 2025, 2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Ostatnie poprawki przed 2.0 Jacek Stolarczyk <jstolarz@kde.org>
 # Jacek Stolarczyk <jstolarz@kde.org>, 2001.
 # Piotr Roszatycki <dexter@debian.org>, 1997-2000.
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2025-09-06 06:16+0200\n"
+"PO-Revision-Date: 2026-03-14 06:34+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Qt-Contexts: true\n"
 
 #: kinhibitionjobtracker.cpp:80
@@ -99,7 +99,7 @@ msgstr "%1 (niepowodzenie)"
 #, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "An unknown error occurred while executing a job: %1"
-msgstr ""
+msgstr "Wystąpił nieznany błąd podczas wykonywania zadania: %1"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
