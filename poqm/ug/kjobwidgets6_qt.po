@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-31 18:53-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 3.9\n"
 "X-Qt-Contexts: true\n"
 
 #: kinhibitionjobtracker.cpp:80
@@ -25,81 +25,57 @@ msgid "Job in progress"
 msgstr ""
 
 #: kjobtrackerformatters.cpp:27
-#, fuzzy, qt-format
-#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 days"
-#| msgid "%1 days"
+#, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n day(s)"
 msgid_plural "%n day(s)"
-msgstr[0] "%1 كۈن"
+msgstr[0] "%n كۈن"
 
 #: kjobtrackerformatters.cpp:34
-#, fuzzy, qt-format
-#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 hours"
-#| msgid "%1 hours"
+#, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n hour(s)"
 msgid_plural "%n hour(s)"
-msgstr[0] "%1 سائەت"
+msgstr[0] "%n سائەت"
 
 #: kjobtrackerformatters.cpp:41
-#, fuzzy, qt-format
-#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 minutes"
-#| msgid "%1 minutes"
+#, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n minute(s)"
 msgid_plural "%n minute(s)"
-msgstr[0] "%1 مىنۇت"
+msgstr[0] "%n مىنۇت"
 
 #: kjobtrackerformatters.cpp:48
-#, fuzzy, qt-format
-#| msgctxt "@item:intext %1 is a real number, e.g. 1.23 seconds"
-#| msgid "%1 seconds"
+#, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext"
 msgid "%n second(s)"
 msgid_plural "%n second(s)"
-msgstr[0] "%1 سېكۇنت"
+msgstr[0] "%n سېكۇنت"
 
 #: kjobtrackerformatters.cpp:69
-#, fuzzy, qt-format
-#| msgctxt ""
-#| "@item:intext days and hours. This uses the previous item:intext messages. "
-#| "If this does not fit the grammar of your language please contact the i18n "
-#| "team to solve the problem"
-#| msgid "%1 and %2"
+#, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext days and hours."
 msgid "%1 and %2"
 msgstr "%1 ۋە %2"
 
 #: kjobtrackerformatters.cpp:73
-#, fuzzy, qt-format
-#| msgctxt ""
-#| "@item:intext days and hours. This uses the previous item:intext messages. "
-#| "If this does not fit the grammar of your language please contact the i18n "
-#| "team to solve the problem"
-#| msgid "%1 and %2"
+#, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext hours and minutes."
 msgid "%1 and %2"
 msgstr "%1 ۋە %2"
 
 #: kjobtrackerformatters.cpp:78
-#, fuzzy, qt-format
-#| msgctxt ""
-#| "@item:intext days and hours. This uses the previous item:intext messages. "
-#| "If this does not fit the grammar of your language please contact the i18n "
-#| "team to solve the problem"
-#| msgid "%1 and %2"
+#, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
 msgid "%1 and %2"
 msgstr "%1 ۋە %2"
 
 #. Job name, e.g. Copying has failed
 #: knotificationjobuidelegate.cpp:29
-#, fuzzy, qt-format
-#| msgid "%1 (Link)"
+#, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "%1 (Failed)"
-msgstr "%1 (ئۇلانما)"
+msgstr "%1 (مەغلۇپ بولدى)"
 
 #: knotificationjobuidelegate.cpp:63
 #, qt-format
@@ -108,309 +84,239 @@ msgid "An unknown error occurred while executing a job: %1"
 msgstr ""
 
 #: kstatusbarjobtracker.cpp:161
-#, fuzzy
-#| msgid "Stop"
 msgctxt "KStatusBarJobTracker|"
 msgid "Stop"
 msgstr "توختا"
 
 #: kstatusbarjobtracker.cpp:240
-#, fuzzy
-#| msgid " Stalled "
 msgctxt "KStatusBarJobTracker|"
 msgid " Stalled "
 msgstr " توختىتىلدى "
 
 #: kstatusbarjobtracker.cpp:242
-#, fuzzy, qt-format
-#| msgid " %1/s "
+#, qt-format
 msgctxt "KStatusBarJobTracker|"
 msgid " %1/s "
 msgstr " %1/s "
 
 #: kwidgetjobtracker.cpp:282 kwidgetjobtracker.cpp:290
-#, fuzzy, qt-format
-#| msgctxt "%1 is the label, we add a ':' to it"
-#| msgid "%1:"
+#, qt-format
 msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
 msgid "%1:"
 msgstr "%1:"
 
 #: kwidgetjobtracker.cpp:354
-#, fuzzy, qt-format
-#| msgid "%2 of %3 complete"
-#| msgid_plural "%2 of %3 complete"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 of %2 complete"
 msgid_plural "%1 of %2 complete"
-msgstr[0] "%2 / %3 تاماملاندى"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:373 kwidgetjobtracker.cpp:391
-#, fuzzy, qt-format
-#| msgid "%2 / %1 folder"
-#| msgid_plural "%2 / %1 folders"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n folder(s)"
 msgid_plural "%1 / %n folder(s)"
-msgstr[0] "%2 / %1 قىسقۇچ"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:377 kwidgetjobtracker.cpp:396
-#, fuzzy, qt-format
-#| msgid "%2 / %1 file"
-#| msgid_plural "%2 / %1 files"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n file(s)"
 msgid_plural "%1 / %n file(s)"
-msgstr[0] "%2 / %1 ھۆججەت"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:408
-#, fuzzy, qt-format
-#| msgid "%2 / %1 file"
-#| msgid_plural "%2 / %1 files"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n item(s)"
 msgid_plural "%1 / %n item(s)"
-msgstr[0] "%2 / %1 ھۆججەت"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:424
-#, fuzzy, qt-format
-#| msgid "%1% of %2"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
 msgstr "%2 نىڭ %1%"
 
 #: kwidgetjobtracker.cpp:428
-#, fuzzy, qt-format
-#| msgid "%2% of 1 file"
-#| msgid_plural "%2% of %1 files"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %n file(s)"
 msgid_plural "%1% of %n file(s)"
-msgstr[0] "%2% (%1 ھۆججەت)"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:430
-#, fuzzy, qt-format
-#| msgid "%1%"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
 msgstr "%1%"
 
 #: kwidgetjobtracker.cpp:444
-#, fuzzy
-#| msgid "Stalled"
 msgctxt "KWidgetJobTracker|"
 msgid "Stalled"
 msgstr "توختىتىلدى"
 
 #: kwidgetjobtracker.cpp:451
-#, fuzzy, qt-format
-#| msgid "%2/s (%3 remaining)"
-#| msgid_plural "%2/s (%3 remaining)"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
 msgid_plural "%1/s (%2 remaining)"
-msgstr[0] "%2/سېكۇنت(قالغىنى %3)"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:454
-#, fuzzy, qt-format
-#| msgctxt "speed in bytes per second"
-#| msgid "%1/s"
+#, qt-format
 msgctxt "KWidgetJobTracker|speed in bytes per second"
 msgid "%1/s"
 msgstr "%1/s"
 
 #: kwidgetjobtracker.cpp:462
-#, fuzzy
-#| msgid "&Close"
 msgctxt "KWidgetJobTracker|"
 msgid "&Close"
 msgstr "ياپ(&C)"
 
 #: kwidgetjobtracker.cpp:464
-#, fuzzy
-#| msgid "Close the current window or document"
 msgctxt "KWidgetJobTracker|"
 msgid "Close the current window or document"
 msgstr "ھازىرقى كۆزنەك ياكى پۈتۈكنى ياپىدۇ"
 
 #: kwidgetjobtracker.cpp:478
-#, fuzzy, qt-format
-#| msgid "%1/s (done)"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
 msgstr "%1/سېكۇنت (تامام)"
 
 #: kwidgetjobtracker.cpp:484
-#, fuzzy
-#| msgid "&Resume"
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "داۋاملاشتۇر(&R)"
 
 #: kwidgetjobtracker.cpp:490 kwidgetjobtracker.cpp:563
-#, fuzzy
-#| msgid "&Pause"
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "ۋاقىتلىق توختا(&P)"
 
 #: kwidgetjobtracker.cpp:514
-#, fuzzy
-#| msgctxt "The source url of a job"
-#| msgid "Source:"
 msgctxt "KWidgetJobTracker|The source url of a job"
 msgid "Source:"
 msgstr "مەنبە:"
 
 #: kwidgetjobtracker.cpp:522
-#, fuzzy
-#| msgctxt "The destination url of a job"
-#| msgid "Destination:"
 msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "نىشان:"
 
 #: kwidgetjobtracker.cpp:534
-#, fuzzy
-#| msgid "%1%"
 msgctxt ""
 "KWidgetJobTracker|Progress bar percent value, %p is the value, % is the "
 "percent sign. Make sure to include %p in your translation."
 msgid "%p%"
-msgstr "%1%"
+msgstr "%p%"
 
 #: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
-#, fuzzy
-#| msgid "Click this to expand the dialog, to show details"
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr "سۆزلەشكۈنى يېيىپ، تەپسىلاتىنى كۆرسىتىش ئۈچۈن بۇ يەرنى چېكىڭ"
 
 #: kwidgetjobtracker.cpp:583
-#, fuzzy
-#| msgid "&Keep this window open after transfer is complete"
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "ئەۋەتىپ بولغۇچە بۇ كۆزنەك ئوچۇق تۇرسۇن(&K)"
 
 #: kwidgetjobtracker.cpp:592
-#, fuzzy
-#| msgid "Open &File"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "ھۆججەت ئاچ(&F)"
 
 #: kwidgetjobtracker.cpp:598
-#, fuzzy
-#| msgid "Open &Destination"
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "نىشان ئاچ(&D)"
 
 #: kwidgetjobtracker.cpp:606
-#, fuzzy
-#| msgid "&Cancel"
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "ۋاز كەچ(&C)"
 
 #: kwidgetjobtracker.cpp:614
-#, fuzzy
-#| msgid "Progress Dialog"
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "جەريان كۆزنەك"
 
 #: kwidgetjobtracker.cpp:627
-#, fuzzy, qt-format
-#| msgid "Delete item(s)"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
 msgid_plural "%n item(s)"
-msgstr[0] "تۇر(لەر)نى ئۆچۈرىدۇ"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:633
-#, fuzzy, qt-format
-#| msgid "%1 folder"
-#| msgid_plural "%1 folders"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
 msgid_plural "%n folder(s)"
-msgstr[0] "%1 قىسقۇچ"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:637
-#, fuzzy, qt-format
-#| msgid "%1 file"
-#| msgid_plural "%1 files"
+#, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
 msgid_plural "%n file(s)"
-msgstr[0] "%1 ھۆججەت"
+msgstr[0] ""
 
 #: kwidgetjobtracker.cpp:740
-#, fuzzy
-#| msgid "Click this to collapse the dialog, to hide details"
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr "سۆزلەشكۈنى قاتلاپ، تەپسىلاتىنى يوشۇرۇش ئۈچۈن بۇ يەرنى چېكىڭ"
 
-#, fuzzy
 #~| msgctxt "size in bytes"
 #~| msgid "%1 B"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 B"
 #~ msgstr "%1 بايت"
 
-#, fuzzy
 #~| msgctxt "size in 1024 bytes"
 #~| msgid "%1 KiB"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 KiB"
 #~ msgstr "%1 كىلوبايت‏"
 
-#, fuzzy
 #~| msgctxt "size in 2^20 bytes"
 #~| msgid "%1 MiB"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 MiB"
 #~ msgstr "%1 مېگابايت"
 
-#, fuzzy
 #~| msgctxt "size in 2^30 bytes"
 #~| msgid "%1 GiB"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 GiB"
 #~ msgstr "%1 گىگابايت"
 
-#, fuzzy
 #~| msgctxt "size in 2^40 bytes"
 #~| msgid "%1 TiB"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 TiB"
 #~ msgstr "%1 تېرابايت"
 
-#, fuzzy
 #~| msgctxt "size in 2^50 bytes"
 #~| msgid "%1 PiB"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 PiB"
 #~ msgstr "%1 پېتابايت"
 
-#, fuzzy
 #~| msgctxt "size in 2^60 bytes"
 #~| msgid "%1 EiB"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 EiB"
 #~ msgstr "%1 ئېكسابايت"
 
-#, fuzzy
 #~| msgctxt "size in 2^70 bytes"
 #~| msgid "%1 ZiB"
 #~ msgctxt "KJobTrackerFormatters|"
 #~ msgid "%1 ZiB"
 #~ msgstr "%1 زېتتابايت"
 
-#, fuzzy
 #~| msgctxt "size in 2^80 bytes"
 #~| msgid "%1 YiB"
 #~ msgctxt "KJobTrackerFormatters|"
@@ -4031,7 +3937,6 @@ msgstr "سۆزلەشكۈنى قاتلاپ، تەپسىلاتىنى يوشۇرۇ�
 #~ msgid "Supply a username and password below."
 #~ msgstr "تۆۋەندە ئىشلەتكۈچى ئاتى ۋە ئىم تەمىنلەيدۇ."
 
-#, fuzzy
 #~ msgid "Use this password:"
 #~ msgstr "ئىمنى ساقلا(&K)"
 
