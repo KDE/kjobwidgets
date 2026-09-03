@@ -512,6 +512,43 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>desktopEntry</tabstop>
+  <tabstop>destUrl</tabstop>
+  <tabstop>title</tabstop>
+  <tabstop>descriptionLabel1</tabstop>
+  <tabstop>descriptionValue1</tabstop>
+  <tabstop>descriptionLabel2</tabstop>
+  <tabstop>descriptionValue2</tabstop>
+  <tabstop>emitDescriptionButton</tabstop>
+  <tabstop>percent</tabstop>
+  <tabstop>processedBytes</tabstop>
+  <tabstop>totalBytes</tabstop>
+  <tabstop>processedFiles</tabstop>
+  <tabstop>totalFiles</tabstop>
+  <tabstop>processedDirectories</tabstop>
+  <tabstop>totalDirectories</tabstop>
+  <tabstop>processedItems</tabstop>
+  <tabstop>totalItems</tabstop>
+  <tabstop>speed</tabstop>
+  <tabstop>infoMessage</tabstop>
+  <tabstop>emitInfoMessage</tabstop>
+  <tabstop>errorCombo</tabstop>
+  <tabstop>errorText</tabstop>
+  <tabstop>suspendableCheck</tabstop>
+  <tabstop>killableCheck</tabstop>
+  <tabstop>immediateCheck</tabstop>
+  <tabstop>transientCheck</tabstop>
+  <tabstop>registerKInhibitionJobTracker</tabstop>
+  <tabstop>registerKWidgetJobTracker</tabstop>
+  <tabstop>registerKUIServerJobTracker</tabstop>
+  <tabstop>registerKUIServerV2JobTracker</tabstop>
+  <tabstop>createButton</tabstop>
+  <tabstop>startButton</tabstop>
+  <tabstop>suspendButton</tabstop>
+  <tabstop>killButton</tabstop>
+  <tabstop>finishButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
