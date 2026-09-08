@@ -270,7 +270,7 @@ msgstr "Annu&ler"
 #: kwidgetjobtracker.cpp:614
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
-msgstr "Boîte de dialogue de progression"
+msgstr "Boite de dialogue de progression"
 
 #: kwidgetjobtracker.cpp:627
 #, qt-format
