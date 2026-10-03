@@ -11,7 +11,7 @@
 # Joonas Niilola <juippis@roskakori.org>, 2006.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
 # Teemu Rytilahti <tpr@d5k.net>, 2008.
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2020, 2023, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2020, 2023, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2006, 2010, 2011, 2012, 2013, 2014, 2015.
 #
@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2025-09-10 17:09+0300\n"
+"PO-Revision-Date: 2026-08-26 14:06+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -100,11 +100,10 @@ msgid "%1 (Failed)"
 msgstr "%1 (epäonnistui)"
 
 #: knotificationjobuidelegate.cpp:63
-#, fuzzy, qt-format
-#| msgid "An error occurred while accessing '%1'"
+#, qt-format
 msgctxt "KNotificationJobUiDelegate|"
 msgid "An unknown error occurred while executing a job: %1"
-msgstr "Tapahtui virhe  tiedostoa %1 luettaessa"
+msgstr "Työtä suoritettaessa sattui tuntematon virhe: %1"
 
 #: kstatusbarjobtracker.cpp:161
 msgctxt "KStatusBarJobTracker|"
