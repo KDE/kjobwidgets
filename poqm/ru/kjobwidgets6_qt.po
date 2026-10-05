@@ -80,19 +80,19 @@ msgstr[2] "%n секунд"
 #, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext days and hours."
 msgid "%1 and %2"
-msgstr "%1 %2"
+msgstr "%1 и %2"
 
 #: kjobtrackerformatters.cpp:73
 #, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext hours and minutes."
 msgid "%1 and %2"
-msgstr "%1 %2"
+msgstr "%1 и %2"
 
 #: kjobtrackerformatters.cpp:78
 #, qt-format
 msgctxt "KJobTrackerFormatters|@item:intext minutes and seconds."
 msgid "%1 and %2"
-msgstr "%1 %2"
+msgstr "%1 и %2"
 
 #. Job name, e.g. Copying has failed
 #: knotificationjobuidelegate.cpp:29
@@ -289,8 +289,8 @@ msgstr "Процесс выполнения"
 msgctxt "KWidgetJobTracker|"
 msgid "%n item(s)"
 msgid_plural "%n item(s)"
-msgstr[0] " %n объект"
-msgstr[1] " %n объекта"
+msgstr[0] "%n объект"
+msgstr[1] "%n объекта"
 msgstr[2] "%n объектов"
 
 # [https://bugs.kde.org/show_bug.cgi?id=335105] BUGME: word puzzle --aspotashev
