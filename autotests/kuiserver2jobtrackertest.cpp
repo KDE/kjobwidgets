@@ -12,9 +12,7 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <kjobwidgets_export.h>
-#include <kstatusbarjobtracker.h>
 #include <kuiserverjobtracker.h>
-#include <kwidgetjobtracker.h>
 
 class KTestJobTracker : public KJobTrackerInterface
 {
