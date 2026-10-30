@@ -18,7 +18,6 @@
 #include <QWidget>
 
 class QPushButton;
-class QCheckBox;
 class QLabel;
 class QProgressBar;
 
