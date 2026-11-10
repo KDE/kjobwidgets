@@ -49,7 +49,7 @@ protected Q_SLOTS:
     {
         resumedSpy.append(job);
     }
-    void description(KJob * /*job */, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override
+    void description(KJob * /*job */, const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2) override
     {
         jobTitle = title;
         jobField1 = field1;
@@ -89,8 +89,8 @@ public:
     QList<KJob *> suspendedSpy;
     QList<KJob *> resumedSpy;
     QString jobTitle;
-    QPair<QString, QString> jobField1;
-    QPair<QString, QString> jobField2;
+    std::pair<QString, QString> jobField1;
+    std::pair<QString, QString> jobField2;
     QString jobInfoMessage;
     QString jobWarning;
     KJob::Unit jobTotalUnit;

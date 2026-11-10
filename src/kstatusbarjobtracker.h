@@ -64,7 +64,7 @@ public:
     void setStatusBarMode(StatusBarModes statusBarMode);
 
 public Q_SLOTS:
-    void description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override;
+    void description(KJob *job, const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2) override;
     void totalAmount(KJob *job, KJob::Unit unit, qulonglong amount) override;
     void percent(KJob *job, unsigned long percent) override;
     void speed(KJob *job, unsigned long value) override;

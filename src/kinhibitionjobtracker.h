@@ -70,7 +70,7 @@ protected Q_SLOTS:
     void finished(KJob *job) override;
     void suspended(KJob *job) override;
     void resumed(KJob *job) override;
-    void description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2) override;
+    void description(KJob *job, const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2) override;
 
 private:
     std::unique_ptr<KInhibitionJobTrackerPrivate> const d;

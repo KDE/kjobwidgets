@@ -119,7 +119,7 @@ void KWidgetJobTracker::infoMessage(KJob *job, const QString &message)
     pWidget->infoMessage(message);
 }
 
-void KWidgetJobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
+void KWidgetJobTracker::description(KJob *job, const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2)
 {
     Q_D(KWidgetJobTracker);
 
@@ -275,7 +275,9 @@ void KWidgetJobTrackerPrivate::ProgressWidget::infoMessage(const QString &messag
     speedLabel->setAlignment(speedLabel->alignment() & ~Qt::TextWordWrap);
 }
 
-void KWidgetJobTrackerPrivate::ProgressWidget::description(const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
+void KWidgetJobTrackerPrivate::ProgressWidget::description(const QString &title,
+                                                           const std::pair<QString, QString> &field1,
+                                                           const std::pair<QString, QString> &field2)
 {
     setWindowTitle(title);
     caption = title;

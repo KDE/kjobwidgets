@@ -39,8 +39,8 @@ void KTestJob::start()
     m_timer.start(m_durationMs);
     Q_EMIT description(this,
                        QStringLiteral("Copying"),
-                       qMakePair(QStringLiteral("Source"), QStringLiteral("file:/src")),
-                       qMakePair(QStringLiteral("Destination"), QStringLiteral("file:/dest")));
+                       std::make_pair(QStringLiteral("Source"), QStringLiteral("file:/src")),
+                       std::make_pair(QStringLiteral("Destination"), QStringLiteral("file:/dest")));
 }
 
 void KTestJob::nextStep()
@@ -78,7 +78,7 @@ void KTestJob::stateNextDir()
     setTotalAmount(KJob::Bytes, totalAmount(KJob::Files) * 1000);
 
     Q_EMIT warning(this, directory_name);
-    Q_EMIT description(this, QStringLiteral("Stating"), qMakePair(QStringLiteral("Stating"), QString(QStringLiteral("file:/src/") + directory_name)));
+    Q_EMIT description(this, QStringLiteral("Stating"), std::make_pair(QStringLiteral("Stating"), QString(QStringLiteral("file:/src/") + directory_name)));
 }
 
 void KTestJob::createNextDir()
@@ -93,7 +93,9 @@ void KTestJob::createNextDir()
     qDebug() << "Creating " << directory_name;
     setProcessedAmount(KJob::Directories, processedAmount(KJob::Directories) + 1);
 
-    Q_EMIT description(this, QStringLiteral("Creating Dir"), qMakePair(QStringLiteral("Creating"), QString(QStringLiteral("file:/dest/") + directory_name)));
+    Q_EMIT description(this,
+                       QStringLiteral("Creating Dir"),
+                       std::make_pair(QStringLiteral("Creating"), QString(QStringLiteral("file:/dest/") + directory_name)));
 }
 
 void KTestJob::copyNextFile()
@@ -114,8 +116,8 @@ void KTestJob::copyNextFile()
 
     Q_EMIT description(this,
                        QStringLiteral("Copying"),
-                       qMakePair(QStringLiteral("Source"), QString(QStringLiteral("file:/src/") + file_name)),
-                       qMakePair(QStringLiteral("Destination"), QString(QStringLiteral("file:/dest/") + file_name)));
+                       std::make_pair(QStringLiteral("Source"), QString(QStringLiteral("file:/src/") + file_name)),
+                       std::make_pair(QStringLiteral("Destination"), QString(QStringLiteral("file:/dest/") + file_name)));
 
     emitSpeed(m_currentSpeed);
 }

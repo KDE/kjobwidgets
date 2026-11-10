@@ -83,7 +83,7 @@ public:
     void setMode(KStatusBarJobTracker::StatusBarModes newMode);
 
 public Q_SLOTS:
-    virtual void description(const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2);
+    virtual void description(const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2);
     virtual void totalAmount(KJob::Unit unit, qulonglong amount);
     virtual void percent(unsigned long percent);
     virtual void speed(unsigned long value);

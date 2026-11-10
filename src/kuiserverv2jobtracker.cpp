@@ -366,7 +366,7 @@ void KUiServerV2JobTracker::resumed(KJob *job)
     d->scheduleUpdate(job, QStringLiteral("suspended"), false);
 }
 
-void KUiServerV2JobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
+void KUiServerV2JobTracker::description(KJob *job, const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2)
 {
     d->scheduleUpdate(job, QStringLiteral("title"), title);
 
