@@ -160,8 +160,8 @@ TestDialog::TestDialog(QWidget *parent)
     connect(m_ui.emitDescriptionButton, &QPushButton::clicked, this, [this] {
         Q_EMIT m_job->description(m_job,
                                   m_ui.title->text(),
-                                  qMakePair(m_ui.descriptionLabel1->text(), m_ui.descriptionValue1->text()),
-                                  qMakePair(m_ui.descriptionLabel2->text(), m_ui.descriptionValue2->text()));
+                                  std::make_pair(m_ui.descriptionLabel1->text(), m_ui.descriptionValue1->text()),
+                                  std::make_pair(m_ui.descriptionLabel2->text(), m_ui.descriptionValue2->text()));
     });
 
     connect(m_ui.percent, &QSlider::valueChanged, this, &TestDialog::updateJob);

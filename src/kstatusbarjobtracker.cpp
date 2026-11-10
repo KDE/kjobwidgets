@@ -86,7 +86,7 @@ void KStatusBarJobTracker::setStatusBarMode(StatusBarModes statusBarMode)
     d->currentProgressWidget->setMode(statusBarMode);
 }
 
-void KStatusBarJobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
+void KStatusBarJobTracker::description(KJob *job, const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2)
 {
     Q_D(KStatusBarJobTracker);
 
@@ -209,8 +209,8 @@ void KStatusBarJobTrackerPrivate::ProgressWidget::setMode(KStatusBarJobTracker::
 }
 
 void KStatusBarJobTrackerPrivate::ProgressWidget::description(const QString &title,
-                                                              const QPair<QString, QString> &field1,
-                                                              const QPair<QString, QString> &field2)
+                                                              const std::pair<QString, QString> &field1,
+                                                              const std::pair<QString, QString> &field2)
 {
     Q_UNUSED(field1);
     Q_UNUSED(field2);

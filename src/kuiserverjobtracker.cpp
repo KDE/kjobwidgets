@@ -208,7 +208,7 @@ void KUiServerJobTracker::resumed(KJob *job)
     jobView->setSuspended(false);
 }
 
-void KUiServerJobTracker::description(KJob *job, const QString &title, const QPair<QString, QString> &field1, const QPair<QString, QString> &field2)
+void KUiServerJobTracker::description(KJob *job, const QString &title, const std::pair<QString, QString> &field1, const std::pair<QString, QString> &field2)
 {
     if (!d->progressJobView.contains(job)) {
         return;
