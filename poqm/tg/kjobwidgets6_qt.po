@@ -107,13 +107,13 @@ msgctxt "KStatusBarJobTracker|"
 msgid " %1/s "
 msgstr " %1/с "
 
-#: kwidgetjobtracker.cpp:282 kwidgetjobtracker.cpp:290
+#: kwidgetjobtracker.cpp:284 kwidgetjobtracker.cpp:292
 #, qt-format
 msgctxt "KWidgetJobTracker|%1 is the label, we add a ':' to it"
 msgid "%1:"
 msgstr "%1:"
 
-#: kwidgetjobtracker.cpp:354
+#: kwidgetjobtracker.cpp:356
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 of %2 complete"
@@ -121,7 +121,7 @@ msgid_plural "%1 of %2 complete"
 msgstr[0] "%1 аз %2 ба анҷом расид"
 msgstr[1] "%1 аз %2 ба анҷом расид"
 
-#: kwidgetjobtracker.cpp:373 kwidgetjobtracker.cpp:391
+#: kwidgetjobtracker.cpp:375 kwidgetjobtracker.cpp:393
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n folder(s)"
@@ -129,7 +129,7 @@ msgid_plural "%1 / %n folder(s)"
 msgstr[0] "%1 / %n ҷузвадон"
 msgstr[1] "%1 / %n ҷузвадон"
 
-#: kwidgetjobtracker.cpp:377 kwidgetjobtracker.cpp:396
+#: kwidgetjobtracker.cpp:379 kwidgetjobtracker.cpp:398
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1 / %n file(s)"
@@ -137,7 +137,7 @@ msgid_plural "%1 / %n file(s)"
 msgstr[0] "%1 / %n файл"
 msgstr[1] "%1 / %n файл"
 
-#: kwidgetjobtracker.cpp:408
+#: kwidgetjobtracker.cpp:410
 #, fuzzy, qt-format
 #| msgctxt "KWidgetJobTracker|"
 #| msgid "%1 / %n file(s)"
@@ -148,13 +148,13 @@ msgid_plural "%1 / %n item(s)"
 msgstr[0] "%1 / %n файл"
 msgstr[1] "%1 / %n файл"
 
-#: kwidgetjobtracker.cpp:424
+#: kwidgetjobtracker.cpp:426
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %2"
 msgstr "%1% аз %2"
 
-#: kwidgetjobtracker.cpp:428
+#: kwidgetjobtracker.cpp:430
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1% of %n file(s)"
@@ -162,18 +162,18 @@ msgid_plural "%1% of %n file(s)"
 msgstr[0] "%1% аз %n файл"
 msgstr[1] "%1% аз %n файл"
 
-#: kwidgetjobtracker.cpp:430
+#: kwidgetjobtracker.cpp:432
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:444
+#: kwidgetjobtracker.cpp:446
 msgctxt "KWidgetJobTracker|"
 msgid "Stalled"
 msgstr "Манъ шуд"
 
-#: kwidgetjobtracker.cpp:451
+#: kwidgetjobtracker.cpp:453
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (%2 remaining)"
@@ -181,49 +181,49 @@ msgid_plural "%1/s (%2 remaining)"
 msgstr[0] "%1/с (%2 боқӣ монд)"
 msgstr[1] "%1/s (%2 боқӣ монд)"
 
-#: kwidgetjobtracker.cpp:454
+#: kwidgetjobtracker.cpp:456
 #, qt-format
 msgctxt "KWidgetJobTracker|speed in bytes per second"
 msgid "%1/s"
 msgstr "%1/с"
 
-#: kwidgetjobtracker.cpp:462
+#: kwidgetjobtracker.cpp:464
 msgctxt "KWidgetJobTracker|"
 msgid "&Close"
 msgstr "&Пӯшидан"
 
-#: kwidgetjobtracker.cpp:464
+#: kwidgetjobtracker.cpp:466
 msgctxt "KWidgetJobTracker|"
 msgid "Close the current window or document"
 msgstr "Пӯшидани равзана ё ҳуҷҷати ҷорӣ"
 
-#: kwidgetjobtracker.cpp:478
+#: kwidgetjobtracker.cpp:480
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%1/s (done)"
 msgstr "%1/с (ба анҷом расид)"
 
-#: kwidgetjobtracker.cpp:484
+#: kwidgetjobtracker.cpp:486
 msgctxt "KWidgetJobTracker|"
 msgid "&Resume"
 msgstr "&Давом додан"
 
-#: kwidgetjobtracker.cpp:490 kwidgetjobtracker.cpp:563
+#: kwidgetjobtracker.cpp:492 kwidgetjobtracker.cpp:565
 msgctxt "KWidgetJobTracker|"
 msgid "&Pause"
 msgstr "&Таваққуф кардан"
 
-#: kwidgetjobtracker.cpp:514
+#: kwidgetjobtracker.cpp:516
 msgctxt "KWidgetJobTracker|The source url of a job"
 msgid "Source:"
 msgstr "Манбаъ:"
 
-#: kwidgetjobtracker.cpp:522
+#: kwidgetjobtracker.cpp:524
 msgctxt "KWidgetJobTracker|The destination url of a job"
 msgid "Destination:"
 msgstr "Ҷои таъйинот:"
 
-#: kwidgetjobtracker.cpp:534
+#: kwidgetjobtracker.cpp:536
 #, fuzzy
 #| msgctxt "KWidgetJobTracker|"
 #| msgid "%1%"
@@ -233,39 +233,39 @@ msgctxt ""
 msgid "%p%"
 msgstr "%1%"
 
-#: kwidgetjobtracker.cpp:547 kwidgetjobtracker.cpp:747
+#: kwidgetjobtracker.cpp:549 kwidgetjobtracker.cpp:749
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to expand the dialog, to show details"
 msgstr ""
 "Барои баркушодани равзанаи гуфтугӯ ё нишон додани тафсилот, дар ин ҷо зер "
 "кунед"
 
-#: kwidgetjobtracker.cpp:583
+#: kwidgetjobtracker.cpp:585
 msgctxt "KWidgetJobTracker|"
 msgid "&Keep this window open after transfer is complete"
 msgstr "&Кушода нигоҳ доштани ин равзана баъд аз анҷоми интиқол"
 
-#: kwidgetjobtracker.cpp:592
+#: kwidgetjobtracker.cpp:594
 msgctxt "KWidgetJobTracker|"
 msgid "Open &File"
 msgstr "Кушодани &файл"
 
-#: kwidgetjobtracker.cpp:598
+#: kwidgetjobtracker.cpp:600
 msgctxt "KWidgetJobTracker|"
 msgid "Open &Destination"
 msgstr "Кушодани ҷои &таъйинот"
 
-#: kwidgetjobtracker.cpp:606
+#: kwidgetjobtracker.cpp:608
 msgctxt "KWidgetJobTracker|"
 msgid "&Cancel"
 msgstr "&Бекор кардан"
 
-#: kwidgetjobtracker.cpp:614
+#: kwidgetjobtracker.cpp:616
 msgctxt "KWidgetJobTracker|"
 msgid "Progress Dialog"
 msgstr "Равзанаи гуфтугӯи раванд"
 
-#: kwidgetjobtracker.cpp:627
+#: kwidgetjobtracker.cpp:629
 #, fuzzy, qt-format
 #| msgid "Delete item(s)"
 msgctxt "KWidgetJobTracker|"
@@ -274,7 +274,7 @@ msgid_plural "%n item(s)"
 msgstr[0] "Чизҳоро нест кунед"
 msgstr[1] "Чизҳоро нест кунед"
 
-#: kwidgetjobtracker.cpp:633
+#: kwidgetjobtracker.cpp:635
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n folder(s)"
@@ -282,7 +282,7 @@ msgid_plural "%n folder(s)"
 msgstr[0] "%n ҷузвадон"
 msgstr[1] "%n ҷузвадон"
 
-#: kwidgetjobtracker.cpp:637
+#: kwidgetjobtracker.cpp:639
 #, qt-format
 msgctxt "KWidgetJobTracker|"
 msgid "%n file(s)"
@@ -290,7 +290,7 @@ msgid_plural "%n file(s)"
 msgstr[0] "%n файл"
 msgstr[1] "%n файл"
 
-#: kwidgetjobtracker.cpp:740
+#: kwidgetjobtracker.cpp:742
 msgctxt "KWidgetJobTracker|"
 msgid "Click this to collapse the dialog, to hide details"
 msgstr ""
